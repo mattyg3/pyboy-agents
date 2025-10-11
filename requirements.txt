@@ -1,0 +1,8 @@
+pyboy
+pillow
+opencv-python
+numpy
+langchain
+langgraph
+openai
+ollama
