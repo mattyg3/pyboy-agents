@@ -6,14 +6,15 @@ from planner import SimplePlanner
 from skills import SkillExecutor
 import time
 
-ROM_PATH = "C:/Users/surff/Desktop/Pokemon ROMs/Pokemon_ Red Version/Pokemon - Red Version.gb"  
-
+ROM_PATH = 'ROMS/pokemon_red.gb'
+SAVE_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander.sav'
 
 def main():
     # Use headless for fastest "null", or use "SDL2" if you want a window or "OpenGL"
     pyboy = PyBoy(ROM_PATH, window="SDL2")
     # Optionally set unlimited speed
-    # pyboy.set_emulation_speed(0)
+    pyboy.set_emulation_speed(0)
+
 
     # Load Save State
     # START_SAVE = "C:/Users/surff/Desktop/Pokemon ROMs/Pokemon_ Red Version/Pokemon - Red Version_charmander.sav"
@@ -24,28 +25,31 @@ def main():
     #     pyboy.cartridge.load_ram(f.read())
 
     perception = Perception(pyboy)
-    planner = SimplePlanner()
+    planner = SimplePlanner() #LLM Step eventually
     skills = SkillExecutor(pyboy)
 
     frame = 0
     try:
         while pyboy.tick():  # returns False when ROM done / exit
             state = perception.parse_state()
-            plan = planner.plan(state)
+            if frame < 3800:
+                plan = planner.gamestart_plan(frame)
+            else:
+                plan = planner.plan(state, frame)
             status = skills.execute(plan, state)
 
             if frame % 100 == 0:
                 print(f"[frame {frame}] scene={state.get('scene')} plan={plan.get('type')} status={status}")
             frame += 1
 
-            if frame==1000:
-                break
+            # if frame==2400:
+            #     break
 
             # optional: small sleep to avoid hogging CPU unnecessarily
             time.sleep(0.001)
     finally:
-        # with open("saves/test_saves.sav", "wb") as f:
-        #     f.write(pyboy.cartridge.save_ram())
+        with open(SAVE_STATE_PATH, "wb") as f:
+            pyboy.save_state(f)
         pyboy.stop()
         print("Stopped emulator.")
 

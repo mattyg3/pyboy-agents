@@ -1,18 +1,28 @@
 # planner.py
-# Simple planner: very small rule-based planner that issues high-level commands from state.
+# Simple planner: get through opening menu to get to a specific starting pokemon
+import random
+from utils.saved_macros import game_start_macro
+
 
 class SimplePlanner:
     def __init__(self):
         self.goal = "explore"
 
-    def plan(self, state):
-        # If in text or menu, press A
-        if state.get("has_text"):
-            return {"type": "PRESS_A"}
-
-        if state.get("scene") == "battle":
-            return {"type": "PRESS_A"}
-
-        # Otherwise, move up
-        return {"type": "GO_UP"}
-
+    def gamestart_plan(self, frame): #, state
+        action = game_start_macro.run_macro(frame=frame, init_frame=0)
+        if action is None:
+            return {"type": None}
+        else:
+            return action
+    
+    def plan(self, state, frame): #
+        action = random.choice([
+            {"type": "PRESS_A"},
+            {"type": "PRESS_B"},
+            {"type": "GO_UP"},
+            {"type": "GO_DOWN"},
+            {"type": "GO_LEFT"},
+            {"type": "GO_RIGHT"},
+            # {"type": "OPEN_MENU"},
+        ])
+        return action

@@ -17,18 +17,33 @@ class SkillExecutor:
         self.pyboy.tick()
 
     def execute(self, plan, state):
-        t = plan.get("type")
+        t = plan.get("type",None)
         if t is None or t == "NOOP":
             return "noop"
 
         if t == "PRESS_A":
-            # Press A button
             self._press("a", hold_frames=2)
             return "pressed_a"
+        
+        if t == "PRESS_B":
+            self._press("b", hold_frames=2)
+            return "pressed_b"
 
         if t == "GO_UP":
             self._press("up", hold_frames=2)
             return "moved_up"
+        
+        if t == "GO_DOWN":
+            self._press("down", hold_frames=2)
+            return "moved_down"
+        
+        if t == "GO_LEFT":
+            self._press("left", hold_frames=2)
+            return "moved_left"
+
+        if t == "GO_RIGHT":
+            self._press("right", hold_frames=2)
+            return "moved_right"
 
         if t == "OPEN_MENU":
             self._press("start", hold_frames=2)
