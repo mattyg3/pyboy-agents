@@ -30,8 +30,12 @@ def main():
 
     frame = 0
     try:
+        
         while pyboy.tick():  # returns False when ROM done / exit
+            # perception = PokemonPerceptionAgent(pyboy)
             # state = perception.parse_state()
+            # pyboy.m
+            # pyboy.memory
             if frame < 2500:
                 state = {}
             else:
@@ -45,6 +49,7 @@ def main():
             if frame % 100 == 0:
                 # print(f"[frame {frame}] scene={state.get('scene')} plan={plan.get('type')} status={status}")
                 print(f"[frame {frame}]     status={status}     STATE: {state}")
+                # print(pyboy.memory[0xD014])
             frame += 1
 
             # if frame==2400:

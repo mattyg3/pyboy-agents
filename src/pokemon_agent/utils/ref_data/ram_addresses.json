@@ -50,6 +50,13 @@
       "description": "Player Pokémon #1 maximum HP"
     },
     {
+      "name": "poke_level",
+      "address": "0xD022",
+      "size": 2,
+      "type": "word (little endian)",
+      "description": "Player Pokémon #1 level"
+    },
+    {
       "name": "poke_species",
       "address": "0xD014",
       "size": 1,
@@ -72,7 +79,7 @@
     },
     {
       "name": "enemy_species",
-      "address": "0xCFD8",
+      "address": "0xCFE5",
       "size": 1,
       "type": "byte",
       "description": "Enemy Pokémon species ID in battle"
@@ -104,6 +111,13 @@
       "size": 2,
       "type": "word (little endian)",
       "description": "Enemy Pokémon maximum HP"
+    },
+    {
+      "name": "enemy_level",
+      "address": "0xCFF3",
+      "size": 2,
+      "type": "word (little endian)",
+      "description": "Enemy Pokémon #1 level"
     },
     {
       "name": "battle_type",

@@ -27,7 +27,16 @@ game_start_macro.add_step({"type": "GO_LEFT"}, 5)
 game_start_macro.add_step({"type": "GO_DOWN"}, 20)
 game_start_macro.add_step({"type": "PRESS_A"}, 1200) #battle rival (mash A button)
 
-game_start_macro.add_step({"type": "GO_DOWN"}, 200) #leave building, start adventure
+game_start_macro.add_step({"type": "GO_DOWN"}, 150) #leave building, start adventure
+
+# ###get to wild pokemon
+# game_start_macro.add_step({"type": "GO_LEFT"}, 15)
+# game_start_macro.add_step({"type": "GO_UP"}, 100)
+# game_start_macro.add_step({"type":"GO_RIGHT"}, 10)
+# game_start_macro.add_step({"type": "GO_UP"}, 300)
+
+
+
 
 
 
