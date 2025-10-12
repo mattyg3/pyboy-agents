@@ -8,6 +8,9 @@ import json
 with open('src/pokemon_agent/utils/ref_data/POKEMON_NAMES.json', 'r') as f:
     POKEMON_NAMES = json.load(f)
 
+with open('src/pokemon_agent/utils/ref_data/POKEMON_TYPES.json', 'r') as f:
+    POKEMON_TYPES = json.load(f)
+
 with open('src/pokemon_agent/utils/ref_data/ram_addresses.json', 'r') as f:
     RAM_POINTERS = json.load(f)
 
@@ -54,18 +57,30 @@ class PokemonPerceptionAgent:
 
         # Player Pokémon stats
         player_species = POKEMON_NAMES.get(str(mem[self.get_mem_pointer("poke_species")]))   
-        player_type1 = mem[self.get_mem_pointer("poke_type1")]
-        player_type2 = mem[self.get_mem_pointer("poke_type2")] 
-        player_hp = read_word(mem, self.get_mem_pointer("poke_current_hp"))
-        player_hp_max = read_word(mem, self.get_mem_pointer("poke_max_hp")) 
+        # player_type1 = mem[self.get_mem_pointer("poke_type1")]
+        # player_type2 = mem[self.get_mem_pointer("poke_type2")] 
+        try:
+            player_type1 = POKEMON_TYPES.get(player_species.upper(), None)[0]
+            player_type2 = POKEMON_TYPES.get(player_species.upper(), None)[1]
+        except:
+            player_type1 = None
+            player_type2 = None
+        player_hp = read_word(mem, self.get_mem_pointer("poke_current_hp"))/256
+        player_hp_max = read_word(mem, self.get_mem_pointer("poke_max_hp"))/256
         player_level = mem[self.get_mem_pointer("poke_level")] 
 
         # Enemy Pokémon stats
         enemy_species = POKEMON_NAMES.get(str(mem[self.get_mem_pointer("enemy_species")]))
-        enemy_type1 = mem[self.get_mem_pointer("enemy_type1")] 
-        enemy_type2 = mem[self.get_mem_pointer("enemy_type2")]
-        enemy_hp = read_word(mem, self.get_mem_pointer("enemy_current_hp"))
-        enemy_hp_max = read_word(mem, self.get_mem_pointer("enemy_max_hp"))
+        # enemy_type1 = mem[self.get_mem_pointer("enemy_type1")] 
+        # enemy_type2 = mem[self.get_mem_pointer("enemy_type2")]
+        try:
+            enemy_type1 = POKEMON_TYPES.get(enemy_species.upper(), None)[0]
+            enemy_type2 = POKEMON_TYPES.get(enemy_species.upper(), None)[1]
+        except:
+            enemy_type1 = None
+            enemy_type2 = None
+        enemy_hp = read_word(mem, self.get_mem_pointer("enemy_current_hp"))/256
+        enemy_hp_max = read_word(mem, self.get_mem_pointer("enemy_max_hp"))/256
         enemy_name = POKEMON_NAMES.get(enemy_species, "Unknown")
         enemy_level = mem[self.get_mem_pointer("enemy_level")]
 

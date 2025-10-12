@@ -8,6 +8,8 @@ import time
 
 ROM_PATH = 'ROMS/pokemon_red.gb'
 SAVE_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander.sav'
+LOAD_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_prefight.sav'
+# SAVE_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_prefight.sav'
 
 def main():
     # Use headless for fastest "null", or use "SDL2" if you want a window or "OpenGL"
@@ -17,12 +19,8 @@ def main():
 
 
     # Load Save State
-    # START_SAVE = "C:/Users/surff/Desktop/Pokemon ROMs/Pokemon_ Red Version/Pokemon - Red Version_charmander.sav"
-    # START_SAVE = "./saves/Pokemon - Red Version_charmander.sav"
-    # START_SAVE = "src/pokemon_agent/saves/Pokemon - Red Version_charmander.sav"
-    # pyboy.load_battery(START_SAVE)
-    # with open(START_SAVE, "rb") as f:
-    #     pyboy.cartridge.load_ram(f.read())
+    with open(LOAD_STATE_PATH, "rb") as f:
+            pyboy.load_state(f)
 
     perception = PokemonPerceptionAgent(pyboy)
     planner = SimplePlanner() #LLM Step eventually
@@ -30,19 +28,22 @@ def main():
 
     frame = 0
     try:
+        # if frame % 10 == 0:
         
         while pyboy.tick():  # returns False when ROM done / exit
-            # perception = PokemonPerceptionAgent(pyboy)
-            # state = perception.parse_state()
-            # pyboy.m
-            # pyboy.memory
-            if frame < 2500:
-                state = {}
+            # if frame < 2500:
+            #     state = {}
+            # else:
+            #     state = perception.get_game_state()
+            # if frame < 3800:
+            #     plan = planner.gamestart_plan(frame)
+            # else:
+            #     plan = planner.plan(state, frame)
+            if frame < 1500:
+                state = perception.get_game_state()
+                plan = planner.fightstart_plan(frame)
             else:
                 state = perception.get_game_state()
-            if frame < 3800:
-                plan = planner.gamestart_plan(frame)
-            else:
                 plan = planner.plan(state, frame)
             status = skills.execute(plan, state)
 
@@ -52,11 +53,13 @@ def main():
                 # print(pyboy.memory[0xD014])
             frame += 1
 
-            # if frame==2400:
-            #     break
+            if frame==2500:
+                break
 
             # optional: small sleep to avoid hogging CPU unnecessarily
             time.sleep(0.001)
+        # else:
+        #     frame+=9
     finally:
         with open(SAVE_STATE_PATH, "wb") as f:
             pyboy.save_state(f)

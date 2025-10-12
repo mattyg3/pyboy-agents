@@ -23,11 +23,11 @@ game_start_macro.add_step({"type": "GO_RIGHT"}, 5)
 game_start_macro.add_step({"type": "GO_UP"}, 5)
 game_start_macro.add_step({"type": "PRESS_A"}, 500) #pick Charmander
 
-game_start_macro.add_step({"type": "GO_LEFT"}, 5)
-game_start_macro.add_step({"type": "GO_DOWN"}, 20)
-game_start_macro.add_step({"type": "PRESS_A"}, 1200) #battle rival (mash A button)
+# game_start_macro.add_step({"type": "GO_LEFT"}, 5)
+# game_start_macro.add_step({"type": "GO_DOWN"}, 20)
+# game_start_macro.add_step({"type": "PRESS_A"}, 1200) #battle rival (mash A button)
 
-game_start_macro.add_step({"type": "GO_DOWN"}, 150) #leave building, start adventure
+# game_start_macro.add_step({"type": "GO_DOWN"}, 150) #leave building, start adventure
 
 # ###get to wild pokemon
 # game_start_macro.add_step({"type": "GO_LEFT"}, 15)
@@ -36,6 +36,12 @@ game_start_macro.add_step({"type": "GO_DOWN"}, 150) #leave building, start adven
 # game_start_macro.add_step({"type": "GO_UP"}, 300)
 
 
+# ====== Start Rival Fight Macro ======
+start_fight = create_macro()
+start_fight.add_step({"type": "GO_LEFT"}, 5)
+start_fight.add_step({"type": "GO_DOWN"}, 20)
+start_fight.add_step({"type": "PRESS_A"}, 1400) #battle rival (mash A button)
+start_fight.add_step({"type": "GO_DOWN"}, 150) #leave building, start adventure
 
 
 
