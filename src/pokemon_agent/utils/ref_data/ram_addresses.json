@@ -1,0 +1,200 @@
+{
+  "ram_addresses": [
+    {
+      "name": "current_map_id",
+      "address": "0xD35E",
+      "size": 1,
+      "type": "byte",
+      "description": "Current map ID"
+    },
+    {
+      "name": "player_x",
+      "address": "0xD361",
+      "size": 1,
+      "type": "byte",
+      "description": "Player’s X coordinate on current map"
+    },
+    {
+      "name": "player_y",
+      "address": "0xD362",
+      "size": 1,
+      "type": "byte",
+      "description": "Player’s Y coordinate on current map"
+    },
+    {
+      "name": "last_map_id",
+      "address": "0xD365",
+      "size": 1,
+      "type": "byte",
+      "description": "Previous map ID (before current)"
+    },
+    {
+      "name": "party_count",
+      "address": "0xD163",
+      "size": 1,
+      "type": "byte",
+      "description": "Number of Pokémon in player’s party"
+    },
+    {
+      "name": "poke_current_hp",
+      "address": "0xD015",
+      "size": 2,
+      "type": "word (little endian)",
+      "description": "Player Pokémon #1 current HP"
+    },
+    {
+      "name": "poke_max_hp",
+      "address": "0xD023",
+      "size": 2,
+      "type": "word (little endian)",
+      "description": "Player Pokémon #1 maximum HP"
+    },
+    {
+      "name": "poke_species",
+      "address": "0xD014",
+      "size": 1,
+      "type": "byte",
+      "description": "Player Pokémon #1 species ID"
+    },
+	{
+      "name": "poke_type1",
+      "address": "0xD019",
+      "size": 1,
+      "type": "byte",
+      "description": "Player Pokémon #1 Type #1"
+    },
+	{
+      "name": "poke_type2",
+      "address": "0xD01A",
+      "size": 1,
+      "type": "byte",
+      "description": "Player Pokémon #1 Type #2"
+    },
+    {
+      "name": "enemy_species",
+      "address": "0xCFD8",
+      "size": 1,
+      "type": "byte",
+      "description": "Enemy Pokémon species ID in battle"
+    },
+    {
+      "name": "enemy_type1",
+      "address": "0xCFEA",
+      "size": 1,
+      "type": "byte",
+      "description": "Enemy Pokémon #1 Type #1"
+    },
+	{
+      "name": "enemy_type2",
+      "address": "0xCFEB",
+      "size": 1,
+      "type": "byte",
+      "description": "Enemy Pokémon #1 Type #2"
+    },
+    {
+      "name": "enemy_current_hp",
+      "address": "0xCFE6",
+      "size": 2,
+      "type": "word (little endian)",
+      "description": "Enemy Pokémon current HP"
+    },
+    {
+      "name": "enemy_max_hp",
+      "address": "0xCFF4",
+      "size": 2,
+      "type": "word (little endian)",
+      "description": "Enemy Pokémon maximum HP"
+    },
+    {
+      "name": "battle_type",
+      "address": "0xD05A",
+      "size": 1,
+      "type": "byte",
+      "description": "Battle type flag (trainer, wild, etc.)"
+    },
+    {
+      "name": "money_low",
+      "address": "0xD34A",
+      "size": 1,
+      "type": "byte",
+      "description": "Player money, low byte"
+    },
+    {
+      "name": "money_mid",
+      "address": "0xD34B",
+      "size": 1,
+      "type": "byte",
+      "description": "Player money, middle byte"
+    },
+    {
+      "name": "money_high",
+      "address": "0xD34C",
+      "size": 1,
+      "type": "byte",
+      "description": "Player money, high byte (so total money is 3 bytes)"
+    },
+    {
+      "name": "coins",
+      "address": "0xD350",
+      "size": 1,
+      "type": "byte",
+      "description": "Game Corner coins"
+    },
+    {
+      "name": "sram_bank0_start",
+      "address": "0xA000",
+      "size": null,
+      "type": "block",
+      "description": "Start of SRAM bank 0 (save / Hall of Fame area)"
+    },
+    {
+      "name": "oam_dma",
+      "address": "0xFF46",
+      "size": 1,
+      "type": "byte",
+      "description": "OAM DMA register (HRAM)"
+    },
+    {
+      "name": "joypad",
+      "address": "0xFF00",
+      "size": 1,
+      "type": "byte",
+      "description": "Joypad input register (HRAM / I/O)"
+    },
+    {
+      "name": "interrupt_enable",
+      "address": "0xFFFF",
+      "size": 1,
+      "type": "byte",
+      "description": "Interrupt enable register (HRAM)"
+    },
+    {
+      "name": "div_register",
+      "address": "0xFF04",
+      "size": 1,
+      "type": "byte",
+      "description": "Divider register (Timer / hardware clock)"
+    },
+    {
+      "name": "tima",
+      "address": "0xFF05",
+      "size": 1,
+      "type": "byte",
+      "description": "Timer counter (TIMA)"
+    },
+    {
+      "name": "tma",
+      "address": "0xFF06",
+      "size": 1,
+      "type": "byte",
+      "description": "Timer modulo (TMA)"
+    },
+    {
+      "name": "tac",
+      "address": "0xFF07",
+      "size": 1,
+      "type": "byte",
+      "description": "Timer control (TAC)"
+    }
+  ]
+}

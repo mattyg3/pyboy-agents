@@ -1,7 +1,7 @@
 # Minimal runner: uses PyBoy to run an emulator loop, publishes state to planner, runs skill macros.
 
 from pyboy import PyBoy#, WindowEvent
-from perception import Perception
+from perception import PokemonPerceptionAgent
 from planner import SimplePlanner
 from skills import SkillExecutor
 import time
@@ -24,14 +24,18 @@ def main():
     # with open(START_SAVE, "rb") as f:
     #     pyboy.cartridge.load_ram(f.read())
 
-    perception = Perception(pyboy)
+    perception = PokemonPerceptionAgent(pyboy)
     planner = SimplePlanner() #LLM Step eventually
     skills = SkillExecutor(pyboy)
 
     frame = 0
     try:
         while pyboy.tick():  # returns False when ROM done / exit
-            state = perception.parse_state()
+            # state = perception.parse_state()
+            if frame < 2500:
+                state = {}
+            else:
+                state = perception.get_game_state()
             if frame < 3800:
                 plan = planner.gamestart_plan(frame)
             else:
@@ -39,7 +43,8 @@ def main():
             status = skills.execute(plan, state)
 
             if frame % 100 == 0:
-                print(f"[frame {frame}] scene={state.get('scene')} plan={plan.get('type')} status={status}")
+                # print(f"[frame {frame}] scene={state.get('scene')} plan={plan.get('type')} status={status}")
+                print(f"[frame {frame}]     status={status}     STATE: {state}")
             frame += 1
 
             # if frame==2400:
