@@ -10,7 +10,7 @@
     },
     {
         "name": "KARATE_CHOP",
-        "move_id": null,
+        "move_id": 2,
         "effect": "NO_ADDITIONAL_EFFECT",
         "power": 50,
         "type": "NORMAL",
@@ -28,7 +28,7 @@
     },
     {
         "name": "COMET_PUNCH",
-        "move_id": null,
+        "move_id": 4,
         "effect": "TWO_TO_FIVE_ATTACKS_EFFECT",
         "power": 18,
         "type": "NORMAL",
@@ -37,7 +37,7 @@
     },
     {
         "name": "MEGA_PUNCH",
-        "move_id": null,
+        "move_id": 5,
         "effect": "NO_ADDITIONAL_EFFECT",
         "power": 80,
         "type": "NORMAL",
@@ -46,7 +46,7 @@
     },
     {
         "name": "PAY_DAY",
-        "move_id": null,
+        "move_id": 6,
         "effect": "PAY_DAY_EFFECT",
         "power": 40,
         "type": "NORMAL",
@@ -55,7 +55,7 @@
     },
     {
         "name": "FIRE_PUNCH",
-        "move_id": null,
+        "move_id": 7,
         "effect": "BURN_SIDE_EFFECT1",
         "power": 75,
         "type": "FIRE",
@@ -64,7 +64,7 @@
     },
     {
         "name": "ICE_PUNCH",
-        "move_id": null,
+        "move_id": 8,
         "effect": "FREEZE_SIDE_EFFECT1",
         "power": 75,
         "type": "ICE",
@@ -109,7 +109,7 @@
     },
     {
         "name": "RAZOR_WIND",
-        "move_id": null,
+        "move_id": 13,
         "effect": "CHARGE_EFFECT",
         "power": 80,
         "type": "NORMAL",
@@ -118,7 +118,7 @@
     },
     {
         "name": "SWORDS_DANCE",
-        "move_id": null,
+        "move_id": 14,
         "effect": "ATTACK_UP2_EFFECT",
         "power": 0,
         "type": "NORMAL",
@@ -145,7 +145,7 @@
     },
     {
         "name": "WING_ATTACK",
-        "move_id": null,
+        "move_id": 17,
         "effect": "NO_ADDITIONAL_EFFECT",
         "power": 35,
         "type": "FLYING",
@@ -190,7 +190,7 @@
     },
     {
         "name": "VINE_WHIP",
-        "move_id": null,
+        "move_id": 22,
         "effect": "NO_ADDITIONAL_EFFECT",
         "power": 35,
         "type": "GRASS",
@@ -208,7 +208,7 @@
     },
     {
         "name": "DOUBLE_KICK",
-        "move_id": null,
+        "move_id": 24,
         "effect": "ATTACK_TWICE_EFFECT",
         "power": 30,
         "type": "FIGHTING",
@@ -217,7 +217,7 @@
     },
     {
         "name": "MEGA_KICK",
-        "move_id": null,
+        "move_id": 25,
         "effect": "NO_ADDITIONAL_EFFECT",
         "power": 120,
         "type": "NORMAL",
@@ -226,7 +226,7 @@
     },
     {
         "name": "JUMP_KICK",
-        "move_id": null,
+        "move_id": 26,
         "effect": "JUMP_KICK_EFFECT",
         "power": 70,
         "type": "FIGHTING",
@@ -235,7 +235,7 @@
     },
     {
         "name": "ROLLING_KICK",
-        "move_id": null,
+        "move_id": 27,
         "effect": "FLINCH_SIDE_EFFECT2",
         "power": 60,
         "type": "FIGHTING",
@@ -262,7 +262,7 @@
     },
     {
         "name": "HORN_ATTACK",
-        "move_id": null,
+        "move_id": 30,
         "effect": "NO_ADDITIONAL_EFFECT",
         "power": 65,
         "type": "NORMAL",
@@ -271,7 +271,7 @@
     },
     {
         "name": "FURY_ATTACK",
-        "move_id": null,
+        "move_id": 31,
         "effect": "TWO_TO_FIVE_ATTACKS_EFFECT",
         "power": 15,
         "type": "NORMAL",
@@ -280,7 +280,7 @@
     },
     {
         "name": "HORN_DRILL",
-        "move_id": null,
+        "move_id": 32,
         "effect": "OHKO_EFFECT",
         "power": 1,
         "type": "NORMAL",
@@ -298,7 +298,7 @@
     },
     {
         "name": "BODY_SLAM",
-        "move_id": null,
+        "move_id": 34,
         "effect": "PARALYZE_SIDE_EFFECT2",
         "power": 85,
         "type": "NORMAL",
@@ -316,7 +316,7 @@
     },
     {
         "name": "TAKE_DOWN",
-        "move_id": null,
+        "move_id": 36,
         "effect": "RECOIL_EFFECT",
         "power": 90,
         "type": "NORMAL",
@@ -343,7 +343,7 @@
     },
     {
         "name": "TAIL_WHIP",
-        "move_id": null,
+        "move_id": 39,
         "effect": "DEFENSE_DOWN1_EFFECT",
         "power": 0,
         "type": "NORMAL",
@@ -352,7 +352,7 @@
     },
     {
         "name": "POISON_STING",
-        "move_id": null,
+        "move_id": 40,
         "effect": "POISON_SIDE_EFFECT1",
         "power": 15,
         "type": "POISON",
@@ -370,7 +370,7 @@
     },
     {
         "name": "PIN_MISSILE",
-        "move_id": null,
+        "move_id": 42,
         "effect": "TWO_TO_FIVE_ATTACKS_EFFECT",
         "power": 14,
         "type": "BUG",
@@ -487,7 +487,7 @@
     },
     {
         "name": "WATER_GUN",
-        "move_id": null,
+        "move_id": 55,
         "effect": "NO_ADDITIONAL_EFFECT",
         "power": 40,
         "type": "WATER",
@@ -496,7 +496,7 @@
     },
     {
         "name": "HYDRO_PUMP",
-        "move_id": null,
+        "move_id": 56,
         "effect": "NO_ADDITIONAL_EFFECT",
         "power": 120,
         "type": "WATER",
@@ -514,7 +514,7 @@
     },
     {
         "name": "ICE_BEAM",
-        "move_id": null,
+        "move_id": 58,
         "effect": "FREEZE_SIDE_EFFECT1",
         "power": 95,
         "type": "ICE",
@@ -550,7 +550,7 @@
     },
     {
         "name": "AURORA_BEAM",
-        "move_id": null,
+        "move_id": 62,
         "effect": "ATTACK_DOWN_SIDE_EFFECT",
         "power": 65,
         "type": "ICE",
@@ -559,7 +559,7 @@
     },
     {
         "name": "HYPER_BEAM",
-        "move_id": null,
+        "move_id": 63,
         "effect": "HYPER_BEAM_EFFECT",
         "power": 150,
         "type": "NORMAL",
@@ -577,7 +577,7 @@
     },
     {
         "name": "DRILL_PECK",
-        "move_id": null,
+        "move_id": 65,
         "effect": "NO_ADDITIONAL_EFFECT",
         "power": 80,
         "type": "FLYING",
@@ -595,7 +595,7 @@
     },
     {
         "name": "LOW_KICK",
-        "move_id": null,
+        "move_id": 67,
         "effect": "FLINCH_SIDE_EFFECT2",
         "power": 50,
         "type": "FIGHTING",
@@ -613,7 +613,7 @@
     },
     {
         "name": "SEISMIC_TOSS",
-        "move_id": null,
+        "move_id": 69,
         "effect": "SPECIAL_DAMAGE_EFFECT",
         "power": 1,
         "type": "FIGHTING",
@@ -640,7 +640,7 @@
     },
     {
         "name": "MEGA_DRAIN",
-        "move_id": null,
+        "move_id": 72,
         "effect": "DRAIN_HP_EFFECT",
         "power": 40,
         "type": "GRASS",
@@ -649,7 +649,7 @@
     },
     {
         "name": "LEECH_SEED",
-        "move_id": null,
+        "move_id": 73,
         "effect": "LEECH_SEED_EFFECT",
         "power": 0,
         "type": "GRASS",
@@ -667,7 +667,7 @@
     },
     {
         "name": "RAZOR_LEAF",
-        "move_id": null,
+        "move_id": 75,
         "effect": "NO_ADDITIONAL_EFFECT",
         "power": 55,
         "type": "GRASS",
@@ -694,7 +694,7 @@
     },
     {
         "name": "STUN_SPORE",
-        "move_id": null,
+        "move_id": 78,
         "effect": "PARALYZE_EFFECT",
         "power": 0,
         "type": "GRASS",
@@ -703,7 +703,7 @@
     },
     {
         "name": "SLEEP_POWDER",
-        "move_id": null,
+        "move_id": 79,
         "effect": "SLEEP_EFFECT",
         "power": 0,
         "type": "GRASS",
@@ -712,7 +712,7 @@
     },
     {
         "name": "PETAL_DANCE",
-        "move_id": null,
+        "move_id": 80,
         "effect": "THRASH_PETAL_DANCE_EFFECT",
         "power": 70,
         "type": "GRASS",
@@ -721,7 +721,7 @@
     },
     {
         "name": "STRING_SHOT",
-        "move_id": null,
+        "move_id": 81,
         "effect": "SPEED_DOWN1_EFFECT",
         "power": 0,
         "type": "BUG",
@@ -730,7 +730,7 @@
     },
     {
         "name": "DRAGON_RAGE",
-        "move_id": null,
+        "move_id": 82,
         "effect": "SPECIAL_DAMAGE_EFFECT",
         "power": 1,
         "type": "DRAGON",
@@ -739,7 +739,7 @@
     },
     {
         "name": "FIRE_SPIN",
-        "move_id": null,
+        "move_id": 83,
         "effect": "TRAPPING_EFFECT",
         "power": 15,
         "type": "FIRE",
@@ -766,7 +766,7 @@
     },
     {
         "name": "THUNDER_WAVE",
-        "move_id": null,
+        "move_id": 86,
         "effect": "PARALYZE_EFFECT",
         "power": 0,
         "type": "ELECTRIC",
@@ -784,7 +784,7 @@
     },
     {
         "name": "ROCK_THROW",
-        "move_id": null,
+        "move_id": 88,
         "effect": "NO_ADDITIONAL_EFFECT",
         "power": 50,
         "type": "ROCK",
@@ -874,7 +874,7 @@
     },
     {
         "name": "QUICK_ATTACK",
-        "move_id": null,
+        "move_id": 98,
         "effect": "NO_ADDITIONAL_EFFECT",
         "power": 40,
         "type": "NORMAL",
@@ -901,7 +901,7 @@
     },
     {
         "name": "NIGHT_SHADE",
-        "move_id": null,
+        "move_id": 101,
         "effect": "SPECIAL_DAMAGE_EFFECT",
         "power": 0,
         "type": "GHOST",
@@ -928,7 +928,7 @@
     },
     {
         "name": "DOUBLE_TEAM",
-        "move_id": null,
+        "move_id": 104,
         "effect": "EVASION_UP1_EFFECT",
         "power": 0,
         "type": "NORMAL",
@@ -973,7 +973,7 @@
     },
     {
         "name": "CONFUSE_RAY",
-        "move_id": null,
+        "move_id": 109,
         "effect": "CONFUSION_EFFECT",
         "power": 0,
         "type": "GHOST",
@@ -991,7 +991,7 @@
     },
     {
         "name": "DEFENSE_CURL",
-        "move_id": null,
+        "move_id": 111,
         "effect": "DEFENSE_UP1_EFFECT",
         "power": 0,
         "type": "NORMAL",
@@ -1009,7 +1009,7 @@
     },
     {
         "name": "LIGHT_SCREEN",
-        "move_id": null,
+        "move_id": 113,
         "effect": "LIGHT_SCREEN_EFFECT",
         "power": 0,
         "type": "PSYCHIC_TYPE",
@@ -1036,7 +1036,7 @@
     },
     {
         "name": "FOCUS_ENERGY",
-        "move_id": null,
+        "move_id": 116,
         "effect": "FOCUS_ENERGY_EFFECT",
         "power": 0,
         "type": "NORMAL",
@@ -1063,7 +1063,7 @@
     },
     {
         "name": "MIRROR_MOVE",
-        "move_id": null,
+        "move_id": 119,
         "effect": "MIRROR_MOVE_EFFECT",
         "power": 0,
         "type": "FLYING",
@@ -1081,7 +1081,7 @@
     },
     {
         "name": "EGG_BOMB",
-        "move_id": null,
+        "move_id": 121,
         "effect": "NO_ADDITIONAL_EFFECT",
         "power": 100,
         "type": "NORMAL",
@@ -1117,7 +1117,7 @@
     },
     {
         "name": "BONE_CLUB",
-        "move_id": null,
+        "move_id": 125,
         "effect": "FLINCH_SIDE_EFFECT1",
         "power": 65,
         "type": "GROUND",
@@ -1126,7 +1126,7 @@
     },
     {
         "name": "FIRE_BLAST",
-        "move_id": null,
+        "move_id": 126,
         "effect": "BURN_SIDE_EFFECT2",
         "power": 120,
         "type": "FIRE",
@@ -1162,7 +1162,7 @@
     },
     {
         "name": "SKULL_BASH",
-        "move_id": null,
+        "move_id": 130,
         "effect": "CHARGE_EFFECT",
         "power": 100,
         "type": "NORMAL",
@@ -1171,7 +1171,7 @@
     },
     {
         "name": "SPIKE_CANNON",
-        "move_id": null,
+        "move_id": 131,
         "effect": "TWO_TO_FIVE_ATTACKS_EFFECT",
         "power": 20,
         "type": "NORMAL",
@@ -1216,7 +1216,7 @@
     },
     {
         "name": "HI_JUMP_KICK",
-        "move_id": null,
+        "move_id": 136,
         "effect": "JUMP_KICK_EFFECT",
         "power": 85,
         "type": "FIGHTING",
@@ -1234,7 +1234,7 @@
     },
     {
         "name": "DREAM_EATER",
-        "move_id": null,
+        "move_id": 138,
         "effect": "DREAM_EATER_EFFECT",
         "power": 100,
         "type": "PSYCHIC_TYPE",
@@ -1243,7 +1243,7 @@
     },
     {
         "name": "POISON_GAS",
-        "move_id": null,
+        "move_id": 139,
         "effect": "POISON_EFFECT",
         "power": 0,
         "type": "POISON",
@@ -1261,7 +1261,7 @@
     },
     {
         "name": "LEECH_LIFE",
-        "move_id": null,
+        "move_id": 141,
         "effect": "DRAIN_HP_EFFECT",
         "power": 20,
         "type": "BUG",
@@ -1270,7 +1270,7 @@
     },
     {
         "name": "LOVELY_KISS",
-        "move_id": null,
+        "move_id": 142,
         "effect": "SLEEP_EFFECT",
         "power": 0,
         "type": "NORMAL",
@@ -1279,7 +1279,7 @@
     },
     {
         "name": "SKY_ATTACK",
-        "move_id": null,
+        "move_id": 143,
         "effect": "CHARGE_EFFECT",
         "power": 140,
         "type": "FLYING",
@@ -1306,7 +1306,7 @@
     },
     {
         "name": "DIZZY_PUNCH",
-        "move_id": null,
+        "move_id": 146,
         "effect": "NO_ADDITIONAL_EFFECT",
         "power": 70,
         "type": "NORMAL",
@@ -1351,7 +1351,7 @@
     },
     {
         "name": "ACID_ARMOR",
-        "move_id": null,
+        "move_id": 151,
         "effect": "DEFENSE_UP2_EFFECT",
         "power": 0,
         "type": "POISON",
@@ -1378,7 +1378,7 @@
     },
     {
         "name": "FURY_SWIPES",
-        "move_id": null,
+        "move_id": 154,
         "effect": "TWO_TO_FIVE_ATTACKS_EFFECT",
         "power": 18,
         "type": "NORMAL",
@@ -1405,7 +1405,7 @@
     },
     {
         "name": "ROCK_SLIDE",
-        "move_id": null,
+        "move_id": 157,
         "effect": "NO_ADDITIONAL_EFFECT",
         "power": 75,
         "type": "ROCK",
@@ -1414,7 +1414,7 @@
     },
     {
         "name": "HYPER_FANG",
-        "move_id": null,
+        "move_id": 158,
         "effect": "FLINCH_SIDE_EFFECT1",
         "power": 80,
         "type": "NORMAL",
@@ -1441,7 +1441,7 @@
     },
     {
         "name": "TRI_ATTACK",
-        "move_id": null,
+        "move_id": 161,
         "effect": "NO_ADDITIONAL_EFFECT",
         "power": 80,
         "type": "NORMAL",
@@ -1450,7 +1450,7 @@
     },
     {
         "name": "SUPER_FANG",
-        "move_id": null,
+        "move_id": 162,
         "effect": "SUPER_FANG_EFFECT",
         "power": 1,
         "type": "NORMAL",
