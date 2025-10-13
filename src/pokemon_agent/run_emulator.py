@@ -39,17 +39,20 @@ def main():
             #     plan = planner.gamestart_plan(frame)
             # else:
             #     plan = planner.plan(state, frame)
-            if frame < 1500:
+            if frame < 400:
                 state = perception.get_game_state()
                 plan = planner.fightstart_plan(frame)
+            elif frame < 700:
+                state = perception.get_game_state()
+                plan = planner.findwildpokemon_plan(frame)
             else:
                 state = perception.get_game_state()
                 plan = planner.plan(state, frame)
             status = skills.execute(plan, state)
 
-            if frame % 100 == 0:
+            # if frame % 100 == 0:
                 # print(f"[frame {frame}] scene={state.get('scene')} plan={plan.get('type')} status={status}")
-                print(f"[frame {frame}]     status={status}     STATE: {state}")
+            print(f"[frame {frame}]     status={status}     STATE: {state}")
                 # print(pyboy.memory[0xD014])
             frame += 1
 

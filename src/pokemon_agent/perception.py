@@ -10,6 +10,9 @@ from utils.utility_funcs import type_multiplier
 with open('src/pokemon_agent/utils/ref_data/POKEDEX.json', 'r') as f:
     POKEDEX = json.load(f)
 
+with open('src/pokemon_agent/utils/ref_data/MOVES_INDEX.json', 'r') as f:
+    MOVES_INDEX = json.load(f)
+
 with open('src/pokemon_agent/utils/ref_data/ram_addresses.json', 'r') as f:
     RAM_POINTERS = json.load(f)
 
@@ -30,6 +33,8 @@ class PokemonPerceptionAgent:
         self.pyboy = pyboy
         self.screen = self.pyboy.screen
         self.text_prev = ""
+        self.prev_state = {"battle":{"turn":None}, "opponent":{"species":None}}
+        self.enemy_move_list = []
         print("PerceptionAgent with memory reading initialized.")
 
     def capture_frame(self):
@@ -56,61 +61,127 @@ class PokemonPerceptionAgent:
 
         # Battle 
         turn = mem[self.get_mem_pointer("system_addresses", "battle_turn")]
+        # prev_turn = self.prev_state.get("battle").get("turn")
+        prev_enemy_species = self.prev_state.get("opponent").get("species")
+
 
         # Player Pokémon stats
+        ## Pokemon Info
         try:
-            self.player_dict = next((d for d in POKEDEX if d['internal_id'] == str(mem[self.get_mem_pointer("player_addresses", "battle_species")])), None)
-            player_species = self.player_dict.get("pokemon_name")   
-            player_type1 = self.player_dict.get("types")[0]
-            player_type2 = self.player_dict.get("types")[1]
-            player_move_1 = mem[self.get_mem_pointer("player_addresses", "move_1")] 
-            player_move_1_PP = mem[self.get_mem_pointer("player_addresses", "move_1_PP")] 
-            player_move_2 = mem[self.get_mem_pointer("player_addresses", "move_2")] 
-            player_move_2_PP = mem[self.get_mem_pointer("player_addresses", "move_2_PP")] 
-            player_move_3 = mem[self.get_mem_pointer("player_addresses", "move_3")] 
-            player_move_3_PP = mem[self.get_mem_pointer("player_addresses", "move_3_PP")] 
-            player_move_4 = mem[self.get_mem_pointer("player_addresses", "move_4")] 
-            player_move_4_PP = mem[self.get_mem_pointer("player_addresses", "move_4_PP")] 
-            player_attack = mem[self.get_mem_pointer("player_addresses", "battle_attack_stat")] 
-            player_defense = mem[self.get_mem_pointer("player_addresses", "battle_defense_stat")]
-            player_speed = mem[self.get_mem_pointer("player_addresses", "battle_speed_stat")]
-            player_special = mem[self.get_mem_pointer("player_addresses", "battle_special_stat")]
+            self.player_dict = next((d for d in POKEDEX if d['internal_id'] == str(mem[self.get_mem_pointer("player_addresses", "battle_species")]))) #, None
         except:
-            self.player_dict={}
-            player_species = None
-            player_type1 = None
-            player_type2 = None
-            player_move_1 = None
-            player_move_1_PP = None
-            player_move_2 = None
-            player_move_2_PP = None
-            player_move_3 = None
-            player_move_3_PP = None
-            player_move_4 = None
-            player_move_4_PP = None
-            player_attack = None
-            player_defense = None
-            player_speed = None
-            player_special = None
+            self.player_dict={"pokemon_name":None, "types":[None,None]}
+
+        player_species = self.player_dict.get("pokemon_name")   
+        player_type1 = self.player_dict.get("types")[0]
+        player_type2 = self.player_dict.get("types")[1]
+
+        player_attack = read_word(mem, self.get_mem_pointer("player_addresses", "battle_attack_stat"))/256
+        player_defense = read_word(mem, self.get_mem_pointer("player_addresses", "battle_defense_stat"))/256
+        player_speed = read_word(mem, self.get_mem_pointer("player_addresses", "battle_speed_stat"))/256
+        player_special = read_word(mem, self.get_mem_pointer("player_addresses", "battle_special_stat"))/256
+
         player_hp = read_word(mem, self.get_mem_pointer("player_addresses", "battle_current_hp"))/256
         player_hp_max = read_word(mem, self.get_mem_pointer("player_addresses", "battle_max_hp"))/256
         player_level = mem[self.get_mem_pointer("player_addresses", "battle_level")] 
 
-        # Enemy Pokémon stats
+        ## Moves
         try:
-            self.enemy_dict = next((d for d in POKEDEX if d['internal_id'] == str(mem[self.get_mem_pointer("enemy_addresses", "battle_species")])), None)
-            enemy_species = self.enemy_dict.get("pokemon_name")  
-            enemy_type1 = self.enemy_dict.get("types")[0]
-            enemy_type2 = self.enemy_dict.get("types")[1]
+            player_move1_dict = next((d for d in MOVES_INDEX if d['move_id'] == int(mem[self.get_mem_pointer("player_addresses", "move_1")]))) #, None
         except:
-            self.enemy_dict = {}
-            enemy_species = None
-            enemy_type1 = None
-            enemy_type2 = None
+            player_move1_dict={"name":None, "effect":None, "power":None, "type":None, "accuracy":None, "pp":None}
+        player_move_1 = player_move1_dict.get("name")
+        player_move_1_effect = player_move1_dict.get("effect")
+        player_move_1_power = player_move1_dict.get("power")
+        player_move_1_type = player_move1_dict.get("type")
+        player_move_1_accuracy = player_move1_dict.get("accuracy")
+        player_move_1_PP_max = player_move1_dict.get("pp")
+        player_move_1_PP = mem[self.get_mem_pointer("player_addresses", "move_1_PP")] 
+
+        try:
+            player_move2_dict = next((d for d in MOVES_INDEX if d['move_id'] == int(mem[self.get_mem_pointer("player_addresses", "move_2")]))) #, None
+        except:
+            player_move2_dict={"name":None, "effect":None, "power":None, "type":None, "accuracy":None, "pp":None}
+        player_move_2 = player_move2_dict.get("name")
+        player_move_2_effect = player_move2_dict.get("effect")
+        player_move_2_power = player_move2_dict.get("power")
+        player_move_2_type = player_move2_dict.get("type")
+        player_move_2_accuracy = player_move2_dict.get("accuracy")
+        player_move_2_PP_max = player_move2_dict.get("pp")
+        player_move_2_PP = mem[self.get_mem_pointer("player_addresses", "move_2_PP")] 
+            
+        try:
+            player_move3_dict = next((d for d in MOVES_INDEX if d['move_id'] == int(mem[self.get_mem_pointer("player_addresses", "move_3")]))) #, None
+        except:
+            player_move3_dict={"name":None, "effect":None, "power":None, "type":None, "accuracy":None, "pp":None}
+        player_move_3 = player_move3_dict.get("name")
+        player_move_3_effect = player_move3_dict.get("effect")
+        player_move_3_power = player_move3_dict.get("power")
+        player_move_3_type = player_move3_dict.get("type")
+        player_move_3_accuracy = player_move3_dict.get("accuracy")
+        player_move_3_PP_max = player_move3_dict.get("pp")
+        player_move_3_PP = mem[self.get_mem_pointer("player_addresses", "move_3_PP")] 
+
+        try:
+            player_move4_dict = next((d for d in MOVES_INDEX if d['move_id'] == int(mem[self.get_mem_pointer("player_addresses", "move_4")]))) #, None
+        except:
+            player_move4_dict={"name":None, "effect":None, "power":None, "type":None, "accuracy":None, "pp":None}
+        player_move_4 = player_move4_dict.get("name")
+        player_move_4_effect = player_move4_dict.get("effect")
+        player_move_4_power = player_move4_dict.get("power")
+        player_move_4_type = player_move4_dict.get("type")
+        player_move_4_accuracy = player_move4_dict.get("accuracy")
+        player_move_4_PP_max = player_move4_dict.get("pp")
+        player_move_4_PP = mem[self.get_mem_pointer("player_addresses", "move_4_PP")]  
+
+
+        # Enemy Pokémon stats
+        ## Pokemon Info
+        try:
+            self.enemy_dict = next((d for d in POKEDEX if d['internal_id'] == str(mem[self.get_mem_pointer("enemy_addresses", "battle_species")])))
+        except:
+            self.enemy_dict = {"pokemon_name":None, "types":[None,None], "stats": {"atk":None, "def":None, "spd":None, "spc":None}}
+  
+        enemy_species = self.enemy_dict.get("pokemon_name")  
+        enemy_type1 = self.enemy_dict.get("types")[0]
+        enemy_type2 = self.enemy_dict.get("types")[1]
+
+        enemy_attack = self.enemy_dict.get("stats").get("atk")  
+        enemy_defense = self.enemy_dict.get("stats").get("def")  
+        enemy_speed = self.enemy_dict.get("stats").get("spd")  
+        enemy_special = self.enemy_dict.get("stats").get("spc")  
+        
         enemy_hp = read_word(mem, self.get_mem_pointer("enemy_addresses", "battle_current_hp"))/256
         enemy_hp_max = read_word(mem, self.get_mem_pointer("enemy_addresses", "battle_max_hp"))/256
         enemy_level = mem[self.get_mem_pointer("enemy_addresses", "battle_level")]
 
+        ## Moves - Log Moves in BattleState
+        if prev_enemy_species != enemy_species:
+            self.enemy_move_list=[] #reset for new enemies
+        try:
+            enemy_move_dict = next((d for d in MOVES_INDEX if d['move_id'] == int(mem[self.get_mem_pointer("enemy_addresses", "move_id")])))
+        except:
+            enemy_move_dict={"name":None, "effect":None, "power":None, "type":None, "accuracy":None, "pp":None}
+        # enemy_move = enemy_move_dict.get("name")
+        # enemy_move_effect = enemy_move_dict.get("effect")
+        # enemy_move_power = enemy_move_dict.get("power")
+        # enemy_move_type = enemy_move_dict.get("type")
+        # enemy_move_accuracy = enemy_move_dict.get("accuracy")
+        # enemy_move_PP_max = enemy_move_dict.get("pp")
+
+        enemy_move = {
+                        "move":enemy_move_dict.get("name"),
+                        "PP_max":enemy_move_dict.get("pp"),
+                        "effect":enemy_move_dict.get("effect"),
+                        "power":enemy_move_dict.get("power"),
+                        "type":enemy_move_dict.get("type"),
+                        "accuracy":enemy_move_dict.get("accuracy"),
+                    }
+
+        move_list = self.enemy_move_list + [enemy_move]
+        move_list = list({d['move']: d for d in move_list}.values())
+        self.enemy_move_list = [d for d in move_list if d['move'] != None]
+        
 
         return {
             "player": {
@@ -133,18 +204,38 @@ class PokemonPerceptionAgent:
                         "move_1": {
                             "move":player_move_1,
                             "PP":player_move_1_PP,
+                            "PP_max":player_move_1_PP_max,
+                            "effect":player_move_1_effect,
+                            "power":player_move_1_power,
+                            "type":player_move_1_type,
+                            "accuracy":player_move_1_accuracy,
                         },
                         "move_2": {
                             "move":player_move_2,
                             "PP":player_move_2_PP,
+                            "PP_max":player_move_2_PP_max,
+                            "effect":player_move_2_effect,
+                            "power":player_move_2_power,
+                            "type":player_move_2_type,
+                            "accuracy":player_move_2_accuracy,
                         },
                         "move_3": {
                             "move":player_move_3,
                             "PP":player_move_3_PP,
+                            "PP_max":player_move_3_PP_max,
+                            "effect":player_move_3_effect,
+                            "power":player_move_3_power,
+                            "type":player_move_3_type,
+                            "accuracy":player_move_3_accuracy,
                         },
                         "move_4": {
                             "move":player_move_4,
                             "PP":player_move_4_PP,
+                            "PP_max":player_move_4_PP_max,
+                            "effect":player_move_4_effect,
+                            "power":player_move_4_power,
+                            "type":player_move_4_type,
+                            "accuracy":player_move_4_accuracy,
                         }
                     }
                 },
@@ -156,7 +247,18 @@ class PokemonPerceptionAgent:
                 "level": enemy_level,
                 "hp": enemy_hp,
                 "hp_max": enemy_hp_max,
-                "hp_ratio": round(enemy_hp / max(enemy_hp_max, 1), 2)
+                "hp_ratio": round(enemy_hp / max(enemy_hp_max, 1), 2),
+                "stats": {
+                        "attack":enemy_attack,
+                        "defense":enemy_defense,
+                        "speed":enemy_speed,
+                        "special":enemy_special,
+                    },
+                "moves": self.enemy_move_list,
+            },
+            "battle": {
+                "turn": turn,
+                # "prev_turn": prev_turn
             }
         }
     
@@ -175,11 +277,14 @@ class PokemonPerceptionAgent:
         text = self.read_text(frame)
         mem_state = self.read_memory_state()
         mode = self.detect_mode(mem_state, text)
+
+        self.prev_state = mem_state
         state = {
                 "scene": mode,
                 "text_box": text,
                 "player": mem_state["player"],
                 "opponent": mem_state["opponent"],
+                "battle": mem_state["battle"],
             }
 
         # if mode == 'battle':
