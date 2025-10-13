@@ -1,7 +1,7 @@
 # planner.py
 # Simple planner: get through opening menu to get to a specific starting pokemon
 import random
-from utils.saved_macros import game_start_macro, start_fight
+from utils.saved_macros import game_start_macro, start_fight, wild_pokemon
 
 
 class SimplePlanner:
@@ -17,6 +17,13 @@ class SimplePlanner:
         
     def fightstart_plan(self, frame): #, state
         action = start_fight.run_macro(frame=frame, init_frame=0)
+        if action is None:
+            return {"type": None}
+        else:
+            return action
+        
+    def findwildpokemon_plan(self, frame): #, state
+        action = wild_pokemon.run_macro(frame=frame, init_frame=400)
         if action is None:
             return {"type": None}
         else:
