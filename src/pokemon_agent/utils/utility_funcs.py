@@ -19,3 +19,21 @@ class create_macro:
             else:
                 pass
 
+
+
+    # def print_memory_region(self, pyboy, base_pointer, radius=10):
+    #     """
+    #     Print memory values around a given pointer.
+        
+    #     Args:
+    #         pyboy: PyBoy instance
+    #         base_pointer: int, memory address to center on
+    #         radius: int, number of bytes before and after to print
+    #     """
+    #     start = max(base_pointer - radius, 0)
+    #     end = base_pointer + radius + 1
+    #     mem = pyboy.memory
+    #     print(f"Memory region around 0x{base_pointer:04X} (±{radius} bytes):")
+    #     for addr in range(start, end):
+    #         val = mem[addr]
+    #         print(f"0x{addr:04X}: 0x{val:02X}")

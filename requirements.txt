@@ -1,8 +1,9 @@
 pyboy==2.6.0
-PyOpenGL
+pytesseract
 pillow
 opencv-python
 numpy
+pandas
 langchain
 langgraph
 openai
