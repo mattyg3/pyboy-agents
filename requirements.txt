@@ -3,6 +3,7 @@ pytesseract
 pillow
 opencv-python
 numpy
+pandas
 langchain
 langgraph
 openai

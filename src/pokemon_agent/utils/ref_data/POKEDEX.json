@@ -1,0 +1,6863 @@
+[
+    {
+        "pokemon_name": "ABRA",
+        "internal_id": "148",
+        "pokedex_id": "DEX_ABRA",
+        "stats": {
+            "hp": 25,
+            "atk": 20,
+            "def": 15,
+            "spd": 90,
+            "spc": 105
+        },
+        "types": [
+            "PSYCHIC",
+            "PSYCHIC"
+        ],
+        "catch_rate": 200,
+        "base_exp": 73,
+        "level_1_moves": [
+            "TELEPORT"
+        ],
+        "growth_rate": "MEDIUM_SLOW",
+        "tmhm": [
+            "MEGA_PUNCH",
+            "MEGA_KICK",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "SUBMISSION",
+            "COUNTER",
+            "SEISMIC_TOSS",
+            "RAGE",
+            "PSYCHIC_M",
+            "TELEPORT",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "METRONOME",
+            "SKULL_BASH",
+            "REST",
+            "THUNDER_WAVE",
+            "PSYWAVE",
+            "TRI_ATTACK",
+            "SUBSTITUTE",
+            "FLASH"
+        ]
+    },
+    {
+        "pokemon_name": "AERODACTYL",
+        "internal_id": "171",
+        "pokedex_id": "DEX_AERODACTYL",
+        "stats": {
+            "hp": 80,
+            "atk": 105,
+            "def": 65,
+            "spd": 130,
+            "spc": 60
+        },
+        "types": [
+            "ROCK",
+            "FLYING"
+        ],
+        "catch_rate": 45,
+        "base_exp": 202,
+        "level_1_moves": [
+            "WING_ATTACK",
+            "AGILITY"
+        ],
+        "growth_rate": "SLOW",
+        "tmhm": [
+            "RAZOR_WIND",
+            "WHIRLWIND",
+            "TOXIC",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "HYPER_BEAM",
+            "RAGE",
+            "DRAGON_RAGE",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "FIRE_BLAST",
+            "SWIFT",
+            "SKY_ATTACK",
+            "REST",
+            "SUBSTITUTE",
+            "FLY"
+        ]
+    },
+    {
+        "pokemon_name": "ALAKAZAM",
+        "internal_id": "149",
+        "pokedex_id": "DEX_ALAKAZAM",
+        "stats": {
+            "hp": 55,
+            "atk": 50,
+            "def": 45,
+            "spd": 120,
+            "spc": 135
+        },
+        "types": [
+            "PSYCHIC",
+            "PSYCHIC"
+        ],
+        "catch_rate": 50,
+        "base_exp": 186,
+        "level_1_moves": [
+            "TELEPORT",
+            "CONFUSION",
+            "DISABLE"
+        ],
+        "growth_rate": "MEDIUM_SLOW",
+        "tmhm": [
+            "MEGA_PUNCH",
+            "MEGA_KICK",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "HYPER_BEAM",
+            "SUBMISSION",
+            "COUNTER",
+            "SEISMIC_TOSS",
+            "RAGE",
+            "DIG",
+            "PSYCHIC_M",
+            "TELEPORT",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "METRONOME",
+            "SKULL_BASH",
+            "REST",
+            "THUNDER_WAVE",
+            "PSYWAVE",
+            "TRI_ATTACK",
+            "SUBSTITUTE",
+            "FLASH"
+        ]
+    },
+    {
+        "pokemon_name": "ARBOK",
+        "internal_id": "45",
+        "pokedex_id": "DEX_ARBOK",
+        "stats": {
+            "hp": 60,
+            "atk": 85,
+            "def": 69,
+            "spd": 80,
+            "spc": 65
+        },
+        "types": [
+            "POISON",
+            "POISON"
+        ],
+        "catch_rate": 90,
+        "base_exp": 147,
+        "level_1_moves": [
+            "WRAP",
+            "LEER",
+            "POISON_STING"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "HYPER_BEAM",
+            "RAGE",
+            "MEGA_DRAIN",
+            "EARTHQUAKE",
+            "FISSURE",
+            "DIG",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "BIDE",
+            "SKULL_BASH",
+            "REST",
+            "ROCK_SLIDE",
+            "SUBSTITUTE",
+            "STRENGTH"
+        ]
+    },
+    {
+        "pokemon_name": "ARCANINE",
+        "internal_id": "20",
+        "pokedex_id": "DEX_ARCANINE",
+        "stats": {
+            "hp": 90,
+            "atk": 110,
+            "def": 80,
+            "spd": 95,
+            "spc": 80
+        },
+        "types": [
+            "FIRE",
+            "FIRE"
+        ],
+        "catch_rate": 75,
+        "base_exp": 213,
+        "level_1_moves": [
+            "ROAR",
+            "EMBER",
+            "LEER",
+            "TAKE_DOWN"
+        ],
+        "growth_rate": "SLOW",
+        "tmhm": [
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "HYPER_BEAM",
+            "RAGE",
+            "DRAGON_RAGE",
+            "DIG",
+            "TELEPORT",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "FIRE_BLAST",
+            "SWIFT",
+            "SKULL_BASH",
+            "REST",
+            "SUBSTITUTE"
+        ]
+    },
+    {
+        "pokemon_name": "ARTICUNO",
+        "internal_id": "74",
+        "pokedex_id": "DEX_ARTICUNO",
+        "stats": {
+            "hp": 90,
+            "atk": 85,
+            "def": 100,
+            "spd": 85,
+            "spc": 125
+        },
+        "types": [
+            "ICE",
+            "FLYING"
+        ],
+        "catch_rate": 3,
+        "base_exp": 215,
+        "level_1_moves": [
+            "PECK",
+            "ICE_BEAM"
+        ],
+        "growth_rate": "SLOW",
+        "tmhm": [
+            "RAZOR_WIND",
+            "WHIRLWIND",
+            "TOXIC",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "ICE_BEAM",
+            "BLIZZARD",
+            "HYPER_BEAM",
+            "RAGE",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "SWIFT",
+            "SKY_ATTACK",
+            "REST",
+            "SUBSTITUTE",
+            "FLY"
+        ]
+    },
+    {
+        "pokemon_name": "BEEDRILL",
+        "internal_id": "114",
+        "pokedex_id": "DEX_BEEDRILL",
+        "stats": {
+            "hp": 65,
+            "atk": 80,
+            "def": 40,
+            "spd": 75,
+            "spc": 45
+        },
+        "types": [
+            "BUG",
+            "POISON"
+        ],
+        "catch_rate": 45,
+        "base_exp": 159,
+        "level_1_moves": [
+            "FURY_ATTACK"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "SWORDS_DANCE",
+            "TOXIC",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "HYPER_BEAM",
+            "RAGE",
+            "MEGA_DRAIN",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "SWIFT",
+            "SKULL_BASH",
+            "REST",
+            "SUBSTITUTE",
+            "CUT"
+        ]
+    },
+    {
+        "pokemon_name": "BELLSPROUT",
+        "internal_id": "188",
+        "pokedex_id": "DEX_BELLSPROUT",
+        "stats": {
+            "hp": 50,
+            "atk": 75,
+            "def": 35,
+            "spd": 40,
+            "spc": 70
+        },
+        "types": [
+            "GRASS",
+            "POISON"
+        ],
+        "catch_rate": 255,
+        "base_exp": 84,
+        "level_1_moves": [
+            "VINE_WHIP",
+            "GROWTH"
+        ],
+        "growth_rate": "MEDIUM_SLOW",
+        "tmhm": [
+            "SWORDS_DANCE",
+            "TOXIC",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "RAGE",
+            "MEGA_DRAIN",
+            "SOLARBEAM",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "REST",
+            "SUBSTITUTE",
+            "CUT"
+        ]
+    },
+    {
+        "pokemon_name": "BLASTOISE",
+        "internal_id": "28",
+        "pokedex_id": "DEX_BLASTOISE",
+        "stats": {
+            "hp": 79,
+            "atk": 83,
+            "def": 100,
+            "spd": 78,
+            "spc": 85
+        },
+        "types": [
+            "WATER",
+            "WATER"
+        ],
+        "catch_rate": 45,
+        "base_exp": 210,
+        "level_1_moves": [
+            "TACKLE",
+            "TAIL_WHIP",
+            "BUBBLE",
+            "WATER_GUN"
+        ],
+        "growth_rate": "MEDIUM_SLOW",
+        "tmhm": [
+            "MEGA_PUNCH",
+            "MEGA_KICK",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "ICE_BEAM",
+            "BLIZZARD",
+            "HYPER_BEAM",
+            "SUBMISSION",
+            "COUNTER",
+            "SEISMIC_TOSS",
+            "RAGE",
+            "EARTHQUAKE",
+            "FISSURE",
+            "DIG",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "SKULL_BASH",
+            "REST",
+            "SUBSTITUTE",
+            "SURF",
+            "STRENGTH"
+        ]
+    },
+    {
+        "pokemon_name": "BULBASAUR",
+        "internal_id": "153",
+        "pokedex_id": "DEX_BULBASAUR",
+        "stats": {
+            "hp": 45,
+            "atk": 49,
+            "def": 49,
+            "spd": 45,
+            "spc": 65
+        },
+        "types": [
+            "GRASS",
+            "POISON"
+        ],
+        "catch_rate": 45,
+        "base_exp": 64,
+        "level_1_moves": [
+            "TACKLE",
+            "GROWL"
+        ],
+        "growth_rate": "MEDIUM_SLOW",
+        "tmhm": [
+            "SWORDS_DANCE",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "RAGE",
+            "MEGA_DRAIN",
+            "SOLARBEAM",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "REST",
+            "SUBSTITUTE",
+            "CUT"
+        ]
+    },
+    {
+        "pokemon_name": "BUTTERFREE",
+        "internal_id": "125",
+        "pokedex_id": "DEX_BUTTERFREE",
+        "stats": {
+            "hp": 60,
+            "atk": 45,
+            "def": 50,
+            "spd": 70,
+            "spc": 80
+        },
+        "types": [
+            "BUG",
+            "FLYING"
+        ],
+        "catch_rate": 45,
+        "base_exp": 160,
+        "level_1_moves": [
+            "CONFUSION"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "RAZOR_WIND",
+            "WHIRLWIND",
+            "TOXIC",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "HYPER_BEAM",
+            "RAGE",
+            "MEGA_DRAIN",
+            "SOLARBEAM",
+            "PSYCHIC_M",
+            "TELEPORT",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "SWIFT",
+            "REST",
+            "PSYWAVE",
+            "SUBSTITUTE"
+        ]
+    },
+    {
+        "pokemon_name": "CATERPIE",
+        "internal_id": "123",
+        "pokedex_id": "DEX_CATERPIE",
+        "stats": {
+            "hp": 45,
+            "atk": 30,
+            "def": 35,
+            "spd": 45,
+            "spc": 20
+        },
+        "types": [
+            "BUG",
+            "BUG"
+        ],
+        "catch_rate": 255,
+        "base_exp": 53,
+        "level_1_moves": [
+            "TACKLE",
+            "STRING_SHOT"
+        ],
+        "growth_rate": "MEDIUM_FAST"
+    },
+    {
+        "pokemon_name": "CHANSEY",
+        "internal_id": "40",
+        "pokedex_id": "DEX_CHANSEY",
+        "stats": {
+            "hp": 250,
+            "atk": 5,
+            "def": 5,
+            "spd": 50,
+            "spc": 105
+        },
+        "types": [
+            "NORMAL",
+            "NORMAL"
+        ],
+        "catch_rate": 30,
+        "base_exp": 255,
+        "level_1_moves": [
+            "POUND",
+            "DOUBLESLAP"
+        ],
+        "growth_rate": "FAST",
+        "tmhm": [
+            "MEGA_PUNCH",
+            "MEGA_KICK",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "ICE_BEAM",
+            "BLIZZARD",
+            "HYPER_BEAM",
+            "SUBMISSION",
+            "COUNTER",
+            "SEISMIC_TOSS",
+            "RAGE",
+            "SOLARBEAM",
+            "THUNDERBOLT",
+            "THUNDER",
+            "PSYCHIC_M",
+            "TELEPORT",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "METRONOME",
+            "EGG_BOMB",
+            "FIRE_BLAST",
+            "SKULL_BASH",
+            "SOFTBOILED",
+            "REST",
+            "THUNDER_WAVE",
+            "PSYWAVE",
+            "TRI_ATTACK",
+            "SUBSTITUTE",
+            "STRENGTH",
+            "FLASH"
+        ]
+    },
+    {
+        "pokemon_name": "CHARIZARD",
+        "internal_id": "180",
+        "pokedex_id": "DEX_CHARIZARD",
+        "stats": {
+            "hp": 78,
+            "atk": 84,
+            "def": 78,
+            "spd": 100,
+            "spc": 85
+        },
+        "types": [
+            "FIRE",
+            "FLYING"
+        ],
+        "catch_rate": 45,
+        "base_exp": 209,
+        "level_1_moves": [
+            "SCRATCH",
+            "GROWL",
+            "EMBER",
+            "LEER"
+        ],
+        "growth_rate": "MEDIUM_SLOW",
+        "tmhm": [
+            "MEGA_PUNCH",
+            "SWORDS_DANCE",
+            "MEGA_KICK",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "HYPER_BEAM",
+            "SUBMISSION",
+            "COUNTER",
+            "SEISMIC_TOSS",
+            "RAGE",
+            "DRAGON_RAGE",
+            "EARTHQUAKE",
+            "FISSURE",
+            "DIG",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "FIRE_BLAST",
+            "SWIFT",
+            "SKULL_BASH",
+            "REST",
+            "SUBSTITUTE",
+            "CUT",
+            "STRENGTH"
+        ]
+    },
+    {
+        "pokemon_name": "CHARMANDER",
+        "internal_id": "176",
+        "pokedex_id": "DEX_CHARMANDER",
+        "stats": {
+            "hp": 39,
+            "atk": 52,
+            "def": 43,
+            "spd": 65,
+            "spc": 50
+        },
+        "types": [
+            "FIRE",
+            "FIRE"
+        ],
+        "catch_rate": 45,
+        "base_exp": 65,
+        "level_1_moves": [
+            "SCRATCH",
+            "GROWL"
+        ],
+        "growth_rate": "MEDIUM_SLOW",
+        "tmhm": [
+            "MEGA_PUNCH",
+            "SWORDS_DANCE",
+            "MEGA_KICK",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "SUBMISSION",
+            "COUNTER",
+            "SEISMIC_TOSS",
+            "RAGE",
+            "DRAGON_RAGE",
+            "DIG",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "FIRE_BLAST",
+            "SWIFT",
+            "SKULL_BASH",
+            "REST",
+            "SUBSTITUTE",
+            "CUT",
+            "STRENGTH"
+        ]
+    },
+    {
+        "pokemon_name": "CHARMELEON",
+        "internal_id": "178",
+        "pokedex_id": "DEX_CHARMELEON",
+        "stats": {
+            "hp": 58,
+            "atk": 64,
+            "def": 58,
+            "spd": 80,
+            "spc": 65
+        },
+        "types": [
+            "FIRE",
+            "FIRE"
+        ],
+        "catch_rate": 45,
+        "base_exp": 142,
+        "level_1_moves": [
+            "SCRATCH",
+            "GROWL",
+            "EMBER"
+        ],
+        "growth_rate": "MEDIUM_SLOW",
+        "tmhm": [
+            "MEGA_PUNCH",
+            "SWORDS_DANCE",
+            "MEGA_KICK",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "SUBMISSION",
+            "COUNTER",
+            "SEISMIC_TOSS",
+            "RAGE",
+            "DRAGON_RAGE",
+            "DIG",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "FIRE_BLAST",
+            "SWIFT",
+            "SKULL_BASH",
+            "REST",
+            "SUBSTITUTE",
+            "CUT",
+            "STRENGTH"
+        ]
+    },
+    {
+        "pokemon_name": "CLEFABLE",
+        "internal_id": "142",
+        "pokedex_id": "DEX_CLEFABLE",
+        "stats": {
+            "hp": 95,
+            "atk": 70,
+            "def": 73,
+            "spd": 60,
+            "spc": 85
+        },
+        "types": [
+            "NORMAL",
+            "NORMAL"
+        ],
+        "catch_rate": 25,
+        "base_exp": 129,
+        "level_1_moves": [
+            "SING",
+            "DOUBLESLAP",
+            "MINIMIZE",
+            "METRONOME"
+        ],
+        "growth_rate": "FAST",
+        "tmhm": [
+            "MEGA_PUNCH",
+            "MEGA_KICK",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "ICE_BEAM",
+            "BLIZZARD",
+            "HYPER_BEAM",
+            "SUBMISSION",
+            "COUNTER",
+            "SEISMIC_TOSS",
+            "RAGE",
+            "SOLARBEAM",
+            "THUNDERBOLT",
+            "THUNDER",
+            "PSYCHIC_M",
+            "TELEPORT",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "METRONOME",
+            "FIRE_BLAST",
+            "SKULL_BASH",
+            "REST",
+            "THUNDER_WAVE",
+            "PSYWAVE",
+            "TRI_ATTACK",
+            "SUBSTITUTE",
+            "STRENGTH",
+            "FLASH"
+        ]
+    },
+    {
+        "pokemon_name": "CLEFAIRY",
+        "internal_id": "4",
+        "pokedex_id": "DEX_CLEFAIRY",
+        "stats": {
+            "hp": 70,
+            "atk": 45,
+            "def": 48,
+            "spd": 35,
+            "spc": 60
+        },
+        "types": [
+            "NORMAL",
+            "NORMAL"
+        ],
+        "catch_rate": 150,
+        "base_exp": 68,
+        "level_1_moves": [
+            "POUND",
+            "GROWL"
+        ],
+        "growth_rate": "FAST",
+        "tmhm": [
+            "MEGA_PUNCH",
+            "MEGA_KICK",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "ICE_BEAM",
+            "BLIZZARD",
+            "SUBMISSION",
+            "COUNTER",
+            "SEISMIC_TOSS",
+            "RAGE",
+            "SOLARBEAM",
+            "THUNDERBOLT",
+            "THUNDER",
+            "PSYCHIC_M",
+            "TELEPORT",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "METRONOME",
+            "FIRE_BLAST",
+            "SKULL_BASH",
+            "REST",
+            "THUNDER_WAVE",
+            "PSYWAVE",
+            "TRI_ATTACK",
+            "SUBSTITUTE",
+            "STRENGTH",
+            "FLASH"
+        ]
+    },
+    {
+        "pokemon_name": "CLOYSTER",
+        "internal_id": "139",
+        "pokedex_id": "DEX_CLOYSTER",
+        "stats": {
+            "hp": 50,
+            "atk": 95,
+            "def": 180,
+            "spd": 70,
+            "spc": 85
+        },
+        "types": [
+            "WATER",
+            "ICE"
+        ],
+        "catch_rate": 60,
+        "base_exp": 203,
+        "level_1_moves": [
+            "WITHDRAW",
+            "SUPERSONIC",
+            "CLAMP",
+            "AURORA_BEAM"
+        ],
+        "growth_rate": "SLOW",
+        "tmhm": [
+            "TOXIC",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "ICE_BEAM",
+            "BLIZZARD",
+            "HYPER_BEAM",
+            "RAGE",
+            "TELEPORT",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "SELFDESTRUCT",
+            "SWIFT",
+            "REST",
+            "EXPLOSION",
+            "TRI_ATTACK",
+            "SUBSTITUTE",
+            "SURF"
+        ]
+    },
+    {
+        "pokemon_name": "CUBONE",
+        "internal_id": "17",
+        "pokedex_id": "DEX_CUBONE",
+        "stats": {
+            "hp": 50,
+            "atk": 50,
+            "def": 95,
+            "spd": 35,
+            "spc": 40
+        },
+        "types": [
+            "GROUND",
+            "GROUND"
+        ],
+        "catch_rate": 190,
+        "base_exp": 87,
+        "level_1_moves": [
+            "BONE_CLUB",
+            "GROWL"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "MEGA_PUNCH",
+            "MEGA_KICK",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "ICE_BEAM",
+            "BLIZZARD",
+            "SUBMISSION",
+            "COUNTER",
+            "SEISMIC_TOSS",
+            "RAGE",
+            "EARTHQUAKE",
+            "FISSURE",
+            "DIG",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "BIDE",
+            "FIRE_BLAST",
+            "SKULL_BASH",
+            "REST",
+            "SUBSTITUTE",
+            "STRENGTH"
+        ]
+    },
+    {
+        "pokemon_name": "DEWGONG",
+        "internal_id": "120",
+        "pokedex_id": "DEX_DEWGONG",
+        "stats": {
+            "hp": 90,
+            "atk": 70,
+            "def": 80,
+            "spd": 70,
+            "spc": 95
+        },
+        "types": [
+            "WATER",
+            "ICE"
+        ],
+        "catch_rate": 75,
+        "base_exp": 176,
+        "level_1_moves": [
+            "HEADBUTT",
+            "GROWL",
+            "AURORA_BEAM"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "TOXIC",
+            "HORN_DRILL",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "ICE_BEAM",
+            "BLIZZARD",
+            "HYPER_BEAM",
+            "PAY_DAY",
+            "RAGE",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "BIDE",
+            "SKULL_BASH",
+            "REST",
+            "SUBSTITUTE",
+            "SURF",
+            "STRENGTH"
+        ]
+    },
+    {
+        "pokemon_name": "DIGLETT",
+        "internal_id": "59",
+        "pokedex_id": "DEX_DIGLETT",
+        "stats": {
+            "hp": 10,
+            "atk": 55,
+            "def": 25,
+            "spd": 95,
+            "spc": 45
+        },
+        "types": [
+            "GROUND",
+            "GROUND"
+        ],
+        "catch_rate": 255,
+        "base_exp": 81,
+        "level_1_moves": [
+            "SCRATCH"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "RAGE",
+            "EARTHQUAKE",
+            "FISSURE",
+            "DIG",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "BIDE",
+            "REST",
+            "ROCK_SLIDE",
+            "SUBSTITUTE"
+        ]
+    },
+    {
+        "pokemon_name": "DITTO",
+        "internal_id": "76",
+        "pokedex_id": "DEX_DITTO",
+        "stats": {
+            "hp": 48,
+            "atk": 48,
+            "def": 48,
+            "spd": 48,
+            "spc": 48
+        },
+        "types": [
+            "NORMAL",
+            "NORMAL"
+        ],
+        "catch_rate": 35,
+        "base_exp": 61,
+        "level_1_moves": [
+            "TRANSFORM"
+        ],
+        "growth_rate": "MEDIUM_FAST"
+    },
+    {
+        "pokemon_name": "DODRIO",
+        "internal_id": "116",
+        "pokedex_id": "DEX_DODRIO",
+        "stats": {
+            "hp": 60,
+            "atk": 110,
+            "def": 70,
+            "spd": 100,
+            "spc": 60
+        },
+        "types": [
+            "NORMAL",
+            "FLYING"
+        ],
+        "catch_rate": 45,
+        "base_exp": 158,
+        "level_1_moves": [
+            "PECK",
+            "GROWL",
+            "FURY_ATTACK"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "WHIRLWIND",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "HYPER_BEAM",
+            "RAGE",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "SKULL_BASH",
+            "SKY_ATTACK",
+            "REST",
+            "TRI_ATTACK",
+            "SUBSTITUTE",
+            "FLY"
+        ]
+    },
+    {
+        "pokemon_name": "DODUO",
+        "internal_id": "70",
+        "pokedex_id": "DEX_DODUO",
+        "stats": {
+            "hp": 35,
+            "atk": 85,
+            "def": 45,
+            "spd": 75,
+            "spc": 35
+        },
+        "types": [
+            "NORMAL",
+            "FLYING"
+        ],
+        "catch_rate": 190,
+        "base_exp": 96,
+        "level_1_moves": [
+            "PECK"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "WHIRLWIND",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "RAGE",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "SKULL_BASH",
+            "SKY_ATTACK",
+            "REST",
+            "TRI_ATTACK",
+            "SUBSTITUTE",
+            "FLY"
+        ]
+    },
+    {
+        "pokemon_name": "DRAGONAIR",
+        "internal_id": "89",
+        "pokedex_id": "DEX_DRAGONAIR",
+        "stats": {
+            "hp": 61,
+            "atk": 84,
+            "def": 65,
+            "spd": 70,
+            "spc": 70
+        },
+        "types": [
+            "DRAGON",
+            "DRAGON"
+        ],
+        "catch_rate": 45,
+        "base_exp": 144,
+        "level_1_moves": [
+            "WRAP",
+            "LEER",
+            "THUNDER_WAVE"
+        ],
+        "growth_rate": "SLOW",
+        "tmhm": [
+            "TOXIC",
+            "HORN_DRILL",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "ICE_BEAM",
+            "BLIZZARD",
+            "RAGE",
+            "DRAGON_RAGE",
+            "THUNDERBOLT",
+            "THUNDER",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "FIRE_BLAST",
+            "SWIFT",
+            "SKULL_BASH",
+            "REST",
+            "THUNDER_WAVE",
+            "SUBSTITUTE",
+            "SURF"
+        ]
+    },
+    {
+        "pokemon_name": "DRAGONITE",
+        "internal_id": "66",
+        "pokedex_id": "DEX_DRAGONITE",
+        "stats": {
+            "hp": 91,
+            "atk": 134,
+            "def": 95,
+            "spd": 80,
+            "spc": 100
+        },
+        "types": [
+            "DRAGON",
+            "FLYING"
+        ],
+        "catch_rate": 45,
+        "base_exp": 218,
+        "level_1_moves": [
+            "WRAP",
+            "LEER",
+            "THUNDER_WAVE",
+            "AGILITY"
+        ],
+        "growth_rate": "SLOW",
+        "tmhm": [
+            "RAZOR_WIND",
+            "TOXIC",
+            "HORN_DRILL",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "ICE_BEAM",
+            "BLIZZARD",
+            "HYPER_BEAM",
+            "RAGE",
+            "DRAGON_RAGE",
+            "THUNDERBOLT",
+            "THUNDER",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "FIRE_BLAST",
+            "SWIFT",
+            "SKULL_BASH",
+            "REST",
+            "THUNDER_WAVE",
+            "SUBSTITUTE",
+            "SURF",
+            "STRENGTH"
+        ]
+    },
+    {
+        "pokemon_name": "DRATINI",
+        "internal_id": "88",
+        "pokedex_id": "DEX_DRATINI",
+        "stats": {
+            "hp": 41,
+            "atk": 64,
+            "def": 45,
+            "spd": 50,
+            "spc": 50
+        },
+        "types": [
+            "DRAGON",
+            "DRAGON"
+        ],
+        "catch_rate": 45,
+        "base_exp": 67,
+        "level_1_moves": [
+            "WRAP",
+            "LEER"
+        ],
+        "growth_rate": "SLOW",
+        "tmhm": [
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "ICE_BEAM",
+            "BLIZZARD",
+            "RAGE",
+            "DRAGON_RAGE",
+            "THUNDERBOLT",
+            "THUNDER",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "FIRE_BLAST",
+            "SWIFT",
+            "SKULL_BASH",
+            "REST",
+            "THUNDER_WAVE",
+            "SUBSTITUTE",
+            "SURF"
+        ]
+    },
+    {
+        "pokemon_name": "DROWZEE",
+        "internal_id": "48",
+        "pokedex_id": "DEX_DROWZEE",
+        "stats": {
+            "hp": 60,
+            "atk": 48,
+            "def": 45,
+            "spd": 42,
+            "spc": 90
+        },
+        "types": [
+            "PSYCHIC",
+            "PSYCHIC"
+        ],
+        "catch_rate": 190,
+        "base_exp": 102,
+        "level_1_moves": [
+            "POUND",
+            "HYPNOSIS"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "MEGA_PUNCH",
+            "MEGA_KICK",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "SUBMISSION",
+            "COUNTER",
+            "SEISMIC_TOSS",
+            "RAGE",
+            "PSYCHIC_M",
+            "TELEPORT",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "METRONOME",
+            "SKULL_BASH",
+            "DREAM_EATER",
+            "REST",
+            "THUNDER_WAVE",
+            "PSYWAVE",
+            "TRI_ATTACK",
+            "SUBSTITUTE",
+            "FLASH"
+        ]
+    },
+    {
+        "pokemon_name": "DUGTRIO",
+        "internal_id": "118",
+        "pokedex_id": "DEX_DUGTRIO",
+        "stats": {
+            "hp": 35,
+            "atk": 80,
+            "def": 50,
+            "spd": 120,
+            "spc": 70
+        },
+        "types": [
+            "GROUND",
+            "GROUND"
+        ],
+        "catch_rate": 50,
+        "base_exp": 153,
+        "level_1_moves": [
+            "SCRATCH",
+            "GROWL",
+            "DIG"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "HYPER_BEAM",
+            "RAGE",
+            "EARTHQUAKE",
+            "FISSURE",
+            "DIG",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "BIDE",
+            "REST",
+            "ROCK_SLIDE",
+            "SUBSTITUTE"
+        ]
+    },
+    {
+        "pokemon_name": "EEVEE",
+        "internal_id": "102",
+        "pokedex_id": "DEX_EEVEE",
+        "stats": {
+            "hp": 55,
+            "atk": 55,
+            "def": 50,
+            "spd": 55,
+            "spc": 65
+        },
+        "types": [
+            "NORMAL",
+            "NORMAL"
+        ],
+        "catch_rate": 45,
+        "base_exp": 92,
+        "level_1_moves": [
+            "TACKLE",
+            "SAND_ATTACK"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "RAGE",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "SWIFT",
+            "SKULL_BASH",
+            "REST",
+            "SUBSTITUTE"
+        ]
+    },
+    {
+        "pokemon_name": "EKANS",
+        "internal_id": "108",
+        "pokedex_id": "DEX_EKANS",
+        "stats": {
+            "hp": 35,
+            "atk": 60,
+            "def": 44,
+            "spd": 55,
+            "spc": 40
+        },
+        "types": [
+            "POISON",
+            "POISON"
+        ],
+        "catch_rate": 255,
+        "base_exp": 62,
+        "level_1_moves": [
+            "WRAP",
+            "LEER"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "RAGE",
+            "MEGA_DRAIN",
+            "EARTHQUAKE",
+            "FISSURE",
+            "DIG",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "BIDE",
+            "SKULL_BASH",
+            "REST",
+            "ROCK_SLIDE",
+            "SUBSTITUTE",
+            "STRENGTH"
+        ]
+    },
+    {
+        "pokemon_name": "ELECTABUZZ",
+        "internal_id": "53",
+        "pokedex_id": "DEX_ELECTABUZZ",
+        "stats": {
+            "hp": 65,
+            "atk": 83,
+            "def": 57,
+            "spd": 105,
+            "spc": 85
+        },
+        "types": [
+            "ELECTRIC",
+            "ELECTRIC"
+        ],
+        "catch_rate": 45,
+        "base_exp": 156,
+        "level_1_moves": [
+            "QUICK_ATTACK",
+            "LEER"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "MEGA_PUNCH",
+            "MEGA_KICK",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "HYPER_BEAM",
+            "SUBMISSION",
+            "COUNTER",
+            "SEISMIC_TOSS",
+            "RAGE",
+            "THUNDERBOLT",
+            "THUNDER",
+            "PSYCHIC_M",
+            "TELEPORT",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "METRONOME",
+            "SWIFT",
+            "SKULL_BASH",
+            "REST",
+            "THUNDER_WAVE",
+            "PSYWAVE",
+            "SUBSTITUTE",
+            "STRENGTH",
+            "FLASH"
+        ]
+    },
+    {
+        "pokemon_name": "ELECTRODE",
+        "internal_id": "141",
+        "pokedex_id": "DEX_ELECTRODE",
+        "stats": {
+            "hp": 60,
+            "atk": 50,
+            "def": 70,
+            "spd": 140,
+            "spc": 80
+        },
+        "types": [
+            "ELECTRIC",
+            "ELECTRIC"
+        ],
+        "catch_rate": 60,
+        "base_exp": 150,
+        "level_1_moves": [
+            "TACKLE",
+            "SCREECH",
+            "SONICBOOM"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "TOXIC",
+            "TAKE_DOWN",
+            "HYPER_BEAM",
+            "RAGE",
+            "THUNDERBOLT",
+            "THUNDER",
+            "TELEPORT",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "SELFDESTRUCT",
+            "SWIFT",
+            "SKULL_BASH",
+            "REST",
+            "THUNDER_WAVE",
+            "EXPLOSION",
+            "SUBSTITUTE",
+            "FLASH"
+        ]
+    },
+    {
+        "pokemon_name": "EXEGGCUTE",
+        "internal_id": "12",
+        "pokedex_id": "DEX_EXEGGCUTE",
+        "stats": {
+            "hp": 60,
+            "atk": 40,
+            "def": 80,
+            "spd": 40,
+            "spc": 60
+        },
+        "types": [
+            "GRASS",
+            "PSYCHIC"
+        ],
+        "catch_rate": 90,
+        "base_exp": 98,
+        "level_1_moves": [
+            "BARRAGE",
+            "HYPNOSIS"
+        ],
+        "growth_rate": "SLOW",
+        "tmhm": [
+            "TOXIC",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "RAGE",
+            "PSYCHIC_M",
+            "TELEPORT",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "SELFDESTRUCT",
+            "EGG_BOMB",
+            "REST",
+            "PSYWAVE",
+            "EXPLOSION",
+            "SUBSTITUTE"
+        ]
+    },
+    {
+        "pokemon_name": "EXEGGUTOR",
+        "internal_id": "10",
+        "pokedex_id": "DEX_EXEGGUTOR",
+        "stats": {
+            "hp": 95,
+            "atk": 95,
+            "def": 85,
+            "spd": 55,
+            "spc": 125
+        },
+        "types": [
+            "GRASS",
+            "PSYCHIC"
+        ],
+        "catch_rate": 45,
+        "base_exp": 212,
+        "level_1_moves": [
+            "BARRAGE",
+            "HYPNOSIS"
+        ],
+        "growth_rate": "SLOW",
+        "tmhm": [
+            "TOXIC",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "HYPER_BEAM",
+            "RAGE",
+            "MEGA_DRAIN",
+            "SOLARBEAM",
+            "PSYCHIC_M",
+            "TELEPORT",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "SELFDESTRUCT",
+            "EGG_BOMB",
+            "REST",
+            "PSYWAVE",
+            "EXPLOSION",
+            "SUBSTITUTE",
+            "STRENGTH"
+        ]
+    },
+    {
+        "pokemon_name": "FARFETCHD",
+        "internal_id": null,
+        "pokedex_id": "DEX_FARFETCHD",
+        "stats": {
+            "hp": 52,
+            "atk": 65,
+            "def": 55,
+            "spd": 60,
+            "spc": 58
+        },
+        "types": [
+            "NORMAL",
+            "FLYING"
+        ],
+        "catch_rate": 45,
+        "base_exp": 94,
+        "level_1_moves": [
+            "PECK",
+            "SAND_ATTACK"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "RAZOR_WIND",
+            "SWORDS_DANCE",
+            "WHIRLWIND",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "RAGE",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "SWIFT",
+            "SKULL_BASH",
+            "REST",
+            "SUBSTITUTE",
+            "CUT",
+            "FLY"
+        ]
+    },
+    {
+        "pokemon_name": "FEAROW",
+        "internal_id": "35",
+        "pokedex_id": "DEX_FEAROW",
+        "stats": {
+            "hp": 65,
+            "atk": 90,
+            "def": 65,
+            "spd": 100,
+            "spc": 61
+        },
+        "types": [
+            "NORMAL",
+            "FLYING"
+        ],
+        "catch_rate": 90,
+        "base_exp": 162,
+        "level_1_moves": [
+            "PECK",
+            "GROWL",
+            "LEER"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "RAZOR_WIND",
+            "WHIRLWIND",
+            "TOXIC",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "HYPER_BEAM",
+            "RAGE",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "BIDE",
+            "SWIFT",
+            "SKY_ATTACK",
+            "REST",
+            "SUBSTITUTE",
+            "FLY"
+        ]
+    },
+    {
+        "pokemon_name": "FLAREON",
+        "internal_id": "103",
+        "pokedex_id": "DEX_FLAREON",
+        "stats": {
+            "hp": 65,
+            "atk": 130,
+            "def": 60,
+            "spd": 65,
+            "spc": 110
+        },
+        "types": [
+            "FIRE",
+            "FIRE"
+        ],
+        "catch_rate": 45,
+        "base_exp": 198,
+        "level_1_moves": [
+            "TACKLE",
+            "SAND_ATTACK",
+            "QUICK_ATTACK",
+            "EMBER"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "HYPER_BEAM",
+            "RAGE",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "FIRE_BLAST",
+            "SWIFT",
+            "SKULL_BASH",
+            "REST",
+            "SUBSTITUTE"
+        ]
+    },
+    {
+        "pokemon_name": "GASTLY",
+        "internal_id": "25",
+        "pokedex_id": "DEX_GASTLY",
+        "stats": {
+            "hp": 30,
+            "atk": 35,
+            "def": 30,
+            "spd": 80,
+            "spc": 100
+        },
+        "types": [
+            "GHOST",
+            "POISON"
+        ],
+        "catch_rate": 190,
+        "base_exp": 95,
+        "level_1_moves": [
+            "LICK",
+            "CONFUSE_RAY",
+            "NIGHT_SHADE"
+        ],
+        "growth_rate": "MEDIUM_SLOW",
+        "tmhm": [
+            "TOXIC",
+            "RAGE",
+            "MEGA_DRAIN",
+            "THUNDERBOLT",
+            "THUNDER",
+            "PSYCHIC_M",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "BIDE",
+            "SELFDESTRUCT",
+            "DREAM_EATER",
+            "REST",
+            "PSYWAVE",
+            "EXPLOSION",
+            "SUBSTITUTE"
+        ]
+    },
+    {
+        "pokemon_name": "GENGAR",
+        "internal_id": "14",
+        "pokedex_id": "DEX_GENGAR",
+        "stats": {
+            "hp": 60,
+            "atk": 65,
+            "def": 60,
+            "spd": 110,
+            "spc": 130
+        },
+        "types": [
+            "GHOST",
+            "POISON"
+        ],
+        "catch_rate": 45,
+        "base_exp": 190,
+        "level_1_moves": [
+            "LICK",
+            "CONFUSE_RAY",
+            "NIGHT_SHADE"
+        ],
+        "growth_rate": "MEDIUM_SLOW",
+        "tmhm": [
+            "MEGA_PUNCH",
+            "MEGA_KICK",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "HYPER_BEAM",
+            "SUBMISSION",
+            "COUNTER",
+            "SEISMIC_TOSS",
+            "RAGE",
+            "MEGA_DRAIN",
+            "THUNDERBOLT",
+            "THUNDER",
+            "PSYCHIC_M",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "BIDE",
+            "METRONOME",
+            "SELFDESTRUCT",
+            "SKULL_BASH",
+            "DREAM_EATER",
+            "REST",
+            "PSYWAVE",
+            "EXPLOSION",
+            "SUBSTITUTE",
+            "STRENGTH"
+        ]
+    },
+    {
+        "pokemon_name": "GEODUDE",
+        "internal_id": "169",
+        "pokedex_id": "DEX_GEODUDE",
+        "stats": {
+            "hp": 40,
+            "atk": 80,
+            "def": 100,
+            "spd": 20,
+            "spc": 30
+        },
+        "types": [
+            "ROCK",
+            "GROUND"
+        ],
+        "catch_rate": 255,
+        "base_exp": 86,
+        "level_1_moves": [
+            "TACKLE"
+        ],
+        "growth_rate": "MEDIUM_SLOW",
+        "tmhm": [
+            "MEGA_PUNCH",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "SUBMISSION",
+            "COUNTER",
+            "SEISMIC_TOSS",
+            "RAGE",
+            "EARTHQUAKE",
+            "FISSURE",
+            "DIG",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "BIDE",
+            "METRONOME",
+            "SELFDESTRUCT",
+            "FIRE_BLAST",
+            "REST",
+            "EXPLOSION",
+            "ROCK_SLIDE",
+            "SUBSTITUTE",
+            "STRENGTH"
+        ]
+    },
+    {
+        "pokemon_name": "GLOOM",
+        "internal_id": "186",
+        "pokedex_id": "DEX_GLOOM",
+        "stats": {
+            "hp": 60,
+            "atk": 65,
+            "def": 70,
+            "spd": 40,
+            "spc": 85
+        },
+        "types": [
+            "GRASS",
+            "POISON"
+        ],
+        "catch_rate": 120,
+        "base_exp": 132,
+        "level_1_moves": [
+            "ABSORB",
+            "POISONPOWDER",
+            "STUN_SPORE"
+        ],
+        "growth_rate": "MEDIUM_SLOW",
+        "tmhm": [
+            "SWORDS_DANCE",
+            "TOXIC",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "RAGE",
+            "MEGA_DRAIN",
+            "SOLARBEAM",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "REST",
+            "SUBSTITUTE",
+            "CUT"
+        ]
+    },
+    {
+        "pokemon_name": "GOLBAT",
+        "internal_id": "130",
+        "pokedex_id": "DEX_GOLBAT",
+        "stats": {
+            "hp": 75,
+            "atk": 80,
+            "def": 70,
+            "spd": 90,
+            "spc": 75
+        },
+        "types": [
+            "POISON",
+            "FLYING"
+        ],
+        "catch_rate": 90,
+        "base_exp": 171,
+        "level_1_moves": [
+            "LEECH_LIFE",
+            "SCREECH",
+            "BITE"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "RAZOR_WIND",
+            "WHIRLWIND",
+            "TOXIC",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "HYPER_BEAM",
+            "RAGE",
+            "MEGA_DRAIN",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "BIDE",
+            "SWIFT",
+            "REST",
+            "SUBSTITUTE"
+        ]
+    },
+    {
+        "pokemon_name": "GOLDEEN",
+        "internal_id": "157",
+        "pokedex_id": "DEX_GOLDEEN",
+        "stats": {
+            "hp": 45,
+            "atk": 67,
+            "def": 60,
+            "spd": 63,
+            "spc": 50
+        },
+        "types": [
+            "WATER",
+            "WATER"
+        ],
+        "catch_rate": 225,
+        "base_exp": 111,
+        "level_1_moves": [
+            "PECK",
+            "TAIL_WHIP"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "TOXIC",
+            "HORN_DRILL",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "ICE_BEAM",
+            "BLIZZARD",
+            "RAGE",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "BIDE",
+            "SWIFT",
+            "SKULL_BASH",
+            "REST",
+            "SUBSTITUTE",
+            "SURF"
+        ]
+    },
+    {
+        "pokemon_name": "GOLDUCK",
+        "internal_id": "128",
+        "pokedex_id": "DEX_GOLDUCK",
+        "stats": {
+            "hp": 80,
+            "atk": 82,
+            "def": 78,
+            "spd": 85,
+            "spc": 80
+        },
+        "types": [
+            "WATER",
+            "WATER"
+        ],
+        "catch_rate": 75,
+        "base_exp": 174,
+        "level_1_moves": [
+            "SCRATCH",
+            "TAIL_WHIP",
+            "DISABLE"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "MEGA_PUNCH",
+            "MEGA_KICK",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "ICE_BEAM",
+            "BLIZZARD",
+            "HYPER_BEAM",
+            "PAY_DAY",
+            "SUBMISSION",
+            "COUNTER",
+            "SEISMIC_TOSS",
+            "RAGE",
+            "DIG",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "BIDE",
+            "SWIFT",
+            "SKULL_BASH",
+            "REST",
+            "SUBSTITUTE",
+            "SURF",
+            "STRENGTH"
+        ]
+    },
+    {
+        "pokemon_name": "GOLEM",
+        "internal_id": "49",
+        "pokedex_id": "DEX_GOLEM",
+        "stats": {
+            "hp": 80,
+            "atk": 110,
+            "def": 130,
+            "spd": 45,
+            "spc": 55
+        },
+        "types": [
+            "ROCK",
+            "GROUND"
+        ],
+        "catch_rate": 45,
+        "base_exp": 177,
+        "level_1_moves": [
+            "TACKLE",
+            "DEFENSE_CURL"
+        ],
+        "growth_rate": "MEDIUM_SLOW",
+        "tmhm": [
+            "MEGA_PUNCH",
+            "MEGA_KICK",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "HYPER_BEAM",
+            "SUBMISSION",
+            "COUNTER",
+            "SEISMIC_TOSS",
+            "RAGE",
+            "EARTHQUAKE",
+            "FISSURE",
+            "DIG",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "BIDE",
+            "METRONOME",
+            "SELFDESTRUCT",
+            "FIRE_BLAST",
+            "REST",
+            "EXPLOSION",
+            "ROCK_SLIDE",
+            "SUBSTITUTE",
+            "STRENGTH"
+        ]
+    },
+    {
+        "pokemon_name": "GRAVELER",
+        "internal_id": "39",
+        "pokedex_id": "DEX_GRAVELER",
+        "stats": {
+            "hp": 55,
+            "atk": 95,
+            "def": 115,
+            "spd": 35,
+            "spc": 45
+        },
+        "types": [
+            "ROCK",
+            "GROUND"
+        ],
+        "catch_rate": 120,
+        "base_exp": 134,
+        "level_1_moves": [
+            "TACKLE",
+            "DEFENSE_CURL"
+        ],
+        "growth_rate": "MEDIUM_SLOW",
+        "tmhm": [
+            "MEGA_PUNCH",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "SUBMISSION",
+            "COUNTER",
+            "SEISMIC_TOSS",
+            "RAGE",
+            "EARTHQUAKE",
+            "FISSURE",
+            "DIG",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "BIDE",
+            "METRONOME",
+            "SELFDESTRUCT",
+            "FIRE_BLAST",
+            "REST",
+            "EXPLOSION",
+            "ROCK_SLIDE",
+            "SUBSTITUTE",
+            "STRENGTH"
+        ]
+    },
+    {
+        "pokemon_name": "GRIMER",
+        "internal_id": "13",
+        "pokedex_id": "DEX_GRIMER",
+        "stats": {
+            "hp": 80,
+            "atk": 80,
+            "def": 50,
+            "spd": 25,
+            "spc": 40
+        },
+        "types": [
+            "POISON",
+            "POISON"
+        ],
+        "catch_rate": 190,
+        "base_exp": 90,
+        "level_1_moves": [
+            "POUND",
+            "DISABLE"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "TOXIC",
+            "BODY_SLAM",
+            "RAGE",
+            "MEGA_DRAIN",
+            "THUNDERBOLT",
+            "THUNDER",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "BIDE",
+            "SELFDESTRUCT",
+            "FIRE_BLAST",
+            "REST",
+            "EXPLOSION",
+            "SUBSTITUTE"
+        ]
+    },
+    {
+        "pokemon_name": "GROWLITHE",
+        "internal_id": "33",
+        "pokedex_id": "DEX_GROWLITHE",
+        "stats": {
+            "hp": 55,
+            "atk": 70,
+            "def": 45,
+            "spd": 60,
+            "spc": 50
+        },
+        "types": [
+            "FIRE",
+            "FIRE"
+        ],
+        "catch_rate": 190,
+        "base_exp": 91,
+        "level_1_moves": [
+            "BITE",
+            "ROAR"
+        ],
+        "growth_rate": "SLOW",
+        "tmhm": [
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "RAGE",
+            "DRAGON_RAGE",
+            "DIG",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "FIRE_BLAST",
+            "SWIFT",
+            "SKULL_BASH",
+            "REST",
+            "SUBSTITUTE"
+        ]
+    },
+    {
+        "pokemon_name": "GYARADOS",
+        "internal_id": "22",
+        "pokedex_id": "DEX_GYARADOS",
+        "stats": {
+            "hp": 95,
+            "atk": 125,
+            "def": 79,
+            "spd": 81,
+            "spc": 100
+        },
+        "types": [
+            "WATER",
+            "FLYING"
+        ],
+        "catch_rate": 45,
+        "base_exp": 214,
+        "level_1_moves": [
+            "BITE",
+            "DRAGON_RAGE",
+            "LEER",
+            "HYDRO_PUMP"
+        ],
+        "growth_rate": "SLOW",
+        "tmhm": [
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "ICE_BEAM",
+            "BLIZZARD",
+            "HYPER_BEAM",
+            "RAGE",
+            "DRAGON_RAGE",
+            "THUNDERBOLT",
+            "THUNDER",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "FIRE_BLAST",
+            "SKULL_BASH",
+            "REST",
+            "SUBSTITUTE",
+            "SURF",
+            "STRENGTH"
+        ]
+    },
+    {
+        "pokemon_name": "HAUNTER",
+        "internal_id": "147",
+        "pokedex_id": "DEX_HAUNTER",
+        "stats": {
+            "hp": 45,
+            "atk": 50,
+            "def": 45,
+            "spd": 95,
+            "spc": 115
+        },
+        "types": [
+            "GHOST",
+            "POISON"
+        ],
+        "catch_rate": 90,
+        "base_exp": 126,
+        "level_1_moves": [
+            "LICK",
+            "CONFUSE_RAY",
+            "NIGHT_SHADE"
+        ],
+        "growth_rate": "MEDIUM_SLOW",
+        "tmhm": [
+            "TOXIC",
+            "RAGE",
+            "MEGA_DRAIN",
+            "THUNDERBOLT",
+            "THUNDER",
+            "PSYCHIC_M",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "BIDE",
+            "SELFDESTRUCT",
+            "DREAM_EATER",
+            "REST",
+            "PSYWAVE",
+            "EXPLOSION",
+            "SUBSTITUTE"
+        ]
+    },
+    {
+        "pokemon_name": "HITMONCHAN",
+        "internal_id": "44",
+        "pokedex_id": "DEX_HITMONCHAN",
+        "stats": {
+            "hp": 50,
+            "atk": 105,
+            "def": 79,
+            "spd": 76,
+            "spc": 35
+        },
+        "types": [
+            "FIGHTING",
+            "FIGHTING"
+        ],
+        "catch_rate": 45,
+        "base_exp": 140,
+        "level_1_moves": [
+            "COMET_PUNCH",
+            "AGILITY"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "MEGA_PUNCH",
+            "MEGA_KICK",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "SUBMISSION",
+            "COUNTER",
+            "SEISMIC_TOSS",
+            "RAGE",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "BIDE",
+            "METRONOME",
+            "SWIFT",
+            "SKULL_BASH",
+            "REST",
+            "SUBSTITUTE",
+            "STRENGTH"
+        ]
+    },
+    {
+        "pokemon_name": "HITMONLEE",
+        "internal_id": "43",
+        "pokedex_id": "DEX_HITMONLEE",
+        "stats": {
+            "hp": 50,
+            "atk": 120,
+            "def": 53,
+            "spd": 87,
+            "spc": 35
+        },
+        "types": [
+            "FIGHTING",
+            "FIGHTING"
+        ],
+        "catch_rate": 45,
+        "base_exp": 139,
+        "level_1_moves": [
+            "DOUBLE_KICK",
+            "MEDITATE"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "MEGA_PUNCH",
+            "MEGA_KICK",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "SUBMISSION",
+            "COUNTER",
+            "SEISMIC_TOSS",
+            "RAGE",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "BIDE",
+            "METRONOME",
+            "SWIFT",
+            "SKULL_BASH",
+            "REST",
+            "SUBSTITUTE",
+            "STRENGTH"
+        ]
+    },
+    {
+        "pokemon_name": "HORSEA",
+        "internal_id": "92",
+        "pokedex_id": "DEX_HORSEA",
+        "stats": {
+            "hp": 30,
+            "atk": 40,
+            "def": 70,
+            "spd": 60,
+            "spc": 70
+        },
+        "types": [
+            "WATER",
+            "WATER"
+        ],
+        "catch_rate": 225,
+        "base_exp": 83,
+        "level_1_moves": [
+            "BUBBLE"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "TOXIC",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "ICE_BEAM",
+            "BLIZZARD",
+            "RAGE",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "BIDE",
+            "SWIFT",
+            "SKULL_BASH",
+            "REST",
+            "SUBSTITUTE",
+            "SURF"
+        ]
+    },
+    {
+        "pokemon_name": "HYPNO",
+        "internal_id": "129",
+        "pokedex_id": "DEX_HYPNO",
+        "stats": {
+            "hp": 85,
+            "atk": 73,
+            "def": 70,
+            "spd": 67,
+            "spc": 115
+        },
+        "types": [
+            "PSYCHIC",
+            "PSYCHIC"
+        ],
+        "catch_rate": 75,
+        "base_exp": 165,
+        "level_1_moves": [
+            "POUND",
+            "HYPNOSIS",
+            "DISABLE",
+            "CONFUSION"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "MEGA_PUNCH",
+            "MEGA_KICK",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "HYPER_BEAM",
+            "SUBMISSION",
+            "COUNTER",
+            "SEISMIC_TOSS",
+            "RAGE",
+            "PSYCHIC_M",
+            "TELEPORT",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "METRONOME",
+            "SKULL_BASH",
+            "DREAM_EATER",
+            "REST",
+            "THUNDER_WAVE",
+            "PSYWAVE",
+            "TRI_ATTACK",
+            "SUBSTITUTE",
+            "FLASH"
+        ]
+    },
+    {
+        "pokemon_name": "IVYSAUR",
+        "internal_id": "9",
+        "pokedex_id": "DEX_IVYSAUR",
+        "stats": {
+            "hp": 60,
+            "atk": 62,
+            "def": 63,
+            "spd": 60,
+            "spc": 80
+        },
+        "types": [
+            "GRASS",
+            "POISON"
+        ],
+        "catch_rate": 45,
+        "base_exp": 141,
+        "level_1_moves": [
+            "TACKLE",
+            "GROWL",
+            "LEECH_SEED"
+        ],
+        "growth_rate": "MEDIUM_SLOW",
+        "tmhm": [
+            "SWORDS_DANCE",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "RAGE",
+            "MEGA_DRAIN",
+            "SOLARBEAM",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "REST",
+            "SUBSTITUTE",
+            "CUT"
+        ]
+    },
+    {
+        "pokemon_name": "JIGGLYPUFF",
+        "internal_id": "100",
+        "pokedex_id": "DEX_JIGGLYPUFF",
+        "stats": {
+            "hp": 115,
+            "atk": 45,
+            "def": 20,
+            "spd": 20,
+            "spc": 25
+        },
+        "types": [
+            "NORMAL",
+            "NORMAL"
+        ],
+        "catch_rate": 170,
+        "base_exp": 76,
+        "level_1_moves": [
+            "SING"
+        ],
+        "growth_rate": "FAST",
+        "tmhm": [
+            "MEGA_PUNCH",
+            "MEGA_KICK",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "ICE_BEAM",
+            "BLIZZARD",
+            "SUBMISSION",
+            "COUNTER",
+            "SEISMIC_TOSS",
+            "RAGE",
+            "SOLARBEAM",
+            "THUNDERBOLT",
+            "THUNDER",
+            "PSYCHIC_M",
+            "TELEPORT",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "FIRE_BLAST",
+            "SKULL_BASH",
+            "REST",
+            "THUNDER_WAVE",
+            "PSYWAVE",
+            "TRI_ATTACK",
+            "SUBSTITUTE",
+            "STRENGTH",
+            "FLASH"
+        ]
+    },
+    {
+        "pokemon_name": "JOLTEON",
+        "internal_id": "104",
+        "pokedex_id": "DEX_JOLTEON",
+        "stats": {
+            "hp": 65,
+            "atk": 65,
+            "def": 60,
+            "spd": 130,
+            "spc": 110
+        },
+        "types": [
+            "ELECTRIC",
+            "ELECTRIC"
+        ],
+        "catch_rate": 45,
+        "base_exp": 197,
+        "level_1_moves": [
+            "TACKLE",
+            "SAND_ATTACK",
+            "QUICK_ATTACK",
+            "THUNDERSHOCK"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "HYPER_BEAM",
+            "RAGE",
+            "THUNDERBOLT",
+            "THUNDER",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "SWIFT",
+            "SKULL_BASH",
+            "REST",
+            "THUNDER_WAVE",
+            "SUBSTITUTE",
+            "FLASH"
+        ]
+    },
+    {
+        "pokemon_name": "JYNX",
+        "internal_id": "72",
+        "pokedex_id": "DEX_JYNX",
+        "stats": {
+            "hp": 65,
+            "atk": 50,
+            "def": 35,
+            "spd": 95,
+            "spc": 95
+        },
+        "types": [
+            "ICE",
+            "PSYCHIC"
+        ],
+        "catch_rate": 45,
+        "base_exp": 137,
+        "level_1_moves": [
+            "POUND",
+            "LOVELY_KISS"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "MEGA_PUNCH",
+            "MEGA_KICK",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "ICE_BEAM",
+            "BLIZZARD",
+            "HYPER_BEAM",
+            "SUBMISSION",
+            "COUNTER",
+            "SEISMIC_TOSS",
+            "RAGE",
+            "PSYCHIC_M",
+            "TELEPORT",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "METRONOME",
+            "SKULL_BASH",
+            "REST",
+            "PSYWAVE",
+            "SUBSTITUTE"
+        ]
+    },
+    {
+        "pokemon_name": "KABUTO",
+        "internal_id": "90",
+        "pokedex_id": "DEX_KABUTO",
+        "stats": {
+            "hp": 30,
+            "atk": 80,
+            "def": 90,
+            "spd": 55,
+            "spc": 45
+        },
+        "types": [
+            "ROCK",
+            "WATER"
+        ],
+        "catch_rate": 45,
+        "base_exp": 119,
+        "level_1_moves": [
+            "SCRATCH",
+            "HARDEN"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "ICE_BEAM",
+            "BLIZZARD",
+            "RAGE",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "REST",
+            "SUBSTITUTE",
+            "SURF"
+        ]
+    },
+    {
+        "pokemon_name": "KABUTOPS",
+        "internal_id": "91",
+        "pokedex_id": "DEX_KABUTOPS",
+        "stats": {
+            "hp": 60,
+            "atk": 115,
+            "def": 105,
+            "spd": 80,
+            "spc": 70
+        },
+        "types": [
+            "ROCK",
+            "WATER"
+        ],
+        "catch_rate": 45,
+        "base_exp": 201,
+        "level_1_moves": [
+            "SCRATCH",
+            "HARDEN",
+            "ABSORB"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "RAZOR_WIND",
+            "SWORDS_DANCE",
+            "MEGA_KICK",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "ICE_BEAM",
+            "BLIZZARD",
+            "HYPER_BEAM",
+            "SUBMISSION",
+            "SEISMIC_TOSS",
+            "RAGE",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "SKULL_BASH",
+            "REST",
+            "SUBSTITUTE",
+            "SURF"
+        ]
+    },
+    {
+        "pokemon_name": "KADABRA",
+        "internal_id": "38",
+        "pokedex_id": "DEX_KADABRA",
+        "stats": {
+            "hp": 40,
+            "atk": 35,
+            "def": 30,
+            "spd": 105,
+            "spc": 120
+        },
+        "types": [
+            "PSYCHIC",
+            "PSYCHIC"
+        ],
+        "catch_rate": 100,
+        "base_exp": 145,
+        "level_1_moves": [
+            "TELEPORT",
+            "CONFUSION",
+            "DISABLE"
+        ],
+        "growth_rate": "MEDIUM_SLOW",
+        "tmhm": [
+            "MEGA_PUNCH",
+            "MEGA_KICK",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "SUBMISSION",
+            "COUNTER",
+            "SEISMIC_TOSS",
+            "RAGE",
+            "DIG",
+            "PSYCHIC_M",
+            "TELEPORT",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "METRONOME",
+            "SKULL_BASH",
+            "REST",
+            "THUNDER_WAVE",
+            "PSYWAVE",
+            "TRI_ATTACK",
+            "SUBSTITUTE",
+            "FLASH"
+        ]
+    },
+    {
+        "pokemon_name": "KAKUNA",
+        "internal_id": "113",
+        "pokedex_id": "DEX_KAKUNA",
+        "stats": {
+            "hp": 45,
+            "atk": 25,
+            "def": 50,
+            "spd": 35,
+            "spc": 25
+        },
+        "types": [
+            "BUG",
+            "POISON"
+        ],
+        "catch_rate": 120,
+        "base_exp": 71,
+        "level_1_moves": [
+            "HARDEN"
+        ],
+        "growth_rate": "MEDIUM_FAST"
+    },
+    {
+        "pokemon_name": "KANGASKHAN",
+        "internal_id": "2",
+        "pokedex_id": "DEX_KANGASKHAN",
+        "stats": {
+            "hp": 105,
+            "atk": 95,
+            "def": 80,
+            "spd": 90,
+            "spc": 40
+        },
+        "types": [
+            "NORMAL",
+            "NORMAL"
+        ],
+        "catch_rate": 45,
+        "base_exp": 175,
+        "level_1_moves": [
+            "COMET_PUNCH",
+            "RAGE"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "MEGA_PUNCH",
+            "MEGA_KICK",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "ICE_BEAM",
+            "BLIZZARD",
+            "HYPER_BEAM",
+            "SUBMISSION",
+            "COUNTER",
+            "SEISMIC_TOSS",
+            "RAGE",
+            "THUNDERBOLT",
+            "THUNDER",
+            "EARTHQUAKE",
+            "FISSURE",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "BIDE",
+            "FIRE_BLAST",
+            "SKULL_BASH",
+            "REST",
+            "ROCK_SLIDE",
+            "SUBSTITUTE",
+            "SURF",
+            "STRENGTH"
+        ]
+    },
+    {
+        "pokemon_name": "KINGLER",
+        "internal_id": "138",
+        "pokedex_id": "DEX_KINGLER",
+        "stats": {
+            "hp": 55,
+            "atk": 130,
+            "def": 115,
+            "spd": 75,
+            "spc": 50
+        },
+        "types": [
+            "WATER",
+            "WATER"
+        ],
+        "catch_rate": 60,
+        "base_exp": 206,
+        "level_1_moves": [
+            "BUBBLE",
+            "LEER",
+            "VICEGRIP"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "SWORDS_DANCE",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "ICE_BEAM",
+            "BLIZZARD",
+            "HYPER_BEAM",
+            "RAGE",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "BIDE",
+            "REST",
+            "SUBSTITUTE",
+            "CUT",
+            "SURF",
+            "STRENGTH"
+        ]
+    },
+    {
+        "pokemon_name": "KOFFING",
+        "internal_id": "55",
+        "pokedex_id": "DEX_KOFFING",
+        "stats": {
+            "hp": 40,
+            "atk": 65,
+            "def": 95,
+            "spd": 35,
+            "spc": 60
+        },
+        "types": [
+            "POISON",
+            "POISON"
+        ],
+        "catch_rate": 190,
+        "base_exp": 114,
+        "level_1_moves": [
+            "TACKLE",
+            "SMOG"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "TOXIC",
+            "RAGE",
+            "THUNDERBOLT",
+            "THUNDER",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "BIDE",
+            "SELFDESTRUCT",
+            "FIRE_BLAST",
+            "REST",
+            "EXPLOSION",
+            "SUBSTITUTE"
+        ]
+    },
+    {
+        "pokemon_name": "KRABBY",
+        "internal_id": "78",
+        "pokedex_id": "DEX_KRABBY",
+        "stats": {
+            "hp": 30,
+            "atk": 105,
+            "def": 90,
+            "spd": 50,
+            "spc": 25
+        },
+        "types": [
+            "WATER",
+            "WATER"
+        ],
+        "catch_rate": 225,
+        "base_exp": 115,
+        "level_1_moves": [
+            "BUBBLE",
+            "LEER"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "SWORDS_DANCE",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "ICE_BEAM",
+            "BLIZZARD",
+            "RAGE",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "BIDE",
+            "REST",
+            "SUBSTITUTE",
+            "CUT",
+            "SURF",
+            "STRENGTH"
+        ]
+    },
+    {
+        "pokemon_name": "LAPRAS",
+        "internal_id": "19",
+        "pokedex_id": "DEX_LAPRAS",
+        "stats": {
+            "hp": 130,
+            "atk": 85,
+            "def": 80,
+            "spd": 60,
+            "spc": 95
+        },
+        "types": [
+            "WATER",
+            "ICE"
+        ],
+        "catch_rate": 45,
+        "base_exp": 219,
+        "level_1_moves": [
+            "WATER_GUN",
+            "GROWL"
+        ],
+        "growth_rate": "SLOW",
+        "tmhm": [
+            "TOXIC",
+            "HORN_DRILL",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "ICE_BEAM",
+            "BLIZZARD",
+            "HYPER_BEAM",
+            "RAGE",
+            "SOLARBEAM",
+            "DRAGON_RAGE",
+            "THUNDERBOLT",
+            "THUNDER",
+            "PSYCHIC_M",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "SKULL_BASH",
+            "REST",
+            "PSYWAVE",
+            "SUBSTITUTE",
+            "SURF",
+            "STRENGTH"
+        ]
+    },
+    {
+        "pokemon_name": "LICKITUNG",
+        "internal_id": "11",
+        "pokedex_id": "DEX_LICKITUNG",
+        "stats": {
+            "hp": 90,
+            "atk": 55,
+            "def": 75,
+            "spd": 30,
+            "spc": 60
+        },
+        "types": [
+            "NORMAL",
+            "NORMAL"
+        ],
+        "catch_rate": 45,
+        "base_exp": 127,
+        "level_1_moves": [
+            "WRAP",
+            "SUPERSONIC"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "MEGA_PUNCH",
+            "SWORDS_DANCE",
+            "MEGA_KICK",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "ICE_BEAM",
+            "BLIZZARD",
+            "HYPER_BEAM",
+            "SUBMISSION",
+            "COUNTER",
+            "SEISMIC_TOSS",
+            "RAGE",
+            "THUNDERBOLT",
+            "THUNDER",
+            "EARTHQUAKE",
+            "FISSURE",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "BIDE",
+            "FIRE_BLAST",
+            "SKULL_BASH",
+            "REST",
+            "SUBSTITUTE",
+            "CUT",
+            "SURF",
+            "STRENGTH"
+        ]
+    },
+    {
+        "pokemon_name": "MACHAMP",
+        "internal_id": "126",
+        "pokedex_id": "DEX_MACHAMP",
+        "stats": {
+            "hp": 90,
+            "atk": 130,
+            "def": 80,
+            "spd": 55,
+            "spc": 65
+        },
+        "types": [
+            "FIGHTING",
+            "FIGHTING"
+        ],
+        "catch_rate": 45,
+        "base_exp": 193,
+        "level_1_moves": [
+            "KARATE_CHOP",
+            "LOW_KICK",
+            "LEER"
+        ],
+        "growth_rate": "MEDIUM_SLOW",
+        "tmhm": [
+            "MEGA_PUNCH",
+            "MEGA_KICK",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "HYPER_BEAM",
+            "SUBMISSION",
+            "COUNTER",
+            "SEISMIC_TOSS",
+            "RAGE",
+            "EARTHQUAKE",
+            "FISSURE",
+            "DIG",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "BIDE",
+            "METRONOME",
+            "FIRE_BLAST",
+            "SKULL_BASH",
+            "REST",
+            "ROCK_SLIDE",
+            "SUBSTITUTE",
+            "STRENGTH"
+        ]
+    },
+    {
+        "pokemon_name": "MACHOKE",
+        "internal_id": "41",
+        "pokedex_id": "DEX_MACHOKE",
+        "stats": {
+            "hp": 80,
+            "atk": 100,
+            "def": 70,
+            "spd": 45,
+            "spc": 50
+        },
+        "types": [
+            "FIGHTING",
+            "FIGHTING"
+        ],
+        "catch_rate": 90,
+        "base_exp": 146,
+        "level_1_moves": [
+            "KARATE_CHOP",
+            "LOW_KICK",
+            "LEER"
+        ],
+        "growth_rate": "MEDIUM_SLOW",
+        "tmhm": [
+            "MEGA_PUNCH",
+            "MEGA_KICK",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "SUBMISSION",
+            "COUNTER",
+            "SEISMIC_TOSS",
+            "RAGE",
+            "EARTHQUAKE",
+            "FISSURE",
+            "DIG",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "BIDE",
+            "METRONOME",
+            "FIRE_BLAST",
+            "SKULL_BASH",
+            "REST",
+            "ROCK_SLIDE",
+            "SUBSTITUTE",
+            "STRENGTH"
+        ]
+    },
+    {
+        "pokemon_name": "MACHOP",
+        "internal_id": "106",
+        "pokedex_id": "DEX_MACHOP",
+        "stats": {
+            "hp": 70,
+            "atk": 80,
+            "def": 50,
+            "spd": 35,
+            "spc": 35
+        },
+        "types": [
+            "FIGHTING",
+            "FIGHTING"
+        ],
+        "catch_rate": 180,
+        "base_exp": 88,
+        "level_1_moves": [
+            "KARATE_CHOP"
+        ],
+        "growth_rate": "MEDIUM_SLOW",
+        "tmhm": [
+            "MEGA_PUNCH",
+            "MEGA_KICK",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "SUBMISSION",
+            "COUNTER",
+            "SEISMIC_TOSS",
+            "RAGE",
+            "EARTHQUAKE",
+            "FISSURE",
+            "DIG",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "BIDE",
+            "METRONOME",
+            "FIRE_BLAST",
+            "SKULL_BASH",
+            "REST",
+            "ROCK_SLIDE",
+            "SUBSTITUTE",
+            "STRENGTH"
+        ]
+    },
+    {
+        "pokemon_name": "MAGIKARP",
+        "internal_id": "133",
+        "pokedex_id": "DEX_MAGIKARP",
+        "stats": {
+            "hp": 20,
+            "atk": 10,
+            "def": 55,
+            "spd": 80,
+            "spc": 20
+        },
+        "types": [
+            "WATER",
+            "WATER"
+        ],
+        "catch_rate": 255,
+        "base_exp": 20,
+        "level_1_moves": [
+            "SPLASH"
+        ],
+        "growth_rate": "SLOW"
+    },
+    {
+        "pokemon_name": "MAGMAR",
+        "internal_id": "51",
+        "pokedex_id": "DEX_MAGMAR",
+        "stats": {
+            "hp": 65,
+            "atk": 95,
+            "def": 57,
+            "spd": 93,
+            "spc": 85
+        },
+        "types": [
+            "FIRE",
+            "FIRE"
+        ],
+        "catch_rate": 45,
+        "base_exp": 167,
+        "level_1_moves": [
+            "EMBER"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "MEGA_PUNCH",
+            "MEGA_KICK",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "HYPER_BEAM",
+            "SUBMISSION",
+            "COUNTER",
+            "SEISMIC_TOSS",
+            "RAGE",
+            "PSYCHIC_M",
+            "TELEPORT",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "BIDE",
+            "METRONOME",
+            "FIRE_BLAST",
+            "SKULL_BASH",
+            "REST",
+            "PSYWAVE",
+            "SUBSTITUTE",
+            "STRENGTH"
+        ]
+    },
+    {
+        "pokemon_name": "MAGNEMITE",
+        "internal_id": "173",
+        "pokedex_id": "DEX_MAGNEMITE",
+        "stats": {
+            "hp": 25,
+            "atk": 35,
+            "def": 70,
+            "spd": 45,
+            "spc": 95
+        },
+        "types": [
+            "ELECTRIC",
+            "ELECTRIC"
+        ],
+        "catch_rate": 190,
+        "base_exp": 89,
+        "level_1_moves": [
+            "TACKLE"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "TOXIC",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "RAGE",
+            "THUNDERBOLT",
+            "THUNDER",
+            "TELEPORT",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "SWIFT",
+            "REST",
+            "THUNDER_WAVE",
+            "SUBSTITUTE",
+            "FLASH"
+        ]
+    },
+    {
+        "pokemon_name": "MAGNETON",
+        "internal_id": "54",
+        "pokedex_id": "DEX_MAGNETON",
+        "stats": {
+            "hp": 50,
+            "atk": 60,
+            "def": 95,
+            "spd": 70,
+            "spc": 120
+        },
+        "types": [
+            "ELECTRIC",
+            "ELECTRIC"
+        ],
+        "catch_rate": 60,
+        "base_exp": 161,
+        "level_1_moves": [
+            "TACKLE",
+            "SONICBOOM",
+            "THUNDERSHOCK"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "TOXIC",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "HYPER_BEAM",
+            "RAGE",
+            "THUNDERBOLT",
+            "THUNDER",
+            "TELEPORT",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "SWIFT",
+            "REST",
+            "THUNDER_WAVE",
+            "SUBSTITUTE",
+            "FLASH"
+        ]
+    },
+    {
+        "pokemon_name": "MANKEY",
+        "internal_id": "57",
+        "pokedex_id": "DEX_MANKEY",
+        "stats": {
+            "hp": 40,
+            "atk": 80,
+            "def": 35,
+            "spd": 70,
+            "spc": 35
+        },
+        "types": [
+            "FIGHTING",
+            "FIGHTING"
+        ],
+        "catch_rate": 190,
+        "base_exp": 74,
+        "level_1_moves": [
+            "SCRATCH",
+            "LEER"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "MEGA_PUNCH",
+            "MEGA_KICK",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "PAY_DAY",
+            "SUBMISSION",
+            "COUNTER",
+            "SEISMIC_TOSS",
+            "RAGE",
+            "THUNDERBOLT",
+            "THUNDER",
+            "DIG",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "BIDE",
+            "METRONOME",
+            "SWIFT",
+            "SKULL_BASH",
+            "REST",
+            "ROCK_SLIDE",
+            "SUBSTITUTE",
+            "STRENGTH"
+        ]
+    },
+    {
+        "pokemon_name": "MAROWAK",
+        "internal_id": "145",
+        "pokedex_id": "DEX_MAROWAK",
+        "stats": {
+            "hp": 60,
+            "atk": 80,
+            "def": 110,
+            "spd": 45,
+            "spc": 50
+        },
+        "types": [
+            "GROUND",
+            "GROUND"
+        ],
+        "catch_rate": 75,
+        "base_exp": 124,
+        "level_1_moves": [
+            "BONE_CLUB",
+            "GROWL",
+            "LEER",
+            "FOCUS_ENERGY"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "MEGA_PUNCH",
+            "MEGA_KICK",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "ICE_BEAM",
+            "BLIZZARD",
+            "HYPER_BEAM",
+            "SUBMISSION",
+            "COUNTER",
+            "SEISMIC_TOSS",
+            "RAGE",
+            "EARTHQUAKE",
+            "FISSURE",
+            "DIG",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "BIDE",
+            "FIRE_BLAST",
+            "SKULL_BASH",
+            "REST",
+            "SUBSTITUTE",
+            "STRENGTH"
+        ]
+    },
+    {
+        "pokemon_name": "MEOWTH",
+        "internal_id": "77",
+        "pokedex_id": "DEX_MEOWTH",
+        "stats": {
+            "hp": 40,
+            "atk": 45,
+            "def": 35,
+            "spd": 90,
+            "spc": 40
+        },
+        "types": [
+            "NORMAL",
+            "NORMAL"
+        ],
+        "catch_rate": 255,
+        "base_exp": 69,
+        "level_1_moves": [
+            "SCRATCH",
+            "GROWL"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "PAY_DAY",
+            "RAGE",
+            "THUNDERBOLT",
+            "THUNDER",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "BIDE",
+            "SWIFT",
+            "SKULL_BASH",
+            "REST",
+            "SUBSTITUTE"
+        ]
+    },
+    {
+        "pokemon_name": "METAPOD",
+        "internal_id": "124",
+        "pokedex_id": "DEX_METAPOD",
+        "stats": {
+            "hp": 50,
+            "atk": 20,
+            "def": 55,
+            "spd": 30,
+            "spc": 25
+        },
+        "types": [
+            "BUG",
+            "BUG"
+        ],
+        "catch_rate": 120,
+        "base_exp": 72,
+        "level_1_moves": [
+            "HARDEN"
+        ],
+        "growth_rate": "MEDIUM_FAST"
+    },
+    {
+        "pokemon_name": "MEW",
+        "internal_id": "21",
+        "pokedex_id": "DEX_MEW",
+        "stats": {
+            "hp": 100,
+            "atk": 100,
+            "def": 100,
+            "spd": 100,
+            "spc": 100
+        },
+        "types": [
+            "PSYCHIC",
+            "PSYCHIC"
+        ],
+        "catch_rate": 45,
+        "base_exp": 64,
+        "level_1_moves": [
+            "POUND"
+        ],
+        "growth_rate": "MEDIUM_SLOW",
+        "tmhm": [
+            "MEGA_PUNCH",
+            "RAZOR_WIND",
+            "SWORDS_DANCE",
+            "WHIRLWIND",
+            "MEGA_KICK",
+            "TOXIC",
+            "HORN_DRILL",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "ICE_BEAM",
+            "BLIZZARD",
+            "HYPER_BEAM",
+            "PAY_DAY",
+            "SUBMISSION",
+            "COUNTER",
+            "SEISMIC_TOSS",
+            "RAGE",
+            "MEGA_DRAIN",
+            "SOLARBEAM",
+            "DRAGON_RAGE",
+            "THUNDERBOLT",
+            "THUNDER",
+            "EARTHQUAKE",
+            "FISSURE",
+            "DIG",
+            "PSYCHIC_M",
+            "TELEPORT",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "METRONOME",
+            "SELFDESTRUCT",
+            "EGG_BOMB",
+            "FIRE_BLAST",
+            "SWIFT",
+            "SKULL_BASH",
+            "SOFTBOILED",
+            "DREAM_EATER",
+            "SKY_ATTACK",
+            "REST",
+            "THUNDER_WAVE",
+            "PSYWAVE",
+            "EXPLOSION",
+            "ROCK_SLIDE",
+            "TRI_ATTACK",
+            "SUBSTITUTE",
+            "CUT",
+            "FLY",
+            "SURF",
+            "STRENGTH",
+            "FLASH",
+            "UNUSED"
+        ]
+    },
+    {
+        "pokemon_name": "MEWTWO",
+        "internal_id": "131",
+        "pokedex_id": "DEX_MEWTWO",
+        "stats": {
+            "hp": 106,
+            "atk": 110,
+            "def": 90,
+            "spd": 130,
+            "spc": 154
+        },
+        "types": [
+            "PSYCHIC",
+            "PSYCHIC"
+        ],
+        "catch_rate": 3,
+        "base_exp": 220,
+        "level_1_moves": [
+            "CONFUSION",
+            "DISABLE",
+            "SWIFT",
+            "PSYCHIC_M"
+        ],
+        "growth_rate": "SLOW",
+        "tmhm": [
+            "MEGA_PUNCH",
+            "MEGA_KICK",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "ICE_BEAM",
+            "BLIZZARD",
+            "HYPER_BEAM",
+            "PAY_DAY",
+            "SUBMISSION",
+            "COUNTER",
+            "SEISMIC_TOSS",
+            "RAGE",
+            "SOLARBEAM",
+            "THUNDERBOLT",
+            "THUNDER",
+            "PSYCHIC_M",
+            "TELEPORT",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "METRONOME",
+            "SELFDESTRUCT",
+            "FIRE_BLAST",
+            "SKULL_BASH",
+            "REST",
+            "THUNDER_WAVE",
+            "PSYWAVE",
+            "TRI_ATTACK",
+            "SUBSTITUTE",
+            "STRENGTH",
+            "FLASH"
+        ]
+    },
+    {
+        "pokemon_name": "MOLTRES",
+        "internal_id": "73",
+        "pokedex_id": "DEX_MOLTRES",
+        "stats": {
+            "hp": 90,
+            "atk": 100,
+            "def": 90,
+            "spd": 90,
+            "spc": 125
+        },
+        "types": [
+            "FIRE",
+            "FLYING"
+        ],
+        "catch_rate": 3,
+        "base_exp": 217,
+        "level_1_moves": [
+            "PECK",
+            "FIRE_SPIN"
+        ],
+        "growth_rate": "SLOW",
+        "tmhm": [
+            "RAZOR_WIND",
+            "WHIRLWIND",
+            "TOXIC",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "HYPER_BEAM",
+            "RAGE",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "FIRE_BLAST",
+            "SWIFT",
+            "SKY_ATTACK",
+            "REST",
+            "SUBSTITUTE",
+            "FLY"
+        ]
+    },
+    {
+        "pokemon_name": "MRMIME",
+        "internal_id": null,
+        "pokedex_id": "DEX_MR_MIME",
+        "stats": {
+            "hp": 40,
+            "atk": 45,
+            "def": 65,
+            "spd": 90,
+            "spc": 100
+        },
+        "types": [
+            "PSYCHIC",
+            "PSYCHIC"
+        ],
+        "catch_rate": 45,
+        "base_exp": 136,
+        "level_1_moves": [
+            "CONFUSION",
+            "BARRIER"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "MEGA_PUNCH",
+            "MEGA_KICK",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "HYPER_BEAM",
+            "SUBMISSION",
+            "COUNTER",
+            "SEISMIC_TOSS",
+            "RAGE",
+            "SOLARBEAM",
+            "THUNDERBOLT",
+            "THUNDER",
+            "PSYCHIC_M",
+            "TELEPORT",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "METRONOME",
+            "SKULL_BASH",
+            "REST",
+            "THUNDER_WAVE",
+            "PSYWAVE",
+            "SUBSTITUTE",
+            "FLASH"
+        ]
+    },
+    {
+        "pokemon_name": "MUK",
+        "internal_id": "136",
+        "pokedex_id": "DEX_MUK",
+        "stats": {
+            "hp": 105,
+            "atk": 105,
+            "def": 75,
+            "spd": 50,
+            "spc": 65
+        },
+        "types": [
+            "POISON",
+            "POISON"
+        ],
+        "catch_rate": 75,
+        "base_exp": 157,
+        "level_1_moves": [
+            "POUND",
+            "DISABLE",
+            "POISON_GAS"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "TOXIC",
+            "BODY_SLAM",
+            "HYPER_BEAM",
+            "RAGE",
+            "MEGA_DRAIN",
+            "THUNDERBOLT",
+            "THUNDER",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "BIDE",
+            "SELFDESTRUCT",
+            "FIRE_BLAST",
+            "REST",
+            "EXPLOSION",
+            "SUBSTITUTE"
+        ]
+    },
+    {
+        "pokemon_name": "NIDOKING",
+        "internal_id": "7",
+        "pokedex_id": "DEX_NIDOKING",
+        "stats": {
+            "hp": 81,
+            "atk": 92,
+            "def": 77,
+            "spd": 85,
+            "spc": 75
+        },
+        "types": [
+            "POISON",
+            "GROUND"
+        ],
+        "catch_rate": 45,
+        "base_exp": 195,
+        "level_1_moves": [
+            "TACKLE",
+            "HORN_ATTACK",
+            "POISON_STING",
+            "THRASH"
+        ],
+        "growth_rate": "MEDIUM_SLOW",
+        "tmhm": [
+            "MEGA_PUNCH",
+            "MEGA_KICK",
+            "TOXIC",
+            "HORN_DRILL",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "ICE_BEAM",
+            "BLIZZARD",
+            "HYPER_BEAM",
+            "PAY_DAY",
+            "SUBMISSION",
+            "COUNTER",
+            "SEISMIC_TOSS",
+            "RAGE",
+            "THUNDERBOLT",
+            "THUNDER",
+            "EARTHQUAKE",
+            "FISSURE",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "FIRE_BLAST",
+            "SKULL_BASH",
+            "REST",
+            "ROCK_SLIDE",
+            "SUBSTITUTE",
+            "SURF",
+            "STRENGTH"
+        ]
+    },
+    {
+        "pokemon_name": "NIDOQUEEN",
+        "internal_id": "16",
+        "pokedex_id": "DEX_NIDOQUEEN",
+        "stats": {
+            "hp": 90,
+            "atk": 82,
+            "def": 87,
+            "spd": 76,
+            "spc": 75
+        },
+        "types": [
+            "POISON",
+            "GROUND"
+        ],
+        "catch_rate": 45,
+        "base_exp": 194,
+        "level_1_moves": [
+            "TACKLE",
+            "SCRATCH",
+            "TAIL_WHIP",
+            "BODY_SLAM"
+        ],
+        "growth_rate": "MEDIUM_SLOW",
+        "tmhm": [
+            "MEGA_PUNCH",
+            "MEGA_KICK",
+            "TOXIC",
+            "HORN_DRILL",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "ICE_BEAM",
+            "BLIZZARD",
+            "HYPER_BEAM",
+            "PAY_DAY",
+            "SUBMISSION",
+            "COUNTER",
+            "SEISMIC_TOSS",
+            "RAGE",
+            "THUNDERBOLT",
+            "THUNDER",
+            "EARTHQUAKE",
+            "FISSURE",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "FIRE_BLAST",
+            "SKULL_BASH",
+            "REST",
+            "ROCK_SLIDE",
+            "SUBSTITUTE",
+            "SURF",
+            "STRENGTH"
+        ]
+    },
+    {
+        "pokemon_name": "NIDORANF",
+        "internal_id": null,
+        "pokedex_id": "DEX_NIDORAN_F",
+        "stats": {
+            "hp": 55,
+            "atk": 47,
+            "def": 52,
+            "spd": 41,
+            "spc": 40
+        },
+        "types": [
+            "POISON",
+            "POISON"
+        ],
+        "catch_rate": 235,
+        "base_exp": 59,
+        "level_1_moves": [
+            "GROWL",
+            "TACKLE"
+        ],
+        "growth_rate": "MEDIUM_SLOW",
+        "tmhm": [
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BLIZZARD",
+            "RAGE",
+            "THUNDERBOLT",
+            "THUNDER",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "SKULL_BASH",
+            "REST",
+            "SUBSTITUTE"
+        ]
+    },
+    {
+        "pokemon_name": "NIDORANM",
+        "internal_id": null,
+        "pokedex_id": "DEX_NIDORAN_M",
+        "stats": {
+            "hp": 46,
+            "atk": 57,
+            "def": 40,
+            "spd": 50,
+            "spc": 40
+        },
+        "types": [
+            "POISON",
+            "POISON"
+        ],
+        "catch_rate": 235,
+        "base_exp": 60,
+        "level_1_moves": [
+            "LEER",
+            "TACKLE"
+        ],
+        "growth_rate": "MEDIUM_SLOW",
+        "tmhm": [
+            "TOXIC",
+            "HORN_DRILL",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BLIZZARD",
+            "RAGE",
+            "THUNDERBOLT",
+            "THUNDER",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "SKULL_BASH",
+            "REST",
+            "SUBSTITUTE"
+        ]
+    },
+    {
+        "pokemon_name": "NIDORINA",
+        "internal_id": "168",
+        "pokedex_id": "DEX_NIDORINA",
+        "stats": {
+            "hp": 70,
+            "atk": 62,
+            "def": 67,
+            "spd": 56,
+            "spc": 55
+        },
+        "types": [
+            "POISON",
+            "POISON"
+        ],
+        "catch_rate": 120,
+        "base_exp": 117,
+        "level_1_moves": [
+            "GROWL",
+            "TACKLE",
+            "SCRATCH"
+        ],
+        "growth_rate": "MEDIUM_SLOW",
+        "tmhm": [
+            "TOXIC",
+            "HORN_DRILL",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "ICE_BEAM",
+            "BLIZZARD",
+            "RAGE",
+            "THUNDERBOLT",
+            "THUNDER",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "SKULL_BASH",
+            "REST",
+            "SUBSTITUTE"
+        ]
+    },
+    {
+        "pokemon_name": "NIDORINO",
+        "internal_id": "167",
+        "pokedex_id": "DEX_NIDORINO",
+        "stats": {
+            "hp": 61,
+            "atk": 72,
+            "def": 57,
+            "spd": 65,
+            "spc": 55
+        },
+        "types": [
+            "POISON",
+            "POISON"
+        ],
+        "catch_rate": 120,
+        "base_exp": 118,
+        "level_1_moves": [
+            "LEER",
+            "TACKLE",
+            "HORN_ATTACK"
+        ],
+        "growth_rate": "MEDIUM_SLOW",
+        "tmhm": [
+            "TOXIC",
+            "HORN_DRILL",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "ICE_BEAM",
+            "BLIZZARD",
+            "RAGE",
+            "THUNDERBOLT",
+            "THUNDER",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "SKULL_BASH",
+            "REST",
+            "SUBSTITUTE"
+        ]
+    },
+    {
+        "pokemon_name": "NINETALES",
+        "internal_id": "83",
+        "pokedex_id": "DEX_NINETALES",
+        "stats": {
+            "hp": 73,
+            "atk": 76,
+            "def": 75,
+            "spd": 100,
+            "spc": 100
+        },
+        "types": [
+            "FIRE",
+            "FIRE"
+        ],
+        "catch_rate": 75,
+        "base_exp": 178,
+        "level_1_moves": [
+            "EMBER",
+            "TAIL_WHIP",
+            "QUICK_ATTACK",
+            "ROAR"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "HYPER_BEAM",
+            "RAGE",
+            "DIG",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "FIRE_BLAST",
+            "SWIFT",
+            "SKULL_BASH",
+            "REST",
+            "SUBSTITUTE"
+        ]
+    },
+    {
+        "pokemon_name": "ODDISH",
+        "internal_id": "185",
+        "pokedex_id": "DEX_ODDISH",
+        "stats": {
+            "hp": 45,
+            "atk": 50,
+            "def": 55,
+            "spd": 30,
+            "spc": 75
+        },
+        "types": [
+            "GRASS",
+            "POISON"
+        ],
+        "catch_rate": 255,
+        "base_exp": 78,
+        "level_1_moves": [
+            "ABSORB"
+        ],
+        "growth_rate": "MEDIUM_SLOW",
+        "tmhm": [
+            "SWORDS_DANCE",
+            "TOXIC",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "RAGE",
+            "MEGA_DRAIN",
+            "SOLARBEAM",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "REST",
+            "SUBSTITUTE",
+            "CUT"
+        ]
+    },
+    {
+        "pokemon_name": "OMANYTE",
+        "internal_id": "98",
+        "pokedex_id": "DEX_OMANYTE",
+        "stats": {
+            "hp": 35,
+            "atk": 40,
+            "def": 100,
+            "spd": 35,
+            "spc": 90
+        },
+        "types": [
+            "ROCK",
+            "WATER"
+        ],
+        "catch_rate": 45,
+        "base_exp": 120,
+        "level_1_moves": [
+            "WATER_GUN",
+            "WITHDRAW"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "ICE_BEAM",
+            "BLIZZARD",
+            "RAGE",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "REST",
+            "SUBSTITUTE",
+            "SURF"
+        ]
+    },
+    {
+        "pokemon_name": "OMASTAR",
+        "internal_id": "99",
+        "pokedex_id": "DEX_OMASTAR",
+        "stats": {
+            "hp": 70,
+            "atk": 60,
+            "def": 125,
+            "spd": 55,
+            "spc": 115
+        },
+        "types": [
+            "ROCK",
+            "WATER"
+        ],
+        "catch_rate": 45,
+        "base_exp": 199,
+        "level_1_moves": [
+            "WATER_GUN",
+            "WITHDRAW",
+            "HORN_ATTACK"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "TOXIC",
+            "HORN_DRILL",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "ICE_BEAM",
+            "BLIZZARD",
+            "HYPER_BEAM",
+            "SUBMISSION",
+            "SEISMIC_TOSS",
+            "RAGE",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "SKULL_BASH",
+            "REST",
+            "SUBSTITUTE",
+            "SURF"
+        ]
+    },
+    {
+        "pokemon_name": "ONIX",
+        "internal_id": "34",
+        "pokedex_id": "DEX_ONIX",
+        "stats": {
+            "hp": 35,
+            "atk": 45,
+            "def": 160,
+            "spd": 70,
+            "spc": 30
+        },
+        "types": [
+            "ROCK",
+            "GROUND"
+        ],
+        "catch_rate": 45,
+        "base_exp": 108,
+        "level_1_moves": [
+            "TACKLE",
+            "SCREECH"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "RAGE",
+            "EARTHQUAKE",
+            "FISSURE",
+            "DIG",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "BIDE",
+            "SELFDESTRUCT",
+            "SKULL_BASH",
+            "REST",
+            "EXPLOSION",
+            "ROCK_SLIDE",
+            "SUBSTITUTE",
+            "STRENGTH"
+        ]
+    },
+    {
+        "pokemon_name": "PARAS",
+        "internal_id": "109",
+        "pokedex_id": "DEX_PARAS",
+        "stats": {
+            "hp": 35,
+            "atk": 70,
+            "def": 55,
+            "spd": 25,
+            "spc": 55
+        },
+        "types": [
+            "BUG",
+            "GRASS"
+        ],
+        "catch_rate": 190,
+        "base_exp": 70,
+        "level_1_moves": [
+            "SCRATCH"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "SWORDS_DANCE",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "RAGE",
+            "MEGA_DRAIN",
+            "SOLARBEAM",
+            "DIG",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "SKULL_BASH",
+            "REST",
+            "SUBSTITUTE",
+            "CUT"
+        ]
+    },
+    {
+        "pokemon_name": "PARASECT",
+        "internal_id": "46",
+        "pokedex_id": "DEX_PARASECT",
+        "stats": {
+            "hp": 60,
+            "atk": 95,
+            "def": 80,
+            "spd": 30,
+            "spc": 80
+        },
+        "types": [
+            "BUG",
+            "GRASS"
+        ],
+        "catch_rate": 75,
+        "base_exp": 128,
+        "level_1_moves": [
+            "SCRATCH",
+            "STUN_SPORE",
+            "LEECH_LIFE"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "SWORDS_DANCE",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "HYPER_BEAM",
+            "RAGE",
+            "MEGA_DRAIN",
+            "SOLARBEAM",
+            "DIG",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "SKULL_BASH",
+            "REST",
+            "SUBSTITUTE",
+            "CUT"
+        ]
+    },
+    {
+        "pokemon_name": "PERSIAN",
+        "internal_id": "144",
+        "pokedex_id": "DEX_PERSIAN",
+        "stats": {
+            "hp": 65,
+            "atk": 70,
+            "def": 60,
+            "spd": 115,
+            "spc": 65
+        },
+        "types": [
+            "NORMAL",
+            "NORMAL"
+        ],
+        "catch_rate": 90,
+        "base_exp": 148,
+        "level_1_moves": [
+            "SCRATCH",
+            "GROWL",
+            "BITE",
+            "SCREECH"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "HYPER_BEAM",
+            "PAY_DAY",
+            "RAGE",
+            "THUNDERBOLT",
+            "THUNDER",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "BIDE",
+            "SWIFT",
+            "SKULL_BASH",
+            "REST",
+            "SUBSTITUTE"
+        ]
+    },
+    {
+        "pokemon_name": "PIDGEOT",
+        "internal_id": "151",
+        "pokedex_id": "DEX_PIDGEOT",
+        "stats": {
+            "hp": 83,
+            "atk": 80,
+            "def": 75,
+            "spd": 91,
+            "spc": 70
+        },
+        "types": [
+            "NORMAL",
+            "FLYING"
+        ],
+        "catch_rate": 45,
+        "base_exp": 172,
+        "level_1_moves": [
+            "GUST",
+            "SAND_ATTACK",
+            "QUICK_ATTACK"
+        ],
+        "growth_rate": "MEDIUM_SLOW",
+        "tmhm": [
+            "RAZOR_WIND",
+            "WHIRLWIND",
+            "TOXIC",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "HYPER_BEAM",
+            "RAGE",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "SWIFT",
+            "SKY_ATTACK",
+            "REST",
+            "SUBSTITUTE",
+            "FLY"
+        ]
+    },
+    {
+        "pokemon_name": "PIDGEOTTO",
+        "internal_id": "150",
+        "pokedex_id": "DEX_PIDGEOTTO",
+        "stats": {
+            "hp": 63,
+            "atk": 60,
+            "def": 55,
+            "spd": 71,
+            "spc": 50
+        },
+        "types": [
+            "NORMAL",
+            "FLYING"
+        ],
+        "catch_rate": 120,
+        "base_exp": 113,
+        "level_1_moves": [
+            "GUST",
+            "SAND_ATTACK"
+        ],
+        "growth_rate": "MEDIUM_SLOW",
+        "tmhm": [
+            "RAZOR_WIND",
+            "WHIRLWIND",
+            "TOXIC",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "RAGE",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "SWIFT",
+            "SKY_ATTACK",
+            "REST",
+            "SUBSTITUTE",
+            "FLY"
+        ]
+    },
+    {
+        "pokemon_name": "PIDGEY",
+        "internal_id": "36",
+        "pokedex_id": "DEX_PIDGEY",
+        "stats": {
+            "hp": 40,
+            "atk": 45,
+            "def": 40,
+            "spd": 56,
+            "spc": 35
+        },
+        "types": [
+            "NORMAL",
+            "FLYING"
+        ],
+        "catch_rate": 255,
+        "base_exp": 55,
+        "level_1_moves": [
+            "GUST"
+        ],
+        "growth_rate": "MEDIUM_SLOW",
+        "tmhm": [
+            "RAZOR_WIND",
+            "WHIRLWIND",
+            "TOXIC",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "RAGE",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "SWIFT",
+            "SKY_ATTACK",
+            "REST",
+            "SUBSTITUTE",
+            "FLY"
+        ]
+    },
+    {
+        "pokemon_name": "PIKACHU",
+        "internal_id": "84",
+        "pokedex_id": "DEX_PIKACHU",
+        "stats": {
+            "hp": 35,
+            "atk": 55,
+            "def": 30,
+            "spd": 90,
+            "spc": 50
+        },
+        "types": [
+            "ELECTRIC",
+            "ELECTRIC"
+        ],
+        "catch_rate": 190,
+        "base_exp": 82,
+        "level_1_moves": [
+            "THUNDERSHOCK",
+            "GROWL"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "MEGA_PUNCH",
+            "MEGA_KICK",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "PAY_DAY",
+            "SUBMISSION",
+            "SEISMIC_TOSS",
+            "RAGE",
+            "THUNDERBOLT",
+            "THUNDER",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "SWIFT",
+            "SKULL_BASH",
+            "REST",
+            "THUNDER_WAVE",
+            "SUBSTITUTE",
+            "FLASH"
+        ]
+    },
+    {
+        "pokemon_name": "PINSIR",
+        "internal_id": "29",
+        "pokedex_id": "DEX_PINSIR",
+        "stats": {
+            "hp": 65,
+            "atk": 125,
+            "def": 100,
+            "spd": 85,
+            "spc": 55
+        },
+        "types": [
+            "BUG",
+            "BUG"
+        ],
+        "catch_rate": 45,
+        "base_exp": 200,
+        "level_1_moves": [
+            "VICEGRIP"
+        ],
+        "growth_rate": "SLOW",
+        "tmhm": [
+            "SWORDS_DANCE",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "HYPER_BEAM",
+            "SUBMISSION",
+            "SEISMIC_TOSS",
+            "RAGE",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "BIDE",
+            "REST",
+            "SUBSTITUTE",
+            "CUT",
+            "STRENGTH"
+        ]
+    },
+    {
+        "pokemon_name": "POLIWAG",
+        "internal_id": "71",
+        "pokedex_id": "DEX_POLIWAG",
+        "stats": {
+            "hp": 40,
+            "atk": 50,
+            "def": 40,
+            "spd": 90,
+            "spc": 40
+        },
+        "types": [
+            "WATER",
+            "WATER"
+        ],
+        "catch_rate": 255,
+        "base_exp": 77,
+        "level_1_moves": [
+            "BUBBLE"
+        ],
+        "growth_rate": "MEDIUM_SLOW",
+        "tmhm": [
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "ICE_BEAM",
+            "BLIZZARD",
+            "RAGE",
+            "PSYCHIC_M",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "BIDE",
+            "SKULL_BASH",
+            "REST",
+            "PSYWAVE",
+            "SUBSTITUTE",
+            "SURF"
+        ]
+    },
+    {
+        "pokemon_name": "POLIWHIRL",
+        "internal_id": "110",
+        "pokedex_id": "DEX_POLIWHIRL",
+        "stats": {
+            "hp": 65,
+            "atk": 65,
+            "def": 65,
+            "spd": 90,
+            "spc": 50
+        },
+        "types": [
+            "WATER",
+            "WATER"
+        ],
+        "catch_rate": 120,
+        "base_exp": 131,
+        "level_1_moves": [
+            "BUBBLE",
+            "HYPNOSIS",
+            "WATER_GUN"
+        ],
+        "growth_rate": "MEDIUM_SLOW",
+        "tmhm": [
+            "MEGA_PUNCH",
+            "MEGA_KICK",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "ICE_BEAM",
+            "BLIZZARD",
+            "SUBMISSION",
+            "COUNTER",
+            "SEISMIC_TOSS",
+            "RAGE",
+            "EARTHQUAKE",
+            "FISSURE",
+            "PSYCHIC_M",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "BIDE",
+            "METRONOME",
+            "SKULL_BASH",
+            "REST",
+            "PSYWAVE",
+            "SUBSTITUTE",
+            "SURF",
+            "STRENGTH"
+        ]
+    },
+    {
+        "pokemon_name": "POLIWRATH",
+        "internal_id": "111",
+        "pokedex_id": "DEX_POLIWRATH",
+        "stats": {
+            "hp": 90,
+            "atk": 85,
+            "def": 95,
+            "spd": 70,
+            "spc": 70
+        },
+        "types": [
+            "WATER",
+            "FIGHTING"
+        ],
+        "catch_rate": 45,
+        "base_exp": 185,
+        "level_1_moves": [
+            "HYPNOSIS",
+            "WATER_GUN",
+            "DOUBLESLAP",
+            "BODY_SLAM"
+        ],
+        "growth_rate": "MEDIUM_SLOW",
+        "tmhm": [
+            "MEGA_PUNCH",
+            "MEGA_KICK",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "ICE_BEAM",
+            "BLIZZARD",
+            "HYPER_BEAM",
+            "SUBMISSION",
+            "COUNTER",
+            "SEISMIC_TOSS",
+            "RAGE",
+            "EARTHQUAKE",
+            "FISSURE",
+            "PSYCHIC_M",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "BIDE",
+            "METRONOME",
+            "SKULL_BASH",
+            "REST",
+            "PSYWAVE",
+            "SUBSTITUTE",
+            "SURF",
+            "STRENGTH"
+        ]
+    },
+    {
+        "pokemon_name": "PONYTA",
+        "internal_id": "163",
+        "pokedex_id": "DEX_PONYTA",
+        "stats": {
+            "hp": 50,
+            "atk": 85,
+            "def": 55,
+            "spd": 90,
+            "spc": 65
+        },
+        "types": [
+            "FIRE",
+            "FIRE"
+        ],
+        "catch_rate": 190,
+        "base_exp": 152,
+        "level_1_moves": [
+            "EMBER"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "TOXIC",
+            "HORN_DRILL",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "RAGE",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "FIRE_BLAST",
+            "SWIFT",
+            "SKULL_BASH",
+            "REST",
+            "SUBSTITUTE"
+        ]
+    },
+    {
+        "pokemon_name": "PORYGON",
+        "internal_id": "170",
+        "pokedex_id": "DEX_PORYGON",
+        "stats": {
+            "hp": 65,
+            "atk": 60,
+            "def": 70,
+            "spd": 40,
+            "spc": 75
+        },
+        "types": [
+            "NORMAL",
+            "NORMAL"
+        ],
+        "catch_rate": 45,
+        "base_exp": 130,
+        "level_1_moves": [
+            "TACKLE",
+            "SHARPEN",
+            "CONVERSION"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "TOXIC",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "ICE_BEAM",
+            "BLIZZARD",
+            "HYPER_BEAM",
+            "RAGE",
+            "THUNDERBOLT",
+            "THUNDER",
+            "PSYCHIC_M",
+            "TELEPORT",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "SWIFT",
+            "SKULL_BASH",
+            "REST",
+            "THUNDER_WAVE",
+            "PSYWAVE",
+            "TRI_ATTACK",
+            "SUBSTITUTE",
+            "FLASH"
+        ]
+    },
+    {
+        "pokemon_name": "PRIMEAPE",
+        "internal_id": "117",
+        "pokedex_id": "DEX_PRIMEAPE",
+        "stats": {
+            "hp": 65,
+            "atk": 105,
+            "def": 60,
+            "spd": 95,
+            "spc": 60
+        },
+        "types": [
+            "FIGHTING",
+            "FIGHTING"
+        ],
+        "catch_rate": 75,
+        "base_exp": 149,
+        "level_1_moves": [
+            "SCRATCH",
+            "LEER",
+            "KARATE_CHOP",
+            "FURY_SWIPES"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "MEGA_PUNCH",
+            "MEGA_KICK",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "HYPER_BEAM",
+            "PAY_DAY",
+            "SUBMISSION",
+            "COUNTER",
+            "SEISMIC_TOSS",
+            "RAGE",
+            "THUNDERBOLT",
+            "THUNDER",
+            "DIG",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "BIDE",
+            "METRONOME",
+            "SWIFT",
+            "SKULL_BASH",
+            "REST",
+            "ROCK_SLIDE",
+            "SUBSTITUTE",
+            "STRENGTH"
+        ]
+    },
+    {
+        "pokemon_name": "PSYDUCK",
+        "internal_id": "47",
+        "pokedex_id": "DEX_PSYDUCK",
+        "stats": {
+            "hp": 50,
+            "atk": 52,
+            "def": 48,
+            "spd": 55,
+            "spc": 50
+        },
+        "types": [
+            "WATER",
+            "WATER"
+        ],
+        "catch_rate": 190,
+        "base_exp": 80,
+        "level_1_moves": [
+            "SCRATCH"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "MEGA_PUNCH",
+            "MEGA_KICK",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "ICE_BEAM",
+            "BLIZZARD",
+            "PAY_DAY",
+            "SUBMISSION",
+            "COUNTER",
+            "SEISMIC_TOSS",
+            "RAGE",
+            "DIG",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "BIDE",
+            "SWIFT",
+            "SKULL_BASH",
+            "REST",
+            "SUBSTITUTE",
+            "SURF",
+            "STRENGTH"
+        ]
+    },
+    {
+        "pokemon_name": "RAICHU",
+        "internal_id": "85",
+        "pokedex_id": "DEX_RAICHU",
+        "stats": {
+            "hp": 60,
+            "atk": 90,
+            "def": 55,
+            "spd": 100,
+            "spc": 90
+        },
+        "types": [
+            "ELECTRIC",
+            "ELECTRIC"
+        ],
+        "catch_rate": 75,
+        "base_exp": 122,
+        "level_1_moves": [
+            "THUNDERSHOCK",
+            "GROWL",
+            "THUNDER_WAVE"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "MEGA_PUNCH",
+            "MEGA_KICK",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "HYPER_BEAM",
+            "PAY_DAY",
+            "SUBMISSION",
+            "SEISMIC_TOSS",
+            "RAGE",
+            "THUNDERBOLT",
+            "THUNDER",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "SWIFT",
+            "SKULL_BASH",
+            "REST",
+            "THUNDER_WAVE",
+            "SUBSTITUTE",
+            "FLASH"
+        ]
+    },
+    {
+        "pokemon_name": "RAPIDASH",
+        "internal_id": "164",
+        "pokedex_id": "DEX_RAPIDASH",
+        "stats": {
+            "hp": 65,
+            "atk": 100,
+            "def": 70,
+            "spd": 105,
+            "spc": 80
+        },
+        "types": [
+            "FIRE",
+            "FIRE"
+        ],
+        "catch_rate": 60,
+        "base_exp": 192,
+        "level_1_moves": [
+            "EMBER",
+            "TAIL_WHIP",
+            "STOMP",
+            "GROWL"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "TOXIC",
+            "HORN_DRILL",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "HYPER_BEAM",
+            "RAGE",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "FIRE_BLAST",
+            "SWIFT",
+            "SKULL_BASH",
+            "REST",
+            "SUBSTITUTE"
+        ]
+    },
+    {
+        "pokemon_name": "RATICATE",
+        "internal_id": "166",
+        "pokedex_id": "DEX_RATICATE",
+        "stats": {
+            "hp": 55,
+            "atk": 81,
+            "def": 60,
+            "spd": 97,
+            "spc": 50
+        },
+        "types": [
+            "NORMAL",
+            "NORMAL"
+        ],
+        "catch_rate": 90,
+        "base_exp": 116,
+        "level_1_moves": [
+            "TACKLE",
+            "TAIL_WHIP",
+            "QUICK_ATTACK"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "ICE_BEAM",
+            "BLIZZARD",
+            "HYPER_BEAM",
+            "RAGE",
+            "THUNDERBOLT",
+            "THUNDER",
+            "DIG",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "BIDE",
+            "SWIFT",
+            "SKULL_BASH",
+            "REST",
+            "SUBSTITUTE"
+        ]
+    },
+    {
+        "pokemon_name": "RATTATA",
+        "internal_id": "165",
+        "pokedex_id": "DEX_RATTATA",
+        "stats": {
+            "hp": 30,
+            "atk": 56,
+            "def": 35,
+            "spd": 72,
+            "spc": 25
+        },
+        "types": [
+            "NORMAL",
+            "NORMAL"
+        ],
+        "catch_rate": 255,
+        "base_exp": 57,
+        "level_1_moves": [
+            "TACKLE",
+            "TAIL_WHIP"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "BLIZZARD",
+            "RAGE",
+            "THUNDERBOLT",
+            "THUNDER",
+            "DIG",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "BIDE",
+            "SWIFT",
+            "SKULL_BASH",
+            "REST",
+            "SUBSTITUTE"
+        ]
+    },
+    {
+        "pokemon_name": "RHYDON",
+        "internal_id": "1",
+        "pokedex_id": "DEX_RHYDON",
+        "stats": {
+            "hp": 105,
+            "atk": 130,
+            "def": 120,
+            "spd": 40,
+            "spc": 45
+        },
+        "types": [
+            "GROUND",
+            "ROCK"
+        ],
+        "catch_rate": 60,
+        "base_exp": 204,
+        "level_1_moves": [
+            "HORN_ATTACK",
+            "STOMP",
+            "TAIL_WHIP",
+            "FURY_ATTACK"
+        ],
+        "growth_rate": "SLOW",
+        "tmhm": [
+            "MEGA_PUNCH",
+            "MEGA_KICK",
+            "TOXIC",
+            "HORN_DRILL",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "ICE_BEAM",
+            "BLIZZARD",
+            "HYPER_BEAM",
+            "PAY_DAY",
+            "SUBMISSION",
+            "COUNTER",
+            "SEISMIC_TOSS",
+            "RAGE",
+            "THUNDERBOLT",
+            "THUNDER",
+            "EARTHQUAKE",
+            "FISSURE",
+            "DIG",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "BIDE",
+            "FIRE_BLAST",
+            "SKULL_BASH",
+            "REST",
+            "ROCK_SLIDE",
+            "SUBSTITUTE",
+            "SURF",
+            "STRENGTH"
+        ]
+    },
+    {
+        "pokemon_name": "RHYHORN",
+        "internal_id": "18",
+        "pokedex_id": "DEX_RHYHORN",
+        "stats": {
+            "hp": 80,
+            "atk": 85,
+            "def": 95,
+            "spd": 25,
+            "spc": 30
+        },
+        "types": [
+            "GROUND",
+            "ROCK"
+        ],
+        "catch_rate": 120,
+        "base_exp": 135,
+        "level_1_moves": [
+            "HORN_ATTACK"
+        ],
+        "growth_rate": "SLOW",
+        "tmhm": [
+            "TOXIC",
+            "HORN_DRILL",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "RAGE",
+            "THUNDERBOLT",
+            "THUNDER",
+            "EARTHQUAKE",
+            "FISSURE",
+            "DIG",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "BIDE",
+            "FIRE_BLAST",
+            "SKULL_BASH",
+            "REST",
+            "ROCK_SLIDE",
+            "SUBSTITUTE",
+            "STRENGTH"
+        ]
+    },
+    {
+        "pokemon_name": "SANDSHREW",
+        "internal_id": "96",
+        "pokedex_id": "DEX_SANDSHREW",
+        "stats": {
+            "hp": 50,
+            "atk": 75,
+            "def": 85,
+            "spd": 40,
+            "spc": 30
+        },
+        "types": [
+            "GROUND",
+            "GROUND"
+        ],
+        "catch_rate": 255,
+        "base_exp": 93,
+        "level_1_moves": [
+            "SCRATCH"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "SWORDS_DANCE",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "SUBMISSION",
+            "SEISMIC_TOSS",
+            "RAGE",
+            "EARTHQUAKE",
+            "FISSURE",
+            "DIG",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "BIDE",
+            "SWIFT",
+            "SKULL_BASH",
+            "REST",
+            "ROCK_SLIDE",
+            "SUBSTITUTE",
+            "CUT",
+            "STRENGTH"
+        ]
+    },
+    {
+        "pokemon_name": "SANDSLASH",
+        "internal_id": "97",
+        "pokedex_id": "DEX_SANDSLASH",
+        "stats": {
+            "hp": 75,
+            "atk": 100,
+            "def": 110,
+            "spd": 65,
+            "spc": 55
+        },
+        "types": [
+            "GROUND",
+            "GROUND"
+        ],
+        "catch_rate": 90,
+        "base_exp": 163,
+        "level_1_moves": [
+            "SCRATCH",
+            "SAND_ATTACK"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "SWORDS_DANCE",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "HYPER_BEAM",
+            "SUBMISSION",
+            "SEISMIC_TOSS",
+            "RAGE",
+            "EARTHQUAKE",
+            "FISSURE",
+            "DIG",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "BIDE",
+            "SWIFT",
+            "SKULL_BASH",
+            "REST",
+            "ROCK_SLIDE",
+            "SUBSTITUTE",
+            "CUT",
+            "STRENGTH"
+        ]
+    },
+    {
+        "pokemon_name": "SCYTHER",
+        "internal_id": "26",
+        "pokedex_id": "DEX_SCYTHER",
+        "stats": {
+            "hp": 70,
+            "atk": 110,
+            "def": 80,
+            "spd": 105,
+            "spc": 55
+        },
+        "types": [
+            "BUG",
+            "FLYING"
+        ],
+        "catch_rate": 45,
+        "base_exp": 187,
+        "level_1_moves": [
+            "QUICK_ATTACK"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "SWORDS_DANCE",
+            "TOXIC",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "HYPER_BEAM",
+            "RAGE",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "BIDE",
+            "SWIFT",
+            "SKULL_BASH",
+            "REST",
+            "SUBSTITUTE",
+            "CUT"
+        ]
+    },
+    {
+        "pokemon_name": "SEADRA",
+        "internal_id": "93",
+        "pokedex_id": "DEX_SEADRA",
+        "stats": {
+            "hp": 55,
+            "atk": 65,
+            "def": 95,
+            "spd": 85,
+            "spc": 95
+        },
+        "types": [
+            "WATER",
+            "WATER"
+        ],
+        "catch_rate": 75,
+        "base_exp": 155,
+        "level_1_moves": [
+            "BUBBLE",
+            "SMOKESCREEN"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "TOXIC",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "ICE_BEAM",
+            "BLIZZARD",
+            "HYPER_BEAM",
+            "RAGE",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "BIDE",
+            "SWIFT",
+            "SKULL_BASH",
+            "REST",
+            "SUBSTITUTE",
+            "SURF"
+        ]
+    },
+    {
+        "pokemon_name": "SEAKING",
+        "internal_id": "158",
+        "pokedex_id": "DEX_SEAKING",
+        "stats": {
+            "hp": 80,
+            "atk": 92,
+            "def": 65,
+            "spd": 68,
+            "spc": 80
+        },
+        "types": [
+            "WATER",
+            "WATER"
+        ],
+        "catch_rate": 60,
+        "base_exp": 170,
+        "level_1_moves": [
+            "PECK",
+            "TAIL_WHIP",
+            "SUPERSONIC"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "TOXIC",
+            "HORN_DRILL",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "ICE_BEAM",
+            "BLIZZARD",
+            "HYPER_BEAM",
+            "RAGE",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "BIDE",
+            "SWIFT",
+            "SKULL_BASH",
+            "REST",
+            "SUBSTITUTE",
+            "SURF"
+        ]
+    },
+    {
+        "pokemon_name": "SEEL",
+        "internal_id": "58",
+        "pokedex_id": "DEX_SEEL",
+        "stats": {
+            "hp": 65,
+            "atk": 45,
+            "def": 55,
+            "spd": 45,
+            "spc": 70
+        },
+        "types": [
+            "WATER",
+            "WATER"
+        ],
+        "catch_rate": 190,
+        "base_exp": 100,
+        "level_1_moves": [
+            "HEADBUTT"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "TOXIC",
+            "HORN_DRILL",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "ICE_BEAM",
+            "BLIZZARD",
+            "PAY_DAY",
+            "RAGE",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "BIDE",
+            "SKULL_BASH",
+            "REST",
+            "SUBSTITUTE",
+            "SURF",
+            "STRENGTH"
+        ]
+    },
+    {
+        "pokemon_name": "SHELLDER",
+        "internal_id": "23",
+        "pokedex_id": "DEX_SHELLDER",
+        "stats": {
+            "hp": 30,
+            "atk": 65,
+            "def": 100,
+            "spd": 40,
+            "spc": 45
+        },
+        "types": [
+            "WATER",
+            "WATER"
+        ],
+        "catch_rate": 190,
+        "base_exp": 97,
+        "level_1_moves": [
+            "TACKLE",
+            "WITHDRAW"
+        ],
+        "growth_rate": "SLOW",
+        "tmhm": [
+            "TOXIC",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "ICE_BEAM",
+            "BLIZZARD",
+            "RAGE",
+            "TELEPORT",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "SELFDESTRUCT",
+            "SWIFT",
+            "REST",
+            "EXPLOSION",
+            "TRI_ATTACK",
+            "SUBSTITUTE",
+            "SURF"
+        ]
+    },
+    {
+        "pokemon_name": "SLOWBRO",
+        "internal_id": "8",
+        "pokedex_id": "DEX_SLOWBRO",
+        "stats": {
+            "hp": 95,
+            "atk": 75,
+            "def": 110,
+            "spd": 30,
+            "spc": 80
+        },
+        "types": [
+            "WATER",
+            "PSYCHIC"
+        ],
+        "catch_rate": 75,
+        "base_exp": 164,
+        "level_1_moves": [
+            "CONFUSION",
+            "DISABLE",
+            "HEADBUTT"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "MEGA_PUNCH",
+            "MEGA_KICK",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "ICE_BEAM",
+            "BLIZZARD",
+            "HYPER_BEAM",
+            "PAY_DAY",
+            "SUBMISSION",
+            "COUNTER",
+            "SEISMIC_TOSS",
+            "RAGE",
+            "EARTHQUAKE",
+            "FISSURE",
+            "DIG",
+            "PSYCHIC_M",
+            "TELEPORT",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "FIRE_BLAST",
+            "SWIFT",
+            "SKULL_BASH",
+            "REST",
+            "THUNDER_WAVE",
+            "PSYWAVE",
+            "TRI_ATTACK",
+            "SUBSTITUTE",
+            "SURF",
+            "STRENGTH",
+            "FLASH"
+        ]
+    },
+    {
+        "pokemon_name": "SLOWPOKE",
+        "internal_id": "37",
+        "pokedex_id": "DEX_SLOWPOKE",
+        "stats": {
+            "hp": 90,
+            "atk": 65,
+            "def": 65,
+            "spd": 15,
+            "spc": 40
+        },
+        "types": [
+            "WATER",
+            "PSYCHIC"
+        ],
+        "catch_rate": 190,
+        "base_exp": 99,
+        "level_1_moves": [
+            "CONFUSION"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "ICE_BEAM",
+            "BLIZZARD",
+            "PAY_DAY",
+            "RAGE",
+            "EARTHQUAKE",
+            "FISSURE",
+            "DIG",
+            "PSYCHIC_M",
+            "TELEPORT",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "FIRE_BLAST",
+            "SWIFT",
+            "SKULL_BASH",
+            "REST",
+            "THUNDER_WAVE",
+            "PSYWAVE",
+            "TRI_ATTACK",
+            "SUBSTITUTE",
+            "SURF",
+            "STRENGTH",
+            "FLASH"
+        ]
+    },
+    {
+        "pokemon_name": "SNORLAX",
+        "internal_id": "132",
+        "pokedex_id": "DEX_SNORLAX",
+        "stats": {
+            "hp": 160,
+            "atk": 110,
+            "def": 65,
+            "spd": 30,
+            "spc": 65
+        },
+        "types": [
+            "NORMAL",
+            "NORMAL"
+        ],
+        "catch_rate": 25,
+        "base_exp": 154,
+        "level_1_moves": [
+            "HEADBUTT",
+            "AMNESIA",
+            "REST"
+        ],
+        "growth_rate": "SLOW",
+        "tmhm": [
+            "MEGA_PUNCH",
+            "MEGA_KICK",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "ICE_BEAM",
+            "BLIZZARD",
+            "HYPER_BEAM",
+            "PAY_DAY",
+            "SUBMISSION",
+            "COUNTER",
+            "SEISMIC_TOSS",
+            "RAGE",
+            "SOLARBEAM",
+            "THUNDERBOLT",
+            "THUNDER",
+            "EARTHQUAKE",
+            "FISSURE",
+            "PSYCHIC_M",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "METRONOME",
+            "SELFDESTRUCT",
+            "FIRE_BLAST",
+            "SKULL_BASH",
+            "REST",
+            "PSYWAVE",
+            "ROCK_SLIDE",
+            "SUBSTITUTE",
+            "SURF",
+            "STRENGTH"
+        ]
+    },
+    {
+        "pokemon_name": "SPEAROW",
+        "internal_id": "5",
+        "pokedex_id": "DEX_SPEAROW",
+        "stats": {
+            "hp": 40,
+            "atk": 60,
+            "def": 30,
+            "spd": 70,
+            "spc": 31
+        },
+        "types": [
+            "NORMAL",
+            "FLYING"
+        ],
+        "catch_rate": 255,
+        "base_exp": 58,
+        "level_1_moves": [
+            "PECK",
+            "GROWL"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "RAZOR_WIND",
+            "WHIRLWIND",
+            "TOXIC",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "RAGE",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "BIDE",
+            "SWIFT",
+            "SKY_ATTACK",
+            "REST",
+            "SUBSTITUTE",
+            "FLY"
+        ]
+    },
+    {
+        "pokemon_name": "SQUIRTLE",
+        "internal_id": "177",
+        "pokedex_id": "DEX_SQUIRTLE",
+        "stats": {
+            "hp": 44,
+            "atk": 48,
+            "def": 65,
+            "spd": 43,
+            "spc": 50
+        },
+        "types": [
+            "WATER",
+            "WATER"
+        ],
+        "catch_rate": 45,
+        "base_exp": 66,
+        "level_1_moves": [
+            "TACKLE",
+            "TAIL_WHIP"
+        ],
+        "growth_rate": "MEDIUM_SLOW",
+        "tmhm": [
+            "MEGA_PUNCH",
+            "MEGA_KICK",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "ICE_BEAM",
+            "BLIZZARD",
+            "SUBMISSION",
+            "COUNTER",
+            "SEISMIC_TOSS",
+            "RAGE",
+            "DIG",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "SKULL_BASH",
+            "REST",
+            "SUBSTITUTE",
+            "SURF",
+            "STRENGTH"
+        ]
+    },
+    {
+        "pokemon_name": "STARMIE",
+        "internal_id": "152",
+        "pokedex_id": "DEX_STARMIE",
+        "stats": {
+            "hp": 60,
+            "atk": 75,
+            "def": 85,
+            "spd": 115,
+            "spc": 100
+        },
+        "types": [
+            "WATER",
+            "PSYCHIC"
+        ],
+        "catch_rate": 60,
+        "base_exp": 207,
+        "level_1_moves": [
+            "TACKLE",
+            "WATER_GUN",
+            "HARDEN"
+        ],
+        "growth_rate": "SLOW",
+        "tmhm": [
+            "TOXIC",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "ICE_BEAM",
+            "BLIZZARD",
+            "HYPER_BEAM",
+            "RAGE",
+            "THUNDERBOLT",
+            "THUNDER",
+            "PSYCHIC_M",
+            "TELEPORT",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "SWIFT",
+            "SKULL_BASH",
+            "REST",
+            "THUNDER_WAVE",
+            "PSYWAVE",
+            "TRI_ATTACK",
+            "SUBSTITUTE",
+            "SURF",
+            "FLASH"
+        ]
+    },
+    {
+        "pokemon_name": "STARYU",
+        "internal_id": "27",
+        "pokedex_id": "DEX_STARYU",
+        "stats": {
+            "hp": 30,
+            "atk": 45,
+            "def": 55,
+            "spd": 85,
+            "spc": 70
+        },
+        "types": [
+            "WATER",
+            "WATER"
+        ],
+        "catch_rate": 225,
+        "base_exp": 106,
+        "level_1_moves": [
+            "TACKLE"
+        ],
+        "growth_rate": "SLOW",
+        "tmhm": [
+            "TOXIC",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "ICE_BEAM",
+            "BLIZZARD",
+            "RAGE",
+            "THUNDERBOLT",
+            "THUNDER",
+            "PSYCHIC_M",
+            "TELEPORT",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "SWIFT",
+            "SKULL_BASH",
+            "REST",
+            "THUNDER_WAVE",
+            "PSYWAVE",
+            "TRI_ATTACK",
+            "SUBSTITUTE",
+            "SURF",
+            "FLASH"
+        ]
+    },
+    {
+        "pokemon_name": "TANGELA",
+        "internal_id": "30",
+        "pokedex_id": "DEX_TANGELA",
+        "stats": {
+            "hp": 65,
+            "atk": 55,
+            "def": 115,
+            "spd": 60,
+            "spc": 100
+        },
+        "types": [
+            "GRASS",
+            "GRASS"
+        ],
+        "catch_rate": 45,
+        "base_exp": 166,
+        "level_1_moves": [
+            "CONSTRICT",
+            "BIND"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "SWORDS_DANCE",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "HYPER_BEAM",
+            "RAGE",
+            "MEGA_DRAIN",
+            "SOLARBEAM",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "BIDE",
+            "SKULL_BASH",
+            "REST",
+            "SUBSTITUTE",
+            "CUT"
+        ]
+    },
+    {
+        "pokemon_name": "TAUROS",
+        "internal_id": "60",
+        "pokedex_id": "DEX_TAUROS",
+        "stats": {
+            "hp": 75,
+            "atk": 100,
+            "def": 95,
+            "spd": 110,
+            "spc": 70
+        },
+        "types": [
+            "NORMAL",
+            "NORMAL"
+        ],
+        "catch_rate": 45,
+        "base_exp": 211,
+        "level_1_moves": [
+            "TACKLE"
+        ],
+        "growth_rate": "SLOW",
+        "tmhm": [
+            "TOXIC",
+            "HORN_DRILL",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "ICE_BEAM",
+            "BLIZZARD",
+            "HYPER_BEAM",
+            "RAGE",
+            "THUNDERBOLT",
+            "THUNDER",
+            "EARTHQUAKE",
+            "FISSURE",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "BIDE",
+            "FIRE_BLAST",
+            "SKULL_BASH",
+            "REST",
+            "SUBSTITUTE",
+            "STRENGTH"
+        ]
+    },
+    {
+        "pokemon_name": "TENTACOOL",
+        "internal_id": "24",
+        "pokedex_id": "DEX_TENTACOOL",
+        "stats": {
+            "hp": 40,
+            "atk": 40,
+            "def": 35,
+            "spd": 70,
+            "spc": 100
+        },
+        "types": [
+            "WATER",
+            "POISON"
+        ],
+        "catch_rate": 190,
+        "base_exp": 105,
+        "level_1_moves": [
+            "ACID"
+        ],
+        "growth_rate": "SLOW",
+        "tmhm": [
+            "SWORDS_DANCE",
+            "TOXIC",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "ICE_BEAM",
+            "BLIZZARD",
+            "RAGE",
+            "MEGA_DRAIN",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "SKULL_BASH",
+            "REST",
+            "SUBSTITUTE",
+            "CUT",
+            "SURF"
+        ]
+    },
+    {
+        "pokemon_name": "TENTACRUEL",
+        "internal_id": "155",
+        "pokedex_id": "DEX_TENTACRUEL",
+        "stats": {
+            "hp": 80,
+            "atk": 70,
+            "def": 65,
+            "spd": 100,
+            "spc": 120
+        },
+        "types": [
+            "WATER",
+            "POISON"
+        ],
+        "catch_rate": 60,
+        "base_exp": 205,
+        "level_1_moves": [
+            "ACID",
+            "SUPERSONIC",
+            "WRAP"
+        ],
+        "growth_rate": "SLOW",
+        "tmhm": [
+            "SWORDS_DANCE",
+            "TOXIC",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "ICE_BEAM",
+            "BLIZZARD",
+            "HYPER_BEAM",
+            "RAGE",
+            "MEGA_DRAIN",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "SKULL_BASH",
+            "REST",
+            "SUBSTITUTE",
+            "CUT",
+            "SURF"
+        ]
+    },
+    {
+        "pokemon_name": "VAPOREON",
+        "internal_id": "105",
+        "pokedex_id": "DEX_VAPOREON",
+        "stats": {
+            "hp": 130,
+            "atk": 65,
+            "def": 60,
+            "spd": 65,
+            "spc": 110
+        },
+        "types": [
+            "WATER",
+            "WATER"
+        ],
+        "catch_rate": 45,
+        "base_exp": 196,
+        "level_1_moves": [
+            "TACKLE",
+            "SAND_ATTACK",
+            "QUICK_ATTACK",
+            "WATER_GUN"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "ICE_BEAM",
+            "BLIZZARD",
+            "HYPER_BEAM",
+            "RAGE",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "SWIFT",
+            "SKULL_BASH",
+            "REST",
+            "SUBSTITUTE",
+            "SURF"
+        ]
+    },
+    {
+        "pokemon_name": "VENOMOTH",
+        "internal_id": "119",
+        "pokedex_id": "DEX_VENOMOTH",
+        "stats": {
+            "hp": 70,
+            "atk": 65,
+            "def": 60,
+            "spd": 90,
+            "spc": 90
+        },
+        "types": [
+            "BUG",
+            "POISON"
+        ],
+        "catch_rate": 75,
+        "base_exp": 138,
+        "level_1_moves": [
+            "TACKLE",
+            "DISABLE",
+            "POISONPOWDER",
+            "LEECH_LIFE"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "RAZOR_WIND",
+            "WHIRLWIND",
+            "TOXIC",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "HYPER_BEAM",
+            "RAGE",
+            "MEGA_DRAIN",
+            "SOLARBEAM",
+            "PSYCHIC_M",
+            "TELEPORT",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "SWIFT",
+            "REST",
+            "PSYWAVE",
+            "SUBSTITUTE"
+        ]
+    },
+    {
+        "pokemon_name": "VENONAT",
+        "internal_id": "65",
+        "pokedex_id": "DEX_VENONAT",
+        "stats": {
+            "hp": 60,
+            "atk": 55,
+            "def": 50,
+            "spd": 45,
+            "spc": 40
+        },
+        "types": [
+            "BUG",
+            "POISON"
+        ],
+        "catch_rate": 190,
+        "base_exp": 75,
+        "level_1_moves": [
+            "TACKLE",
+            "DISABLE"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "TOXIC",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "RAGE",
+            "MEGA_DRAIN",
+            "SOLARBEAM",
+            "PSYCHIC_M",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "REST",
+            "PSYWAVE",
+            "SUBSTITUTE"
+        ]
+    },
+    {
+        "pokemon_name": "VENUSAUR",
+        "internal_id": "154",
+        "pokedex_id": "DEX_VENUSAUR",
+        "stats": {
+            "hp": 80,
+            "atk": 82,
+            "def": 83,
+            "spd": 80,
+            "spc": 100
+        },
+        "types": [
+            "GRASS",
+            "POISON"
+        ],
+        "catch_rate": 45,
+        "base_exp": 208,
+        "level_1_moves": [
+            "TACKLE",
+            "GROWL",
+            "LEECH_SEED",
+            "VINE_WHIP"
+        ],
+        "growth_rate": "MEDIUM_SLOW",
+        "tmhm": [
+            "SWORDS_DANCE",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "HYPER_BEAM",
+            "RAGE",
+            "MEGA_DRAIN",
+            "SOLARBEAM",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "REST",
+            "SUBSTITUTE",
+            "CUT"
+        ]
+    },
+    {
+        "pokemon_name": "VICTREEBEL",
+        "internal_id": "190",
+        "pokedex_id": "DEX_VICTREEBEL",
+        "stats": {
+            "hp": 80,
+            "atk": 105,
+            "def": 65,
+            "spd": 70,
+            "spc": 100
+        },
+        "types": [
+            "GRASS",
+            "POISON"
+        ],
+        "catch_rate": 45,
+        "base_exp": 191,
+        "level_1_moves": [
+            "SLEEP_POWDER",
+            "STUN_SPORE",
+            "ACID",
+            "RAZOR_LEAF"
+        ],
+        "growth_rate": "MEDIUM_SLOW",
+        "tmhm": [
+            "SWORDS_DANCE",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "HYPER_BEAM",
+            "RAGE",
+            "MEGA_DRAIN",
+            "SOLARBEAM",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "REST",
+            "SUBSTITUTE",
+            "CUT"
+        ]
+    },
+    {
+        "pokemon_name": "VILEPLUME",
+        "internal_id": "187",
+        "pokedex_id": "DEX_VILEPLUME",
+        "stats": {
+            "hp": 75,
+            "atk": 80,
+            "def": 85,
+            "spd": 50,
+            "spc": 100
+        },
+        "types": [
+            "GRASS",
+            "POISON"
+        ],
+        "catch_rate": 45,
+        "base_exp": 184,
+        "level_1_moves": [
+            "STUN_SPORE",
+            "SLEEP_POWDER",
+            "ACID",
+            "PETAL_DANCE"
+        ],
+        "growth_rate": "MEDIUM_SLOW",
+        "tmhm": [
+            "SWORDS_DANCE",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "HYPER_BEAM",
+            "RAGE",
+            "MEGA_DRAIN",
+            "SOLARBEAM",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "REST",
+            "SUBSTITUTE",
+            "CUT"
+        ]
+    },
+    {
+        "pokemon_name": "VOLTORB",
+        "internal_id": "6",
+        "pokedex_id": "DEX_VOLTORB",
+        "stats": {
+            "hp": 40,
+            "atk": 30,
+            "def": 50,
+            "spd": 100,
+            "spc": 55
+        },
+        "types": [
+            "ELECTRIC",
+            "ELECTRIC"
+        ],
+        "catch_rate": 190,
+        "base_exp": 103,
+        "level_1_moves": [
+            "TACKLE",
+            "SCREECH"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "TOXIC",
+            "TAKE_DOWN",
+            "RAGE",
+            "THUNDERBOLT",
+            "THUNDER",
+            "TELEPORT",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "SELFDESTRUCT",
+            "SWIFT",
+            "REST",
+            "THUNDER_WAVE",
+            "EXPLOSION",
+            "SUBSTITUTE",
+            "FLASH"
+        ]
+    },
+    {
+        "pokemon_name": "VULPIX",
+        "internal_id": "82",
+        "pokedex_id": "DEX_VULPIX",
+        "stats": {
+            "hp": 38,
+            "atk": 41,
+            "def": 40,
+            "spd": 65,
+            "spc": 65
+        },
+        "types": [
+            "FIRE",
+            "FIRE"
+        ],
+        "catch_rate": 190,
+        "base_exp": 63,
+        "level_1_moves": [
+            "EMBER",
+            "TAIL_WHIP"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "RAGE",
+            "DIG",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "FIRE_BLAST",
+            "SWIFT",
+            "SKULL_BASH",
+            "REST",
+            "SUBSTITUTE"
+        ]
+    },
+    {
+        "pokemon_name": "WARTORTLE",
+        "internal_id": "179",
+        "pokedex_id": "DEX_WARTORTLE",
+        "stats": {
+            "hp": 59,
+            "atk": 63,
+            "def": 80,
+            "spd": 58,
+            "spc": 65
+        },
+        "types": [
+            "WATER",
+            "WATER"
+        ],
+        "catch_rate": 45,
+        "base_exp": 143,
+        "level_1_moves": [
+            "TACKLE",
+            "TAIL_WHIP",
+            "BUBBLE"
+        ],
+        "growth_rate": "MEDIUM_SLOW",
+        "tmhm": [
+            "MEGA_PUNCH",
+            "MEGA_KICK",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "ICE_BEAM",
+            "BLIZZARD",
+            "SUBMISSION",
+            "COUNTER",
+            "SEISMIC_TOSS",
+            "RAGE",
+            "DIG",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "SKULL_BASH",
+            "REST",
+            "SUBSTITUTE",
+            "SURF",
+            "STRENGTH"
+        ]
+    },
+    {
+        "pokemon_name": "WEEDLE",
+        "internal_id": "112",
+        "pokedex_id": "DEX_WEEDLE",
+        "stats": {
+            "hp": 40,
+            "atk": 35,
+            "def": 30,
+            "spd": 50,
+            "spc": 20
+        },
+        "types": [
+            "BUG",
+            "POISON"
+        ],
+        "catch_rate": 255,
+        "base_exp": 52,
+        "level_1_moves": [
+            "POISON_STING",
+            "STRING_SHOT"
+        ],
+        "growth_rate": "MEDIUM_FAST"
+    },
+    {
+        "pokemon_name": "WEEPINBELL",
+        "internal_id": "189",
+        "pokedex_id": "DEX_WEEPINBELL",
+        "stats": {
+            "hp": 65,
+            "atk": 90,
+            "def": 50,
+            "spd": 55,
+            "spc": 85
+        },
+        "types": [
+            "GRASS",
+            "POISON"
+        ],
+        "catch_rate": 120,
+        "base_exp": 151,
+        "level_1_moves": [
+            "VINE_WHIP",
+            "GROWTH",
+            "WRAP"
+        ],
+        "growth_rate": "MEDIUM_SLOW",
+        "tmhm": [
+            "SWORDS_DANCE",
+            "TOXIC",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "RAGE",
+            "MEGA_DRAIN",
+            "SOLARBEAM",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "REST",
+            "SUBSTITUTE",
+            "CUT"
+        ]
+    },
+    {
+        "pokemon_name": "WEEZING",
+        "internal_id": "143",
+        "pokedex_id": "DEX_WEEZING",
+        "stats": {
+            "hp": 65,
+            "atk": 90,
+            "def": 120,
+            "spd": 60,
+            "spc": 85
+        },
+        "types": [
+            "POISON",
+            "POISON"
+        ],
+        "catch_rate": 60,
+        "base_exp": 173,
+        "level_1_moves": [
+            "TACKLE",
+            "SMOG",
+            "SLUDGE"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "TOXIC",
+            "HYPER_BEAM",
+            "RAGE",
+            "THUNDERBOLT",
+            "THUNDER",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "BIDE",
+            "SELFDESTRUCT",
+            "FIRE_BLAST",
+            "REST",
+            "EXPLOSION",
+            "SUBSTITUTE"
+        ]
+    },
+    {
+        "pokemon_name": "WIGGLYTUFF",
+        "internal_id": "101",
+        "pokedex_id": "DEX_WIGGLYTUFF",
+        "stats": {
+            "hp": 140,
+            "atk": 70,
+            "def": 45,
+            "spd": 45,
+            "spc": 50
+        },
+        "types": [
+            "NORMAL",
+            "NORMAL"
+        ],
+        "catch_rate": 50,
+        "base_exp": 109,
+        "level_1_moves": [
+            "SING",
+            "DISABLE",
+            "DEFENSE_CURL",
+            "DOUBLESLAP"
+        ],
+        "growth_rate": "FAST",
+        "tmhm": [
+            "MEGA_PUNCH",
+            "MEGA_KICK",
+            "TOXIC",
+            "BODY_SLAM",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "BUBBLEBEAM",
+            "WATER_GUN",
+            "ICE_BEAM",
+            "BLIZZARD",
+            "HYPER_BEAM",
+            "SUBMISSION",
+            "COUNTER",
+            "SEISMIC_TOSS",
+            "RAGE",
+            "SOLARBEAM",
+            "THUNDERBOLT",
+            "THUNDER",
+            "PSYCHIC_M",
+            "TELEPORT",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "FIRE_BLAST",
+            "SKULL_BASH",
+            "REST",
+            "THUNDER_WAVE",
+            "PSYWAVE",
+            "TRI_ATTACK",
+            "SUBSTITUTE",
+            "STRENGTH",
+            "FLASH"
+        ]
+    },
+    {
+        "pokemon_name": "ZAPDOS",
+        "internal_id": "75",
+        "pokedex_id": "DEX_ZAPDOS",
+        "stats": {
+            "hp": 90,
+            "atk": 90,
+            "def": 85,
+            "spd": 100,
+            "spc": 125
+        },
+        "types": [
+            "ELECTRIC",
+            "FLYING"
+        ],
+        "catch_rate": 3,
+        "base_exp": 216,
+        "level_1_moves": [
+            "THUNDERSHOCK",
+            "DRILL_PECK"
+        ],
+        "growth_rate": "SLOW",
+        "tmhm": [
+            "RAZOR_WIND",
+            "WHIRLWIND",
+            "TOXIC",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "HYPER_BEAM",
+            "RAGE",
+            "THUNDERBOLT",
+            "THUNDER",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "REFLECT",
+            "BIDE",
+            "SWIFT",
+            "SKY_ATTACK",
+            "REST",
+            "THUNDER_WAVE",
+            "SUBSTITUTE",
+            "FLY",
+            "FLASH"
+        ]
+    },
+    {
+        "pokemon_name": "ZUBAT",
+        "internal_id": "107",
+        "pokedex_id": "DEX_ZUBAT",
+        "stats": {
+            "hp": 40,
+            "atk": 45,
+            "def": 35,
+            "spd": 55,
+            "spc": 40
+        },
+        "types": [
+            "POISON",
+            "FLYING"
+        ],
+        "catch_rate": 255,
+        "base_exp": 54,
+        "level_1_moves": [
+            "LEECH_LIFE"
+        ],
+        "growth_rate": "MEDIUM_FAST",
+        "tmhm": [
+            "RAZOR_WIND",
+            "WHIRLWIND",
+            "TOXIC",
+            "TAKE_DOWN",
+            "DOUBLE_EDGE",
+            "RAGE",
+            "MEGA_DRAIN",
+            "MIMIC",
+            "DOUBLE_TEAM",
+            "BIDE",
+            "SWIFT",
+            "REST",
+            "SUBSTITUTE"
+        ]
+    }
+]
