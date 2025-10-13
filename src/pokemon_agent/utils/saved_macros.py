@@ -40,8 +40,12 @@ game_start_macro.add_step({"type": "PRESS_A"}, 500) #pick Charmander
 start_fight = create_macro()
 start_fight.add_step({"type": "GO_LEFT"}, 5)
 start_fight.add_step({"type": "GO_DOWN"}, 20)
-start_fight.add_step({"type": "PRESS_A"}, 1400) #battle rival (mash A button)
+start_fight.add_step({"type": "PRESS_A"}, 500) #battle rival (mash A button)
 start_fight.add_step({"type": "GO_DOWN"}, 150) #leave building, start adventure
+# start_fight.add_step({"type": "GO_LEFT"}, 5)
+# start_fight.add_step({"type": "GO_DOWN"}, 20)
+# start_fight.add_step({"type": "PRESS_A"}, 1400) #battle rival (mash A button)
+# start_fight.add_step({"type": "GO_DOWN"}, 150) #leave building, start adventure
 
 
 
