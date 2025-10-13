@@ -84,15 +84,17 @@ def parse_move_names(path):
 
     # Find all li "..." entries
     moves = re.findall(r'li\s+"([^"]+)"', text)
+    
 
     # Create dictionary with IDs starting at 1
-    move_dict = {i + 1: name for i, name in enumerate(moves)}
+    move_dict = {i + 1: name.replace(' ', '_') for i, name in enumerate(moves)}
 
     return move_dict
 
 MOVES_NAMES = parse_move_names("src/pokemon_agent/utils/ref_data/pokered_data/moves/names.asm")
 with open("src/pokemon_agent/utils/ref_data/MOVES_NAMES.json", "w", encoding='utf-8') as f:
     json.dump(MOVES_NAMES, f, indent=4, ensure_ascii=False)
+# print(MOVES_NAMES)
 
 inverted_MOVES_NAMES = {value: key for key, value in MOVES_NAMES.items()}
 
