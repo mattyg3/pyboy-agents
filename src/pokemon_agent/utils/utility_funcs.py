@@ -21,6 +21,44 @@ class create_macro:
 
 
 
+# Type Effectivness Multiplier
+from functools import reduce
+from operator import mul
+import json
+
+with open("src/pokemon_agent/utils/ref_data/type_chart.json") as f:
+    TYPE_CHART = json.load(f)
+
+def type_multiplier(attacking_type, defending_types, attacker_types=None):
+    """
+    attacking_type : str
+        Type of the move being used (e.g. "Fire")
+    defending_types : list[str]
+        Defending Pokémon's types (e.g. ["Water", "Flying"])
+    attacker_types : list[str] | None
+        Attacker's Pokémon types (e.g. ["Fire", "Flying"])
+    """
+
+    # Base effectiveness vs all defender types
+    base_mult = reduce(
+        mul, [TYPE_CHART.get(attacking_type, {}).get(defn, 1.0) for defn in defending_types], 1.0
+    )
+
+    # Apply STAB if move type matches attacker type
+    stab = 1.5 if attacker_types and attacking_type in attacker_types else 1.0
+
+    return base_mult * stab
+
+
+# # Example usage:
+# if __name__ == "__main__":
+#     # Charizard (Fire/Flying) uses Fire move vs Water opponent
+#     result = type_multiplier("Fire", ["Water"], ["Fire", "Flying"])
+#     print(f"Effectiveness: {result}x")  # 0.75x (0.5 * 1.5)
+
+
+
+
     # def print_memory_region(self, pyboy, base_pointer, radius=10):
     #     """
     #     Print memory values around a given pointer.

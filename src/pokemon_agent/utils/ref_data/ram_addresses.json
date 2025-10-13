@@ -1,5 +1,5 @@
 {
-  "ram_addresses": [
+  "system_addresses": [
     {
       "name": "current_map_id",
       "address": "0xD35E",
@@ -29,102 +29,18 @@
       "description": "Previous map ID (before current)"
     },
     {
-      "name": "party_count",
-      "address": "0xD163",
-      "size": 1,
-      "type": "byte",
-      "description": "Number of Pokémon in player’s party"
-    },
-    {
-      "name": "poke_current_hp",
-      "address": "0xD015",
-      "size": 2,
-      "type": "word (little endian)",
-      "description": "Player Pokémon #1 current HP"
-    },
-    {
-      "name": "poke_max_hp",
-      "address": "0xD023",
-      "size": 2,
-      "type": "word (little endian)",
-      "description": "Player Pokémon #1 maximum HP"
-    },
-    {
-      "name": "poke_level",
-      "address": "0xD022",
-      "size": 2,
-      "type": "word (little endian)",
-      "description": "Player Pokémon #1 level"
-    },
-    {
-      "name": "poke_species",
-      "address": "0xD014",
-      "size": 1,
-      "type": "byte",
-      "description": "Player Pokémon #1 species ID"
-    },
-	{
-      "name": "poke_type1",
-      "address": "0xD019",
-      "size": 1,
-      "type": "byte",
-      "description": "Player Pokémon #1 Type #1"
-    },
-	{
-      "name": "poke_type2",
-      "address": "0xD01A",
-      "size": 1,
-      "type": "byte",
-      "description": "Player Pokémon #1 Type #2"
-    },
-    {
-      "name": "enemy_species",
-      "address": "0xCFE5",
-      "size": 1,
-      "type": "byte",
-      "description": "Enemy Pokémon species ID in battle"
-    },
-    {
-      "name": "enemy_type1",
-      "address": "0xCFEA",
-      "size": 1,
-      "type": "byte",
-      "description": "Enemy Pokémon #1 Type #1"
-    },
-	{
-      "name": "enemy_type2",
-      "address": "0xCFEB",
-      "size": 1,
-      "type": "byte",
-      "description": "Enemy Pokémon #1 Type #2"
-    },
-    {
-      "name": "enemy_current_hp",
-      "address": "0xCFE6",
-      "size": 2,
-      "type": "word (little endian)",
-      "description": "Enemy Pokémon current HP"
-    },
-    {
-      "name": "enemy_max_hp",
-      "address": "0xCFF4",
-      "size": 2,
-      "type": "word (little endian)",
-      "description": "Enemy Pokémon maximum HP"
-    },
-    {
-      "name": "enemy_level",
-      "address": "0xCFF3",
-      "size": 2,
-      "type": "word (little endian)",
-      "description": "Enemy Pokémon #1 level"
-    },
-    {
       "name": "battle_type",
       "address": "0xD05A",
       "size": 1,
       "type": "byte",
       "description": "Battle type flag (trainer, wild, etc.)"
+    },
+    {
+      "name": "battle_turn",
+      "address": "0xCCD5",
+      "size": 1,
+      "type": "byte",
+      "description": "Battle Turn Counter"
     },
     {
       "name": "money_low",
@@ -210,5 +126,314 @@
       "type": "byte",
       "description": "Timer control (TAC)"
     }
+  ],
+
+  "player_addresses": [
+    {
+      "name": "party_count",
+      "address": "0xD163",
+      "size": 1,
+      "type": "byte",
+      "description": "Number of Pokémon in player’s party"
+    },
+    {
+      "name": "battle_species",
+      "address": "0xD014",
+      "size": 1,
+      "type": "byte",
+      "description": "Player Pokémon #1 species ID"
+    },
+	{
+      "name": "battle_type1",
+      "address": "0xD019",
+      "size": 1,
+      "type": "byte",
+      "description": "Player Pokémon #1 Type #1"
+    },
+	{
+      "name": "battle_type2",
+      "address": "0xD01A",
+      "size": 1,
+      "type": "byte",
+      "description": "Player Pokémon #1 Type #2"
+    },
+    {
+      "name": "battle_current_hp",
+      "address": "0xD015",
+      "size": 2,
+      "type": "word (little endian)",
+      "description": "Player Pokémon #1 current HP"
+    },
+    {
+      "name": "battle_max_hp",
+      "address": "0xD023",
+      "size": 2,
+      "type": "word (little endian)",
+      "description": "Player Pokémon #1 maximum HP"
+    },
+    {
+      "name": "battle_attack_stat",
+      "address": "0xD025",
+      "size": 2,
+      "type": "word (little endian)",
+      "description": "Player Pokémon #1 Atack Stat"
+    },
+    {
+      "name": "battle_defense_stat",
+      "address": "0xD027",
+      "size": 2,
+      "type": "word (little endian)",
+      "description": "Player Pokémon #1 Defense Stat"
+    },
+    {
+      "name": "battle_speed_stat",
+      "address": "0xD029",
+      "size": 2,
+      "type": "word (little endian)",
+      "description": "Player Pokémon #1 Speed Stat"
+    },
+    {
+      "name": "battle_special_stat",
+      "address": "0xD02B",
+      "size": 2,
+      "type": "word (little endian)",
+      "description": "Player Pokémon #1 Special Stat"
+    },
+    {
+      "name": "battle_level",
+      "address": "0xD022",
+      "size": 2,
+      "type": "word (little endian)",
+      "description": "Player Pokémon #1 level"
+    },
+    {
+      "name": "battle_status",
+      "address": "0xD018",
+      "size": 1,
+      "type": "byte",
+      "description": "Player Pokémon #1 status"
+    },
+    {
+      "name": "move_id",
+      "address": "0xCFD2",
+      "size": 1,
+      "type": "byte",
+      "description": "Player Pokémon Used Move"
+    },
+    {
+      "name": "move_effect",
+      "address": "0xCFD3",
+      "size": 1,
+      "type": "byte",
+      "description": "Player Pokémon Used Move Effect"
+    },
+    {
+      "name": "move_power",
+      "address": "0xCFD4",
+      "size": 1,
+      "type": "byte",
+      "description": "Player Pokémon Used Move Power"
+    },
+    {
+      "name": "move_type", 
+      "address": "0xCFD5",
+      "size": 1,
+      "type": "byte",
+      "description": "Player Pokémon Used Move Type"
+    },
+    {
+      "name": "move_accuracy", 
+      "address": "0xCFD6",
+      "size": 1,
+      "type": "byte",
+      "description": "Player Pokémon Used Move Accuracy"
+    },
+    {
+      "name": "move_max_pp", 
+      "address": "0xCFD7",
+      "size": 1,
+      "type": "byte",
+      "description": "Player Pokémon Used Move Max PP"
+    },
+    {
+      "name": "move_1", 
+      "address": "0xD01C",
+      "size": 1,
+      "type": "byte",
+      "description": "Player Pokémon Move #1"
+    },
+    {
+      "name": "move_2", 
+      "address": "0xD01D",
+      "size": 1,
+      "type": "byte",
+      "description": "Player Pokémon Move #2"
+    },
+    {
+      "name": "move_3", 
+      "address": "0xD01E",
+      "size": 1,
+      "type": "byte",
+      "description": "Player Pokémon Move #3"
+    },
+    {
+      "name": "move_4", 
+      "address": "0xD01F",
+      "size": 1,
+      "type": "byte",
+      "description": "Player Pokémon Move #4"
+    },
+    {
+      "name": "move_1_PP", 
+      "address": "0xD02D",
+      "size": 1,
+      "type": "byte",
+      "description": "Player Pokémon Move #1 PP"
+    },
+    {
+      "name": "move_2_PP", 
+      "address": "0xD02E",
+      "size": 1,
+      "type": "byte",
+      "description": "Player Pokémon Move #2 PP"
+    },
+    {
+      "name": "move_3_PP", 
+      "address": "0xD02F",
+      "size": 1,
+      "type": "byte",
+      "description": "Player Pokémon Move #3 PP"
+    },
+    {
+      "name": "move_4_PP", 
+      "address": "0xD030",
+      "size": 1,
+      "type": "byte",
+      "description": "Player Pokémon Move #4 PP"
+    }
+    
+  ],
+
+  "enemy_addresses": [
+    {
+      "name": "battle_species",
+      "address": "0xCFE5",
+      "size": 1,
+      "type": "byte",
+      "description": "Enemy Pokémon species ID in battle"
+    },
+    {
+      "name": "battle_type1",
+      "address": "0xCFEA",
+      "size": 1,
+      "type": "byte",
+      "description": "Enemy Pokémon #1 Type #1"
+    },
+	  {
+      "name": "battle_type2",
+      "address": "0xCFEB",
+      "size": 1,
+      "type": "byte",
+      "description": "Enemy Pokémon #1 Type #2"
+    },
+    {
+      "name": "battle_current_hp",
+      "address": "0xCFE6",
+      "size": 2,
+      "type": "word (little endian)",
+      "description": "Enemy Pokémon current HP"
+    },
+    {
+      "name": "battle_max_hp",
+      "address": "0xCFF4",
+      "size": 2,
+      "type": "word (little endian)",
+      "description": "Enemy Pokémon maximum HP"
+    },
+    {
+      "name": "battle_level",
+      "address": "0xCFF3",
+      "size": 2,
+      "type": "word (little endian)",
+      "description": "Enemy Pokémon #1 level"
+    },
+    {
+      "name": "battle_status",
+      "address": "0xCFE9",
+      "size": 1,
+      "type": "byte",
+      "description": "Enemy Pokémon #1 status"
+    },
+    {
+      "name": "move_id",
+      "address": "0xCFCC",
+      "size": 1,
+      "type": "byte",
+      "description": "Enemy Pokémon Used Move"
+    },
+    {
+      "name": "move_effect",
+      "address": "0xCFCD",
+      "size": 1,
+      "type": "byte",
+      "description": "Enemy Pokémon Used Move Effect"
+    },
+    {
+      "name": "move_power",
+      "address": "0xCFCE",
+      "size": 1,
+      "type": "byte",
+      "description": "Enemy Pokémon Used Move Power"
+    },
+    {
+      "name": "move_type", 
+      "address": "0xCFCF",
+      "size": 1,
+      "type": "byte",
+      "description": "Enemy Pokémon Used Move Type"
+    },
+    {
+      "name": "move_accuracy", 
+      "address": "0xCFD0",
+      "size": 1,
+      "type": "byte",
+      "description": "Enemy Pokémon Used Move Accuracy"
+    },
+    {
+      "name": "move_max_pp", 
+      "address": "0xCFD1",
+      "size": 1,
+      "type": "byte",
+      "description": "Enemy Pokémon Used Move Max PP"
+    },
+    {
+      "name": "move_1", 
+      "address": "0xCFED",
+      "size": 1,
+      "type": "byte",
+      "description": "Enemy Pokémon Move #1"
+    },
+    {
+      "name": "move_2", 
+      "address": "0xCFEE",
+      "size": 1,
+      "type": "byte",
+      "description": "Enemy Pokémon Move #2"
+    },
+    {
+      "name": "move_3", 
+      "address": "0xCFEF",
+      "size": 1,
+      "type": "byte",
+      "description": "Enemy Pokémon Move #3"
+    },
+    {
+      "name": "move_4", 
+      "address": "0xCFF0",
+      "size": 1,
+      "type": "byte",
+      "description": "Enemy Pokémon Move #4"
+    }
+    
   ]
 }

@@ -1,0 +1,1487 @@
+[
+    {
+        "name": "POUND",
+        "move_id": 1,
+        "effect": "NO_ADDITIONAL_EFFECT",
+        "power": 40,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 35
+    },
+    {
+        "name": "KARATE_CHOP",
+        "move_id": null,
+        "effect": "NO_ADDITIONAL_EFFECT",
+        "power": 50,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 25
+    },
+    {
+        "name": "DOUBLESLAP",
+        "move_id": 3,
+        "effect": "TWO_TO_FIVE_ATTACKS_EFFECT",
+        "power": 15,
+        "type": "NORMAL",
+        "accuracy": 85,
+        "pp": 10
+    },
+    {
+        "name": "COMET_PUNCH",
+        "move_id": null,
+        "effect": "TWO_TO_FIVE_ATTACKS_EFFECT",
+        "power": 18,
+        "type": "NORMAL",
+        "accuracy": 85,
+        "pp": 15
+    },
+    {
+        "name": "MEGA_PUNCH",
+        "move_id": null,
+        "effect": "NO_ADDITIONAL_EFFECT",
+        "power": 80,
+        "type": "NORMAL",
+        "accuracy": 85,
+        "pp": 20
+    },
+    {
+        "name": "PAY_DAY",
+        "move_id": null,
+        "effect": "PAY_DAY_EFFECT",
+        "power": 40,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 20
+    },
+    {
+        "name": "FIRE_PUNCH",
+        "move_id": null,
+        "effect": "BURN_SIDE_EFFECT1",
+        "power": 75,
+        "type": "FIRE",
+        "accuracy": 100,
+        "pp": 15
+    },
+    {
+        "name": "ICE_PUNCH",
+        "move_id": null,
+        "effect": "FREEZE_SIDE_EFFECT1",
+        "power": 75,
+        "type": "ICE",
+        "accuracy": 100,
+        "pp": 15
+    },
+    {
+        "name": "THUNDERPUNCH",
+        "move_id": 9,
+        "effect": "PARALYZE_SIDE_EFFECT1",
+        "power": 75,
+        "type": "ELECTRIC",
+        "accuracy": 100,
+        "pp": 15
+    },
+    {
+        "name": "SCRATCH",
+        "move_id": 10,
+        "effect": "NO_ADDITIONAL_EFFECT",
+        "power": 40,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 35
+    },
+    {
+        "name": "VICEGRIP",
+        "move_id": 11,
+        "effect": "NO_ADDITIONAL_EFFECT",
+        "power": 55,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 30
+    },
+    {
+        "name": "GUILLOTINE",
+        "move_id": 12,
+        "effect": "OHKO_EFFECT",
+        "power": 1,
+        "type": "NORMAL",
+        "accuracy": 30,
+        "pp": 5
+    },
+    {
+        "name": "RAZOR_WIND",
+        "move_id": null,
+        "effect": "CHARGE_EFFECT",
+        "power": 80,
+        "type": "NORMAL",
+        "accuracy": 75,
+        "pp": 10
+    },
+    {
+        "name": "SWORDS_DANCE",
+        "move_id": null,
+        "effect": "ATTACK_UP2_EFFECT",
+        "power": 0,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 30
+    },
+    {
+        "name": "CUT",
+        "move_id": 15,
+        "effect": "NO_ADDITIONAL_EFFECT",
+        "power": 50,
+        "type": "NORMAL",
+        "accuracy": 95,
+        "pp": 30
+    },
+    {
+        "name": "GUST",
+        "move_id": 16,
+        "effect": "NO_ADDITIONAL_EFFECT",
+        "power": 40,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 35
+    },
+    {
+        "name": "WING_ATTACK",
+        "move_id": null,
+        "effect": "NO_ADDITIONAL_EFFECT",
+        "power": 35,
+        "type": "FLYING",
+        "accuracy": 100,
+        "pp": 35
+    },
+    {
+        "name": "WHIRLWIND",
+        "move_id": 18,
+        "effect": "SWITCH_AND_TELEPORT_EFFECT",
+        "power": 0,
+        "type": "NORMAL",
+        "accuracy": 85,
+        "pp": 20
+    },
+    {
+        "name": "FLY",
+        "move_id": 19,
+        "effect": "FLY_EFFECT",
+        "power": 70,
+        "type": "FLYING",
+        "accuracy": 95,
+        "pp": 15
+    },
+    {
+        "name": "BIND",
+        "move_id": 20,
+        "effect": "TRAPPING_EFFECT",
+        "power": 15,
+        "type": "NORMAL",
+        "accuracy": 75,
+        "pp": 20
+    },
+    {
+        "name": "SLAM",
+        "move_id": 21,
+        "effect": "NO_ADDITIONAL_EFFECT",
+        "power": 80,
+        "type": "NORMAL",
+        "accuracy": 75,
+        "pp": 20
+    },
+    {
+        "name": "VINE_WHIP",
+        "move_id": null,
+        "effect": "NO_ADDITIONAL_EFFECT",
+        "power": 35,
+        "type": "GRASS",
+        "accuracy": 100,
+        "pp": 10
+    },
+    {
+        "name": "STOMP",
+        "move_id": 23,
+        "effect": "FLINCH_SIDE_EFFECT2",
+        "power": 65,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 20
+    },
+    {
+        "name": "DOUBLE_KICK",
+        "move_id": null,
+        "effect": "ATTACK_TWICE_EFFECT",
+        "power": 30,
+        "type": "FIGHTING",
+        "accuracy": 100,
+        "pp": 30
+    },
+    {
+        "name": "MEGA_KICK",
+        "move_id": null,
+        "effect": "NO_ADDITIONAL_EFFECT",
+        "power": 120,
+        "type": "NORMAL",
+        "accuracy": 75,
+        "pp": 5
+    },
+    {
+        "name": "JUMP_KICK",
+        "move_id": null,
+        "effect": "JUMP_KICK_EFFECT",
+        "power": 70,
+        "type": "FIGHTING",
+        "accuracy": 95,
+        "pp": 25
+    },
+    {
+        "name": "ROLLING_KICK",
+        "move_id": null,
+        "effect": "FLINCH_SIDE_EFFECT2",
+        "power": 60,
+        "type": "FIGHTING",
+        "accuracy": 85,
+        "pp": 15
+    },
+    {
+        "name": "SAND_ATTACK",
+        "move_id": null,
+        "effect": "ACCURACY_DOWN1_EFFECT",
+        "power": 0,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 15
+    },
+    {
+        "name": "HEADBUTT",
+        "move_id": 29,
+        "effect": "FLINCH_SIDE_EFFECT2",
+        "power": 70,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 15
+    },
+    {
+        "name": "HORN_ATTACK",
+        "move_id": null,
+        "effect": "NO_ADDITIONAL_EFFECT",
+        "power": 65,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 25
+    },
+    {
+        "name": "FURY_ATTACK",
+        "move_id": null,
+        "effect": "TWO_TO_FIVE_ATTACKS_EFFECT",
+        "power": 15,
+        "type": "NORMAL",
+        "accuracy": 85,
+        "pp": 20
+    },
+    {
+        "name": "HORN_DRILL",
+        "move_id": null,
+        "effect": "OHKO_EFFECT",
+        "power": 1,
+        "type": "NORMAL",
+        "accuracy": 30,
+        "pp": 5
+    },
+    {
+        "name": "TACKLE",
+        "move_id": 33,
+        "effect": "NO_ADDITIONAL_EFFECT",
+        "power": 35,
+        "type": "NORMAL",
+        "accuracy": 95,
+        "pp": 35
+    },
+    {
+        "name": "BODY_SLAM",
+        "move_id": null,
+        "effect": "PARALYZE_SIDE_EFFECT2",
+        "power": 85,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 15
+    },
+    {
+        "name": "WRAP",
+        "move_id": 35,
+        "effect": "TRAPPING_EFFECT",
+        "power": 15,
+        "type": "NORMAL",
+        "accuracy": 85,
+        "pp": 20
+    },
+    {
+        "name": "TAKE_DOWN",
+        "move_id": null,
+        "effect": "RECOIL_EFFECT",
+        "power": 90,
+        "type": "NORMAL",
+        "accuracy": 85,
+        "pp": 20
+    },
+    {
+        "name": "THRASH",
+        "move_id": 37,
+        "effect": "THRASH_PETAL_DANCE_EFFECT",
+        "power": 90,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 20
+    },
+    {
+        "name": "DOUBLE_EDGE",
+        "move_id": null,
+        "effect": "RECOIL_EFFECT",
+        "power": 100,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 15
+    },
+    {
+        "name": "TAIL_WHIP",
+        "move_id": null,
+        "effect": "DEFENSE_DOWN1_EFFECT",
+        "power": 0,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 30
+    },
+    {
+        "name": "POISON_STING",
+        "move_id": null,
+        "effect": "POISON_SIDE_EFFECT1",
+        "power": 15,
+        "type": "POISON",
+        "accuracy": 100,
+        "pp": 35
+    },
+    {
+        "name": "TWINEEDLE",
+        "move_id": 41,
+        "effect": "TWINEEDLE_EFFECT",
+        "power": 25,
+        "type": "BUG",
+        "accuracy": 100,
+        "pp": 20
+    },
+    {
+        "name": "PIN_MISSILE",
+        "move_id": null,
+        "effect": "TWO_TO_FIVE_ATTACKS_EFFECT",
+        "power": 14,
+        "type": "BUG",
+        "accuracy": 85,
+        "pp": 20
+    },
+    {
+        "name": "LEER",
+        "move_id": 43,
+        "effect": "DEFENSE_DOWN1_EFFECT",
+        "power": 0,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 30
+    },
+    {
+        "name": "BITE",
+        "move_id": 44,
+        "effect": "FLINCH_SIDE_EFFECT1",
+        "power": 60,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 25
+    },
+    {
+        "name": "GROWL",
+        "move_id": 45,
+        "effect": "ATTACK_DOWN1_EFFECT",
+        "power": 0,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 40
+    },
+    {
+        "name": "ROAR",
+        "move_id": 46,
+        "effect": "SWITCH_AND_TELEPORT_EFFECT",
+        "power": 0,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 20
+    },
+    {
+        "name": "SING",
+        "move_id": 47,
+        "effect": "SLEEP_EFFECT",
+        "power": 0,
+        "type": "NORMAL",
+        "accuracy": 55,
+        "pp": 15
+    },
+    {
+        "name": "SUPERSONIC",
+        "move_id": 48,
+        "effect": "CONFUSION_EFFECT",
+        "power": 0,
+        "type": "NORMAL",
+        "accuracy": 55,
+        "pp": 20
+    },
+    {
+        "name": "SONICBOOM",
+        "move_id": 49,
+        "effect": "SPECIAL_DAMAGE_EFFECT",
+        "power": 1,
+        "type": "NORMAL",
+        "accuracy": 90,
+        "pp": 20
+    },
+    {
+        "name": "DISABLE",
+        "move_id": 50,
+        "effect": "DISABLE_EFFECT",
+        "power": 0,
+        "type": "NORMAL",
+        "accuracy": 55,
+        "pp": 20
+    },
+    {
+        "name": "ACID",
+        "move_id": 51,
+        "effect": "DEFENSE_DOWN_SIDE_EFFECT",
+        "power": 40,
+        "type": "POISON",
+        "accuracy": 100,
+        "pp": 30
+    },
+    {
+        "name": "EMBER",
+        "move_id": 52,
+        "effect": "BURN_SIDE_EFFECT1",
+        "power": 40,
+        "type": "FIRE",
+        "accuracy": 100,
+        "pp": 25
+    },
+    {
+        "name": "FLAMETHROWER",
+        "move_id": 53,
+        "effect": "BURN_SIDE_EFFECT1",
+        "power": 95,
+        "type": "FIRE",
+        "accuracy": 100,
+        "pp": 15
+    },
+    {
+        "name": "MIST",
+        "move_id": 54,
+        "effect": "MIST_EFFECT",
+        "power": 0,
+        "type": "ICE",
+        "accuracy": 100,
+        "pp": 30
+    },
+    {
+        "name": "WATER_GUN",
+        "move_id": null,
+        "effect": "NO_ADDITIONAL_EFFECT",
+        "power": 40,
+        "type": "WATER",
+        "accuracy": 100,
+        "pp": 25
+    },
+    {
+        "name": "HYDRO_PUMP",
+        "move_id": null,
+        "effect": "NO_ADDITIONAL_EFFECT",
+        "power": 120,
+        "type": "WATER",
+        "accuracy": 80,
+        "pp": 5
+    },
+    {
+        "name": "SURF",
+        "move_id": 57,
+        "effect": "NO_ADDITIONAL_EFFECT",
+        "power": 95,
+        "type": "WATER",
+        "accuracy": 100,
+        "pp": 15
+    },
+    {
+        "name": "ICE_BEAM",
+        "move_id": null,
+        "effect": "FREEZE_SIDE_EFFECT1",
+        "power": 95,
+        "type": "ICE",
+        "accuracy": 100,
+        "pp": 10
+    },
+    {
+        "name": "BLIZZARD",
+        "move_id": 59,
+        "effect": "FREEZE_SIDE_EFFECT1",
+        "power": 120,
+        "type": "ICE",
+        "accuracy": 90,
+        "pp": 5
+    },
+    {
+        "name": "PSYBEAM",
+        "move_id": 60,
+        "effect": "CONFUSION_SIDE_EFFECT",
+        "power": 65,
+        "type": "PSYCHIC_TYPE",
+        "accuracy": 100,
+        "pp": 20
+    },
+    {
+        "name": "BUBBLEBEAM",
+        "move_id": 61,
+        "effect": "SPEED_DOWN_SIDE_EFFECT",
+        "power": 65,
+        "type": "WATER",
+        "accuracy": 100,
+        "pp": 20
+    },
+    {
+        "name": "AURORA_BEAM",
+        "move_id": null,
+        "effect": "ATTACK_DOWN_SIDE_EFFECT",
+        "power": 65,
+        "type": "ICE",
+        "accuracy": 100,
+        "pp": 20
+    },
+    {
+        "name": "HYPER_BEAM",
+        "move_id": null,
+        "effect": "HYPER_BEAM_EFFECT",
+        "power": 150,
+        "type": "NORMAL",
+        "accuracy": 90,
+        "pp": 5
+    },
+    {
+        "name": "PECK",
+        "move_id": 64,
+        "effect": "NO_ADDITIONAL_EFFECT",
+        "power": 35,
+        "type": "FLYING",
+        "accuracy": 100,
+        "pp": 35
+    },
+    {
+        "name": "DRILL_PECK",
+        "move_id": null,
+        "effect": "NO_ADDITIONAL_EFFECT",
+        "power": 80,
+        "type": "FLYING",
+        "accuracy": 100,
+        "pp": 20
+    },
+    {
+        "name": "SUBMISSION",
+        "move_id": 66,
+        "effect": "RECOIL_EFFECT",
+        "power": 80,
+        "type": "FIGHTING",
+        "accuracy": 80,
+        "pp": 25
+    },
+    {
+        "name": "LOW_KICK",
+        "move_id": null,
+        "effect": "FLINCH_SIDE_EFFECT2",
+        "power": 50,
+        "type": "FIGHTING",
+        "accuracy": 90,
+        "pp": 20
+    },
+    {
+        "name": "COUNTER",
+        "move_id": 68,
+        "effect": "NO_ADDITIONAL_EFFECT",
+        "power": 1,
+        "type": "FIGHTING",
+        "accuracy": 100,
+        "pp": 20
+    },
+    {
+        "name": "SEISMIC_TOSS",
+        "move_id": null,
+        "effect": "SPECIAL_DAMAGE_EFFECT",
+        "power": 1,
+        "type": "FIGHTING",
+        "accuracy": 100,
+        "pp": 20
+    },
+    {
+        "name": "STRENGTH",
+        "move_id": 70,
+        "effect": "NO_ADDITIONAL_EFFECT",
+        "power": 80,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 15
+    },
+    {
+        "name": "ABSORB",
+        "move_id": 71,
+        "effect": "DRAIN_HP_EFFECT",
+        "power": 20,
+        "type": "GRASS",
+        "accuracy": 100,
+        "pp": 20
+    },
+    {
+        "name": "MEGA_DRAIN",
+        "move_id": null,
+        "effect": "DRAIN_HP_EFFECT",
+        "power": 40,
+        "type": "GRASS",
+        "accuracy": 100,
+        "pp": 10
+    },
+    {
+        "name": "LEECH_SEED",
+        "move_id": null,
+        "effect": "LEECH_SEED_EFFECT",
+        "power": 0,
+        "type": "GRASS",
+        "accuracy": 90,
+        "pp": 10
+    },
+    {
+        "name": "GROWTH",
+        "move_id": 74,
+        "effect": "SPECIAL_UP1_EFFECT",
+        "power": 0,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 40
+    },
+    {
+        "name": "RAZOR_LEAF",
+        "move_id": null,
+        "effect": "NO_ADDITIONAL_EFFECT",
+        "power": 55,
+        "type": "GRASS",
+        "accuracy": 95,
+        "pp": 25
+    },
+    {
+        "name": "SOLARBEAM",
+        "move_id": 76,
+        "effect": "CHARGE_EFFECT",
+        "power": 120,
+        "type": "GRASS",
+        "accuracy": 100,
+        "pp": 10
+    },
+    {
+        "name": "POISONPOWDER",
+        "move_id": 77,
+        "effect": "POISON_EFFECT",
+        "power": 0,
+        "type": "POISON",
+        "accuracy": 75,
+        "pp": 35
+    },
+    {
+        "name": "STUN_SPORE",
+        "move_id": null,
+        "effect": "PARALYZE_EFFECT",
+        "power": 0,
+        "type": "GRASS",
+        "accuracy": 75,
+        "pp": 30
+    },
+    {
+        "name": "SLEEP_POWDER",
+        "move_id": null,
+        "effect": "SLEEP_EFFECT",
+        "power": 0,
+        "type": "GRASS",
+        "accuracy": 75,
+        "pp": 15
+    },
+    {
+        "name": "PETAL_DANCE",
+        "move_id": null,
+        "effect": "THRASH_PETAL_DANCE_EFFECT",
+        "power": 70,
+        "type": "GRASS",
+        "accuracy": 100,
+        "pp": 20
+    },
+    {
+        "name": "STRING_SHOT",
+        "move_id": null,
+        "effect": "SPEED_DOWN1_EFFECT",
+        "power": 0,
+        "type": "BUG",
+        "accuracy": 95,
+        "pp": 40
+    },
+    {
+        "name": "DRAGON_RAGE",
+        "move_id": null,
+        "effect": "SPECIAL_DAMAGE_EFFECT",
+        "power": 1,
+        "type": "DRAGON",
+        "accuracy": 100,
+        "pp": 10
+    },
+    {
+        "name": "FIRE_SPIN",
+        "move_id": null,
+        "effect": "TRAPPING_EFFECT",
+        "power": 15,
+        "type": "FIRE",
+        "accuracy": 70,
+        "pp": 15
+    },
+    {
+        "name": "THUNDERSHOCK",
+        "move_id": 84,
+        "effect": "PARALYZE_SIDE_EFFECT1",
+        "power": 40,
+        "type": "ELECTRIC",
+        "accuracy": 100,
+        "pp": 30
+    },
+    {
+        "name": "THUNDERBOLT",
+        "move_id": 85,
+        "effect": "PARALYZE_SIDE_EFFECT1",
+        "power": 95,
+        "type": "ELECTRIC",
+        "accuracy": 100,
+        "pp": 15
+    },
+    {
+        "name": "THUNDER_WAVE",
+        "move_id": null,
+        "effect": "PARALYZE_EFFECT",
+        "power": 0,
+        "type": "ELECTRIC",
+        "accuracy": 100,
+        "pp": 20
+    },
+    {
+        "name": "THUNDER",
+        "move_id": 87,
+        "effect": "PARALYZE_SIDE_EFFECT1",
+        "power": 120,
+        "type": "ELECTRIC",
+        "accuracy": 70,
+        "pp": 10
+    },
+    {
+        "name": "ROCK_THROW",
+        "move_id": null,
+        "effect": "NO_ADDITIONAL_EFFECT",
+        "power": 50,
+        "type": "ROCK",
+        "accuracy": 65,
+        "pp": 15
+    },
+    {
+        "name": "EARTHQUAKE",
+        "move_id": 89,
+        "effect": "NO_ADDITIONAL_EFFECT",
+        "power": 100,
+        "type": "GROUND",
+        "accuracy": 100,
+        "pp": 10
+    },
+    {
+        "name": "FISSURE",
+        "move_id": 90,
+        "effect": "OHKO_EFFECT",
+        "power": 1,
+        "type": "GROUND",
+        "accuracy": 30,
+        "pp": 5
+    },
+    {
+        "name": "DIG",
+        "move_id": 91,
+        "effect": "CHARGE_EFFECT",
+        "power": 100,
+        "type": "GROUND",
+        "accuracy": 100,
+        "pp": 10
+    },
+    {
+        "name": "TOXIC",
+        "move_id": 92,
+        "effect": "POISON_EFFECT",
+        "power": 0,
+        "type": "POISON",
+        "accuracy": 85,
+        "pp": 10
+    },
+    {
+        "name": "CONFUSION",
+        "move_id": 93,
+        "effect": "CONFUSION_SIDE_EFFECT",
+        "power": 50,
+        "type": "PSYCHIC_TYPE",
+        "accuracy": 100,
+        "pp": 25
+    },
+    {
+        "name": "PSYCHIC_M",
+        "move_id": null,
+        "effect": "SPECIAL_DOWN_SIDE_EFFECT",
+        "power": 90,
+        "type": "PSYCHIC_TYPE",
+        "accuracy": 100,
+        "pp": 10
+    },
+    {
+        "name": "HYPNOSIS",
+        "move_id": 95,
+        "effect": "SLEEP_EFFECT",
+        "power": 0,
+        "type": "PSYCHIC_TYPE",
+        "accuracy": 60,
+        "pp": 20
+    },
+    {
+        "name": "MEDITATE",
+        "move_id": 96,
+        "effect": "ATTACK_UP1_EFFECT",
+        "power": 0,
+        "type": "PSYCHIC_TYPE",
+        "accuracy": 100,
+        "pp": 40
+    },
+    {
+        "name": "AGILITY",
+        "move_id": 97,
+        "effect": "SPEED_UP2_EFFECT",
+        "power": 0,
+        "type": "PSYCHIC_TYPE",
+        "accuracy": 100,
+        "pp": 30
+    },
+    {
+        "name": "QUICK_ATTACK",
+        "move_id": null,
+        "effect": "NO_ADDITIONAL_EFFECT",
+        "power": 40,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 30
+    },
+    {
+        "name": "RAGE",
+        "move_id": 99,
+        "effect": "RAGE_EFFECT",
+        "power": 20,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 20
+    },
+    {
+        "name": "TELEPORT",
+        "move_id": 100,
+        "effect": "SWITCH_AND_TELEPORT_EFFECT",
+        "power": 0,
+        "type": "PSYCHIC_TYPE",
+        "accuracy": 100,
+        "pp": 20
+    },
+    {
+        "name": "NIGHT_SHADE",
+        "move_id": null,
+        "effect": "SPECIAL_DAMAGE_EFFECT",
+        "power": 0,
+        "type": "GHOST",
+        "accuracy": 100,
+        "pp": 15
+    },
+    {
+        "name": "MIMIC",
+        "move_id": 102,
+        "effect": "MIMIC_EFFECT",
+        "power": 0,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 10
+    },
+    {
+        "name": "SCREECH",
+        "move_id": 103,
+        "effect": "DEFENSE_DOWN2_EFFECT",
+        "power": 0,
+        "type": "NORMAL",
+        "accuracy": 85,
+        "pp": 40
+    },
+    {
+        "name": "DOUBLE_TEAM",
+        "move_id": null,
+        "effect": "EVASION_UP1_EFFECT",
+        "power": 0,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 15
+    },
+    {
+        "name": "RECOVER",
+        "move_id": 105,
+        "effect": "HEAL_EFFECT",
+        "power": 0,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 20
+    },
+    {
+        "name": "HARDEN",
+        "move_id": 106,
+        "effect": "DEFENSE_UP1_EFFECT",
+        "power": 0,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 30
+    },
+    {
+        "name": "MINIMIZE",
+        "move_id": 107,
+        "effect": "EVASION_UP1_EFFECT",
+        "power": 0,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 20
+    },
+    {
+        "name": "SMOKESCREEN",
+        "move_id": 108,
+        "effect": "ACCURACY_DOWN1_EFFECT",
+        "power": 0,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 20
+    },
+    {
+        "name": "CONFUSE_RAY",
+        "move_id": null,
+        "effect": "CONFUSION_EFFECT",
+        "power": 0,
+        "type": "GHOST",
+        "accuracy": 100,
+        "pp": 10
+    },
+    {
+        "name": "WITHDRAW",
+        "move_id": 110,
+        "effect": "DEFENSE_UP1_EFFECT",
+        "power": 0,
+        "type": "WATER",
+        "accuracy": 100,
+        "pp": 40
+    },
+    {
+        "name": "DEFENSE_CURL",
+        "move_id": null,
+        "effect": "DEFENSE_UP1_EFFECT",
+        "power": 0,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 40
+    },
+    {
+        "name": "BARRIER",
+        "move_id": 112,
+        "effect": "DEFENSE_UP2_EFFECT",
+        "power": 0,
+        "type": "PSYCHIC_TYPE",
+        "accuracy": 100,
+        "pp": 30
+    },
+    {
+        "name": "LIGHT_SCREEN",
+        "move_id": null,
+        "effect": "LIGHT_SCREEN_EFFECT",
+        "power": 0,
+        "type": "PSYCHIC_TYPE",
+        "accuracy": 100,
+        "pp": 30
+    },
+    {
+        "name": "HAZE",
+        "move_id": 114,
+        "effect": "HAZE_EFFECT",
+        "power": 0,
+        "type": "ICE",
+        "accuracy": 100,
+        "pp": 30
+    },
+    {
+        "name": "REFLECT",
+        "move_id": 115,
+        "effect": "REFLECT_EFFECT",
+        "power": 0,
+        "type": "PSYCHIC_TYPE",
+        "accuracy": 100,
+        "pp": 20
+    },
+    {
+        "name": "FOCUS_ENERGY",
+        "move_id": null,
+        "effect": "FOCUS_ENERGY_EFFECT",
+        "power": 0,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 30
+    },
+    {
+        "name": "BIDE",
+        "move_id": 117,
+        "effect": "BIDE_EFFECT",
+        "power": 0,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 10
+    },
+    {
+        "name": "METRONOME",
+        "move_id": 118,
+        "effect": "METRONOME_EFFECT",
+        "power": 0,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 10
+    },
+    {
+        "name": "MIRROR_MOVE",
+        "move_id": null,
+        "effect": "MIRROR_MOVE_EFFECT",
+        "power": 0,
+        "type": "FLYING",
+        "accuracy": 100,
+        "pp": 20
+    },
+    {
+        "name": "SELFDESTRUCT",
+        "move_id": 120,
+        "effect": "EXPLODE_EFFECT",
+        "power": 130,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 5
+    },
+    {
+        "name": "EGG_BOMB",
+        "move_id": null,
+        "effect": "NO_ADDITIONAL_EFFECT",
+        "power": 100,
+        "type": "NORMAL",
+        "accuracy": 75,
+        "pp": 10
+    },
+    {
+        "name": "LICK",
+        "move_id": 122,
+        "effect": "PARALYZE_SIDE_EFFECT2",
+        "power": 20,
+        "type": "GHOST",
+        "accuracy": 100,
+        "pp": 30
+    },
+    {
+        "name": "SMOG",
+        "move_id": 123,
+        "effect": "POISON_SIDE_EFFECT2",
+        "power": 20,
+        "type": "POISON",
+        "accuracy": 70,
+        "pp": 20
+    },
+    {
+        "name": "SLUDGE",
+        "move_id": 124,
+        "effect": "POISON_SIDE_EFFECT2",
+        "power": 65,
+        "type": "POISON",
+        "accuracy": 100,
+        "pp": 20
+    },
+    {
+        "name": "BONE_CLUB",
+        "move_id": null,
+        "effect": "FLINCH_SIDE_EFFECT1",
+        "power": 65,
+        "type": "GROUND",
+        "accuracy": 85,
+        "pp": 20
+    },
+    {
+        "name": "FIRE_BLAST",
+        "move_id": null,
+        "effect": "BURN_SIDE_EFFECT2",
+        "power": 120,
+        "type": "FIRE",
+        "accuracy": 85,
+        "pp": 5
+    },
+    {
+        "name": "WATERFALL",
+        "move_id": 127,
+        "effect": "NO_ADDITIONAL_EFFECT",
+        "power": 80,
+        "type": "WATER",
+        "accuracy": 100,
+        "pp": 15
+    },
+    {
+        "name": "CLAMP",
+        "move_id": 128,
+        "effect": "TRAPPING_EFFECT",
+        "power": 35,
+        "type": "WATER",
+        "accuracy": 75,
+        "pp": 10
+    },
+    {
+        "name": "SWIFT",
+        "move_id": 129,
+        "effect": "SWIFT_EFFECT",
+        "power": 60,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 20
+    },
+    {
+        "name": "SKULL_BASH",
+        "move_id": null,
+        "effect": "CHARGE_EFFECT",
+        "power": 100,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 15
+    },
+    {
+        "name": "SPIKE_CANNON",
+        "move_id": null,
+        "effect": "TWO_TO_FIVE_ATTACKS_EFFECT",
+        "power": 20,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 15
+    },
+    {
+        "name": "CONSTRICT",
+        "move_id": 132,
+        "effect": "SPEED_DOWN_SIDE_EFFECT",
+        "power": 10,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 35
+    },
+    {
+        "name": "AMNESIA",
+        "move_id": 133,
+        "effect": "SPECIAL_UP2_EFFECT",
+        "power": 0,
+        "type": "PSYCHIC_TYPE",
+        "accuracy": 100,
+        "pp": 20
+    },
+    {
+        "name": "KINESIS",
+        "move_id": 134,
+        "effect": "ACCURACY_DOWN1_EFFECT",
+        "power": 0,
+        "type": "PSYCHIC_TYPE",
+        "accuracy": 80,
+        "pp": 15
+    },
+    {
+        "name": "SOFTBOILED",
+        "move_id": 135,
+        "effect": "HEAL_EFFECT",
+        "power": 0,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 10
+    },
+    {
+        "name": "HI_JUMP_KICK",
+        "move_id": null,
+        "effect": "JUMP_KICK_EFFECT",
+        "power": 85,
+        "type": "FIGHTING",
+        "accuracy": 90,
+        "pp": 20
+    },
+    {
+        "name": "GLARE",
+        "move_id": 137,
+        "effect": "PARALYZE_EFFECT",
+        "power": 0,
+        "type": "NORMAL",
+        "accuracy": 75,
+        "pp": 30
+    },
+    {
+        "name": "DREAM_EATER",
+        "move_id": null,
+        "effect": "DREAM_EATER_EFFECT",
+        "power": 100,
+        "type": "PSYCHIC_TYPE",
+        "accuracy": 100,
+        "pp": 15
+    },
+    {
+        "name": "POISON_GAS",
+        "move_id": null,
+        "effect": "POISON_EFFECT",
+        "power": 0,
+        "type": "POISON",
+        "accuracy": 55,
+        "pp": 40
+    },
+    {
+        "name": "BARRAGE",
+        "move_id": 140,
+        "effect": "TWO_TO_FIVE_ATTACKS_EFFECT",
+        "power": 15,
+        "type": "NORMAL",
+        "accuracy": 85,
+        "pp": 20
+    },
+    {
+        "name": "LEECH_LIFE",
+        "move_id": null,
+        "effect": "DRAIN_HP_EFFECT",
+        "power": 20,
+        "type": "BUG",
+        "accuracy": 100,
+        "pp": 15
+    },
+    {
+        "name": "LOVELY_KISS",
+        "move_id": null,
+        "effect": "SLEEP_EFFECT",
+        "power": 0,
+        "type": "NORMAL",
+        "accuracy": 75,
+        "pp": 10
+    },
+    {
+        "name": "SKY_ATTACK",
+        "move_id": null,
+        "effect": "CHARGE_EFFECT",
+        "power": 140,
+        "type": "FLYING",
+        "accuracy": 90,
+        "pp": 5
+    },
+    {
+        "name": "TRANSFORM",
+        "move_id": 144,
+        "effect": "TRANSFORM_EFFECT",
+        "power": 0,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 10
+    },
+    {
+        "name": "BUBBLE",
+        "move_id": 145,
+        "effect": "SPEED_DOWN_SIDE_EFFECT",
+        "power": 20,
+        "type": "WATER",
+        "accuracy": 100,
+        "pp": 30
+    },
+    {
+        "name": "DIZZY_PUNCH",
+        "move_id": null,
+        "effect": "NO_ADDITIONAL_EFFECT",
+        "power": 70,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 10
+    },
+    {
+        "name": "SPORE",
+        "move_id": 147,
+        "effect": "SLEEP_EFFECT",
+        "power": 0,
+        "type": "GRASS",
+        "accuracy": 100,
+        "pp": 15
+    },
+    {
+        "name": "FLASH",
+        "move_id": 148,
+        "effect": "ACCURACY_DOWN1_EFFECT",
+        "power": 0,
+        "type": "NORMAL",
+        "accuracy": 70,
+        "pp": 20
+    },
+    {
+        "name": "PSYWAVE",
+        "move_id": 149,
+        "effect": "SPECIAL_DAMAGE_EFFECT",
+        "power": 1,
+        "type": "PSYCHIC_TYPE",
+        "accuracy": 80,
+        "pp": 15
+    },
+    {
+        "name": "SPLASH",
+        "move_id": 150,
+        "effect": "SPLASH_EFFECT",
+        "power": 0,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 40
+    },
+    {
+        "name": "ACID_ARMOR",
+        "move_id": null,
+        "effect": "DEFENSE_UP2_EFFECT",
+        "power": 0,
+        "type": "POISON",
+        "accuracy": 100,
+        "pp": 40
+    },
+    {
+        "name": "CRABHAMMER",
+        "move_id": 152,
+        "effect": "NO_ADDITIONAL_EFFECT",
+        "power": 90,
+        "type": "WATER",
+        "accuracy": 85,
+        "pp": 10
+    },
+    {
+        "name": "EXPLOSION",
+        "move_id": 153,
+        "effect": "EXPLODE_EFFECT",
+        "power": 170,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 5
+    },
+    {
+        "name": "FURY_SWIPES",
+        "move_id": null,
+        "effect": "TWO_TO_FIVE_ATTACKS_EFFECT",
+        "power": 18,
+        "type": "NORMAL",
+        "accuracy": 80,
+        "pp": 15
+    },
+    {
+        "name": "BONEMERANG",
+        "move_id": 155,
+        "effect": "ATTACK_TWICE_EFFECT",
+        "power": 50,
+        "type": "GROUND",
+        "accuracy": 90,
+        "pp": 10
+    },
+    {
+        "name": "REST",
+        "move_id": 156,
+        "effect": "HEAL_EFFECT",
+        "power": 0,
+        "type": "PSYCHIC_TYPE",
+        "accuracy": 100,
+        "pp": 10
+    },
+    {
+        "name": "ROCK_SLIDE",
+        "move_id": null,
+        "effect": "NO_ADDITIONAL_EFFECT",
+        "power": 75,
+        "type": "ROCK",
+        "accuracy": 90,
+        "pp": 10
+    },
+    {
+        "name": "HYPER_FANG",
+        "move_id": null,
+        "effect": "FLINCH_SIDE_EFFECT1",
+        "power": 80,
+        "type": "NORMAL",
+        "accuracy": 90,
+        "pp": 15
+    },
+    {
+        "name": "SHARPEN",
+        "move_id": 159,
+        "effect": "ATTACK_UP1_EFFECT",
+        "power": 0,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 30
+    },
+    {
+        "name": "CONVERSION",
+        "move_id": 160,
+        "effect": "CONVERSION_EFFECT",
+        "power": 0,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 30
+    },
+    {
+        "name": "TRI_ATTACK",
+        "move_id": null,
+        "effect": "NO_ADDITIONAL_EFFECT",
+        "power": 80,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 10
+    },
+    {
+        "name": "SUPER_FANG",
+        "move_id": null,
+        "effect": "SUPER_FANG_EFFECT",
+        "power": 1,
+        "type": "NORMAL",
+        "accuracy": 90,
+        "pp": 10
+    },
+    {
+        "name": "SLASH",
+        "move_id": 163,
+        "effect": "NO_ADDITIONAL_EFFECT",
+        "power": 70,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 20
+    },
+    {
+        "name": "SUBSTITUTE",
+        "move_id": 164,
+        "effect": "SUBSTITUTE_EFFECT",
+        "power": 0,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 10
+    },
+    {
+        "name": "STRUGGLE",
+        "move_id": 165,
+        "effect": "RECOIL_EFFECT",
+        "power": 50,
+        "type": "NORMAL",
+        "accuracy": 100,
+        "pp": 10
+    }
+]

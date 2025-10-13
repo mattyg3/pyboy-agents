@@ -30,7 +30,7 @@ def main():
     try:
         # if frame % 10 == 0:
         
-        while pyboy.tick():  # returns False when ROM done / exit
+        while pyboy.tick(10):  # returns False when ROM done / exit
             # if frame < 2500:
             #     state = {}
             # else:
@@ -53,7 +53,7 @@ def main():
                 # print(pyboy.memory[0xD014])
             frame += 1
 
-            if frame==2500:
+            if frame>2500:
                 break
 
             # optional: small sleep to avoid hogging CPU unnecessarily
