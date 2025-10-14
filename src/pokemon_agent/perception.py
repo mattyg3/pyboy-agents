@@ -163,12 +163,6 @@ class PokemonPerceptionAgent:
             enemy_move_dict = next((d for d in MOVES_INDEX if d['move_id'] == int(mem[self.get_mem_pointer("enemy_addresses", "move_id")])))
         except:
             enemy_move_dict={"name":None, "effect":None, "power":None, "type":None, "accuracy":None, "pp":None}
-        # enemy_move = enemy_move_dict.get("name")
-        # enemy_move_effect = enemy_move_dict.get("effect")
-        # enemy_move_power = enemy_move_dict.get("power")
-        # enemy_move_type = enemy_move_dict.get("type")
-        # enemy_move_accuracy = enemy_move_dict.get("accuracy")
-        # enemy_move_PP_max = enemy_move_dict.get("pp")
 
         enemy_move = {
                         "move":enemy_move_dict.get("name"),
@@ -260,7 +254,6 @@ class PokemonPerceptionAgent:
             "battle": {
                 "battle_type": battle_flag,
                 "turn": turn,
-                # "prev_turn": prev_turn
             }
         }
     
@@ -284,33 +277,24 @@ class PokemonPerceptionAgent:
             battle_state = battle_tracker.read_frame()
         else:
             battle_state={"in_battle":None, "turn":None, "menu_state":None, "last_event":None}
+        player_turn=False
         if battle_state.get("menu_state"):
+            player_turn = True
             print(f'\nMENU: {battle_state.get("menu_state")}\n')
+
         self.prev_state = mem_state
         state = {
-                # "in_battle": battle_state.get("in_battle"),
-                # "trainer_turn": battle_state.get("turn"),
-                
-                # "last_event": battle_state.get("last_event"),
                 "player": mem_state["player"],
                 "opponent": mem_state["opponent"],
-                "battle": mem_state["battle"],
+                "battle": {
+                    "battle_type": mem_state.get("battle").get("battle_type"),
+                    "turn": mem_state.get("battle").get("turn"),
+                    "player_turn": player_turn
+                },
+
+                
                 "menu_state": battle_state.get("menu_state"),
             }
-
-        # if mode == 'battle':
-        #     state = {
-        #         "scene": mode,
-        #         "text_box": text,
-
-        #         }
-        # else:
-        #     state = {
-        #         "scene": mode,
-        #         "text_box": text,
-        #         "player": mem_state["player"],
-        #         "opponent": mem_state["opponent"],
-        #     }
         return state
 
     # def evaluate_advantage(self, player, enemy):
@@ -334,16 +318,4 @@ class PokemonPerceptionAgent:
     #         return "even"
         
 
-    # def step(self):
-    #     self.pyboy.tick()
-    #     return self.get_game_state()
-
-# if __name__ == "__main__":
-#     agent = PokemonPerceptionAgent("PokemonRed.gb")
-
-#     while not agent.pyboy.tick():
-#         state = agent.get_game_state()
-#         if state["text_box"] != agent.text_prev:
-#             print(state)
-#             agent.text_prev = state["text_box"]
 
