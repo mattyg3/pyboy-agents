@@ -5,6 +5,8 @@ import pytesseract
 pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 import json
 from utils.utility_funcs import type_multiplier
+from collections import deque
+import re
 
 # Import Reference Data
 with open('src/pokemon_agent/utils/ref_data/POKEDEX.json', 'r') as f:
@@ -16,6 +18,17 @@ with open('src/pokemon_agent/utils/ref_data/MOVES_INDEX.json', 'r') as f:
 with open('src/pokemon_agent/utils/ref_data/ram_addresses.json', 'r') as f:
     RAM_POINTERS = json.load(f)
 
+# ---------- CONFIG ----------
+UPSCALE = 4
+TEXT_WHITELIST = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!?.',:; "
+HISTORY_SIZE = 20
+REGIONS = {
+    "dialog":  (104, 144, 8, 152),
+    "menu":    (104, 144, 8, 80),
+    "player_hp": (64, 72, 100, 152),
+    "enemy_hp":  (16, 24, 96, 152),
+}
+# ----------------------------
 
 def read_word(memory, addr):
     """Read 2 bytes little-endian"""
