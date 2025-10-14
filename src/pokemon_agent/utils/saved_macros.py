@@ -38,10 +38,11 @@ game_start_macro.add_step({"type": "PRESS_A"}, 500) #pick Charmander
 
 # ====== Start Rival Fight Macro ======
 start_fight = create_macro()
-start_fight.add_step({"type": "GO_LEFT"}, 5)
-start_fight.add_step({"type": "GO_DOWN"}, 20)
-start_fight.add_step({"type": "PRESS_A"}, 350) #battle rival (mash A button)
-start_fight.add_step({"type": "GO_DOWN"}, 75) #leave building, start adventure
+start_fight.add_step({"type": "GO_LEFT"}, 2)
+start_fight.add_step({"type": "GO_DOWN"}, 15)
+start_fight.add_step({"type": "PRESS_A"}, 500)
+# start_fight.add_step({"type": "PRESS_A"}, 150) #battle rival (mash A button)
+start_fight.add_step({"type": "GO_DOWN"}, 8) #leave building, start adventure
 # start_fight.add_step({"type": "GO_LEFT"}, 5)
 # start_fight.add_step({"type": "GO_DOWN"}, 20)
 # start_fight.add_step({"type": "PRESS_A"}, 1400) #battle rival (mash A button)
@@ -49,10 +50,10 @@ start_fight.add_step({"type": "GO_DOWN"}, 75) #leave building, start adventure
 
 # ====== Get to Wild Pokemon ======
 wild_pokemon = create_macro()
-wild_pokemon.add_step({"type": "GO_LEFT"}, 7)
-wild_pokemon.add_step({"type": "GO_UP"}, 70)
-wild_pokemon.add_step({"type":"GO_RIGHT"}, 5)
-wild_pokemon.add_step({"type": "GO_UP"}, 300)
+wild_pokemon.add_step({"type": "GO_LEFT"}, 5)
+wild_pokemon.add_step({"type": "GO_UP"}, 25)
+wild_pokemon.add_step({"type":"GO_RIGHT"}, 3)
+wild_pokemon.add_step({"type": "GO_UP"}, 100)
 
 # test_macro = create_macro()
 # test_macro.add_step({"type": "PRESS_A"}, 700)

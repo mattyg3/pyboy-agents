@@ -1,5 +1,3 @@
-# Minimal runner: uses PyBoy to run an emulator loop, publishes state to planner, runs skill macros.
-
 from pyboy import PyBoy#, WindowEvent
 from perception import PokemonPerceptionAgent
 from planner import SimplePlanner
@@ -7,7 +5,7 @@ from skills import SkillExecutor
 import time
 
 ROM_PATH = 'ROMS/pokemon_red.gb'
-SAVE_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander.sav'
+SAVE_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_midfight.sav'
 LOAD_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_prefight.sav'
 # SAVE_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_prefight.sav'
 
@@ -15,7 +13,7 @@ def main():
     # Use headless for fastest "null", or use "SDL2" if you want a window or "OpenGL"
     pyboy = PyBoy(ROM_PATH, window="SDL2")
     # Optionally set unlimited speed
-    pyboy.set_emulation_speed(0)
+    # pyboy.set_emulation_speed(0)
 
 
     # Load Save State
@@ -30,7 +28,7 @@ def main():
     try:
         # if frame % 10 == 0:
         
-        while pyboy.tick(10):  # returns False when ROM done / exit
+        while pyboy.tick():  # returns False when ROM done / exit 60
             # if frame < 2500:
             #     state = {}
             # else:
@@ -39,10 +37,10 @@ def main():
             #     plan = planner.gamestart_plan(frame)
             # else:
             #     plan = planner.plan(state, frame)
-            if frame < 400:
+            if frame < 500:
                 state = perception.get_game_state()
                 plan = planner.fightstart_plan(frame)
-            elif frame < 700:
+            elif frame < 400:
                 state = perception.get_game_state()
                 plan = planner.findwildpokemon_plan(frame)
             else:
@@ -52,11 +50,11 @@ def main():
 
             # if frame % 100 == 0:
                 # print(f"[frame {frame}] scene={state.get('scene')} plan={plan.get('type')} status={status}")
-            print(f"[frame {frame}]     status={status}     STATE: {state}")
+            print(f"\n\n[frame {frame}]     \nstatus={status}     \nSTATE: {state}\n")
                 # print(pyboy.memory[0xD014])
             frame += 1
 
-            if frame>2500:
+            if frame>2000:
                 break
 
             # optional: small sleep to avoid hogging CPU unnecessarily

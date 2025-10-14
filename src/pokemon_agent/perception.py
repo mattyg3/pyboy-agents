@@ -5,6 +5,7 @@ import pytesseract
 pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 import json
 from utils.utility_funcs import type_multiplier
+from battle_state import BattleTracker, BattleStateTracker
 
 # Import Reference Data
 with open('src/pokemon_agent/utils/ref_data/POKEDEX.json', 'r') as f:
@@ -37,16 +38,15 @@ class PokemonPerceptionAgent:
         self.enemy_move_list = []
         print("PerceptionAgent with memory reading initialized.")
 
-    def capture_frame(self):
-        return self.screen.ndarray
+    
 
-    def read_text(self, frame):
-        gray = cv2.cvtColor(frame, cv2.COLOR_RGB2GRAY)
-        h, w = gray.shape
-        text_region = gray[int(h*0.7):, :]
-        text_region = cv2.threshold(text_region, 100, 255, cv2.THRESH_BINARY)[1]
-        text = pytesseract.image_to_string(text_region, config='--psm 6').strip()
-        return text
+    # def read_text(self, frame):
+    #     gray = cv2.cvtColor(frame, cv2.COLOR_RGB2GRAY)
+    #     h, w = gray.shape
+    #     text_region = gray[int(h*0.7):, :]
+    #     text_region = cv2.threshold(text_region, 100, 255, cv2.THRESH_BINARY)[1]
+    #     text = pytesseract.image_to_string(text_region, config='--psm 6').strip()
+    #     return text
     
     def get_mem_pointer(self, address_book, pointer_name):
         return int(next(entry["address"] for entry in RAM_POINTERS[address_book] if entry["name"] == pointer_name), 16)
@@ -60,6 +60,7 @@ class PokemonPerceptionAgent:
         map_id = mem[self.get_mem_pointer("system_addresses", "current_map_id")]
 
         # Battle 
+        battle_flag = mem[self.get_mem_pointer("system_addresses", "battle_type")]
         turn = mem[self.get_mem_pointer("system_addresses", "battle_turn")]
         # prev_turn = self.prev_state.get("battle").get("turn")
         prev_enemy_species = self.prev_state.get("opponent").get("species")
@@ -162,12 +163,6 @@ class PokemonPerceptionAgent:
             enemy_move_dict = next((d for d in MOVES_INDEX if d['move_id'] == int(mem[self.get_mem_pointer("enemy_addresses", "move_id")])))
         except:
             enemy_move_dict={"name":None, "effect":None, "power":None, "type":None, "accuracy":None, "pp":None}
-        # enemy_move = enemy_move_dict.get("name")
-        # enemy_move_effect = enemy_move_dict.get("effect")
-        # enemy_move_power = enemy_move_dict.get("power")
-        # enemy_move_type = enemy_move_dict.get("type")
-        # enemy_move_accuracy = enemy_move_dict.get("accuracy")
-        # enemy_move_PP_max = enemy_move_dict.get("pp")
 
         enemy_move = {
                         "move":enemy_move_dict.get("name"),
@@ -257,49 +252,49 @@ class PokemonPerceptionAgent:
                 "moves": self.enemy_move_list,
             },
             "battle": {
+                "battle_type": battle_flag,
                 "turn": turn,
-                # "prev_turn": prev_turn
             }
         }
     
     # def get_battle_state(self, mem_state):
     #     turn_count = 
 
-    def detect_mode(self, mem_state, text):
-        if mem_state["opponent"]["hp_max"] > 0:
-            return "battle"
-        if "menu" in text.lower():
-            return "menu"
-        return "overworld"
+    # def detect_mode(self, mem_state, text):
+    #     if mem_state["opponent"]["hp_max"] > 0:
+    #         return "battle"
+    #     if "menu" in text.lower():
+    #         return "menu"
+    #     return "overworld"
+    def capture_frame(self):
+        return self.screen.ndarray
 
     def get_game_state(self):
         frame = self.capture_frame()
-        text = self.read_text(frame)
         mem_state = self.read_memory_state()
-        mode = self.detect_mode(mem_state, text)
+        battle_tracker = BattleTracker(self.pyboy, frame)
+        if mem_state.get("battle").get("battle_type") != 0:
+            battle_state = battle_tracker.read_frame()
+        else:
+            battle_state={"in_battle":None, "turn":None, "menu_state":None, "last_event":None}
+        player_turn=False
+        if battle_state.get("menu_state"):
+            player_turn = True
+            print(f'\nMENU: {battle_state.get("menu_state")}\n')
 
         self.prev_state = mem_state
         state = {
-                "scene": mode,
-                "text_box": text,
                 "player": mem_state["player"],
                 "opponent": mem_state["opponent"],
-                "battle": mem_state["battle"],
+                "battle": {
+                    "battle_type": mem_state.get("battle").get("battle_type"),
+                    "turn": mem_state.get("battle").get("turn"),
+                    "player_turn": player_turn
+                },
+
+                
+                "menu_state": battle_state.get("menu_state"),
             }
-
-        # if mode == 'battle':
-        #     state = {
-        #         "scene": mode,
-        #         "text_box": text,
-
-        #         }
-        # else:
-        #     state = {
-        #         "scene": mode,
-        #         "text_box": text,
-        #         "player": mem_state["player"],
-        #         "opponent": mem_state["opponent"],
-        #     }
         return state
 
     # def evaluate_advantage(self, player, enemy):
@@ -323,16 +318,4 @@ class PokemonPerceptionAgent:
     #         return "even"
         
 
-    # def step(self):
-    #     self.pyboy.tick()
-    #     return self.get_game_state()
-
-# if __name__ == "__main__":
-#     agent = PokemonPerceptionAgent("PokemonRed.gb")
-
-#     while not agent.pyboy.tick():
-#         state = agent.get_game_state()
-#         if state["text_box"] != agent.text_prev:
-#             print(state)
-#             agent.text_prev = state["text_box"]
 
