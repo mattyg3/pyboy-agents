@@ -5,8 +5,7 @@ import pytesseract
 pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 import json
 from utils.utility_funcs import type_multiplier
-from collections import deque
-import re
+from battle_state import BattleTracker, BattleStateTracker
 
 # Import Reference Data
 with open('src/pokemon_agent/utils/ref_data/POKEDEX.json', 'r') as f:
@@ -18,17 +17,6 @@ with open('src/pokemon_agent/utils/ref_data/MOVES_INDEX.json', 'r') as f:
 with open('src/pokemon_agent/utils/ref_data/ram_addresses.json', 'r') as f:
     RAM_POINTERS = json.load(f)
 
-# ---------- CONFIG ----------
-UPSCALE = 4
-TEXT_WHITELIST = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!?.',:; "
-HISTORY_SIZE = 20
-REGIONS = {
-    "dialog":  (104, 144, 8, 152),
-    "menu":    (104, 144, 8, 80),
-    "player_hp": (64, 72, 100, 152),
-    "enemy_hp":  (16, 24, 96, 152),
-}
-# ----------------------------
 
 def read_word(memory, addr):
     """Read 2 bytes little-endian"""
@@ -50,16 +38,15 @@ class PokemonPerceptionAgent:
         self.enemy_move_list = []
         print("PerceptionAgent with memory reading initialized.")
 
-    def capture_frame(self):
-        return self.screen.ndarray
+    
 
-    def read_text(self, frame):
-        gray = cv2.cvtColor(frame, cv2.COLOR_RGB2GRAY)
-        h, w = gray.shape
-        text_region = gray[int(h*0.7):, :]
-        text_region = cv2.threshold(text_region, 100, 255, cv2.THRESH_BINARY)[1]
-        text = pytesseract.image_to_string(text_region, config='--psm 6').strip()
-        return text
+    # def read_text(self, frame):
+    #     gray = cv2.cvtColor(frame, cv2.COLOR_RGB2GRAY)
+    #     h, w = gray.shape
+    #     text_region = gray[int(h*0.7):, :]
+    #     text_region = cv2.threshold(text_region, 100, 255, cv2.THRESH_BINARY)[1]
+    #     text = pytesseract.image_to_string(text_region, config='--psm 6').strip()
+    #     return text
     
     def get_mem_pointer(self, address_book, pointer_name):
         return int(next(entry["address"] for entry in RAM_POINTERS[address_book] if entry["name"] == pointer_name), 16)
@@ -73,6 +60,7 @@ class PokemonPerceptionAgent:
         map_id = mem[self.get_mem_pointer("system_addresses", "current_map_id")]
 
         # Battle 
+        battle_flag = mem[self.get_mem_pointer("system_addresses", "battle_type")]
         turn = mem[self.get_mem_pointer("system_addresses", "battle_turn")]
         # prev_turn = self.prev_state.get("battle").get("turn")
         prev_enemy_species = self.prev_state.get("opponent").get("species")
@@ -270,6 +258,7 @@ class PokemonPerceptionAgent:
                 "moves": self.enemy_move_list,
             },
             "battle": {
+                "battle_type": battle_flag,
                 "turn": turn,
                 # "prev_turn": prev_turn
             }
@@ -278,26 +267,35 @@ class PokemonPerceptionAgent:
     # def get_battle_state(self, mem_state):
     #     turn_count = 
 
-    def detect_mode(self, mem_state, text):
-        if mem_state["opponent"]["hp_max"] > 0:
-            return "battle"
-        if "menu" in text.lower():
-            return "menu"
-        return "overworld"
+    # def detect_mode(self, mem_state, text):
+    #     if mem_state["opponent"]["hp_max"] > 0:
+    #         return "battle"
+    #     if "menu" in text.lower():
+    #         return "menu"
+    #     return "overworld"
+    def capture_frame(self):
+        return self.screen.ndarray
 
     def get_game_state(self):
         frame = self.capture_frame()
-        text = self.read_text(frame)
         mem_state = self.read_memory_state()
-        mode = self.detect_mode(mem_state, text)
-
+        battle_tracker = BattleTracker(self.pyboy, frame)
+        if mem_state.get("battle").get("battle_type") != 0:
+            battle_state = battle_tracker.read_frame()
+        else:
+            battle_state={"in_battle":None, "turn":None, "menu_state":None, "last_event":None}
+        if battle_state.get("menu_state"):
+            print(f'\nMENU: {battle_state.get("menu_state")}\n')
         self.prev_state = mem_state
         state = {
-                "scene": mode,
-                "text_box": text,
+                # "in_battle": battle_state.get("in_battle"),
+                # "trainer_turn": battle_state.get("turn"),
+                
+                # "last_event": battle_state.get("last_event"),
                 "player": mem_state["player"],
                 "opponent": mem_state["opponent"],
                 "battle": mem_state["battle"],
+                "menu_state": battle_state.get("menu_state"),
             }
 
         # if mode == 'battle':

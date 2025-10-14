@@ -23,7 +23,7 @@ class SimplePlanner:
             return action
         
     def findwildpokemon_plan(self, frame): #, state
-        action = wild_pokemon.run_macro(frame=frame, init_frame=400)
+        action = wild_pokemon.run_macro(frame=frame, init_frame=200)
         if action is None:
             return {"type": None}
         else:

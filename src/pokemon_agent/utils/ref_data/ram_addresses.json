@@ -30,7 +30,7 @@
     },
     {
       "name": "battle_type",
-      "address": "0xD05A",
+      "address": "0xD057",
       "size": 1,
       "type": "byte",
       "description": "Battle type flag (trainer, wild, etc.)"
