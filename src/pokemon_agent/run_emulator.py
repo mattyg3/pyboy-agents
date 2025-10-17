@@ -28,7 +28,7 @@ def main():
     try:
         # if frame % 10 == 0:
         
-        while pyboy.tick():  # returns False when ROM done / exit 60
+        while pyboy.tick(60):  # returns False when ROM done / exit 60
             # if frame < 2500:
             #     state = {}
             # else:
@@ -62,6 +62,7 @@ def main():
         # else:
         #     frame+=9
     finally:
+        print(perception.dialog_history)
         with open(SAVE_STATE_PATH, "wb") as f:
             pyboy.save_state(f)
         pyboy.stop()

@@ -5,6 +5,11 @@
 # player_move1_dict = next((d for d in MOVES_INDEX if d['move_id'] == 10), None)
 # print(player_move1_dict)
 
+
+
+
+
+
 from pyboy import PyBoy
 import cv2
 ROM_PATH = 'ROMS/pokemon_red.gb'
@@ -29,17 +34,33 @@ def main():
         pyboy.button_release("a")
         # Allow at least one more tick so the command registers
         pyboy.tick()
-        cv2.imwrite("dev_files/frame_test.png", frame)
+        cv2.imwrite("dev_files/frame_test2.png", frame)
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-        y1, y2, x1, x2 = (104, 144, 2, 160) #152
+
+        y1, y2, x1, x2 = (104, 137, 6, 154) #152
         img= gray[y1:y2, x1:x2]
-        cv2.imwrite("dev_files/dialog_region.png", img)
+        cv2.imwrite("dev_files/dialog_region2.png", img)
+
         y1, y2, x1, x2 = (90, 144, 35, 160)
         img= gray[y1:y2, x1:x2]
-        cv2.imwrite("dev_files/menu_region.png", img)
+        cv2.imwrite("dev_files/menu_region2.png", img)
     pyboy.stop()
         
 
 
 if __name__ == "__main__":
     main()
+
+
+
+# import cv2
+# import pytesseract
+# from pytesseract import Output
+
+# # `img` should be the cropped dialog region (BGR or grayscale)
+# img = cv2.imread("dev_files/dialog_region.png")
+# # run Tesseract with data output
+# data = pytesseract.image_to_data(img, output_type=Output.DICT, config="--psm 6")
+# for i, text in enumerate(data['text']):
+#     if text.strip():
+#         print(f"word:{text!r} conf:{data['conf'][i]}")

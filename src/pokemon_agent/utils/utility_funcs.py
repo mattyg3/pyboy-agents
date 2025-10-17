@@ -57,6 +57,77 @@ def type_multiplier(attacking_type, defending_types, attacker_types=None):
 #     print(f"Effectiveness: {result}x")  # 0.75x (0.5 * 1.5)
 
 
+# Clean noisy text
+class TextCleaner():
+    def __new__(cls, ocr_outputs):
+        cleaned = cls.collapse_ocr_sequence(ocr_outputs)
+        stripped = cls.extract_final_texts(cleaned)
+        final = [cls.post_process(msg) for msg in stripped]
+        return ' '.join(final)
+    
+    def __init__(self):
+        pass
+        
+
+
+    def collapse_ocr_sequence(ocr_outputs, min_len=3):
+        """
+        Reduce noisy OCR frame outputs to meaningful full lines.
+        - Removes duplicates and partial overlaps.
+        - Keeps only distinct final states of each message.
+        """
+        cleaned = []
+        last = ""
+        for text in ocr_outputs:
+            # Normalize newlines and spaces
+            t = text.strip().replace("\r", "")
+            # Ignore if it's just a prefix of the previous
+            if t.startswith(last) and len(t) <= len(last):
+                continue
+            # Ignore if it's too short
+            if len(t) < min_len:
+                continue
+            # Only append if different enough
+            if t != last:
+                cleaned.append(t)
+                last = t
+        return cleaned
+
+    def extract_final_texts(cleaned):
+        """
+        Split sequence into message chunks and take final text of each.
+        A reset (shorter text) signals new message.
+        """
+        finals = []
+        current_chunk = []
+        last_len = 0
+
+        for text in cleaned:
+            if len(text) >= last_len:
+                current_chunk.append(text)
+            else:
+                if current_chunk:
+                    finals.append(current_chunk[-1])
+                current_chunk = [text]
+            last_len = len(text)
+
+        if current_chunk:
+            finals.append(current_chunk[-1])
+
+        return finals
+    
+    def post_process(text):
+        """Fix common OCR quirks and improve readability."""
+        text = text.replace("\n", " ").replace("  ", " ")
+        return text.strip()
+
+
+
+
+
+
+
+
 
 
     # def print_memory_region(self, pyboy, base_pointer, radius=10):

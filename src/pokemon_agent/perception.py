@@ -5,7 +5,8 @@ import pytesseract
 pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 import json
 from utils.utility_funcs import type_multiplier
-from battle_state import BattleTracker, BattleStateTracker
+from OCR import OCR_Processing, BattleStateTracker, OverworldStateTracker
+from utils.utility_funcs import TextCleaner
 
 # Import Reference Data
 with open('src/pokemon_agent/utils/ref_data/POKEDEX.json', 'r') as f:
@@ -36,6 +37,7 @@ class PokemonPerceptionAgent:
         self.text_prev = ""
         self.prev_state = {"battle":{"turn":None}, "opponent":{"species":None}}
         self.enemy_move_list = []
+        self.dialog_history = []
         print("PerceptionAgent with memory reading initialized.")
 
     
@@ -60,7 +62,7 @@ class PokemonPerceptionAgent:
         map_id = mem[self.get_mem_pointer("system_addresses", "current_map_id")]
 
         # Battle 
-        battle_flag = mem[self.get_mem_pointer("system_addresses", "battle_type")]
+        self.battle_flag = mem[self.get_mem_pointer("system_addresses", "battle_type")]
         turn = mem[self.get_mem_pointer("system_addresses", "battle_turn")]
         # prev_turn = self.prev_state.get("battle").get("turn")
         prev_enemy_species = self.prev_state.get("opponent").get("species")
@@ -252,7 +254,7 @@ class PokemonPerceptionAgent:
                 "moves": self.enemy_move_list,
             },
             "battle": {
-                "battle_type": battle_flag,
+                "battle_type": self.battle_flag,
                 "turn": turn,
             }
         }
@@ -268,20 +270,41 @@ class PokemonPerceptionAgent:
     #     return "overworld"
     def capture_frame(self):
         return self.screen.ndarray
+    
+    
 
     def get_game_state(self):
         frame = self.capture_frame()
+        battle_tracker = BattleStateTracker()
+        overworld_tracker = OverworldStateTracker()
         mem_state = self.read_memory_state()
-        battle_tracker = BattleTracker(self.pyboy, frame)
-        if mem_state.get("battle").get("battle_type") != 0:
-            battle_state = battle_tracker.read_frame()
-        else:
-            battle_state={"in_battle":None, "turn":None, "menu_state":None, "last_event":None}
-        player_turn=False
-        if battle_state.get("menu_state"):
-            player_turn = True
-            print(f'\nMENU: {battle_state.get("menu_state")}\n')
 
+        if self.battle_flag != 0:
+            tracker_state = battle_tracker
+        else:
+            tracker_state = overworld_tracker
+
+        ocr_state = OCR_Processing(self.pyboy, frame, tracker_state)
+        ocr_results = ocr_state.read_frame()
+        player_turn=False
+
+        if ocr_results.get("menu_state"):
+            player_turn = True
+            menu_state = ocr_results.get("menu_state")
+            dialog_text = None
+            # print(f'\nMENU: {ocr_results.get("menu_state")}\n')
+        elif ocr_results.get("new_text"):
+            menu_state = None
+            dialog_text = ocr_results.get("new_text")
+            print(type(dialog_text))
+            dialog_text = TextCleaner(dialog_text)
+            print(type(dialog_text))
+            if dialog_text not in self.dialog_history:
+                self.dialog_history.append(dialog_text)
+        else:
+            menu_state = None
+            dialog_text= None
+    
         self.prev_state = mem_state
         state = {
                 "player": mem_state["player"],
@@ -291,9 +314,8 @@ class PokemonPerceptionAgent:
                     "turn": mem_state.get("battle").get("turn"),
                     "player_turn": player_turn
                 },
-
-                
-                "menu_state": battle_state.get("menu_state"),
+                "menu_state": menu_state,
+                "dialog_text": dialog_text
             }
         return state
 
