@@ -185,7 +185,7 @@ if __name__ == "__main__":
 
     frame = cv2.imread("dev_files/frame_test.png")
     results = ocr_from_regions(frame, regions, templates)
-    print(TextCleaner(results)[0])
+    print(TextCleaner(results)) #[0]
     
 
     # for i, text in enumerate(results):

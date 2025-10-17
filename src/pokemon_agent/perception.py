@@ -296,9 +296,7 @@ class PokemonPerceptionAgent:
         elif ocr_results.get("new_text"):
             menu_state = None
             dialog_text = ocr_results.get("new_text")
-            print(type(dialog_text))
-            dialog_text = TextCleaner(dialog_text)
-            print(type(dialog_text))
+            dialog_text = TextCleaner([dialog_text])
             if dialog_text not in self.dialog_history:
                 self.dialog_history.append(dialog_text)
         else:

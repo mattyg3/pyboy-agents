@@ -64,6 +64,7 @@ class TextCleaner():
         stripped = cls.extract_final_texts(cleaned)
         final = [cls.post_process(msg) for msg in stripped]
         return ' '.join(final)
+        # return stripped
     
     def __init__(self):
         pass
@@ -78,6 +79,7 @@ class TextCleaner():
         """
         cleaned = []
         last = ""
+
         for text in ocr_outputs:
             # Normalize newlines and spaces
             t = text.strip().replace("\r", "")

@@ -196,22 +196,22 @@ class OCR_Processing:
         text = self.match_text_region(proc, TEMPLATES)
         return text
 
-    def detect_changes(self, text):
-        if text and text != self.last_texts:
-            new_texts = text
-            self.last_texts = text
-            # if text not in self.history:
-            #     self.history.append(f"{text}")
-        else:
-            new_texts = None
-        return new_texts
+    # def detect_changes(self, text):
+    #     if text and text != self.last_texts:
+    #         new_texts = text
+    #         self.last_texts = text
+    #         # if text not in self.history:
+    #         #     self.history.append(f"{text}")
+    #     else:
+    #         new_texts = None
+    #     return new_texts
 
     def read_frame(self):
         text = self.read_regions()
-        new_texts = self.detect_changes(text)
-
-        if new_texts:
-            self.state.update_from_ocr(text)
+        self.state.update_from_ocr(text)
+        # new_texts = self.detect_changes(text)
+        # if new_texts:
+        #     self.state.update_from_ocr(text)
 
         return self.state.summary()
 
