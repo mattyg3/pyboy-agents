@@ -9,7 +9,7 @@ SAVE_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_midfight.sav'
 LOAD_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_prefight.sav'
 # SAVE_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_prefight.sav'
 
-def main():
+def run(ROM_PATH=ROM_PATH, LOAD_STATE_PATH=LOAD_STATE_PATH, SAVE_STATE_PATH=SAVE_STATE_PATH):
     # Use headless for fastest "null", or use "SDL2" if you want a window or "OpenGL"
     pyboy = PyBoy(ROM_PATH, window="SDL2")
     # Optionally set unlimited speed
@@ -73,4 +73,4 @@ def main():
         print("Stopped emulator.")
 
 if __name__ == "__main__":
-    main()
+    run()
