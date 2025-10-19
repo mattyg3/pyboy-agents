@@ -38,6 +38,9 @@ class PokemonPerceptionAgent:
         self.prev_state = {"battle":{"turn":None}, "opponent":{"species":None}}
         self.enemy_move_list = []
         self.dialog_history = []
+        # self.frame_count = 0
+        self.text_count = 0
+        self.dialog_reset_counter = 0
         print("PerceptionAgent with memory reading initialized.")
 
     
@@ -274,6 +277,7 @@ class PokemonPerceptionAgent:
     
 
     def get_game_state(self):
+        # self.frame_count += 1 
         frame = self.capture_frame()
         battle_tracker = BattleStateTracker()
         overworld_tracker = OverworldStateTracker()
@@ -289,6 +293,13 @@ class PokemonPerceptionAgent:
         player_turn=False
 
         if ocr_results.get("menu_state"):
+            if not player_turn and len(self.dialog_history) > 0:
+                cleaned_dialog = TextCleaner(self.dialog_history)
+                with open('src/pokemon_agent/saves/dialog_log.txt', 'a') as file:
+                    file.write(f'{cleaned_dialog}\n')
+                self.dialog_history=[]
+                self.text_count=0
+
             player_turn = True
             menu_state = ocr_results.get("menu_state")
             dialog_text = None
@@ -296,10 +307,29 @@ class PokemonPerceptionAgent:
         elif ocr_results.get("new_text"):
             menu_state = None
             dialog_text = ocr_results.get("new_text")
-            dialog_text = TextCleaner([dialog_text])
+            # dialog_text = TextCleaner([dialog_text])
             if dialog_text not in self.dialog_history:
                 self.dialog_history.append(dialog_text)
+                self.text_count += 1
+                self.dialog_reset_counter = 0 
+                if self.text_count > 5: #save cleaned text to LOG
+                    cleaned_dialog = TextCleaner(self.dialog_history)
+                    with open('src/pokemon_agent/saves/dialog_log.txt', 'a') as file:
+                        file.write(f'{cleaned_dialog}\n')
+
+                    self.dialog_history=[]
+                    self.text_count=0
+        elif self.dialog_reset_counter > 10:
+            menu_state = None
+            dialog_text= None
+            if len(self.dialog_history) > 0:
+                cleaned_dialog = TextCleaner(self.dialog_history)
+                with open('src/pokemon_agent/saves/dialog_log.txt', 'a') as file:
+                    file.write(f'{cleaned_dialog}\n')
+                self.dialog_history=[]
+                self.text_count=0
         else:
+            self.dialog_reset_counter += 1
             menu_state = None
             dialog_text= None
     
@@ -313,7 +343,8 @@ class PokemonPerceptionAgent:
                     "player_turn": player_turn
                 },
                 "menu_state": menu_state,
-                "dialog_text": dialog_text
+                "dialog_text": dialog_text,
+                "dialog_history": TextCleaner(self.dialog_history),
             }
         return state
 

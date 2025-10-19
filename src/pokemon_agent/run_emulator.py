@@ -20,6 +20,10 @@ def main():
     with open(LOAD_STATE_PATH, "rb") as f:
             pyboy.load_state(f)
 
+    
+    with open('src/pokemon_agent/saves/dialog_log.txt', 'w') as file:
+        file.write('====== Saved Dialog ======\n')
+
     perception = PokemonPerceptionAgent(pyboy)
     planner = SimplePlanner() #LLM Step eventually
     skills = SkillExecutor(pyboy)
@@ -28,7 +32,7 @@ def main():
     try:
         # if frame % 10 == 0:
         
-        while pyboy.tick(60):  # returns False when ROM done / exit 60
+        while pyboy.tick(120):  # returns False when ROM done / exit 60
             # if frame < 2500:
             #     state = {}
             # else:
@@ -62,7 +66,7 @@ def main():
         # else:
         #     frame+=9
     finally:
-        print(perception.dialog_history)
+        print(f"Raw Dialog History: {perception.dialog_history}")
         with open(SAVE_STATE_PATH, "wb") as f:
             pyboy.save_state(f)
         pyboy.stop()
