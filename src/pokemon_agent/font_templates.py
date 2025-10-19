@@ -5,10 +5,13 @@ from pathlib import Path
 import pickle
 # --- CONFIG ---
 TEMPLATE_CHAR_ORDER = ["ABCDEFGHIJKLMNOP","QRSTUVWXYZ", 'abcdefghijklmnop', 'qrstuvwxyzé',"0123456789","?!."]
+TEMPLATE_CHAR_ORDER_INDV = [["'d"], ["'l"], ["'m"], ["'r"], ["'s"], ["'t"], ["'v"]]
 TEMPLATE_WIDTH = 8   # width of one character in pixels
 TEMPLATE_HEIGHT = 8  # height of one character in pixels
 folder_path='src/pokemon_agent/utils/ref_data/fonts/'
 image_paths = [f"{folder_path}font_row1.png", f"{folder_path}font_row2.png", f"{folder_path}font_lower_row1.png", f"{folder_path}font_lower_row2.png", f"{folder_path}font_numbers.png", f"{folder_path}font_punc.png",]
+image_paths_indv = [f"{folder_path}font_d.png", f"{folder_path}font_l.png", f"{folder_path}font_m.png", f"{folder_path}font_r.png", f"{folder_path}font_s.png", f"{folder_path}font_t.png", f"{folder_path}font_v.png"]
+
 
 # def build_templates_from_images(image_paths, char_order_list=TEMPLATE_CHAR_ORDER,
 #                                 width=TEMPLATE_WIDTH, height=TEMPLATE_HEIGHT):
@@ -42,7 +45,37 @@ image_paths = [f"{folder_path}font_row1.png", f"{folder_path}font_row2.png", f"{
 
 # templates = build_templates_from_images(image_paths) #
 
+# def build_templates_from_images_indv(image_paths, char_order_list=TEMPLATE_CHAR_ORDER_INDV,
+#                                 width=TEMPLATE_WIDTH, height=TEMPLATE_HEIGHT):
+#     """
+#     Build template dictionary from multiple font sheet images.
+#     Each image should contain the characters in 'char_order', evenly spaced horizontally.
+#     """
+#     templates = {}
 
+#     for j, path in enumerate(image_paths):
+#         char_order=char_order_list[j]
+#         img = cv2.imread(str(path), cv2.IMREAD_GRAYSCALE)
+#         if img is None:
+#             print(f"[WARN] Could not read {path}")
+#             continue
+
+#         img = cv2.threshold(img, 128, 255, cv2.THRESH_BINARY_INV | cv2.THRESH_OTSU)[1]
+#         chars_per_row = img.shape[1] // width
+
+#         for i, c in enumerate(char_order[:chars_per_row]):
+#             x1, y1 = i * width, 0
+#             x2, y2 = x1 + width, height
+#             glyph = img[y1:y2, x1:x2]
+#             if glyph.size > 0:
+#                 templates[c] = glyph
+
+#         print(f"[OK] Loaded {len(templates)} templates from {path}")
+
+#     print(f"[DONE] Total templates loaded: {len(templates)}")
+#     return templates
+
+# templates_indv = build_templates_from_images_indv(image_paths_indv)
 
 def save_templates_pkl(templates, filename="src/pokemon_agent/utils/ref_data/font_templates.pkl"):
     with open(filename, "wb") as f:
@@ -55,6 +88,8 @@ def load_templates_pkl(filename="src/pokemon_agent/utils/ref_data/font_templates
     print(f"✅ Loaded {len(templates)} templates from {filename}")
     return templates
 
+
+# templates.update(templates_indv)
 # save_templates_pkl(templates)
 templates = load_templates_pkl()
 
@@ -62,7 +97,7 @@ templates = load_templates_pkl()
 
 # # Show a single character template
 # import cv2
-# cv2.imshow('Template A', templates['e'])
+# cv2.imshow('Template A', templates["'s"])
 # cv2.waitKey(0)
 # cv2.destroyAllWindows()
 

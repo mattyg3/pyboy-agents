@@ -32,7 +32,7 @@ def main():
     try:
         # if frame % 10 == 0:
         
-        while pyboy.tick(120):  # returns False when ROM done / exit 60
+        while pyboy.tick(100):  # returns False when ROM done / exit 60
             # if frame < 2500:
             #     state = {}
             # else:
