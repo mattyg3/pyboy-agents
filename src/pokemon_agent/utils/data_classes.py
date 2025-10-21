@@ -21,6 +21,7 @@ class PokemonState:
     hp_max: int
     status: Optional[str] = None
     moves: List[MoveSet] = field(default_factory=list)
+    stats: Dict = {}
 
 @dataclass
 class BattleState:

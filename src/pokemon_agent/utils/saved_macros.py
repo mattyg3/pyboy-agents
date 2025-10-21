@@ -42,7 +42,8 @@ start_fight.add_step({"type": "GO_LEFT"}, 2)
 start_fight.add_step({"type": "GO_DOWN"}, 15)
 start_fight.add_step({"type": "PRESS_A"}, 500)
 # start_fight.add_step({"type": "PRESS_A"}, 150) #battle rival (mash A button)
-start_fight.add_step({"type": "GO_DOWN"}, 8) #leave building, start adventure
+start_fight.add_step({"type": "GO_DOWN"}, 4) #leave building, start adventure
+start_fight.add_step({"type": "GO_LEFT"}, 8)
 # start_fight.add_step({"type": "GO_LEFT"}, 5)
 # start_fight.add_step({"type": "GO_DOWN"}, 20)
 # start_fight.add_step({"type": "PRESS_A"}, 1400) #battle rival (mash A button)
