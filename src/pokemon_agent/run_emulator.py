@@ -5,15 +5,15 @@ from skills import SkillExecutor
 import time
 
 ROM_PATH = 'ROMS/pokemon_red.gb'
-SAVE_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_midfight.sav'
+SAVE_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_postfight_pallettown_right.sav'
 LOAD_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_prefight.sav'
 # SAVE_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_prefight.sav'
 
-def main():
+def run(ROM_PATH=ROM_PATH, LOAD_STATE_PATH=LOAD_STATE_PATH, SAVE_STATE_PATH=SAVE_STATE_PATH):
     # Use headless for fastest "null", or use "SDL2" if you want a window or "OpenGL"
     pyboy = PyBoy(ROM_PATH, window="SDL2")
     # Optionally set unlimited speed
-    # pyboy.set_emulation_speed(0)
+    pyboy.set_emulation_speed(0)
 
 
     # Load Save State
@@ -41,12 +41,12 @@ def main():
             #     plan = planner.gamestart_plan(frame)
             # else:
             #     plan = planner.plan(state, frame)
-            if frame < 500:
+            if frame < 1000:
                 state = perception.get_game_state()
                 plan = planner.fightstart_plan(frame)
-            elif frame < 400:
-                state = perception.get_game_state()
-                plan = planner.findwildpokemon_plan(frame)
+            # elif frame < 900:
+            #     state = perception.get_game_state()
+            #     plan = planner.findwildpokemon_plan(frame)
             else:
                 state = perception.get_game_state()
                 plan = planner.plan(state, frame)
@@ -73,4 +73,4 @@ def main():
         print("Stopped emulator.")
 
 if __name__ == "__main__":
-    main()
+    run()

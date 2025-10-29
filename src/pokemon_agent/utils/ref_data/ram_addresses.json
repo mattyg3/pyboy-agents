@@ -22,6 +22,18 @@
       "description": "Player’s Y coordinate on current map"
     },
     {
+      "name": "camera_x",
+      "address": "0xD363",
+      "size": 1,
+      "type": "byte"
+    },
+    {
+      "name": "camera_y",
+      "address": "0xD364",
+      "size": 1,
+      "type": "byte"
+    },
+    {
       "name": "last_map_id",
       "address": "0xD365",
       "size": 1,
