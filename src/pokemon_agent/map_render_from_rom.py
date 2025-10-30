@@ -158,42 +158,42 @@ def get_player_position(pyboy):
 # IMPASSABLE_TILE_IDS = [0x00, 0x10, 0x1b, 0x20, 0x21, 0x23, 0x2c, 0x2d, 0x2e, 0x30, 0x31, 0x33, 0x39, 0x3c, 0x3e, 0x52, 0x54, 0x58, 0x5b] #from collision_tile_ids
 WALKABLE_TILE_IDS = [0x00, 0x10, 0x1b, 0x20, 0x21, 0x23, 0x2c, 0x2d, 0x2e, 0x30, 0x31, 0x33, 0x39, 0x3c, 0x3e, 0x52, 0x54, 0x58, 0x5b] #from collision_tile_ids, actually walkable tiles?
 
-def is_block_walkable(block, impassable_tiles):
-    """
-    Returns True if all tiles in this block are walkable.
-    """
-    for row in block:
-        for tile_id in row:
-            if tile_id in impassable_tiles:
-                return False
-    return True
+# def is_block_walkable(block, impassable_tiles):
+#     """
+#     Returns True if all tiles in this block are walkable.
+#     """
+#     for row in block:
+#         for tile_id in row:
+#             if tile_id in impassable_tiles:
+#                 return False
+#     return True
 
-def generate_walkability_matrix(blocks, map_blocks, impassable_tiles):
-    """
-    Returns a 2D list of booleans: True = walkable, False = blocked.
-    """
-    matrix = []
-    for row in map_blocks:
-        matrix_row = []
-        for block_idx in row:
-            if block_idx < len(blocks):
-                walkable = is_block_walkable(blocks[block_idx], impassable_tiles)
-                matrix_row.append(walkable)
-            else:
-                matrix_row.append(False)
-        matrix.append(matrix_row)
-    return matrix
+# def generate_walkability_matrix(blocks, map_blocks, impassable_tiles):
+#     """
+#     Returns a 2D list of booleans: True = walkable, False = blocked.
+#     """
+#     matrix = []
+#     for row in map_blocks:
+#         matrix_row = []
+#         for block_idx in row:
+#             if block_idx < len(blocks):
+#                 walkable = is_block_walkable(blocks[block_idx], impassable_tiles)
+#                 matrix_row.append(walkable)
+#             else:
+#                 matrix_row.append(False)
+#         matrix.append(matrix_row)
+#     return matrix
 
-def overlay_walkability(draw, walk_matrix, block_size):
-    """
-    Overlay red translucent rectangles on unwalkable blocks.
-    """
-    for y, row in enumerate(walk_matrix):
-        for x, walkable in enumerate(row):
-            if not walkable:
-                x0, y0 = x * block_size, y * block_size
-                x1, y1 = x0 + block_size, y0 + block_size
-                draw.rectangle([x0, y0, x1, y1], outline="red", width=1)
+# def overlay_walkability(draw, walk_matrix, block_size):
+#     """
+#     Overlay red translucent rectangles on unwalkable blocks.
+#     """
+#     for y, row in enumerate(walk_matrix):
+#         for x, walkable in enumerate(row):
+#             if not walkable:
+#                 x0, y0 = x * block_size, y * block_size
+#                 x1, y1 = x0 + block_size, y0 + block_size
+#                 draw.rectangle([x0, y0, x1, y1], outline="red", width=1)
 
 # def generate_walkability_tile_matrix(blocks, map_blocks, impassable_tiles):
 #     """
@@ -267,16 +267,16 @@ def print_tile_walk_matrix(matrix):
     for row in matrix:
         print("".join("P" if cell == "P" else "." if cell else "#" for cell in row))
 
-def overlay_tile_walkability(draw, walk_matrix, tile_size):
-    """
-    Draws red outlines for unwalkable tiles.
-    """
-    for y, row in enumerate(walk_matrix):
-        for x, walkable in enumerate(row):
-            if not walkable:
-                x0, y0 = x * tile_size, y * tile_size
-                x1, y1 = x0 + tile_size, y0 + tile_size
-                draw.rectangle([x0, y0, x1, y1], outline="red", width=1)
+# def overlay_tile_walkability(draw, walk_matrix, tile_size):
+#     """
+#     Draws red outlines for unwalkable tiles.
+#     """
+#     for y, row in enumerate(walk_matrix):
+#         for x, walkable in enumerate(row):
+#             if not walkable:
+#                 x0, y0 = x * tile_size, y * tile_size
+#                 x1, y1 = x0 + tile_size, y0 + tile_size
+#                 draw.rectangle([x0, y0, x1, y1], outline="red", width=1)
 
 # =========================================================
 # 7. --- Main: render + overlay player ---
