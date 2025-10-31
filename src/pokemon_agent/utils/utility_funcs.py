@@ -126,7 +126,12 @@ class TextCleaner():
 
 
 
-
+# Map Functions
+def find_map_by_id(map_list, map_id):
+    for m in map_list:
+        if m["map_id"] == map_id:
+            return m
+    return None 
 
 
 

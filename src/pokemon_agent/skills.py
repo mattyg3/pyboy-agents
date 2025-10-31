@@ -1,7 +1,7 @@
 # skills.py
 # Convert high-level plans into PyBoy input sequences (macros). Very small macro language included.
 
-from pyboy.utils import WindowEvent
+# from pyboy.utils import WindowEvent
 
 class SkillExecutor:
     def __init__(self, pyboy):
@@ -16,7 +16,7 @@ class SkillExecutor:
         # Allow at least one more tick so the command registers
         self.pyboy.tick()
 
-    def execute(self, plan, state):
+    def execute(self, plan): #, state
         t = plan.get("type",None)
         if t is None or t == "NOOP":
             return "noop"
