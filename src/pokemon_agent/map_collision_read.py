@@ -1,7 +1,8 @@
-import sys
+# import sys
 from pathlib import Path
-from PIL import Image, ImageDraw
+# from PIL import Image, ImageDraw
 from pyboy import PyBoy
+import json
 
 
 # =========================================================
@@ -93,7 +94,7 @@ def get_player_position(pyboy):
 # 5. --- Collision and Walkability Grid ---
 # =========================================================
 # IMPASSABLE_TILE_IDS = [0x00, 0x10, 0x1b, 0x20, 0x21, 0x23, 0x2c, 0x2d, 0x2e, 0x30, 0x31, 0x33, 0x39, 0x3c, 0x3e, 0x52, 0x54, 0x58, 0x5b] #from collision_tile_ids
-WALKABLE_TILE_IDS = [0x00, 0x10, 0x1b, 0x20, 0x21, 0x23, 0x2c, 0x2d, 0x2e, 0x30, 0x31, 0x33, 0x39, 0x3c, 0x3e, 0x52, 0x54, 0x58, 0x5b] #from collision_tile_ids, actually walkable tiles?
+# WALKABLE_TILE_IDS = [0x00, 0x10, 0x1b, 0x20, 0x21, 0x23, 0x2c, 0x2d, 0x2e, 0x30, 0x31, 0x33, 0x39, 0x3c, 0x3e, 0x52, 0x54, 0x58, 0x5b] #from collision_tile_ids, actually walkable tiles?
 
 def generate_walkability_tile_matrix(blocks, map_blocks, walkable_tiles):
     """
@@ -142,17 +143,31 @@ def main():
 
     ROM_PATH = 'ROMS/pokemon_red.gb'
     # tileset_path = Path("src/pokemon_agent/utils/ref_data/maps/tilesets/overworld.2bpp")
-    blockset_path = Path("src/pokemon_agent/utils/ref_data/maps/blocksets/overworld.bst")
-    map_path = Path("src/pokemon_agent/utils/ref_data/maps/map_files/PalletTown.blk")
+    # blockset_path = Path("src/pokemon_agent/utils/ref_data/maps/blocksets/overworld.bst")
+    # map_path = Path("src/pokemon_agent/utils/ref_data/maps/map_files/PalletTown.blk")
     # tileset_path = Path("src/pokemon_agent/utils/ref_data/maps/tilesets/gym.2bpp")
     # blockset_path = Path("src/pokemon_agent/utils/ref_data/maps/blocksets/gym.bst")
     # map_path = Path("src/pokemon_agent/utils/ref_data/maps/map_files/OaksLab.blk")
-    width = 10
-    height = 9
+    # width = 10
+    # height = 9
     # out_path = Path("src/pokemon_agent/saves/render_map_test.png")
     # LOAD_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_postfight_pallettown_right.sav'
     LOAD_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_postfight_pallettown.sav'
     # LOAD_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_prefight.sav'
+
+    with open('src/pokemon_agent/utils/ref_data/maps/map_headers.json', 'r') as f:
+        MAP_HEADERS = json.load(f)
+
+    with open('src/pokemon_agent/utils/ref_data/maps/collision_tiles.json', 'r') as f:
+        COLLISION = json.load(f)
+    
+    def find_map_by_id(map_list, map_id):
+        for m in map_list:
+            if m["map_id"] == map_id:
+                return m
+        return None 
+
+
 
     # --- Start PyBoy in headless mode ---
     pyboy = PyBoy(ROM_PATH, window="SDL2")
@@ -166,6 +181,18 @@ def main():
         # --- Get player position ---
         map_id, px, py, direction = get_player_position(pyboy)
         print(f"Player at map {map_id}, X={px}, Y={py}, Looking={direction}") #(0: down, 4: up, 8: left, 12: right)
+
+        # --- Load Map Values ---
+        width = find_map_by_id(MAP_HEADERS, map_id).get("map_width")
+        height = find_map_by_id(MAP_HEADERS, map_id).get("map_height")
+        map_env = find_map_by_id(MAP_HEADERS, map_id).get("environment")
+        map_filename = find_map_by_id(MAP_HEADERS, map_id).get("file")
+        map_path = Path("src/pokemon_agent/utils/ref_data/maps/map_files") / f"{map_filename.replace(".asm",".blk")}" #/PalletTown.blk
+        blockset_path = Path("src/pokemon_agent/utils/ref_data/maps/blocksets") / f"{map_env.lower()}.bst" #/overworld.bst
+        print(f'WIDTH: {width}, HEIGHT: {height}, ENVR: {map_env}')
+
+        WALKABLE_TILE_IDS = COLLISION.get(f"{map_env.replace("_","").upper()}_COLL")
+
 
         # --- Load map graphics ---
         # tiles = load_tileset_2bpp(tileset_path)
