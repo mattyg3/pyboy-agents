@@ -118,60 +118,60 @@
 
 
 
-# ====== create collision_tiles.json ======
-import re
-import json
-from pathlib import Path
+# # ====== create collision_tiles.json ======
+# import re
+# import json
+# from pathlib import Path
 
-# Path to your collision file
-collision_file = Path("src/pokemon_agent/utils/ref_data/pokered_data/tilesets/collision_tile_ids.asm")
+# # Path to your collision file
+# collision_file = Path("src/pokemon_agent/utils/ref_data/pokered_data/tilesets/collision_tile_ids.asm")
 
-collision_data = {}
-current_labels = []
+# collision_data = {}
+# current_labels = []
 
-with collision_file.open("r", encoding="utf-8") as f:
-    for line in f:
-        # Remove comments and whitespace
-        line = line.split(";")[0].strip()
-        if not line or line.startswith("MACRO"):
-            continue
-
-
-        # Match labels like Underground_Coll:: or multiple stacked labels
-        if line.endswith("::"):
-            labels = [l.strip() for l in line.split("::") if l.strip()]
-            current_labels = labels
-            # Shared list for all stacked labels
-            shared_list = []
-            for label in labels:
-                collision_data[label] = shared_list
-            continue
-
-        # Match coll_tiles lines
-        match = re.match(r'coll_tiles\s*(.*)', line)
-        if match and current_labels:
-            tiles_str = match.group(1).strip()
-            if tiles_str:
-                # Split by commas and remove whitespace
-                tiles = [t.strip() for t in tiles_str.split(",") if t.strip()]
-                # Only keep valid hex tiles ($XX)
-                tiles = [int(t.replace("$", "0x"), 16) for t in tiles if t.startswith("$")]
-                # tiles = [t.replace("$", "0x") for t in tiles if t.startswith("$")]
-                collision_data[current_labels[0]].extend(tiles)
+# with collision_file.open("r", encoding="utf-8") as f:
+#     for line in f:
+#         # Remove comments and whitespace
+#         line = line.split(";")[0].strip()
+#         if not line or line.startswith("MACRO"):
+#             continue
 
 
-collision_data.pop("RedsHouse1_Coll")
-collision_data["RedsHouse_Coll"] = collision_data.pop("RedsHouse2_Coll")
-collision_data.pop("Mart_Coll")
-collision_data.pop("Dojo_Coll")
-collision_data.pop("ForestGate_Coll")
-collision_data.pop("Museum_Coll")
+#         # Match labels like Underground_Coll:: or multiple stacked labels
+#         if line.endswith("::"):
+#             labels = [l.strip() for l in line.split("::") if l.strip()]
+#             current_labels = labels
+#             # Shared list for all stacked labels
+#             shared_list = []
+#             for label in labels:
+#                 collision_data[label] = shared_list
+#             continue
 
-upper_collision_data = {k.upper(): v for k, v in collision_data.items()}
+#         # Match coll_tiles lines
+#         match = re.match(r'coll_tiles\s*(.*)', line)
+#         if match and current_labels:
+#             tiles_str = match.group(1).strip()
+#             if tiles_str:
+#                 # Split by commas and remove whitespace
+#                 tiles = [t.strip() for t in tiles_str.split(",") if t.strip()]
+#                 # Only keep valid hex tiles ($XX)
+#                 tiles = [int(t.replace("$", "0x"), 16) for t in tiles if t.startswith("$")]
+#                 # tiles = [t.replace("$", "0x") for t in tiles if t.startswith("$")]
+#                 collision_data[current_labels[0]].extend(tiles)
 
-# Save as JSON
-output_file = Path("src/pokemon_agent/utils/ref_data/maps/collision_tiles.json")
-with output_file.open("w", encoding="utf-8") as f:
-    json.dump(upper_collision_data, f, indent=4)
 
-print(f"Saved {len(upper_collision_data)} collision tile sets to {output_file}")
+# collision_data.pop("RedsHouse1_Coll")
+# collision_data["RedsHouse_Coll"] = collision_data.pop("RedsHouse2_Coll")
+# collision_data.pop("Mart_Coll")
+# collision_data.pop("Dojo_Coll")
+# collision_data.pop("ForestGate_Coll")
+# collision_data.pop("Museum_Coll")
+
+# upper_collision_data = {k.upper(): v for k, v in collision_data.items()}
+
+# # Save as JSON
+# output_file = Path("src/pokemon_agent/utils/ref_data/maps/collision_tiles.json")
+# with output_file.open("w", encoding="utf-8") as f:
+#     json.dump(upper_collision_data, f, indent=4)
+
+# print(f"Saved {len(upper_collision_data)} collision tile sets to {output_file}")

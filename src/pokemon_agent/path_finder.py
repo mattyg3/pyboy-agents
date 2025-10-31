@@ -2,24 +2,8 @@ from map_collision_read import *
 from pyboy import PyBoy
 from pathlib import Path
 import heapq
-
-# ------ Config ------
-ROM_PATH = 'ROMS/pokemon_red.gb'
-LOAD_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_postfight_pallettown.sav'
-# LOAD_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_postfight.sav'
-
-with open('src/pokemon_agent/utils/ref_data/maps/map_headers.json', 'r') as f:
-        MAP_HEADERS = json.load(f)
-
-with open('src/pokemon_agent/utils/ref_data/maps/collision_tiles.json', 'r') as f:
-        COLLISION = json.load(f)
-    
-def find_map_by_id(map_list, map_id):
-    for m in map_list:
-        if m["map_id"] == map_id:
-            return m
-    return None 
-
+from skills import SkillExecutor
+from utils.utility_funcs import find_map_by_id
 
 # ------ Pathfinding Algo ------
 # def astar(grid, start, goal):
@@ -129,65 +113,28 @@ def astar_next_step(grid, start, goal):
 
 
 def move_toward_path(pyboy, path): #top left is (0,0)
-
-    # map_id, px, py, direction = get_player_position(pyboy)
-    # print(f"Current map={map_id}, player=(Height: {py}, Width: {px}, Direction: {direction})")
-    # if goal == (px,py):
-    #     print(f"Goal Reached! {goal}")
-    #     pyboy.stop()
-
-    # while goal not in [path, (path[0]+1, path[1]), (path[0], path[1]+1), (path[0]+1, path[1]+1), (path[0]-1, path[1]), (path[0], path[1]-1), (path[0]-1, path[1]-1)]
-    # while goal not in [[(path[0] + dx, path[1] + dy) for dx in (-1, 0, 1) for dy in (-1, 0, 1)]]: #outside this func??
-    # for (x, y), (nx, ny) in zip(path, path[1:]):
     map_id, px, py, direction = get_player_position(pyboy)
     print(f"Current map={map_id}, player=(Height: {py}, Width: {px}, Direction: {direction})")
     nx, ny = path
+    skills = SkillExecutor(pyboy)
     if nx > px: 
-        pyboy.button_press("right")
-        print("RIGHT")
-        for _ in range(2):
-            pyboy.tick()
-        pyboy.button_release("right")
+        skills.execute({"type": "GO_RIGHT"})
+        # print("RIGHT")
     elif nx < px: 
-        pyboy.button_press("left")
-        print("LEFT")
-        for _ in range(2):
-            pyboy.tick()
-        pyboy.button_release("left")
+        skills.execute({"type": "GO_LEFT"})
+        # print("LEFT")
     elif ny > py: 
-        pyboy.button_press("down")
-        print("DOWN")
-        for _ in range(2):
-            pyboy.tick()
-        pyboy.button_release("down")
+        skills.execute({"type": "GO_DOWN"})
+        # print("DOWN")
     elif ny < py: 
-        pyboy.button_press("up")
-        print("UP")
-        for _ in range(2):
-            pyboy.tick()
-        pyboy.button_release("up")
+        skills.execute({"type": "GO_UP"})
+        # print("UP")
     
-    for _ in range(60):  # wait a few frames for movement
+    for _ in range(10):  # wait a few frames for movement
         pyboy.tick()
 
-    # break #only 1 iteration
-
         
-        
-
-
-
-# ------ MAIN ------
-def main():
-    pyboy = PyBoy(ROM_PATH, window="SDL2")
-    pyboy.tick()  # initialize emulation
-    # pyboy.set_emulation_speed(0)
-    # Load Save State
-    with open(LOAD_STATE_PATH, "rb") as f:
-            pyboy.load_state(f)
-
-    while pyboy.tick(): #100
-
+def path_finder(pyboy, goal):
         # --- Get player position ---
         map_id, px, py, direction = get_player_position(pyboy)
         print(f"Player at map {map_id}, X={px}, Y={py}, Looking={direction}") #(0: down, 4: up, 8: left, 12: right)
@@ -197,9 +144,9 @@ def main():
         height = find_map_by_id(MAP_HEADERS, map_id).get("map_height")
         map_env = find_map_by_id(MAP_HEADERS, map_id).get("environment")
         map_filename = find_map_by_id(MAP_HEADERS, map_id).get("file")
-        map_path = Path("src/pokemon_agent/utils/ref_data/maps/map_files") / f"{map_filename.replace(".asm",".blk")}" #/PalletTown.blk
-        blockset_path = Path("src/pokemon_agent/utils/ref_data/maps/blocksets") / f"{map_env.lower()}.bst" #/overworld.bst
-        print(f'WIDTH: {width}, HEIGHT: {height}, ENVR: {map_env}')
+        map_path = Path("src/pokemon_agent/utils/ref_data/maps/map_files") / f"{map_filename.replace(".asm",".blk")}"
+        blockset_path = Path("src/pokemon_agent/utils/ref_data/maps/blocksets") / f"{map_env.lower()}.bst"
+        print(f'WIDTH_blk: {width}, HEIGHT_blk: {height}, ENVR: {map_env}')
 
         # --- Load map graphics ---
         # tiles = load_tileset_2bpp(tileset_path)
@@ -212,57 +159,63 @@ def main():
         WALKABLE_TILE_IDS = COLLISION.get(f"{map_env.replace("_","").upper()}_COLL")
         walk_matrix = generate_walkability_tile_matrix(blocks, map_blocks, WALKABLE_TILE_IDS)
         # start = (px, py)
-        goal = (21, 0)  # change this to your desired target tile (x,y)
+        # goal = (21, 0)  # change this to your desired target tile (x,y)
         at_goal=False
         while not at_goal:
         # while at_goal==False:
             map_id, px, py, direction = get_player_position(pyboy)
             # print([(px + dx, py + dy) for dx in (-1, 0, 1) for dy in (-1, 0, 1)])
-            if goal in [(px + dx, py + dy) for dx in (-1, 0, 1) for dy in (-1, 0, 1)]:
+            if goal in [(px + dx, py + dy) for dx in (-1, 0, 1) for dy in (-1, 0, 1)]: 
                 at_goal=True
+                # --- Print to console ---
+                walk_matrix[py][px] = 'P' #player location
+                # walk_matrix[goal[1], goal[0]] = 'G'
+                print("\nWalkable tile matrix ('.' = walkable, '#' = blocked):")
+                print_tile_walk_matrix(walk_matrix)
+                print(f"Current map={map_id}, Map name={map_filename.replace(".asm","")}, map=(Width_blk: {width}, Height_blk: {height}) ,player=(Width: {px}, Height: {py})")
+
             else:
                 path = astar_next_step(walk_matrix, (px, py), goal)
 
                 if path:
                     move_toward_path(pyboy, path)
                     #TOP LEFT OF MAP is (0,0)
-                    print(f"Current map={map_id}, Map name={map_filename.replace(".asm","")}, map=(Height: {height}, Width: {width}) ,player=(Height: {py}, Width: {px})")
+                    print(f"Current map={map_id}, Map name={map_filename.replace(".asm","")}, map=(Width_blk: {width}, Height_blk: {height}) ,player=(Width: {px}, Height: {py})")
                 else:
                     print("No path found.")
                     pyboy.stop()
 
-        
-
-        # --- Print to console ---
-        walk_matrix[py][px] = 'P' #player location
-        # walk_matrix[goal[1], goal[0]] = 'G'
-        print("\nWalkable tile matrix ('.' = walkable, '#' = blocked):")
-        print_tile_walk_matrix(walk_matrix)
 
 
 
-    pyboy.stop()
+
+# ------ Config ------
+ROM_PATH = 'ROMS/pokemon_red.gb'
+# LOAD_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_postfight_pallettown.sav'
+LOAD_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_postfight.sav'
+
+with open('src/pokemon_agent/utils/ref_data/maps/map_headers.json', 'r') as f:
+        MAP_HEADERS = json.load(f)
+
+with open('src/pokemon_agent/utils/ref_data/maps/collision_tiles.json', 'r') as f:
+        COLLISION = json.load(f)
     
+
+
+# ------ MAIN ------
+def main():
+    pyboy = PyBoy(ROM_PATH, window="SDL2")
+    pyboy.tick()  # initialize emulation
+    # pyboy.set_emulation_speed(0)
+    # Load Save State
+    with open(LOAD_STATE_PATH, "rb") as f:
+            pyboy.load_state(f)
+
+    while pyboy.tick(): #100
+        path_finder(pyboy, goal=(0,5))
+        pyboy.stop()
+
+    # pyboy.stop()
     
-    # # --- Print to console ---
-    # walk_matrix[py][px] = 'P' #player location
-    # # walk_matrix[goal[1], goal[0]] = 'G'
-    # print("\nWalkable tile matrix ('.' = walkable, '#' = blocked):")
-    # print_tile_walk_matrix(walk_matrix)
-    # # print(path)
-    # if path:
-    #     move_toward_path(pyboy, path)
-    #     #TOP LEFT OF MAP is (0,0)
-    #     mb = pyboy.memory
-    #     player_x, player_y, map_id, tileset_id = get_player_position(mb)
-    #     print(f"Current map={map_id}, Tileset={tileset_id}, player=(Height: {player_y}, Width: {player_x})")
-    #     tiles = read_visible_tiles(pyboy)
-    #     # Print numeric grid of tile IDs
-    #     cleaned_tiles = clean_tiles(tiles, pyboy)
-    # else:
-    #     print("No path found.")
-    # # move_toward_path(pyboy, path)
-
-
 if __name__ == "__main__":
     main()

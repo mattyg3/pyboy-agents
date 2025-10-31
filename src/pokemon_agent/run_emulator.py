@@ -50,7 +50,7 @@ def run(ROM_PATH=ROM_PATH, LOAD_STATE_PATH=LOAD_STATE_PATH, SAVE_STATE_PATH=SAVE
             else:
                 state = perception.get_game_state()
                 plan = planner.plan(state, frame)
-            status = skills.execute(plan, state)
+            status = skills.execute(plan) #, state
 
             # if frame % 100 == 0:
                 # print(f"[frame {frame}] scene={state.get('scene')} plan={plan.get('type')} status={status}")
