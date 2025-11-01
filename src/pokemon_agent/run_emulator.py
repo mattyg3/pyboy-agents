@@ -74,7 +74,7 @@ def run(ROM_PATH=ROM_PATH, LOAD_STATE_PATH=LOAD_STATE_PATH, SAVE_STATE_PATH=SAVE
     try:
         # if frame % 10 == 0:
         
-        while pyboy.tick():  # returns False when ROM done / exit 60, 100
+        while pyboy.tick(100):  # returns False when ROM done / exit 60, 100
             # Get state
             percept_state = perception.get_game_state()
             walkable_grid, map_width, map_height, warp_tiles = read_map(pyboy)

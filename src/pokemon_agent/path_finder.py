@@ -6,50 +6,50 @@ from skills import SkillExecutor
 from utils.utility_funcs import find_map_by_id
 
 # ------ Pathfinding Algo ------
-# def astar(grid, start, goal):
-#     """
-#     A* pathfinding on a boolean grid.
-#     grid[y][x] = True if walkable, False if blocked
-#     start = (x, y)
-#     goal = (x, y)
-#     Returns a list of coordinates from start to goal (inclusive), or None if no path.
-#     """
-#     h = len(grid)
-#     w = len(grid[0])
+def astar(grid, start, goal):
+    """
+    A* pathfinding on a boolean grid.
+    grid[y][x] = True if walkable, False if blocked
+    start = (x, y)
+    goal = (x, y)
+    Returns a list of coordinates from start to goal (inclusive), or None if no path.
+    """
+    h = len(grid)
+    w = len(grid[0])
 
-#     def heuristic(a, b):
-#         # Manhattan distance (since movement is 4-directional)
-#         return abs(a[0] - b[0]) + abs(a[1] - b[1])
+    def heuristic(a, b):
+        # Manhattan distance (since movement is 4-directional)
+        return abs(a[0] - b[0]) + abs(a[1] - b[1])
 
-#     open_set = []
-#     heapq.heappush(open_set, (0, start))
-#     came_from = {}
-#     g_score = {start: 0}
+    open_set = []
+    heapq.heappush(open_set, (0, start))
+    came_from = {}
+    g_score = {start: 0}
 
-#     while open_set:
-#         _, current = heapq.heappop(open_set)
+    while open_set:
+        _, current = heapq.heappop(open_set)
 
-#         if current == goal:
-#             # reconstruct path
-#             path = [current]
-#             while current in came_from:
-#                 current = came_from[current]
-#                 path.append(current)
-#             path.reverse()
-#             return path
+        if current == goal:
+            # reconstruct path
+            path = [current]
+            while current in came_from:
+                current = came_from[current]
+                path.append(current)
+            path.reverse()
+            return path
 
-#         x, y = current
-#         for dx, dy in [(1,0),(-1,0),(0,1),(0,-1)]:
-#             nx, ny = x + dx, y + dy
-#             if 0 <= nx < w and 0 <= ny < h and grid[ny][nx]:  # walkable
-#                 tentative_g = g_score[current] + 1
-#                 neighbor = (nx, ny)
-#                 if tentative_g < g_score.get(neighbor, float('inf')):
-#                     came_from[neighbor] = current
-#                     g_score[neighbor] = tentative_g
-#                     f_score = tentative_g + heuristic(neighbor, goal)
-#                     heapq.heappush(open_set, (f_score, neighbor))
-#     return None  # no path found 
+        x, y = current
+        for dx, dy in [(1,0),(-1,0),(0,1),(0,-1)]:
+            nx, ny = x + dx, y + dy
+            if 0 <= nx < w and 0 <= ny < h and grid[ny][nx]:  # walkable
+                tentative_g = g_score[current] + 1
+                neighbor = (nx, ny)
+                if tentative_g < g_score.get(neighbor, float('inf')):
+                    came_from[neighbor] = current
+                    g_score[neighbor] = tentative_g
+                    f_score = tentative_g + heuristic(neighbor, goal)
+                    heapq.heappush(open_set, (f_score, neighbor))
+    return None  # no path found 
 
 def astar_next_step(grid, start, goal):
     """
