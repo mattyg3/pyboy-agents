@@ -8,3 +8,5 @@ langchain
 langgraph
 openai
 ollama
+langchain_ollama
+keyring

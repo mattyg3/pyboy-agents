@@ -175,3 +175,95 @@
 #     json.dump(upper_collision_data, f, indent=4)
 
 # print(f"Saved {len(upper_collision_data)} collision tile sets to {output_file}")
+
+
+# ====== create map_objects.json ======
+import re
+import json
+from pathlib import Path
+# Directory containing .asm files
+ASM_DIR = Path("src/pokemon_agent/utils/ref_data/pokered_data/maps/objects")
+OUTPUT_JSON = Path("src/pokemon_agent/utils/ref_data/maps/map_objects.json")
+
+def parse_asm_objects(file_text: str):
+    data = {
+        "constants": [],
+        "border_block": None,
+        "warp_events": [],
+        "bg_events": [],
+        "object_events": [],
+        "warps_to": None,
+    }
+
+    # ---- 1️⃣ constants ----
+    data["constants"] = re.findall(r"const_export\s+(\w+)", file_text)
+
+    # ---- 2️⃣ border block ----
+    m = re.search(r"db\s+\$(\w+)\s*;\s*border block", file_text)
+    if m:
+        data["border_block"] = f"${m.group(1)}"
+
+    # ---- 3️⃣ warp events ----
+    for m in re.finditer(r"warp_event\s+(\d+),\s*(\d+),\s*(\w+),\s*(\d+)", file_text):
+        x, y, dest, warp_id = m.groups()
+        data["warp_events"].append({
+            "x": int(x),
+            "y": int(y),
+            "dest_map": dest,
+            "warp_id": int(warp_id),
+        })
+
+    # ---- 4️⃣ bg events ----
+    for m in re.finditer(r"bg_event\s+(\d+),\s*(\d+),\s*(\w+)", file_text):
+        x, y, text = m.groups()
+        data["bg_events"].append({
+            "x": int(x),
+            "y": int(y),
+            "text": text,
+        })
+
+    # ---- 5️⃣ object events ----
+    # Handle both 6-field and 8-field forms
+    obj_pattern = re.compile(
+        r"object_event\s+(\d+),\s*(\d+),\s*(\w+),\s*(\w+),\s*(\w+),\s*(\w+)(?:,\s*(\w+),\s*(\w+))?"
+    )
+    for m in obj_pattern.finditer(file_text):
+        x, y, sprite, move, facing, text, extra1, extra2 = m.groups(default=None)
+        data["object_events"].append({
+            "x": int(x),
+            "y": int(y),
+            "sprite": sprite,
+            "movement": move,
+            "facing": facing,
+            "text": text,
+            "extra1": extra1,
+            "extra2": extra2,
+        })
+
+    # ---- 6️⃣ warps_to ----
+    m = re.search(r"def_warps_to\s+(\w+)", file_text)
+    if m:
+        data["warps_to"] = m.group(1)
+
+    return data
+
+
+# # === Example: parse one file ===
+# file_path = Path("PalletTown.asm")
+# parsed = parse_asm_objects(file_path.read_text())
+
+# print(json.dumps(parsed, indent=2))
+
+# === Example: optionally collect directory ===
+def parse_asm_directory(dir_path: Path):
+    results = {}
+    for path in dir_path.glob("*.asm"):
+        results[path.stem] = parse_asm_objects(path.read_text())
+    return results
+
+
+# Example usage:
+all_maps = parse_asm_directory(ASM_DIR)
+with OUTPUT_JSON.open( "w", encoding="utf-8") as f:
+    json.dump(all_maps, f, indent=4, default=int)
+
