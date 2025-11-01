@@ -3,32 +3,29 @@ from pydantic import BaseModel
 from path_finder import *
 
 class AnswerSchema(BaseModel):
-    destination_x: int
-    destination_y: int
+    dest_x: int
+    dest_y: int
 
 structered_llm = llm.with_structured_output(AnswerSchema)
 
 def pathing_agent(state):
     system_prompt = f"""
-# Role
-You are an expert at determining destination (x,y) coordinates given a grid of walkable/unwalkable tiles, the start location, and a description of the desired destination. 
+You are controlling a character in the following map.
+P = player, # = wall/blocker, - = walkable
+Your task: {state["pathing_info"]["task"]}
 
-# Task
-Determine the DESTINATION_X and DESTINATION_Y integers.
+Map:
+{state["pathing_info"]["map"]}
 
-# Grid Information
-**grid** is a representing a map with walkable and unwalkable tiles. For orientation, tile (0,0) is the **top-left** of grid. 
-can only walk over tiles that have values **TRUE**
+Player Location [x,y]:
+{state["pathing_info"]["player_position"]}
 
-# Inputs
-grid: {state["walkable_grid"]}
-grid_width: {state["grid_width"]}
-grid_height: {state["grid_height"]}
-start_tuple: {state["start_xy"]}
-desired_destination: {state["destination_wanted"]}
+Known Doorways:
+{state["pathing_info"]["known_door_tiles"]}
 
-# Output 
-**ONLY** X, Y integers
+Question: Which destination coordinate should the player move to so that the task is accomplished?
+Return only JSON: "dest_x": x, "dest_y": y
+
 """
     response = structered_llm.invoke(system_prompt)
     state["messages"].append({"role":"pathing", "content": response.model_dump()})

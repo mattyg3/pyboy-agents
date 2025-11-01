@@ -6,50 +6,50 @@ from skills import SkillExecutor
 from utils.utility_funcs import find_map_by_id
 
 # ------ Pathfinding Algo ------
-# def astar(grid, start, goal):
-#     """
-#     A* pathfinding on a boolean grid.
-#     grid[y][x] = True if walkable, False if blocked
-#     start = (x, y)
-#     goal = (x, y)
-#     Returns a list of coordinates from start to goal (inclusive), or None if no path.
-#     """
-#     h = len(grid)
-#     w = len(grid[0])
+def astar(grid, start, goal):
+    """
+    A* pathfinding on a boolean grid.
+    grid[y][x] = True if walkable, False if blocked
+    start = (x, y)
+    goal = (x, y)
+    Returns a list of coordinates from start to goal (inclusive), or None if no path.
+    """
+    h = len(grid)
+    w = len(grid[0])
 
-#     def heuristic(a, b):
-#         # Manhattan distance (since movement is 4-directional)
-#         return abs(a[0] - b[0]) + abs(a[1] - b[1])
+    def heuristic(a, b):
+        # Manhattan distance (since movement is 4-directional)
+        return abs(a[0] - b[0]) + abs(a[1] - b[1])
 
-#     open_set = []
-#     heapq.heappush(open_set, (0, start))
-#     came_from = {}
-#     g_score = {start: 0}
+    open_set = []
+    heapq.heappush(open_set, (0, start))
+    came_from = {}
+    g_score = {start: 0}
 
-#     while open_set:
-#         _, current = heapq.heappop(open_set)
+    while open_set:
+        _, current = heapq.heappop(open_set)
 
-#         if current == goal:
-#             # reconstruct path
-#             path = [current]
-#             while current in came_from:
-#                 current = came_from[current]
-#                 path.append(current)
-#             path.reverse()
-#             return path
+        if current == goal:
+            # reconstruct path
+            path = [current]
+            while current in came_from:
+                current = came_from[current]
+                path.append(current)
+            path.reverse()
+            return path
 
-#         x, y = current
-#         for dx, dy in [(1,0),(-1,0),(0,1),(0,-1)]:
-#             nx, ny = x + dx, y + dy
-#             if 0 <= nx < w and 0 <= ny < h and grid[ny][nx]:  # walkable
-#                 tentative_g = g_score[current] + 1
-#                 neighbor = (nx, ny)
-#                 if tentative_g < g_score.get(neighbor, float('inf')):
-#                     came_from[neighbor] = current
-#                     g_score[neighbor] = tentative_g
-#                     f_score = tentative_g + heuristic(neighbor, goal)
-#                     heapq.heappush(open_set, (f_score, neighbor))
-#     return None  # no path found 
+        x, y = current
+        for dx, dy in [(1,0),(-1,0),(0,1),(0,-1)]:
+            nx, ny = x + dx, y + dy
+            if 0 <= nx < w and 0 <= ny < h and grid[ny][nx]:  # walkable
+                tentative_g = g_score[current] + 1
+                neighbor = (nx, ny)
+                if tentative_g < g_score.get(neighbor, float('inf')):
+                    came_from[neighbor] = current
+                    g_score[neighbor] = tentative_g
+                    f_score = tentative_g + heuristic(neighbor, goal)
+                    heapq.heappush(open_set, (f_score, neighbor))
+    return None  # no path found 
 
 def astar_next_step(grid, start, goal):
     """
@@ -114,33 +114,38 @@ def astar_next_step(grid, start, goal):
 
 def move_toward_path(pyboy, path): #top left is (0,0)
     map_id, px, py, direction = get_player_position(pyboy)
-    print(f"Current map={map_id}, player=(Height: {py}, Width: {px}, Direction: {direction})")
+    # print(f"Current map={map_id}, player=(Height: {py}, Width: {px}, Direction: {direction})")
     nx, ny = path
     skills = SkillExecutor(pyboy)
     if nx > px: 
         skills.execute({"type": "GO_RIGHT"})
-        # print("RIGHT")
+        return {"type": "GO_RIGHT"}
+        print("RIGHT")
     elif nx < px: 
         skills.execute({"type": "GO_LEFT"})
-        # print("LEFT")
+        print("LEFT")
+        return {"type": "GO_LEFT"}
     elif ny > py: 
         skills.execute({"type": "GO_DOWN"})
-        # print("DOWN")
+        print("DOWN")
+        return {"type": "GO_DOWN"}
     elif ny < py: 
         skills.execute({"type": "GO_UP"})
-        # print("UP")
+        print("UP")
+        return {"type": "GO_UP"}
     
     for _ in range(10):  # wait a few frames for movement
         pyboy.tick()
 
         
 def path_finder(pyboy, goal):
-        walk_matrix, map_width, map_height = read_map(pyboy)
+        skills = SkillExecutor(pyboy)
+        walk_matrix, map_width, map_height, warp_tiles = read_map(pyboy)
         # --- Get player position ---
         map_id, px, py, direction = get_player_position(pyboy)
         print(f"Player at map {map_id}, X={px}, Y={py}, Looking={direction}") #(0: down, 4: up, 8: left, 12: right)
         walk_matrix[py][px] = 'P' #player location
-        print("\nWalkable tile matrix ('.' = walkable, '#' = blocked):")
+        print("\nWalkable tile matrix ('-' = walkable, '#' = blocked):")
         print_tile_walk_matrix(walk_matrix)
 
 
@@ -167,28 +172,41 @@ def path_finder(pyboy, goal):
         # goal = (21, 0)  # change this to your desired target tile (x,y)
         at_goal=False
         while not at_goal:
-        # while at_goal==False:
             new_map_id, px, py, direction = get_player_position(pyboy)
             if new_map_id != map_id:
                 break
             # print([(px + dx, py + dy) for dx in (-1, 0, 1) for dy in (-1, 0, 1)])
             if goal in [(px + dx, py + dy) for dx in (-1, 0, 1) for dy in (-1, 0, 1)]: 
-                at_goal=True
-                print("GOAL REACHED!!!")
+                while not at_goal:
+                    new_map_id, px, py, direction = get_player_position(pyboy)
+                    if new_map_id == map_id:
+                        try:
+                            skills.execute(prev_move)
+                        except:
+                            pass
+                        for _ in range(10):  # wait a few frames for movement
+                            pyboy.tick()
+                    else:
+                        at_goal=True
+                # for _ in range(10):  # wait a few frames for movement
+                #     pyboy.tick()
+                # while new_map_id == map_id:
+                #     skills.execute(prev_move)
+                # print("GOAL REACHED!!!")
                 # --- Print to console ---
-                walk_matrix, map_width, map_height = read_map(pyboy)
+                walk_matrix, map_width, map_height, warp_tiles = read_map(pyboy)
                 walk_matrix[py][px] = 'P' #player location
                 # walk_matrix[goal[1], goal[0]] = 'G'
-                print("\nWalkable tile matrix ('.' = walkable, '#' = blocked):")
-                print_tile_walk_matrix(walk_matrix)
-                print(f"Current map={new_map_id}, Map name={map_filename.replace(".asm","")}, map=(Width_blk: {width}, Height_blk: {height}) ,player=(Width: {px}, Height: {py})")
-                pyboy.stop()
+                # print("\nWalkable tile matrix ('-' = walkable, '#' = blocked):")
+                # print_tile_walk_matrix(walk_matrix)
+                # print(f"Current map={new_map_id}, Map name={map_filename.replace(".asm","")}, map=(Width_blk: {width}, Height_blk: {height}) ,player=(Width: {px}, Height: {py})")
+                # pyboy.stop()
 
             else:
                 path = astar_next_step(walk_matrix, (px, py), goal)
 
                 if path:
-                    move_toward_path(pyboy, path)
+                    prev_move = move_toward_path(pyboy, path)
                     #TOP LEFT OF MAP is (0,0)
                     print(f"Current map={new_map_id}, Map name={map_filename.replace(".asm","")}, map=(Width_blk: {width}, Height_blk: {height}) ,player=(Width: {px}, Height: {py})")
                 else:

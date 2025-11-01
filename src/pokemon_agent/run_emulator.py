@@ -11,7 +11,8 @@ from agents.pathing_agent import *
 ROM_PATH = 'ROMS/pokemon_red.gb'
 SAVE_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_DEV.sav'
 # LOAD_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_prefight.sav'
-LOAD_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_postfight.sav'
+# LOAD_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_postfight.sav'
+LOAD_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_postfight_pallettown.sav'
 # SAVE_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_prefight.sav'
 
 # ------ LangSmith Set-Up ------
@@ -40,31 +41,17 @@ def run(ROM_PATH=ROM_PATH, LOAD_STATE_PATH=LOAD_STATE_PATH, SAVE_STATE_PATH=SAVE
     # ------ Define State ------
     class AgentState(TypedDict):
         messages: list[dict[str, Any]]
-        # walkable_grid: list[Any]
-        walkable_grid: str
-        grid_width: int
-        grid_height: int
-        start_xy: tuple
-        destination_wanted: str
-        destination: tuple
+        pathing_info: dict[Any]
+        destination: dict[Any]
 
     def create_agent_state(
             messages=[],
-            # walkable_grid=[],
-            walkable_grid=None,
-            grid_width=None,
-            grid_height=None,
-            start_xy=None,
-            destination_wanted=None,
-            destination=None,
+            pathing_info={},
+            destination={},
     ) -> AgentState:
         return AgentState(
             messages=messages, 
-            walkable_grid=walkable_grid, 
-            grid_width=grid_width,
-            grid_height=grid_height,
-            start_xy=start_xy, 
-            destination_wanted=destination_wanted,
+            pathing_info=pathing_info,
             destination=destination,
         )
     # ------ Define Nodes ------
@@ -81,30 +68,72 @@ def run(ROM_PATH=ROM_PATH, LOAD_STATE_PATH=LOAD_STATE_PATH, SAVE_STATE_PATH=SAVE
 
     perception = PokemonPerceptionAgent(pyboy)
     # planner = SimplePlanner() #LLM Step eventually
-    skills = SkillExecutor(pyboy)
+    # skills = SkillExecutor(pyboy)
 
     frame = 0
     try:
         # if frame % 10 == 0:
         
-        while pyboy.tick():  # returns False when ROM done / exit 60, 100
+        while pyboy.tick(100):  # returns False when ROM done / exit 60, 100
             # Get state
             percept_state = perception.get_game_state()
-            walkable_grid, map_width, map_height = read_map(pyboy)
-            walkable_grid_clean = "\n".join(
-                "".join("PLAYER" if cell in ("P", "PLAYER") else str(cell) for cell in row)
-                for row in walkable_grid
-            )
+            walkable_grid, map_width, map_height, warp_tiles = read_map(pyboy)
             map_id, px, py, direction = get_player_position(pyboy)
-            CUSTOM_DEST="Exit the building through bottom of map, exit area is middle of the bottom row"
-            state = create_agent_state(walkable_grid=walkable_grid_clean, grid_width=map_width, grid_height=map_height, start_xy=(px,py), destination_wanted=CUSTOM_DEST)
-            # Initial full pipeline run
-            config = RunnableConfig(recursion_limit=50) #max number of graph nodes to process
-            state = app.invoke(state, config) 
-            dest_goal = (state["destination"].get("destination_x"), state["destination"].get("destination_y"))
-            print(f"GOAL: {dest_goal}")
-            path_finder(pyboy, goal=dest_goal)
-            pyboy.stop()
+            walkable_grid[py][px] = "PLAYER"
+            print(f"[frame {frame}]")
+            print(f"Current map={map_id}, map=(Width: {map_width}, Height: {map_height}) ,player=(Width: {px}, Height: {py})")
+            # print("\nWalkable tile matrix ('.' = walkable, '#' = blocked):")
+            # print_tile_walk_matrix(walkable_grid)
+            # walkable_grid_clean = "\n".join(
+            #     # "".join("PLAYER" if cell in ("P", "PLAYER") else str(cell) for cell in row) #
+            #     "".join("PLAYER" if cell in ("P", "PLAYER") else "." if cell else "#" for cell in row)
+            #     for row in walkable_grid
+            # )
+            # walkable_grid = 
+            rows = []
+            # rows.append(str("#"*map_width))
+            for row in walkable_grid:
+                # line = ""
+                line = []
+                for cell in row:
+                    if cell in ("P", "PLAYER"):
+                        # line += "P"
+                        line.append("P")
+                    # elif cell in ("W","WARP"):
+                    #     # line += "W"
+                    #     line.append("W")
+                    elif cell:
+                        # line += "-"
+                        line.append("-")
+                    else:
+                        # line += "#"
+                        line.append("#")
+                # line += "#"
+                rows.append(line)
+            # rows.append(str("#"*map_width))
+            # walkable_grid_clean = "\n".join(rows)
+            walkable_grid_clean = rows
+            
+            CUSTOM_DEST="Enter 'REDS_HOUSE_1F'"
+            # state = create_agent_state(walkable_grid=walkable_grid_clean, grid_width=map_width, grid_height=map_height, start_xy=(px,py), destination_wanted=CUSTOM_DEST)
+
+            # pathing_info_dict = {
+            #     "player_position": [px, py],
+            #     "known_door_tiles": warp_tiles,
+            #     "map": walkable_grid_clean,
+            #     "task": CUSTOM_DEST
+            # }
+            # state = create_agent_state(pathing_info=pathing_info_dict)
+            # # Initial full pipeline run
+            # config = RunnableConfig(recursion_limit=50) #max number of graph nodes to process
+            # state = app.invoke(state, config) 
+            # dest_goal = (state["destination"].get("dest_x"), state["destination"].get("dest_y"))
+            # print(f"GOAL: {dest_goal}")
+            if frame==0:
+                path_finder(pyboy, goal=(10,11)) #dest_goal
+            else:
+                pass
+            # pyboy.stop()
             # if frame < 2500:
             #     state = {}
             # else:
@@ -126,12 +155,13 @@ def run(ROM_PATH=ROM_PATH, LOAD_STATE_PATH=LOAD_STATE_PATH, SAVE_STATE_PATH=SAVE
 
             # if frame % 100 == 0:
                 # print(f"[frame {frame}] scene={state.get('scene')} plan={plan.get('type')} status={status}")
-            print(f"\n\n[frame {frame}] \nSTATE: {percept_state}\n") #\nstatus={status}  
+            # print(f"\n\n[frame {frame}] \nSTATE: {percept_state}\n") #\nstatus={status}  
                 # print(pyboy.memory[0xD014])
+
             frame += 1
 
-            if frame>2000:
-                break
+            # if frame>2000:
+            #     break
 
             # optional: small sleep to avoid hogging CPU unnecessarily
             time.sleep(0.001)

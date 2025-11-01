@@ -125,14 +125,71 @@ def generate_walkability_tile_matrix(blocks, map_blocks, walkable_tiles):
 
     return walk_matrix
 
+def add_warp_tiles(walk_matrix, map_filename):
+    map_name = map_filename.replace(".asm","")
+    warp_events = MAP_OBJECTS.get(map_name).get("warp_events", None)
+    try:
+        for warp in warp_events:
+            x = warp.get("x") * 2 +1
+            y = warp.get("y") * 2 +1
+            walk_matrix[y][x] = 'WARP'
+    except:
+        pass
+    return walk_matrix
+
+
+def get_warp_tiles(map_filename):
+    map_name = map_filename.replace(".asm","")
+    warp_events = MAP_OBJECTS.get(map_name).get("warp_events", None)
+    warps=[]
+    try:
+        for warp in warp_events:
+            x = warp.get("x") * 2 #+1
+            y = warp.get("y") * 2 +1
+            dest = warp.get("dest_map")
+            # warps.append((x,y)) 
+            # warps["destination"] 
+            warps.append({"destination":dest, "xy_coord":[x,y]})
+    except:
+        pass
+    return warps
+
 
 def print_tile_walk_matrix(matrix):
     """
     Prints a compact view of the walkability matrix.
-    '.' = walkable, '#' = blocked
+    '-' = walkable, '#' = blocked
     """
+    # for row in matrix:
+    #     # print("".join("P" if cell in ("P", "PLAYER") else "." if cell else "#" for cell in row))
+    #     line = ""
+    #     for cell in row:
+    #         if cell in ("P", "PLAYER"):
+    #             line += "P"
+    #         elif cell in ("W","WARP"):
+    #             line += "W"
+    #         elif cell:
+    #             line += "-"
+    #         else:
+    #             line += "#"
+    #     print(line)
+    # print(matrix)
+
+    rows = []
     for row in matrix:
-        print("".join("P" if cell in ("P", "PLAYER") else "." if cell else "#" for cell in row))
+        line = ""
+        for cell in row:
+            if cell in ("P", "PLAYER"):
+                line += "P"
+            elif cell in ("W","WARP"):
+                line += "W"
+            elif cell:
+                line += "-"
+            else:
+                line += "#"
+        rows.append(line)
+    walkable_grid_clean = "\n".join(rows)
+    print(walkable_grid_clean)
 
 def read_map(pyboy):
     map_id, px, py, direction = get_player_position(pyboy)
@@ -152,9 +209,11 @@ def read_map(pyboy):
     map_blocks = load_map_blk(map_path, width, height)
 
     walk_matrix = generate_walkability_tile_matrix(blocks, map_blocks, WALKABLE_TILE_IDS)
+    # walk_matrix = add_warp_tiles(walk_matrix, map_filename)
     # walk_matrix[py][px] = 'PLAYER' #player location
+    warp_tiles = get_warp_tiles(map_filename)
 
-    return walk_matrix, width*4, height*4
+    return walk_matrix, width*4, height*4, warp_tiles
 
 
 
@@ -166,10 +225,15 @@ with open('src/pokemon_agent/utils/ref_data/maps/map_headers.json', 'r') as f:
 
 with open('src/pokemon_agent/utils/ref_data/maps/collision_tiles.json', 'r') as f:
     COLLISION = json.load(f)
+
+with open('src/pokemon_agent/utils/ref_data/maps/map_objects.json', 'r') as f:
+    MAP_OBJECTS = json.load(f)
+
 def main():
 
     ROM_PATH = 'ROMS/pokemon_red.gb'
-    LOAD_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_postfight_pallettown.sav'
+    # LOAD_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_postfight_pallettown.sav'
+    LOAD_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_postfight.sav'
 
     # --- Start PyBoy in headless mode ---
     pyboy = PyBoy(ROM_PATH, window="SDL2")
@@ -179,12 +243,14 @@ def main():
             pyboy.load_state(f)
 
     while pyboy.tick():
-        walk_matrix = read_map(pyboy)
+        walk_matrix, map_width, map_height, warp_tiles = read_map(pyboy)
         pyboy.stop()
 
     # --- Print to console ---
-    print("\nWalkable tile matrix ('.' = walkable, '#' = blocked):")
+    # print(walk_matrix)
+    print("\nWalkable tile matrix ('-' = walkable, '#' = blocked):")
     print_tile_walk_matrix(walk_matrix)
+    print(warp_tiles)
 
 
 if __name__ == "__main__":
