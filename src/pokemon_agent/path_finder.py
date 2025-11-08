@@ -119,8 +119,9 @@ def move_toward_path(pyboy, path): #top left is (0,0)
     skills = SkillExecutor(pyboy)
     if nx > px: 
         skills.execute({"type": "GO_RIGHT"})
-        return {"type": "GO_RIGHT"}
         print("RIGHT")
+        return {"type": "GO_RIGHT"}
+        
     elif nx < px: 
         skills.execute({"type": "GO_LEFT"})
         print("LEFT")
@@ -143,8 +144,11 @@ def path_finder(pyboy, goal):
         walk_matrix, map_width, map_height, warp_tiles = read_map(pyboy)
         # --- Get player position ---
         map_id, px, py, direction = get_player_position(pyboy)
-        print(f"Player at map {map_id}, X={px}, Y={py}, Looking={direction}") #(0: down, 4: up, 8: left, 12: right)
-        walk_matrix[py][px] = 'P' #player location
+        try:
+            print(f"Player at map {map_id}, X={px}, Y={py}, Looking={direction}") #(0: down, 4: up, 8: left, 12: right)
+            walk_matrix[py][px] = 'P' #player location
+        except:
+            pass
         print("\nWalkable tile matrix ('-' = walkable, '#' = blocked):")
         print_tile_walk_matrix(walk_matrix)
 
@@ -177,25 +181,41 @@ def path_finder(pyboy, goal):
                 break
             # print([(px + dx, py + dy) for dx in (-1, 0, 1) for dy in (-1, 0, 1)])
             if goal in [(px + dx, py + dy) for dx in (-1, 0, 1) for dy in (-1, 0, 1)]: 
+                last_path = astar_next_step(walk_matrix, (px, py), goal)
                 while not at_goal:
                     new_map_id, px, py, direction = get_player_position(pyboy)
-                    if new_map_id == map_id:
-                        try:
-                            skills.execute(prev_move)
-                        except:
-                            pass
-                        for _ in range(10):  # wait a few frames for movement
-                            pyboy.tick()
-                    else:
+                    if goal == last_path:
                         at_goal=True
+                    else:
+                        move_toward_path(pyboy, last_path)
+                        print(f"Current map={new_map_id}, Map name={map_filename.replace(".asm","")}, map=(Width_blk: {width}, Height_blk: {height}) ,player=(Width: {px}, Height: {py})")
+
+                    # if new_map_id == map_id:
+                    #     try:
+                    #         if path:
+                    #             print(f"LAST PATH: {last_path}")
+                    #             move_toward_path(pyboy, last_path)
+                    #             print(f"Current map={new_map_id}, Map name={map_filename.replace(".asm","")}, map=(Width_blk: {width}, Height_blk: {height}) ,player=(Width: {px}, Height: {py})")
+                    #         else:
+                    #             print("No path found.")
+                    #             break
+                    #     except:
+                    #         pass
+                    #     for _ in range(10):  # wait a few frames for movement
+                    #         pyboy.tick()
+                    # else:
+                    #     at_goal=True
                 # for _ in range(10):  # wait a few frames for movement
                 #     pyboy.tick()
                 # while new_map_id == map_id:
                 #     skills.execute(prev_move)
                 # print("GOAL REACHED!!!")
                 # --- Print to console ---
-                walk_matrix, map_width, map_height, warp_tiles = read_map(pyboy)
-                walk_matrix[py][px] = 'P' #player location
+                try:
+                    walk_matrix, map_width, map_height, warp_tiles = read_map(pyboy)
+                    walk_matrix[py][px] = 'P' #player location inside loop
+                except:
+                    pass
                 # walk_matrix[goal[1], goal[0]] = 'G'
                 # print("\nWalkable tile matrix ('-' = walkable, '#' = blocked):")
                 # print_tile_walk_matrix(walk_matrix)

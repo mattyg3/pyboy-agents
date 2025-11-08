@@ -154,6 +154,16 @@ def get_warp_tiles(map_filename):
         pass
     return warps
 
+def get_map_connections(map_id, direction):
+    # map_name = map_filename.replace(".asm","")
+    map_connections = find_map_by_id(MAP_HEADERS, map_id).get("connections")
+    connection_coords = []
+    if map_connections != []:
+        found_connection = next((c for c in map_connections if c["direction"].lower() == direction.lower()), None)
+        # found_connections = [c for c in map_connections if c["direction"].lower() == direction.lower()]
+        connection_coords = found_connection["connection_coords"]
+    return connection_coords
+
 
 def print_tile_walk_matrix(matrix):
     """
