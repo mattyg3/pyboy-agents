@@ -74,7 +74,7 @@ def run(ROM_PATH=ROM_PATH, LOAD_STATE_PATH=LOAD_STATE_PATH, SAVE_STATE_PATH=SAVE
     try:
         # if frame % 10 == 0:
         
-        while pyboy.tick():  # returns False when ROM done / exit 60, 100
+        while pyboy.tick(100):  # returns False when ROM done / exit 60, 100
             # Get state
             percept_state = perception.get_game_state()
             walkable_grid, map_width, map_height, warp_tiles = read_map(pyboy)
@@ -117,6 +117,7 @@ def run(ROM_PATH=ROM_PATH, LOAD_STATE_PATH=LOAD_STATE_PATH, SAVE_STATE_PATH=SAVE
             def go_to_destination_xy(CUSTOM_DEST):
                 import fnmatch
                 import re
+                map_id = get_current_map(pyboy)
                 map_filename = find_map_by_id(MAP_HEADERS, map_id).get("file")
                 if fnmatch.fnmatch(CUSTOM_DEST, "*enter*"):
                     match = re.search(r"'([^']*)'", CUSTOM_DEST)
@@ -127,17 +128,32 @@ def run(ROM_PATH=ROM_PATH, LOAD_STATE_PATH=LOAD_STATE_PATH, SAVE_STATE_PATH=SAVE
                     for warp in warp_tiles:
                         if warp.get("destination")==dest_key:
                             warps.append((warp.get("xy_coord")[0], warp.get("xy_coord")[1]))
-                    print(f"GOAL: {warps[0]}")
+                    print(f"GOAL: {warps[0]}")  
                     path_finder(pyboy, goal=warps[0])
+                    # cntr = 0
+                    # new_map_id, px, py, direction = get_player_position(pyboy)
+                    # while map_id == new_map_id:
+                    #     print("\n\nEXTRA LOOP\n\n")
+                    #     cntr+=1
+                    #     new_map_id, px, py, direction = get_player_position(pyboy)
+                    #     if cntr <= 3:
+                    #         skills.execute({"type": "GO_UP"})
+                    #         print("UP_EXTRA")
+                    #     else: 
+                    #         skills.execute({"type": "GO_DOWN"})
+                    #         print("DOWN_EXTRA")
+                    for _ in range(60):  # wait a second for new map to load
+                        pyboy.tick()
+                        
+                    
                 elif fnmatch.fnmatch(CUSTOM_DEST, "*move*"):
                     match = re.search(r"'([^']*)'", CUSTOM_DEST)
                     dest_key = match.group(1).lower() #north, south, east, west
                     print(f"DEST_KEY: {dest_key}")
                     connection_coords = get_map_connections(map_id, dest_key) #ADD RETRY FOR ALL POSSIBLE CONNECTIONS
-                    # if dest_key == "north":
-                    #     formated_coords = (connection_coords[0][0], connection_coords[0][1]-1)
+                    print(f"connection_coords: {connection_coords}")
                     formated_coords = (connection_coords[0][0], connection_coords[0][1])
-                    print(f"GOAL: {formated_coords}")
+                    # print(f"GOAL(from connection key): {formated_coords}")
                     path_finder(pyboy, goal=formated_coords)
                     if dest_key == "north":
                         skills.execute({"type": "GO_UP"})
@@ -151,17 +167,41 @@ def run(ROM_PATH=ROM_PATH, LOAD_STATE_PATH=LOAD_STATE_PATH, SAVE_STATE_PATH=SAVE
                     elif dest_key == "west":
                         skills.execute({"type": "GO_LEFT"})
                         print("LEFT_EXTRA")
-                    for _ in range(10):  # wait a few frames for movement
+                    for _ in range(60):  # wait a few frames for movement
                         pyboy.tick()
+
+                elif fnmatch.fnmatch(CUSTOM_DEST, "*talk*"):
+                    match = re.search(r"'([^']*)'", CUSTOM_DEST)
+                    dest_key = match.group(1)
+                    print(f"DEST_KEY: {dest_key}")
+                    npc_xy = get_npc_coords(map_filename)
+                    for npc in npc_xy:
+                        if npc.get("name")==dest_key:
+                            if npc.get("text")[-1] != '2':
+                                npc_coords = (npc.get("x"), npc.get("y"))
+                    print(f"GOAL: {npc_coords}")  
+                    path_finder(pyboy, goal=npc_coords)
+                    skills.execute({"type": "PRESS_A"})
+                    print("START_DIALOG")
+                    for _ in range(60):  # wait a few frames for movement
+                        pyboy.tick()
+
 
             if frame==0:
                 # CUSTOM_DEST="Enter 'REDS_HOUSE_1F'" 
                 # CUSTOM_DEST="Enter 'BLUES_HOUSE'" 
-                CUSTOM_DEST="Move to 'NORTH'" #leave pallettown to route1
-                go_to_destination_xy(CUSTOM_DEST)
+                # CUSTOM_DEST="Move to 'NORTH'" #leave pallettown to route1
+                # go_to_destination_xy(CUSTOM_DEST)
                 
-                CUSTOM_DEST="Move to 'NORTH'" #go through route1
+                # CUSTOM_DEST="Move to 'NORTH'" #go through route1
+                # go_to_destination_xy(CUSTOM_DEST)
+
+                CUSTOM_DEST="Enter  'OAKS_LAB'" 
                 go_to_destination_xy(CUSTOM_DEST)
+
+                CUSTOM_DEST="Talk to  'OAK'" 
+                go_to_destination_xy(CUSTOM_DEST)
+                percept_state = perception.get_game_state()
 
             # else:
             #     pass

@@ -313,11 +313,13 @@ for map in map_headers:
         walk_matrix = generate_walkability_tile_matrix(blocks, map_blocks, WALKABLE_TILE_IDS)
         warp_tiles = get_warp_tiles(map_filename)
         valid_start_xy = []
-        try:
+        # try:
+        if len(warp_tiles) > 0:
             for warp in warp_tiles:
                 valid_start_xy.append((warp.get("xy_coord")[0], warp.get("xy_coord")[1]+1))
             print("WARPS")
-        except:
+        # except:
+        else:
             cropped_height = len(walk_matrix)-10
             cropped_width = len(walk_matrix[0])-10
             for y in range(10, cropped_height):

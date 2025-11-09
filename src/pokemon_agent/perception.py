@@ -30,6 +30,21 @@ def read_word(memory, addr):
 #     high = memory[addr + 3]
 #     return (high << 8) | low
 
+class BattleFlag:
+    def __init__(self, pyboy):
+        self.pyboy = pyboy
+
+    def get_mem_pointer(self, address_book, pointer_name):
+        return int(next(entry["address"] for entry in RAM_POINTERS[address_book] if entry["name"] == pointer_name), 16)
+
+    def read_memory_state(self):
+        mem = self.pyboy.memory
+        battle_flag = mem[self.get_mem_pointer("system_addresses", "battle_type")]
+        turn = mem[self.get_mem_pointer("system_addresses", "battle_turn")]
+
+        return {"battle_type": battle_flag, "battle_turn": turn}
+    
+
 class PokemonPerceptionAgent:
     def __init__(self, pyboy):
         self.pyboy = pyboy
