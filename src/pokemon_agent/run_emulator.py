@@ -68,7 +68,7 @@ def run(ROM_PATH=ROM_PATH, LOAD_STATE_PATH=LOAD_STATE_PATH, SAVE_STATE_PATH=SAVE
 
     perception = PokemonPerceptionAgent(pyboy)
     # planner = SimplePlanner() #LLM Step eventually
-    # skills = SkillExecutor(pyboy)
+    skills = SkillExecutor(pyboy)
 
     frame = 0
     try:
@@ -79,9 +79,10 @@ def run(ROM_PATH=ROM_PATH, LOAD_STATE_PATH=LOAD_STATE_PATH, SAVE_STATE_PATH=SAVE
             percept_state = perception.get_game_state()
             walkable_grid, map_width, map_height, warp_tiles = read_map(pyboy)
             map_id, px, py, direction = get_player_position(pyboy)
-            walkable_grid[py][px] = "PLAYER"
+            
             print(f"[frame {frame}]")
             print(f"Current map={map_id}, map=(Width: {map_width}, Height: {map_height}) ,player=(Width: {px}, Height: {py})")
+            # walkable_grid[py][px] = "PLAYER"
             # print("\nWalkable tile matrix ('.' = walkable, '#' = blocked):")
             # print_tile_walk_matrix(walkable_grid)
             # walkable_grid_clean = "\n".join(
@@ -90,31 +91,121 @@ def run(ROM_PATH=ROM_PATH, LOAD_STATE_PATH=LOAD_STATE_PATH, SAVE_STATE_PATH=SAVE
             #     for row in walkable_grid
             # )
             # walkable_grid = 
-            rows = []
-            # rows.append(str("#"*map_width))
-            for row in walkable_grid:
-                # line = ""
-                line = []
-                for cell in row:
-                    if cell in ("P", "PLAYER"):
-                        # line += "P"
-                        line.append("P")
-                    # elif cell in ("W","WARP"):
-                    #     # line += "W"
-                    #     line.append("W")
-                    elif cell:
-                        # line += "-"
-                        line.append("-")
-                    else:
-                        # line += "#"
-                        line.append("#")
-                # line += "#"
-                rows.append(line)
-            # rows.append(str("#"*map_width))
-            # walkable_grid_clean = "\n".join(rows)
-            walkable_grid_clean = rows
-            
-            CUSTOM_DEST="Enter 'REDS_HOUSE_1F'"
+            # rows = []
+            # # rows.append(str("#"*map_width))
+            # for row in walkable_grid:
+            #     # line = ""
+            #     line = []
+            #     for cell in row:
+            #         if cell in ("P", "PLAYER"):
+            #             # line += "P"
+            #             line.append("P")
+            #         # elif cell in ("W","WARP"):
+            #         #     # line += "W"
+            #         #     line.append("W")
+            #         elif cell:
+            #             # line += "-"
+            #             line.append("-")
+            #         else:
+            #             # line += "#"
+            #             line.append("#")
+            #     # line += "#"
+            #     rows.append(line)
+            # # rows.append(str("#"*map_width))
+            # # walkable_grid_clean = "\n".join(rows)
+            # walkable_grid_clean = rows
+            def go_to_destination_xy(CUSTOM_DEST):
+                import fnmatch
+                import re
+                map_id = get_current_map(pyboy)
+                map_filename = find_map_by_id(MAP_HEADERS, map_id).get("file")
+                if fnmatch.fnmatch(CUSTOM_DEST, "*enter*"):
+                    match = re.search(r"'([^']*)'", CUSTOM_DEST)
+                    dest_key = match.group(1)
+                    print(f"DEST_KEY: {dest_key}")
+                    warp_tiles = get_warp_tiles(map_filename)
+                    warps = []
+                    for warp in warp_tiles:
+                        if warp.get("destination")==dest_key:
+                            warps.append((warp.get("xy_coord")[0], warp.get("xy_coord")[1]))
+                    print(f"GOAL: {warps[0]}")  
+                    path_finder(pyboy, goal=warps[0])
+                    # cntr = 0
+                    # new_map_id, px, py, direction = get_player_position(pyboy)
+                    # while map_id == new_map_id:
+                    #     print("\n\nEXTRA LOOP\n\n")
+                    #     cntr+=1
+                    #     new_map_id, px, py, direction = get_player_position(pyboy)
+                    #     if cntr <= 3:
+                    #         skills.execute({"type": "GO_UP"})
+                    #         print("UP_EXTRA")
+                    #     else: 
+                    #         skills.execute({"type": "GO_DOWN"})
+                    #         print("DOWN_EXTRA")
+                    for _ in range(60):  # wait a second for new map to load
+                        pyboy.tick()
+                        
+                    
+                elif fnmatch.fnmatch(CUSTOM_DEST, "*move*"):
+                    match = re.search(r"'([^']*)'", CUSTOM_DEST)
+                    dest_key = match.group(1).lower() #north, south, east, west
+                    print(f"DEST_KEY: {dest_key}")
+                    connection_coords = get_map_connections(map_id, dest_key) #ADD RETRY FOR ALL POSSIBLE CONNECTIONS
+                    print(f"connection_coords: {connection_coords}")
+                    formated_coords = (connection_coords[0][0], connection_coords[0][1])
+                    # print(f"GOAL(from connection key): {formated_coords}")
+                    path_finder(pyboy, goal=formated_coords)
+                    if dest_key == "north":
+                        skills.execute({"type": "GO_UP"})
+                        print("UP_EXTRA")
+                    elif dest_key == "south":
+                        skills.execute({"type": "GO_DOWN"})
+                        print("DOWN_EXTRA")
+                    elif dest_key == "east":
+                        skills.execute({"type": "GO_RIGHT"})
+                        print("RIGHT_EXTRA")
+                    elif dest_key == "west":
+                        skills.execute({"type": "GO_LEFT"})
+                        print("LEFT_EXTRA")
+                    for _ in range(60):  # wait a few frames for movement
+                        pyboy.tick()
+
+                elif fnmatch.fnmatch(CUSTOM_DEST, "*talk*"):
+                    match = re.search(r"'([^']*)'", CUSTOM_DEST)
+                    dest_key = match.group(1)
+                    print(f"DEST_KEY: {dest_key}")
+                    npc_xy = get_npc_coords(map_filename)
+                    for npc in npc_xy:
+                        if npc.get("name")==dest_key:
+                            if npc.get("text")[-1] != '2':
+                                npc_coords = (npc.get("x"), npc.get("y"))
+                    print(f"GOAL: {npc_coords}")  
+                    path_finder(pyboy, goal=npc_coords)
+                    skills.execute({"type": "PRESS_A"})
+                    print("START_DIALOG")
+                    for _ in range(60):  # wait a few frames for movement
+                        pyboy.tick()
+
+
+            if frame==0:
+                # CUSTOM_DEST="Enter 'REDS_HOUSE_1F'" 
+                # CUSTOM_DEST="Enter 'BLUES_HOUSE'" 
+                # CUSTOM_DEST="Move to 'NORTH'" #leave pallettown to route1
+                # go_to_destination_xy(CUSTOM_DEST)
+                
+                # CUSTOM_DEST="Move to 'NORTH'" #go through route1
+                # go_to_destination_xy(CUSTOM_DEST)
+
+                CUSTOM_DEST="Enter  'OAKS_LAB'" 
+                go_to_destination_xy(CUSTOM_DEST)
+
+                CUSTOM_DEST="Talk to  'OAK'" 
+                go_to_destination_xy(CUSTOM_DEST)
+                percept_state = perception.get_game_state()
+
+            # else:
+            #     pass
+
             # state = create_agent_state(walkable_grid=walkable_grid_clean, grid_width=map_width, grid_height=map_height, start_xy=(px,py), destination_wanted=CUSTOM_DEST)
 
             # pathing_info_dict = {
@@ -129,10 +220,10 @@ def run(ROM_PATH=ROM_PATH, LOAD_STATE_PATH=LOAD_STATE_PATH, SAVE_STATE_PATH=SAVE
             # state = app.invoke(state, config) 
             # dest_goal = (state["destination"].get("dest_x"), state["destination"].get("dest_y"))
             # print(f"GOAL: {dest_goal}")
-            if frame==0:
-                path_finder(pyboy, goal=(10,11)) #dest_goal
-            else:
-                pass
+            # if frame==0:
+            #     path_finder(pyboy, goal=(10,11)) #dest_goal
+            # else:
+            #     pass
             # pyboy.stop()
             # if frame < 2500:
             #     state = {}
@@ -158,12 +249,16 @@ def run(ROM_PATH=ROM_PATH, LOAD_STATE_PATH=LOAD_STATE_PATH, SAVE_STATE_PATH=SAVE
             # print(f"\n\n[frame {frame}] \nSTATE: {percept_state}\n") #\nstatus={status}  
                 # print(pyboy.memory[0xD014])
 
-            frame += 1
+            
 
             # if frame>2000:
             #     break
 
             # optional: small sleep to avoid hogging CPU unnecessarily
+
+
+
+            frame += 1
             time.sleep(0.001)
         # else:
         #     frame+=9

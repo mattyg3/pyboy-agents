@@ -91,6 +91,11 @@ def get_player_position(pyboy):
 
     return map_id, player_x, player_y, looking_direction #global_x, global_y, #player_x, player_y
 
+def get_current_map(pyboy):
+    mem = pyboy.memory
+    map_id = mem[0xD35E]
+    return map_id
+
 # =========================================================
 # 5. --- Collision and Walkability Grid ---
 # =========================================================
@@ -154,6 +159,52 @@ def get_warp_tiles(map_filename):
         pass
     return warps
 
+def get_map_connections(map_id, direction):
+    # map_name = map_filename.replace(".asm","")
+    map_connections = find_map_by_id(MAP_HEADERS, map_id).get("connections")
+    connection_coords = []
+    if map_connections != []:
+        found_connection = next((c for c in map_connections if c["direction"].lower() == direction.lower()), None)
+        # found_connections = [c for c in map_connections if c["direction"].lower() == direction.lower()]
+        connection_coords = found_connection["connection_coords"]
+    return connection_coords
+
+def get_npc_coords(map_filename):
+    map_name = map_filename.replace(".asm","")
+    npc_events = MAP_OBJECTS.get(map_name).get("object_events", None)
+    npcs=[]
+    if npc_events != None and npc_events != []:
+        try:
+            for npc in npc_events:
+                npcs.append({
+                    "x": npc.get("x") * 2, #+1,
+                    "y": npc.get("y") * 2 +1,
+                    "sprite": npc.get("sprite"),
+                    "name": npc.get("sprite").replace("SPRITE_", ""),
+                    "text": npc.get("text"),
+                    "movement": npc.get("movement"),
+                    "facing": npc.get("facing"),
+                })
+        except:
+            pass
+    return npcs
+
+def get_map_signs(map_filename):
+    map_name = map_filename.replace(".asm","")
+    sign_events = MAP_OBJECTS.get(map_name).get("bg_events", None)
+    signs=[]
+    if sign_events != None and sign_events != []:
+        try:
+            for sign in sign_events:
+                signs.append({
+                    "x": sign.get("x") * 2, #+1,
+                    "y": sign.get("y") * 2 +1,
+                    "text": sign.get("text"),
+                })
+        except:
+            pass
+    return signs
+
 
 def print_tile_walk_matrix(matrix):
     """
@@ -183,6 +234,8 @@ def print_tile_walk_matrix(matrix):
                 line += "P"
             elif cell in ("W","WARP"):
                 line += "W"
+            elif cell in ("G", "GOAL"):
+                line += "G"
             elif cell:
                 line += "-"
             else:
@@ -192,7 +245,7 @@ def print_tile_walk_matrix(matrix):
     print(walkable_grid_clean)
 
 def read_map(pyboy):
-    map_id, px, py, direction = get_player_position(pyboy)
+    map_id = get_current_map(pyboy)
     # print(f"Player at map {map_id}, X={px}, Y={py}, Looking={direction}") #(0: down, 4: up, 8: left, 12: right)
     # --- Load Map Values ---
     width = find_map_by_id(MAP_HEADERS, map_id).get("map_width")
@@ -251,6 +304,12 @@ def main():
     print("\nWalkable tile matrix ('-' = walkable, '#' = blocked):")
     print_tile_walk_matrix(walk_matrix)
     print(warp_tiles)
+
+    map_id = get_current_map(pyboy)
+    map_filename = find_map_by_id(MAP_HEADERS, map_id).get("file")
+
+    print(get_npc_coords(map_filename))
+    # print(get_map_signs(map_filename))
 
 
 if __name__ == "__main__":

@@ -1,120 +1,123 @@
-# # ====== create map_headers.json ======
-# import re
-# import pandas as pd
+# ====== create map_headers.json ======
+import re
+import pandas as pd
 
-# # Path to your file
-# file_path = "src/pokemon_agent/utils/ref_data/pokered_data/map_constants.asm"
+# Path to your file
+file_path = "src/pokemon_agent/utils/ref_data/pokered_data/map_constants.asm"
 
-# # Regex to match map_const lines
-# pattern = re.compile(r'map_const\s+(\w+),\s+(\d+),\s+(\d+)\s*;\s*(\$\w+)')
+# Regex to match map_const lines
+pattern = re.compile(r'map_const\s+(\w+),\s+(\d+),\s+(\d+)\s*;\s*(\$\w+)')
 
-# data = []
+data = []
 
-# with open(file_path, "r") as f:
-#     for line in f:
-#         match = pattern.search(line)
-#         if match:
-#             name = match.group(1).replace('_', '').upper()
-#             width = int(match.group(2))
-#             height = int(match.group(3))
-#             map_id = int(match.group(4).replace('$', ''), 16)
-#             data.append({
-#                 "ID": map_id,
-#                 "name": name,
-#                 "width": width,
-#                 "height": height
-#             })
+with open(file_path, "r") as f:
+    for line in f:
+        match = pattern.search(line)
+        if match:
+            name = match.group(1).replace('_', '').upper()
+            width = int(match.group(2))
+            height = int(match.group(3))
+            map_id = int(match.group(4).replace('$', ''), 16)
+            data.append({
+                "ID": map_id,
+                "name": name,
+                "width": width,
+                "height": height
+            })
 
-# df = pd.DataFrame(data)
-# print(df)
-# print(df.dtypes)
+df = pd.DataFrame(data)
+print(df)
+print(df.dtypes)
 
-# import re
-# import json
-# from pathlib import Path
+import re
+import json
+from pathlib import Path
 
-# # Directory containing .asm files
-# ASM_DIR = Path("src/pokemon_agent/utils/ref_data/pokered_data/maps/headers")
-# OUTPUT_JSON = Path("src/pokemon_agent/utils/ref_data/maps/map_headers.json")
+# Directory containing .asm files
+ASM_DIR = Path("src/pokemon_agent/utils/ref_data/pokered_data/maps/headers")
+OUTPUT_JSON = Path("src/pokemon_agent/utils/ref_data/maps/map_headers.json")
 
-# # Regex patterns
-# header_pattern = re.compile(
-#     r"map_header\s+(\w+),\s*(\w+),\s*(\w+),\s*(.*)"
-# )
+# Regex patterns
+header_pattern = re.compile(
+    r"map_header\s+(\w+),\s*(\w+),\s*(\w+),\s*(.*)"
+)
 # connection_pattern = re.compile(
 #     r"connection\s+(\w+),\s*(\w+),\s*(\w+),\s*(\d+)"
 # )
+connection_pattern = re.compile(
+    r"connection\s+(\w+),\s*(\w+),\s*(\w+),\s*([$\-\w\d]+)(?:\s*;.*)?"
+)
 
-# maps = []
+maps = []
 
-# # Loop through all .asm files
-# for asm_file in ASM_DIR.glob("*.asm"):
-#     with asm_file.open("r", encoding="utf-8") as f:
-#         content = f.read()
+# Loop through all .asm files
+for asm_file in ASM_DIR.glob("*.asm"):
+    with asm_file.open("r", encoding="utf-8") as f:
+        content = f.read()
 
-#     # Extract map_header
-#     header_match = header_pattern.search(content)
-#     if not header_match:
-#         continue  # skip files without a map_header
+    # Extract map_header
+    header_match = header_pattern.search(content)
+    if not header_match:
+        continue  # skip files without a map_header
 
 
-#     # Fix environment based on collision table
-#     env = None
-#     if header_match.group(3) == "REDS_HOUSE_1" or header_match.group(3) == "REDS_HOUSE_2":
-#         env = "REDS_HOUSE"
-#     elif header_match.group(3) == "MART":
-#         env = "POKECENTER"
-#     elif header_match.group(3) == "DOJO":
-#         env = "GYM"
-#     elif header_match.group(3) == "FOREST_GATE" or header_match.group(3) == "MUSEUM":
-#         env = "GATE"
-#     else:
-#         env = header_match.group(3)
+    # Fix environment based on collision table
+    env = None
+    if header_match.group(3) == "REDS_HOUSE_1" or header_match.group(3) == "REDS_HOUSE_2":
+        env = "REDS_HOUSE"
+    elif header_match.group(3) == "MART":
+        env = "POKECENTER"
+    elif header_match.group(3) == "DOJO":
+        env = "GYM"
+    elif header_match.group(3) == "FOREST_GATE" or header_match.group(3) == "MUSEUM":
+        env = "GATE"
+    else:
+        env = header_match.group(3)
 
-#     # Look up map constants
-#     upper_name = header_match.group(1).upper()
-#     try:
-#         map_id = df[df['name'] == upper_name]['ID'].iloc[0]
-#     except:
-#         map_id = None
-#     try:
-#         map_width = df[df['name'] == upper_name]['width'].iloc[0]
-#     except:
-#         map_width = None
-#     try:
-#         map_height = df[df['name'] == upper_name]['height'].iloc[0]
-#     except:
-#         map_height = None
+    # Look up map constants
+    upper_name = header_match.group(1).upper()
+    try:
+        map_id = df[df['name'] == upper_name]['ID'].iloc[0]
+    except:
+        map_id = None
+    try:
+        map_width = df[df['name'] == upper_name]['width'].iloc[0]
+    except:
+        map_width = None
+    try:
+        map_height = df[df['name'] == upper_name]['height'].iloc[0]
+    except:
+        map_height = None
 
-#     map_data = {
-#         "file": asm_file.name,
-#         "name": upper_name,
-#         "map_id": map_id,
-#         "map_width": map_width,
-#         "map_height": map_height,
-#         "label": header_match.group(2),
-#         # "environment": header_match.group(3),
-#         "environment": env,
-#         "connections_flags": header_match.group(4),
-#         "connections": []
-#     }
+    map_data = {
+        "file": asm_file.name,
+        "name": upper_name,
+        "map_id": map_id,
+        "map_width": map_width,
+        "map_height": map_height,
+        "label": header_match.group(2),
+        # "environment": header_match.group(3),
+        "environment": env,
+        "connections_flags": header_match.group(4),
+        "connections": []
+    }
 
-#     # Extract connections
-#     for conn_match in connection_pattern.finditer(content):
-#         map_data["connections"].append({
-#             "direction": conn_match.group(1),
-#             "target_name": conn_match.group(2),
-#             "target_label": conn_match.group(3),
-#             "offset": int(conn_match.group(4))
-#         })
+    # Extract connections
+    for conn_match in connection_pattern.finditer(content):
+        map_data["connections"].append({
+            "direction": conn_match.group(1),
+            "target_name": conn_match.group(2),
+            "target_label": conn_match.group(3),
+            "offset": int(conn_match.group(4))
+        })
 
-#     maps.append(map_data)
+    maps.append(map_data)
 
-# # Save to JSON
-# with OUTPUT_JSON.open("w", encoding="utf-8") as f:
-#     json.dump(maps, f, indent=4, default=int)
+# Save to JSON
+with OUTPUT_JSON.open("w", encoding="utf-8") as f:
+    json.dump(maps, f, indent=4, default=int)
 
-# print(f"Parsed {len(maps)} maps and saved to {OUTPUT_JSON}")
+print(f"Parsed {len(maps)} maps and saved to {OUTPUT_JSON}")
 
 
 
@@ -269,86 +272,114 @@
 
 
 
-# # ====== add map connection coords to map_headers.json ======
-# import json
-# from pathlib import Path
-# from path_finder import *
-# from utils.utility_funcs import find_map_by_id
+# ====== add map connection coords to map_headers.json ======
+import json
+from pathlib import Path
+from path_finder import *
+from utils.utility_funcs import find_map_by_id
+from tqdm import tqdm
 
 
-# with open('src/pokemon_agent/utils/ref_data/maps/map_headers.json', 'r') as f:
-#     MAP_HEADERS = json.load(f)
-# with open('src/pokemon_agent/utils/ref_data/maps/collision_tiles.json', 'r') as f:
-#     COLLISION = json.load(f)
-# with open('src/pokemon_agent/utils/ref_data/maps/map_objects.json', 'r') as f:
-#     MAP_OBJECTS = json.load(f)
+with open('src/pokemon_agent/utils/ref_data/maps/map_headers.json', 'r') as f:
+    MAP_HEADERS = json.load(f)
+with open('src/pokemon_agent/utils/ref_data/maps/collision_tiles.json', 'r') as f:
+    COLLISION = json.load(f)
+with open('src/pokemon_agent/utils/ref_data/maps/map_objects.json', 'r') as f:
+    MAP_OBJECTS = json.load(f)
 
-# # Load to JSON
-# INPUT_JSON = Path("src/pokemon_agent/utils/ref_data/maps/map_headers.json")
-# with INPUT_JSON.open("r") as f:
-#     map_headers = json.load(f)
+# Load to JSON
+INPUT_JSON = Path("src/pokemon_agent/utils/ref_data/maps/map_headers.json")
+with INPUT_JSON.open("r") as f:
+    map_headers = json.load(f)
 
-# OUTPUT_JSON = Path("src/pokemon_agent/utils/ref_data/maps/map_headers.json")
+OUTPUT_JSON = Path("src/pokemon_agent/utils/ref_data/maps/map_headers.json")
 
-# # print(map_headers[6])
-# upgraded_maps = []
-# for map in map_headers:
-#     if map['connections_flags'] != '0':
-#         width = find_map_by_id(MAP_HEADERS, map['map_id']).get("map_width")
-#         height = find_map_by_id(MAP_HEADERS, map['map_id']).get("map_height")
-#         map_env = find_map_by_id(MAP_HEADERS, map['map_id']).get("environment")
-#         map_filename = find_map_by_id(MAP_HEADERS, map['map_id']).get("file")
-#         map_path = Path("src/pokemon_agent/utils/ref_data/maps/map_files") / f"{map_filename.replace(".asm",".blk")}" #/PalletTown.blk
-#         blockset_path = Path("src/pokemon_agent/utils/ref_data/maps/blocksets") / f"{map_env.lower()}.bst" #/overworld.bst
-#         WALKABLE_TILE_IDS = COLLISION.get(f"{map_env.replace("_","").upper()}_COLL")
+# print(map_headers[6])
+upgraded_maps = []
+for map in map_headers:
+    if map['connections_flags'] != '0':
+        width = find_map_by_id(MAP_HEADERS, map['map_id']).get("map_width")
+        height = find_map_by_id(MAP_HEADERS, map['map_id']).get("map_height")
+        map_env = find_map_by_id(MAP_HEADERS, map['map_id']).get("environment")
+        map_filename = find_map_by_id(MAP_HEADERS, map['map_id']).get("file")
+        map_path = Path("src/pokemon_agent/utils/ref_data/maps/map_files") / f"{map_filename.replace(".asm",".blk")}" #/PalletTown.blk
+        blockset_path = Path("src/pokemon_agent/utils/ref_data/maps/blocksets") / f"{map_env.lower()}.bst" #/overworld.bst
+        WALKABLE_TILE_IDS = COLLISION.get(f"{map_env.replace("_","").upper()}_COLL")
 
-#         print(f"MAP: {map_filename}")
+        print(f"MAP: {map_filename}")
 
-#         blocks = load_blockset(blockset_path)
-#         map_blocks = load_map_blk(map_path, width, height)
-#         walk_matrix = generate_walkability_tile_matrix(blocks, map_blocks, WALKABLE_TILE_IDS)
-#         warp_tiles = get_warp_tiles(map_filename)
-#         try:
-#             warp_start = (warp_tiles[0].get("xy_coord")[0], warp_tiles[0].get("xy_coord")[1]+1)
-#         except:
-#             # Get coordinates of True cells
-#             true_coords = [(x, y) for y, row in enumerate(walk_matrix) for x, val in enumerate(row) if val]
-#             # Compute average (center of mass)
-#             avg_x = sum(x for x, y in true_coords) / len(true_coords)
-#             avg_y = sum(y for x, y in true_coords) / len(true_coords)
-#             # Find True coordinate closest to the average point
-#             warp_start = min(true_coords, key=lambda c: (c[0] - avg_x) ** 2 + (c[1] - avg_y) ** 2)
+        blocks = load_blockset(blockset_path)
+        map_blocks = load_map_blk(map_path, width, height)
+        walk_matrix = generate_walkability_tile_matrix(blocks, map_blocks, WALKABLE_TILE_IDS)
+        warp_tiles = get_warp_tiles(map_filename)
+        valid_start_xy = []
+        # try:
+        if len(warp_tiles) > 0:
+            for warp in warp_tiles:
+                valid_start_xy.append((warp.get("xy_coord")[0], warp.get("xy_coord")[1]+1))
+            print("WARPS")
+        # except:
+        else:
+            cropped_height = len(walk_matrix)-10
+            cropped_width = len(walk_matrix[0])-10
+            for y in range(10, cropped_height):
+                for x in range(10, cropped_width):
+                    if y % 5 == 0 and x % 5 == 0: #limit combos
+                        value = walk_matrix[y][x]
+                        if value == True:
+                            valid_start_xy.append((x,y))
+            print("BRUTE_FORCE")
+            # # Get coordinates of True cells
+            # true_coords = [(x, y) for y, row in enumerate(walk_matrix) for x, val in enumerate(row) if val]
+            # # Compute average (center of mass)
+            # avg_x = sum(x for x, y in true_coords) / len(true_coords)
+            # avg_y = sum(y for x, y in true_coords) / len(true_coords)
+            # # Find True coordinate closest to the average point
+            # warp_start = min(true_coords, key=lambda c: (c[0] - avg_x) ** 2 + (c[1] - avg_y) ** 2)
 
-#         map_connections = []
-#         for connection in map["connections"]:
-#             if connection["direction"] == "west":
-#                 x_pot = [0]
-#                 y_pot = range(map["map_height"]*4)
-#             elif connection["direction"] == "east":
-#                 x_pot = [map["map_width"]*4 - 1] #max index (width)
-#                 y_pot = range(map["map_height"]*4)
-#             elif connection["direction"] == "north":
-#                 x_pot = range(map["map_width"]*4)
-#                 y_pot = [0]
-#             elif connection["direction"] == "south":
-#                 x_pot = range(map["map_width"]*4)
-#                 y_pot = [map["map_height"]*4 - 1] #max index (height)
-#             else:
-#                 x_pot = None
-#                 y_pot = None
+        # #get possible start tiles walk_matrix[y][x], crop area by 3 blocks in each direction
+        # cropped_height = len(walk_matrix)-3
+        # cropped_width = len(walk_matrix[0])-3
+        # valid_start_xy = []
+        # for y in range(3, cropped_height):
+        #     for x in range(3, cropped_width):
+        #         if y % 5 == 0 and x % 5 == 0: #limit combos
+        #             value = walk_matrix[y][x]
+        #             if value == True:
+        #                 valid_start_xy.append((x,y))
 
-#             valid_connections=[]
-#             for x in x_pot:
-#                 for y in y_pot:
-#                     path = astar(walk_matrix, warp_start, (x, y))
-#                     if path:
-#                         valid_connections.append((x, y))
+        map_connections = []
+        print(map["connections"])
+        for connection in map["connections"]:
+            if connection["direction"] == "west":
+                x_pot = [0]
+                y_pot = range(map["map_height"]*4)
+            elif connection["direction"] == "east":
+                x_pot = [map["map_width"]*4 - 1] #max index (width)
+                y_pot = range(map["map_height"]*4)
+            elif connection["direction"] == "north":
+                x_pot = range(map["map_width"]*4)
+                y_pot = [0]
+            elif connection["direction"] == "south":
+                x_pot = range(map["map_width"]*4)
+                y_pot = [map["map_height"]*4 - 1] #max index (height)
+            else:
+                x_pot = None
+                y_pot = None
+
+            valid_connections=[]
+            for start in tqdm(valid_start_xy, desc="Processing"):
+                for x in x_pot:
+                    for y in y_pot:
+                        path = astar(walk_matrix, start, (x, y))
+                        if path:
+                            valid_connections.append((x, y))
             
-#             connection["connection_coords"] = valid_connections
-#             map_connections.append(connection)
-#         map["connections"] = map_connections
-#     upgraded_maps.append(map)
+            connection["connection_coords"] = list(set(valid_connections))
+            map_connections.append(connection)
+        map["connections"] = map_connections
+    upgraded_maps.append(map)
 
-# # Save to JSON
-# with OUTPUT_JSON.open("w", encoding="utf-8") as f:
-#     json.dump(upgraded_maps, f, indent=4, default=int)
+# Save to JSON
+with OUTPUT_JSON.open("w", encoding="utf-8") as f:
+    json.dump(upgraded_maps, f, indent=4, default=int)
