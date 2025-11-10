@@ -4,7 +4,7 @@ from pathlib import Path
 import heapq
 from skills import SkillExecutor
 from utils.utility_funcs import find_map_by_id
-from perception import BattleFlag
+from perception import BattleFlag, DialogFlag
 
 # ------ Pathfinding Algo ------
 def astar(grid, start, goal):
@@ -146,6 +146,7 @@ def path_finder(pyboy, goal):
         # --- Get player position ---
         map_id, px, py, direction = get_player_position(pyboy)
         battle_flag = BattleFlag(pyboy)
+        dialog_flag = DialogFlag(pyboy)
         try:
             print(f"Player at map {map_id}, X={px}, Y={py}, Looking={direction}") #(0: down, 4: up, 8: left, 12: right)
             walk_matrix[py][px] = 'P' #player location
@@ -202,7 +203,11 @@ def path_finder(pyboy, goal):
                 else:
                     battle_info = battle_flag.read_memory_state()
                     print(f"BATTLE_TYPE: {battle_info["battle_type"]}")
+                    dialog_info = dialog_flag.read_memory_state()
                     if battle_info["battle_type"] != 0: #break out of path_finding to battle
+                        at_goal=True
+                        continue
+                    elif dialog_info: #break out of path_finding for dialog
                         at_goal=True
                         continue
                     else:
