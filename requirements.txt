@@ -11,3 +11,4 @@ ollama
 langchain_ollama
 keyring
 tqdm
+lmstudio
