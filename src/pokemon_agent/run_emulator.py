@@ -1,5 +1,5 @@
 from pyboy import PyBoy#, WindowEvent
-from perception import PokemonPerceptionAgent
+from perception import PokemonPerceptionAgent, DialogPerception, DialogFlag
 # from planner import SimplePlanner
 from skills import SkillExecutor
 import time
@@ -47,12 +47,16 @@ def run(ROM_PATH=ROM_PATH, LOAD_STATE_PATH=LOAD_STATE_PATH, SAVE_STATE_PATH=SAVE
    
 
     # Battle Agent
-    agent_state = create_battle_agent_state()
+    battle_agent_state = create_battle_agent_state()
     battle_agent = BattleAgent(pyboy)
-    battle_agent.compile_workflow(agent_state)
+    battle_agent.compile_workflow(battle_agent_state)
 
     # Pathing Agent
     pathing_agent = PathingAgent(pyboy)
+
+    # Dialog
+    dialog_flag = DialogFlag(pyboy)
+    dialog_reader = DialogPerception(pyboy)
 
     frame = 0
     try:
@@ -69,27 +73,40 @@ def run(ROM_PATH=ROM_PATH, LOAD_STATE_PATH=LOAD_STATE_PATH, SAVE_STATE_PATH=SAVE
 
             if frame > 10:
                 break
+
+            
             battle_flag = BattleFlag(pyboy)
             battle_info = battle_flag.read_memory_state()       
-            if frame==0:
+            if dialog_flag.read_memory_state():
+                while dialog_flag.read_memory_state():
+                    skills.execute({"type": "PRESS_A"})
+                    print("PRESS_A: advance dialog")
+                    for _ in range(200):  # wait 200 frames
+                        pyboy.tick()
+                    dialog_reader.read_dialog()
+                    
+                dialog_reader.log_dialog()
+                
+
+            elif frame==0:
                 # CUSTOM_DEST="Enter 'REDS_HOUSE_1F'" 
                 # CUSTOM_DEST="Enter 'BLUES_HOUSE'" 
-                CUSTOM_DEST="Move to 'NORTH'" #leave pallettown to route1
-                pathing_agent.go_to_destination_xy(CUSTOM_DEST)
+                # CUSTOM_DEST="Move to 'NORTH'" #leave pallettown to route1
+                # pathing_agent.go_to_destination_xy(CUSTOM_DEST)
                 
-                CUSTOM_DEST="Move to 'NORTH'" #go through route1
+                # CUSTOM_DEST="Move to 'NORTH'" #go through route1
+                # pathing_agent.go_to_destination_xy(CUSTOM_DEST)
+
+                CUSTOM_DEST="Enter  'OAKS_LAB'" 
                 pathing_agent.go_to_destination_xy(CUSTOM_DEST)
 
-                # CUSTOM_DEST="Enter  'OAKS_LAB'" 
-                # go_to_destination_xy(CUSTOM_DEST)
-
-                # CUSTOM_DEST="Talk to  'OAK'" 
-                # go_to_destination_xy(CUSTOM_DEST)
+                CUSTOM_DEST="Talk to  'OAK'" 
+                pathing_agent.go_to_destination_xy(CUSTOM_DEST)
                 # percept_state = perception.get_game_state()
             elif battle_info["battle_type"] != 0:
-                agent_state = create_battle_agent_state()
+                battle_agent_state = create_battle_agent_state()
                 config = RunnableConfig(recursion_limit=500) #max number of graph nodes to process
-                agent_state = battle_agent.app.invoke(agent_state, config)
+                battle_agent_state = battle_agent.app.invoke(battle_agent_state, config)
             else:
                 pass
 

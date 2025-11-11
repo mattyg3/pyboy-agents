@@ -49,20 +49,60 @@ class DialogFlag:
         self.pyboy = pyboy
         self.screen = self.pyboy.screen
 
-    def get_mem_pointer(self, address_book, pointer_name):
-        return int(next(entry["address"] for entry in RAM_POINTERS[address_book] if entry["name"] == pointer_name), 16)
+    # def get_mem_pointer(self, address_book, pointer_name):
+    #     return int(next(entry["address"] for entry in RAM_POINTERS[address_book] if entry["name"] == pointer_name), 16)
     
     def capture_frame(self):
         return self.screen.ndarray
     
     def read_memory_state(self):
-        mem = self.pyboy.memory
+        # mem = self.pyboy.memory
         frame = self.capture_frame()
         overworld_tracker = OverworldStateTracker()
         ocr_state = OCR_Processing(self.pyboy, frame, overworld_tracker)
         ocr_results = ocr_state.read_frame()
         if ocr_results.get("new_text"):
             return True
+        else:
+            return False
+        
+class DialogPerception:
+    def __init__(self, pyboy):
+        self.pyboy = pyboy
+        self.screen = self.pyboy.screen
+        self.dialog_history = []
+        self.text_count = 0
+
+    def capture_frame(self):
+        return self.screen.ndarray
+
+    # def get_mem_pointer(self, address_book, pointer_name):
+    #     return int(next(entry["address"] for entry in RAM_POINTERS[address_book] if entry["name"] == pointer_name), 16)
+    
+    def read_dialog(self):
+        # mem = self.pyboy.memory
+        frame = self.capture_frame()
+        overworld_tracker = OverworldStateTracker()
+        ocr_state = OCR_Processing(self.pyboy, frame, overworld_tracker)
+        ocr_results = ocr_state.read_frame()
+        dialog_text = ocr_results.get("new_text")
+        if dialog_text not in self.dialog_history:
+            print(f"NEW DIALOG: {dialog_text}")
+            self.dialog_history.append(dialog_text)
+            self.text_count += 1
+            if self.text_count > 2: #save cleaned text to LOG
+                cleaned_dialog = TextCleaner(self.dialog_history)
+                with open('src/pokemon_agent/saves/dialog_log.txt', 'a') as file:
+                    file.write(f'{cleaned_dialog}\n')
+                self.dialog_history=[]
+                self.text_count=0
+    def log_dialog(self):
+        if len(self.dialog_history) > 0:
+            cleaned_dialog = TextCleaner(self.dialog_history)
+            with open('src/pokemon_agent/saves/dialog_log.txt', 'a') as file:
+                file.write(f'{cleaned_dialog}\n')
+            self.dialog_history=[]
+    
         
     
 
