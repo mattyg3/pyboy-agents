@@ -169,6 +169,11 @@ def get_map_connections(map_id, direction):
         connection_coords = found_connection["connection_coords"]
     return connection_coords
 
+def get_all_map_connections(map_id):
+    print(find_map_by_id(MAP_HEADERS, map_id).get("connections"))
+    return find_map_by_id(MAP_HEADERS, map_id).get("connections")
+
+
 def get_npc_coords(map_filename):
     map_name = map_filename.replace(".asm","")
     npc_events = MAP_OBJECTS.get(map_name).get("object_events", None)
@@ -204,6 +209,14 @@ def get_map_signs(map_filename):
         except:
             pass
     return signs
+
+def get_map_label(map_id):
+    print(find_map_by_id(MAP_HEADERS, map_id).get("label"))
+    return find_map_by_id(MAP_HEADERS, map_id).get("label")
+
+def get_map_filename(map_id):
+    print(find_map_by_id(MAP_HEADERS, map_id).get("file"))
+    return find_map_by_id(MAP_HEADERS, map_id).get("file")
 
 
 def print_tile_walk_matrix(matrix):

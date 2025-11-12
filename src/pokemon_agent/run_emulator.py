@@ -3,13 +3,15 @@ from perception import PokemonPerceptionAgent, DialogPerception, DialogFlag
 # from planner import SimplePlanner
 from skills import SkillExecutor
 import time
-from typing import Any, TypedDict, Annotated
-from langgraph.graph import StateGraph, END
+# from typing import Any, TypedDict, Annotated
+# from langgraph.graph import StateGraph, END
 from langchain_core.runnables.config import RunnableConfig
 # from agents.pathing_agent import *
 from path_finder import *
 from agents.battle_agent import  create_battle_agent_state, BattleAgent
 from agents.pathing_agent import PathingAgent
+from agents.goals_agent import create_goal_agent_state, GoalsAgent
+# from progress_tracking import ProgressTracker
 
 ROM_PATH = 'ROMS/pokemon_red.gb'
 SAVE_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_DEV.sav'
@@ -44,12 +46,18 @@ def run(ROM_PATH=ROM_PATH, LOAD_STATE_PATH=LOAD_STATE_PATH, SAVE_STATE_PATH=SAVE
     # Utilities
     perception = PokemonPerceptionAgent(pyboy)
     skills = SkillExecutor(pyboy)
+    # progress = ProgressTracker(pyboy)
    
 
     # Battle Agent
     battle_agent_state = create_battle_agent_state()
     battle_agent = BattleAgent(pyboy)
     battle_agent.compile_workflow(battle_agent_state)
+
+    # Goal Agent
+    goal_agent_state = create_goal_agent_state()
+    goal_agent = GoalsAgent(pyboy)
+    goal_agent.compile_workflow(goal_agent_state)
 
     # Pathing Agent
     pathing_agent = PathingAgent(pyboy)
@@ -63,16 +71,22 @@ def run(ROM_PATH=ROM_PATH, LOAD_STATE_PATH=LOAD_STATE_PATH, SAVE_STATE_PATH=SAVE
         # if frame % 10 == 0:
         
         while pyboy.tick(100):  # returns False when ROM done / exit 60, 100
+            # LONGTERM_GOAL = progress.check_progress()
+            # print(f"LONGTERM_GOAL: {LONGTERM_GOAL}")
+            
             # Get state
             # percept_state = perception.get_game_state()
             walkable_grid, map_width, map_height, warp_tiles = read_map(pyboy)
             map_id, px, py, direction = get_player_position(pyboy)
             
+            map_label = get_map_label(map_id)
+            # map_connections = get_all_map_connections(map_id)
+            # map_doorways = get_warp_tiles(get_map_filename(map_id))
             print(f"[frame {frame}]")
-            print(f"Current map={map_id}, map=(Width: {map_width}, Height: {map_height}) ,player=(Width: {px}, Height: {py})")
+            print(f"Current map={map_label}, Current mapID={map_id}, map=(Width: {map_width}, Height: {map_height}) ,player=(Width: {px}, Height: {py})")
 
-            if frame > 10:
-                break
+            # if frame > 10:
+            #     break
 
             
             battle_flag = BattleFlag(pyboy)
@@ -86,29 +100,40 @@ def run(ROM_PATH=ROM_PATH, LOAD_STATE_PATH=LOAD_STATE_PATH, SAVE_STATE_PATH=SAVE
                     dialog_reader.read_dialog()
                     
                 dialog_reader.log_dialog()
-                
 
-            elif frame==0:
-                # CUSTOM_DEST="Enter 'REDS_HOUSE_1F'" 
-                # CUSTOM_DEST="Enter 'BLUES_HOUSE'" 
-                # CUSTOM_DEST="Move to 'NORTH'" #leave pallettown to route1
-                # pathing_agent.go_to_destination_xy(CUSTOM_DEST)
-                
-                # CUSTOM_DEST="Move to 'NORTH'" #go through route1
-                # pathing_agent.go_to_destination_xy(CUSTOM_DEST)
-
-                CUSTOM_DEST="Enter  'OAKS_LAB'" 
-                pathing_agent.go_to_destination_xy(CUSTOM_DEST)
-
-                CUSTOM_DEST="Talk to  'OAK'" 
-                pathing_agent.go_to_destination_xy(CUSTOM_DEST)
-                # percept_state = perception.get_game_state()
             elif battle_info["battle_type"] != 0:
                 battle_agent_state = create_battle_agent_state()
                 config = RunnableConfig(recursion_limit=500) #max number of graph nodes to process
                 battle_agent_state = battle_agent.app.invoke(battle_agent_state, config)
+
             else:
-                pass
+                try:
+                    goal_agent_state = create_goal_agent_state()
+                    config = RunnableConfig(recursion_limit=500) #max number of graph nodes to process
+                    goal_agent_state = goal_agent.app.invoke(goal_agent_state, config)
+                    pathing_agent.go_to_destination_xy(goal_agent_state["next_best_action"])
+                except:
+                    pass
+                
+
+            # elif frame==0:
+            #     # CUSTOM_DEST="Enter 'REDS_HOUSE_1F'" 
+            #     # CUSTOM_DEST="Enter 'BLUES_HOUSE'" 
+            #     # CUSTOM_DEST="Move to 'NORTH'" #leave pallettown to route1
+            #     # pathing_agent.go_to_destination_xy(CUSTOM_DEST)
+                
+            #     # CUSTOM_DEST="Move to 'NORTH'" #go through route1
+            #     # pathing_agent.go_to_destination_xy(CUSTOM_DEST)
+
+            #     CUSTOM_DEST="Enter  'OAKS_LAB'" 
+            #     pathing_agent.go_to_destination_xy(CUSTOM_DEST)
+
+            #     CUSTOM_DEST="Talk to  'OAK'" 
+            #     pathing_agent.go_to_destination_xy(CUSTOM_DEST)
+            #     # percept_state = perception.get_game_state()
+            
+            # else:
+            #     pass
 
             frame += 1
             time.sleep(0.001)

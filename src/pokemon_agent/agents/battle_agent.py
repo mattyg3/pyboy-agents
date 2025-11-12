@@ -83,7 +83,7 @@ class BattleAgent:
             state["messages"].append({"role":"battle", "content": response})
             state["battle_move"] = response
             state["battle_thoughts"].append({"content": thinking})
-            print("FINISHED_LLM")
+            # print("FINISHED_LLM")
 
         else:
             self.skills.execute({"type": "PRESS_A"})
