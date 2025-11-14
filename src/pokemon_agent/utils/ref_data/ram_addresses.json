@@ -9,14 +9,14 @@
     },
     {
       "name": "player_x",
-      "address": "0xD361",
+      "address": "0xD362",
       "size": 1,
       "type": "byte",
       "description": "Player’s X coordinate on current map"
     },
     {
       "name": "player_y",
-      "address": "0xD362",
+      "address": "0xD361",
       "size": 1,
       "type": "byte",
       "description": "Player’s Y coordinate on current map"

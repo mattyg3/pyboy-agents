@@ -42,7 +42,7 @@ class BattleAgent:
             
             game_state = self.perception.get_game_state()
             cleaned_game_state = {"player":game_state["player"]["pokemon"], "opponent":game_state["opponent"], "battle":{"turn":game_state["battle"]["turn"], "player_turn":game_state["battle"]["player_turn"]}}
-            print(f"\nCLEANED GAME STATE\n{cleaned_game_state}")
+            # print(f"\nCLEANED GAME STATE\n{cleaned_game_state}\n")
             sys_prompt = f"""
             # Role
             You are a Pokemon battle decision agent
@@ -83,14 +83,13 @@ class BattleAgent:
             state["messages"].append({"role":"battle", "content": response})
             state["battle_move"] = response
             state["battle_thoughts"].append({"content": thinking})
-            print("FINISHED_LLM")
+            # print("FINISHED_LLM")
 
         else:
             self.skills.execute({"type": "PRESS_A"})
-            print("PRESS_A: skipping llm")
-            for _ in range(200):  # wait 200 frames
+            # print("PRESS_A: skipping llm")
+            for _ in range(400):  # wait 200 frames
                 self.pyboy.tick()
-            print("SKIPPED_LLM")
             state["battle_move"]=None
 
         return state
@@ -110,7 +109,7 @@ class BattleAgent:
                     return state
                 else:
                     self.skills.execute({"type": "PRESS_A"})
-                    print("PRESS_A")
+                    # print("PRESS_A: skip to battle menu")
                     for _ in range(5):  # wait 5 frames
                         self.pyboy.tick()
             
@@ -118,11 +117,11 @@ class BattleAgent:
             battle_flag = BattleFlag(self.pyboy)
             battle_info = battle_flag.read_memory_state()
             if battle_info["battle_type"] != 0:
-                print(f"BATTLE TYPE: {battle_info["battle_type"]}")
-                print("ROUTING -> BATTLE")
+                # print(f"BATTLE TYPE: {battle_info["battle_type"]}")
+                # print("ROUTING -> BATTLE")
                 return "battle"
             else:
-                print("ROUTING -> END")
+                # print("ROUTING -> END")
                 return "end"
             
         def battle_action_node(state: AgentState):
@@ -137,12 +136,75 @@ class BattleAgent:
             if state["battle_move"] == "move_1":
                 #Press Fight
                 self.skills.execute({"type": "PRESS_A"})
-                print("PRESS_A: Select 'Fight' Option")
+                # print("PRESS_A: Select 'Fight' Option")
                 for _ in range(5):  # wait 5 frames
                     self.pyboy.tick()
                 #Press First Move
                 self.skills.execute({"type": "PRESS_A"})
-                print("PRESS_A: Select First Move")
+                # print("PRESS_A: Select First Move")
+                for _ in range(5):  # wait 5 frames
+                    self.pyboy.tick()
+            elif state["battle_move"] == "move_2": 
+                #Press Fight
+                self.skills.execute({"type": "PRESS_A"})
+                # print("PRESS_A: Select 'Fight' Option")
+                for _ in range(5):  # wait 5 frames
+                    self.pyboy.tick()
+                #Press Down
+                self.skills.execute({"type": "GO_DOWN"})
+                # print("GO_DOWN: Select First Move")
+                for _ in range(5):  # wait 5 frames
+                    self.pyboy.tick()
+                #Press Second Move
+                self.skills.execute({"type": "PRESS_A"})
+                # print("PRESS_A: Select First Move")
+                for _ in range(5):  # wait 5 frames
+                    self.pyboy.tick()
+            elif state["battle_move"] == "move_3": 
+                #Press Fight
+                self.skills.execute({"type": "PRESS_A"})
+                # print("PRESS_A: Select 'Fight' Option")
+                for _ in range(5):  # wait 5 frames
+                    self.pyboy.tick()
+                #Press Down
+                self.skills.execute({"type": "GO_DOWN"})
+                # print("GO_DOWN: Select First Move")
+                for _ in range(5):  # wait 5 frames
+                    self.pyboy.tick()
+                #Press Down
+                self.skills.execute({"type": "GO_DOWN"})
+                # print("GO_DOWN: Select First Move")
+                for _ in range(5):  # wait 5 frames
+                    self.pyboy.tick()
+                #Press Third Move
+                self.skills.execute({"type": "PRESS_A"})
+                # print("PRESS_A: Select First Move")
+                for _ in range(5):  # wait 5 frames
+                    self.pyboy.tick()
+            elif state["battle_move"] == "move_4": 
+                #Press Fight
+                self.skills.execute({"type": "PRESS_A"})
+                # print("PRESS_A: Select 'Fight' Option")
+                for _ in range(5):  # wait 5 frames
+                    self.pyboy.tick()
+                #Press Down
+                self.skills.execute({"type": "GO_DOWN"})
+                # print("GO_DOWN: Select First Move")
+                for _ in range(5):  # wait 5 frames
+                    self.pyboy.tick()
+                #Press Down
+                self.skills.execute({"type": "GO_DOWN"})
+                # print("GO_DOWN: Select First Move")
+                for _ in range(5):  # wait 5 frames
+                    self.pyboy.tick()
+                #Press Down
+                self.skills.execute({"type": "GO_DOWN"})
+                # print("GO_DOWN: Select First Move")
+                for _ in range(5):  # wait 5 frames
+                    self.pyboy.tick()
+                #Press Fourth Move
+                self.skills.execute({"type": "PRESS_A"})
+                # print("PRESS_A: Select First Move")
                 for _ in range(5):  # wait 5 frames
                     self.pyboy.tick()
             return state
@@ -150,6 +212,7 @@ class BattleAgent:
         def battle_node(state: AgentState):
             return self.battle_agent(state)
         def routing(state: AgentState):
+            #run routing_node
             return state
     
         # ------ Define Workflow ------

@@ -281,21 +281,78 @@ def print_tile_walk_matrix(matrix):
 # =========================================================
 # 7. --- Main: render + overlay player ---
 # =========================================================
+from utils.utility_funcs import find_map_by_id
+def render_map_png(map_id, player_xy, goal_xy, save_path="src/pokemon_agent/saves/render_map.png"):
+    out_path = Path(save_path)
+    width = find_map_by_id(MAP_HEADERS, map_id).get("map_width")
+    height = find_map_by_id(MAP_HEADERS, map_id).get("map_height")
+    map_env = find_map_by_id(MAP_HEADERS, map_id).get("environment")
+    map_filename = find_map_by_id(MAP_HEADERS, map_id).get("file")
+    tileset_path = Path("src/pokemon_agent/utils/ref_data/maps/tilesets") / f"{map_env.lower()}.2bpp" #/overworld.2bpp
+    blockset_path = Path("src/pokemon_agent/utils/ref_data/maps/blocksets") / f"{map_env.lower()}.bst" #/overworld.bst
+    map_path = Path("src/pokemon_agent/utils/ref_data/maps/map_files") / f"{map_filename.replace(".asm",".blk")}" #/PalletTown.blk
+
+    px, py = player_xy
+    gx, gy = goal_xy
+
+     # --- Load map graphics ---
+    tiles = load_tileset_2bpp(tileset_path)
+    blocks = load_blockset(blockset_path)
+    map_blocks = load_map_blk(map_path, width, height)
+
+    # --- Render base map ---
+    img = render_map(tiles, blocks, map_blocks).convert("RGB")
+
+    # --- Overlay player marker ---
+    draw = ImageDraw.Draw(img)
+    block_size = 32  # pixels per map block (4x4 tiles)
+    tile_size = 8
+    
+    # PLAYER: Red square marker
+    player_px = px * tile_size
+    player_py = py * tile_size
+    marker_size = 5
+    draw.rectangle(
+        [(player_px - marker_size, player_py - marker_size),
+        (player_px + marker_size, player_py + marker_size)],
+        outline="red", width=2, fill="red"
+    )
+
+    # GOAL: Blue square marker
+    goal_px = gx * tile_size
+    goal_py = gy * tile_size
+    marker_size = 5
+    draw.rectangle(
+        [(goal_px - marker_size, goal_py - marker_size),
+        (goal_px + marker_size, goal_py + marker_size)],
+        outline="blue", width=2, fill="blue"
+    )
+
+    img.save(out_path)
+
+
+
+
+
+import json
+with open('src/pokemon_agent/utils/ref_data/maps/map_headers.json', 'r') as f:
+    MAP_HEADERS = json.load(f)
+
 def main():
 
     ROM_PATH = 'ROMS/pokemon_red.gb'
-    tileset_path = Path("src/pokemon_agent/utils/ref_data/maps/tilesets/overworld.2bpp")
-    blockset_path = Path("src/pokemon_agent/utils/ref_data/maps/blocksets/overworld.bst")
-    map_path = Path("src/pokemon_agent/utils/ref_data/maps/map_files/PalletTown.blk")
-    # tileset_path = Path("src/pokemon_agent/utils/ref_data/maps/tilesets/gym.2bpp")
-    # blockset_path = Path("src/pokemon_agent/utils/ref_data/maps/blocksets/gym.bst")
-    # map_path = Path("src/pokemon_agent/utils/ref_data/maps/map_files/OaksLab.blk")
-    width = 10
-    height = 9
-    out_path = Path("src/pokemon_agent/saves/render_map_test.png")
+    # tileset_path = Path("src/pokemon_agent/utils/ref_data/maps/tilesets/overworld.2bpp")
+    # blockset_path = Path("src/pokemon_agent/utils/ref_data/maps/blocksets/overworld.bst")
+    # map_path = Path("src/pokemon_agent/utils/ref_data/maps/map_files/PalletTown.blk")
+    # # tileset_path = Path("src/pokemon_agent/utils/ref_data/maps/tilesets/gym.2bpp")
+    # # blockset_path = Path("src/pokemon_agent/utils/ref_data/maps/blocksets/gym.bst")
+    # # map_path = Path("src/pokemon_agent/utils/ref_data/maps/map_files/OaksLab.blk")
+    # width = 10
+    # height = 9
+    # out_path = Path("src/pokemon_agent/saves/render_map_test.png")
     # LOAD_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_postfight_pallettown_right.sav'
-    LOAD_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_postfight_pallettown.sav'
-    # LOAD_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_prefight.sav'
+    # LOAD_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_postfight_pallettown.sav'
+    LOAD_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_prefight.sav'
 
     # --- Start PyBoy in headless mode ---
     pyboy = PyBoy(ROM_PATH, window="SDL2")
@@ -305,39 +362,53 @@ def main():
             pyboy.load_state(f)
 
     while pyboy.tick():
+        render_map_png(40, (10,10), (10,16), save_path="dev_files/render_map.png")
+    pyboy.stop()
 
-        # --- Get player position ---
-        map_id, px, py, direction = get_player_position(pyboy)
-        print(f"Player at map {map_id}, X={px}, Y={py}, Looking={direction}") #(0: down, 4: up, 8: left, 12: right)
 
-        # --- Load map graphics ---
-        tiles = load_tileset_2bpp(tileset_path)
-        blocks = load_blockset(blockset_path)
-        map_blocks = load_map_blk(map_path, width, height)
+    #     # --- Get player position ---
+    #     map_id, px, py, direction = get_player_position(pyboy)
+    #     print(f"Player at map {map_id}, X={px}, Y={py}, Looking={direction}") #(0: down, 4: up, 8: left, 12: right)
+    #     gx, gy = (20,0)
 
-        # --- Render base map ---
-        img = render_map(tiles, blocks, map_blocks).convert("RGB")
+    #     # --- Load map graphics ---
+    #     tiles = load_tileset_2bpp(tileset_path)
+    #     blocks = load_blockset(blockset_path)
+    #     map_blocks = load_map_blk(map_path, width, height)
 
-        # --- Overlay player marker ---
-        draw = ImageDraw.Draw(img)
-        block_size = 32  # pixels per map block (4x4 tiles)
-        tile_size = 8
-        player_px = px * tile_size
-        player_py = py * tile_size
+    #     # --- Render base map ---
+    #     img = render_map(tiles, blocks, map_blocks).convert("RGB")
 
-        # Red square marker
-        marker_size = 5
-        draw.rectangle(
-            [(player_px - marker_size, player_py - marker_size),
-            (player_px + marker_size, player_py + marker_size)],
-            outline="red", width=2, fill="red"
-        )
+    #     # --- Overlay player marker ---
+    #     draw = ImageDraw.Draw(img)
+    #     block_size = 32  # pixels per map block (4x4 tiles)
+    #     tile_size = 8
+        
+    #     # PLAYER: Red square marker
+    #     player_px = px * tile_size
+    #     player_py = py * tile_size
+    #     marker_size = 5
+    #     draw.rectangle(
+    #         [(player_px - marker_size, player_py - marker_size),
+    #         (player_px + marker_size, player_py + marker_size)],
+    #         outline="red", width=2, fill="red"
+    #     )
+
+    #     # GOAL: Blue square marker
+    #     goal_px = gx * tile_size
+    #     goal_py = gy * tile_size
+    #     marker_size = 5
+    #     draw.rectangle(
+    #         [(goal_px - marker_size, goal_py - marker_size),
+    #         (goal_px + marker_size, goal_py + marker_size)],
+    #         outline="blue", width=2, fill="blue"
+    #     )
 
         
 
-    pyboy.stop()
-    img.save(out_path)
-    print(f"Saved map with player marker to {out_path}")
+    # pyboy.stop()
+    # img.save(out_path)
+    # print(f"Saved map with player marker to {out_path}")
 
 
     # walk_matrix = generate_walkability_matrix(blocks, map_blocks, IMPASSABLE_TILE_IDS)
@@ -348,13 +419,13 @@ def main():
     # # --- Overlay walkability ---
     # # overlay_walkability(draw, walk_matrix, block_size)
 
-    # --- Compute tile-level walkability matrix ---
-    walk_matrix = generate_walkability_tile_matrix(blocks, map_blocks, WALKABLE_TILE_IDS)
-    walk_matrix[py][px] = 'P' #player location
+    # # --- Compute tile-level walkability matrix ---
+    # walk_matrix = generate_walkability_tile_matrix(blocks, map_blocks, WALKABLE_TILE_IDS)
+    # walk_matrix[py][px] = 'P' #player location
 
-    # --- Print to console ---
-    print("\nWalkable tile matrix ('.' = walkable, '#' = blocked):")
-    print_tile_walk_matrix(walk_matrix)
+    # # --- Print to console ---
+    # print("\nWalkable tile matrix ('.' = walkable, '#' = blocked):")
+    # print_tile_walk_matrix(walk_matrix)
 
 
 if __name__ == "__main__":

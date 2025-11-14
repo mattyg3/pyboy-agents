@@ -151,6 +151,7 @@ def get_warp_tiles(map_filename):
         for warp in warp_events:
             x = warp.get("x") * 2 #+1
             y = warp.get("y") * 2 +1
+            # y = warp.get("y") * 2 #+1
             dest = warp.get("dest_map")
             # warps.append((x,y)) 
             # warps["destination"] 
@@ -169,6 +170,11 @@ def get_map_connections(map_id, direction):
         connection_coords = found_connection["connection_coords"]
     return connection_coords
 
+def get_all_map_connections(map_id):
+    # print(find_map_by_id(MAP_HEADERS, map_id).get("connections"))
+    return find_map_by_id(MAP_HEADERS, map_id).get("connections")
+
+
 def get_npc_coords(map_filename):
     map_name = map_filename.replace(".asm","")
     npc_events = MAP_OBJECTS.get(map_name).get("object_events", None)
@@ -176,15 +182,18 @@ def get_npc_coords(map_filename):
     if npc_events != None and npc_events != []:
         try:
             for npc in npc_events:
-                npcs.append({
-                    "x": npc.get("x") * 2, #+1,
-                    "y": npc.get("y") * 2 +1,
-                    "sprite": npc.get("sprite"),
-                    "name": npc.get("sprite").replace("SPRITE_", ""),
-                    "text": npc.get("text"),
-                    "movement": npc.get("movement"),
-                    "facing": npc.get("facing"),
-                })
+                if npc.get("facing") == 'NONE':
+                    pass
+                else:
+                    npcs.append({
+                        "x": npc.get("x") * 2, #+1,
+                        "y": npc.get("y") * 2 +1,
+                        "sprite": npc.get("sprite"),
+                        "name": npc.get("sprite").replace("SPRITE_", ""),
+                        "text": npc.get("text"),
+                        "movement": npc.get("movement"),
+                        "facing": npc.get("facing"),
+                    })
         except:
             pass
     return npcs
@@ -204,6 +213,14 @@ def get_map_signs(map_filename):
         except:
             pass
     return signs
+
+def get_map_label(map_id):
+    # print(find_map_by_id(MAP_HEADERS, map_id).get("label"))
+    return find_map_by_id(MAP_HEADERS, map_id).get("label")
+
+def get_map_filename(map_id):
+    # print(find_map_by_id(MAP_HEADERS, map_id).get("file"))
+    return find_map_by_id(MAP_HEADERS, map_id).get("file")
 
 
 def print_tile_walk_matrix(matrix):
