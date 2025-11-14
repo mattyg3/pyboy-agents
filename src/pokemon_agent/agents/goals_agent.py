@@ -78,6 +78,7 @@ class GoalsAgent:
         **ONLY** the next best action formatted exactly like the examples provided. 
 
         """
+        # print("RIGHT BEFORE LLM_MODEL")
         result = llm_model.respond(sys_prompt)
         result_content = result.content
 
@@ -86,7 +87,7 @@ class GoalsAgent:
             response = result_content.split("</think>", 1)[1].strip()
         else:
             response = result_content.strip()
-        
+        # print(f"RESPONSE: {response}")
         state["messages"].append({"role":"goals", "content": response})
         state["next_best_action"] = response
         state["goals_thoughts"].append({"content": thinking})

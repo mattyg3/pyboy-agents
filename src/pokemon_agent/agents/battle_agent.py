@@ -42,7 +42,7 @@ class BattleAgent:
             
             game_state = self.perception.get_game_state()
             cleaned_game_state = {"player":game_state["player"]["pokemon"], "opponent":game_state["opponent"], "battle":{"turn":game_state["battle"]["turn"], "player_turn":game_state["battle"]["player_turn"]}}
-            print(f"\nCLEANED GAME STATE\n{cleaned_game_state}\n")
+            # print(f"\nCLEANED GAME STATE\n{cleaned_game_state}\n")
             sys_prompt = f"""
             # Role
             You are a Pokemon battle decision agent
@@ -87,8 +87,8 @@ class BattleAgent:
 
         else:
             self.skills.execute({"type": "PRESS_A"})
-            print("PRESS_A: skipping llm")
-            for _ in range(200):  # wait 200 frames
+            # print("PRESS_A: skipping llm")
+            for _ in range(400):  # wait 200 frames
                 self.pyboy.tick()
             state["battle_move"]=None
 
@@ -109,7 +109,7 @@ class BattleAgent:
                     return state
                 else:
                     self.skills.execute({"type": "PRESS_A"})
-                    print("PRESS_A: skip to battle menu")
+                    # print("PRESS_A: skip to battle menu")
                     for _ in range(5):  # wait 5 frames
                         self.pyboy.tick()
             
@@ -136,75 +136,75 @@ class BattleAgent:
             if state["battle_move"] == "move_1":
                 #Press Fight
                 self.skills.execute({"type": "PRESS_A"})
-                print("PRESS_A: Select 'Fight' Option")
+                # print("PRESS_A: Select 'Fight' Option")
                 for _ in range(5):  # wait 5 frames
                     self.pyboy.tick()
                 #Press First Move
                 self.skills.execute({"type": "PRESS_A"})
-                print("PRESS_A: Select First Move")
+                # print("PRESS_A: Select First Move")
                 for _ in range(5):  # wait 5 frames
                     self.pyboy.tick()
             elif state["battle_move"] == "move_2": 
                 #Press Fight
                 self.skills.execute({"type": "PRESS_A"})
-                print("PRESS_A: Select 'Fight' Option")
+                # print("PRESS_A: Select 'Fight' Option")
                 for _ in range(5):  # wait 5 frames
                     self.pyboy.tick()
                 #Press Down
                 self.skills.execute({"type": "GO_DOWN"})
-                print("GO_DOWN: Select First Move")
+                # print("GO_DOWN: Select First Move")
                 for _ in range(5):  # wait 5 frames
                     self.pyboy.tick()
                 #Press Second Move
                 self.skills.execute({"type": "PRESS_A"})
-                print("PRESS_A: Select First Move")
+                # print("PRESS_A: Select First Move")
                 for _ in range(5):  # wait 5 frames
                     self.pyboy.tick()
             elif state["battle_move"] == "move_3": 
                 #Press Fight
                 self.skills.execute({"type": "PRESS_A"})
-                print("PRESS_A: Select 'Fight' Option")
+                # print("PRESS_A: Select 'Fight' Option")
                 for _ in range(5):  # wait 5 frames
                     self.pyboy.tick()
                 #Press Down
                 self.skills.execute({"type": "GO_DOWN"})
-                print("GO_DOWN: Select First Move")
+                # print("GO_DOWN: Select First Move")
                 for _ in range(5):  # wait 5 frames
                     self.pyboy.tick()
                 #Press Down
                 self.skills.execute({"type": "GO_DOWN"})
-                print("GO_DOWN: Select First Move")
+                # print("GO_DOWN: Select First Move")
                 for _ in range(5):  # wait 5 frames
                     self.pyboy.tick()
                 #Press Third Move
                 self.skills.execute({"type": "PRESS_A"})
-                print("PRESS_A: Select First Move")
+                # print("PRESS_A: Select First Move")
                 for _ in range(5):  # wait 5 frames
                     self.pyboy.tick()
             elif state["battle_move"] == "move_4": 
                 #Press Fight
                 self.skills.execute({"type": "PRESS_A"})
-                print("PRESS_A: Select 'Fight' Option")
+                # print("PRESS_A: Select 'Fight' Option")
                 for _ in range(5):  # wait 5 frames
                     self.pyboy.tick()
                 #Press Down
                 self.skills.execute({"type": "GO_DOWN"})
-                print("GO_DOWN: Select First Move")
+                # print("GO_DOWN: Select First Move")
                 for _ in range(5):  # wait 5 frames
                     self.pyboy.tick()
                 #Press Down
                 self.skills.execute({"type": "GO_DOWN"})
-                print("GO_DOWN: Select First Move")
+                # print("GO_DOWN: Select First Move")
                 for _ in range(5):  # wait 5 frames
                     self.pyboy.tick()
                 #Press Down
                 self.skills.execute({"type": "GO_DOWN"})
-                print("GO_DOWN: Select First Move")
+                # print("GO_DOWN: Select First Move")
                 for _ in range(5):  # wait 5 frames
                     self.pyboy.tick()
                 #Press Fourth Move
                 self.skills.execute({"type": "PRESS_A"})
-                print("PRESS_A: Select First Move")
+                # print("PRESS_A: Select First Move")
                 for _ in range(5):  # wait 5 frames
                     self.pyboy.tick()
             return state

@@ -2,6 +2,8 @@ from path_finder import *
 from skills import SkillExecutor
 import fnmatch
 import re
+import numpy as np
+import random
 
 class PathingAgent:
     def __init__(self, pyboy):
@@ -18,25 +20,30 @@ class PathingAgent:
             print(f"DEST_KEY: {dest_key}")
             warp_tiles = get_warp_tiles(map_filename)
             warps = []
+            warp_x = []
+            warp_y = []
             for warp in warp_tiles:
                 if warp.get("destination")==dest_key:
                     warps.append((warp.get("xy_coord")[0], warp.get("xy_coord")[1]))
-            print(f"GOAL: {warps[0]}")  
-            path_finder(self.pyboy, goal=warps[0])
+                    warp_x.append(warp.get("xy_coord")[0])
+                    warp_y.append(warp.get("xy_coord")[1])
+            goal_xy = (int(np.mean(warp_x)), int(np.mean(warp_y)))
+            print(f"GOAL: {goal_xy}")  
+            last_move = path_finder(self.pyboy, goal=goal_xy)
             # cntr = 0
-            # new_map_id, px, py, direction = get_player_position(pyboy)
+            # new_map_id, px, py, direction = get_player_position(self.pyboy)
             # while map_id == new_map_id:
             #     print("\n\nEXTRA LOOP\n\n")
             #     cntr+=1
-            #     new_map_id, px, py, direction = get_player_position(pyboy)
+            #     new_map_id, px, py, direction = get_player_position(self.pyboy)
             #     if cntr <= 3:
-            #         skills.execute({"type": "GO_UP"})
+            #         self.skills.execute({"type": "GO_UP"})
             #         print("UP_EXTRA")
             #     else: 
-            #         skills.execute({"type": "GO_DOWN"})
+            #         self.skills.execute({"type": "GO_DOWN"})
             #         print("DOWN_EXTRA")
-            for _ in range(60):  # wait a second for new map to load
-                self.pyboy.tick()
+            # for _ in range(60):  # wait a second for new map to load
+            #     self.pyboy.tick()
                 
             
         elif fnmatch.fnmatch(CUSTOM_DEST, "*move*"):
@@ -44,10 +51,23 @@ class PathingAgent:
             dest_key = match.group(1).lower() #north, south, east, west
             print(f"DEST_KEY: {dest_key}")
             connection_coords = get_map_connections(map_id, dest_key) #ADD RETRY FOR ALL POSSIBLE CONNECTIONS
-            print(f"connection_coords: {connection_coords}")
-            formated_coords = (connection_coords[0][0], connection_coords[0][1])
+            # print(f"connection_coords: {connection_coords}")
+            # print(type(connection_coords))
+            # formated_coords = (connection_coords[0][0], connection_coords[0][1])
             # print(f"GOAL(from connection key): {formated_coords}")
-            path_finder(self.pyboy, goal=formated_coords)
+            # warp_x = []
+            # warp_y = []
+            # warps = []
+            # for connection in connection_coords:
+            #     if connection[0] % 2 == 0 and connection[1] % 2 == 0:
+            #         warps.append((connection[0], connection[1]))
+            #         warp_x.append(connection[0])
+            #         warp_y.append(connection[1])
+            # goal_avg = (int(np.mean(warp_x)), int(np.mean(warp_y)))
+            # goal_xy = random.choice(warps)
+            goal_xy = (connection_coords[0][0], connection_coords[0][1])
+            print(f"GOAL: {goal_xy}") 
+            last_move = path_finder(self.pyboy, goal=goal_xy)
             if dest_key == "north":
                 self.skills.execute({"type": "GO_UP"})
                 print("UP_EXTRA")
@@ -73,51 +93,16 @@ class PathingAgent:
                     if npc.get("text")[-1] != '2':
                         npc_coords = (npc.get("x"), npc.get("y"))
             print(f"GOAL: {npc_coords}")  
-            path_finder(self.pyboy, goal=npc_coords)
+            goal_xy = npc_coords
+            last_move = path_finder(self.pyboy, goal=npc_coords)
             self.skills.execute({"type": "PRESS_A"})
             print("START_DIALOG")
             for _ in range(60):  # wait a few frames for movement
                 self.pyboy.tick()
 
+        return last_move, goal_xy
 
 
 
 
 
-
-
-
-
-# from .init_llm import llm
-# from pydantic import BaseModel
-# from path_finder import *
-
-# class AnswerSchema(BaseModel):
-#     dest_x: int
-#     dest_y: int
-
-# structered_llm = llm.with_structured_output(AnswerSchema)
-
-# def pathing_agent(state):
-#     system_prompt = f"""
-# You are controlling a character in the following map.
-# P = player, # = wall/blocker, - = walkable
-# Your task: {state["pathing_info"]["task"]}
-
-# Map:
-# {state["pathing_info"]["map"]}
-
-# Player Location [x,y]:
-# {state["pathing_info"]["player_position"]}
-
-# Known Doorways:
-# {state["pathing_info"]["known_door_tiles"]}
-
-# Question: Which destination coordinate should the player move to so that the task is accomplished?
-# Return only JSON: "dest_x": x, "dest_y": y
-
-# """
-#     response = structered_llm.invoke(system_prompt)
-#     state["messages"].append({"role":"pathing", "content": response.model_dump()})
-#     state["destination"] = response.model_dump()
-#     return state

@@ -33,11 +33,11 @@ class ProgressTracker:
     def check_progress(self):
         current_progress = self.read_progress()
         if current_progress["oaks_parcel"] == 0:
-            next_game_checkpoint = "Player must retrieve Oak's parcel from Viridian City Mart and then return it to Oak in his lab"
+            next_game_checkpoint = "Player must retrieve Oak's parcel from Viridian City Mart"
         elif current_progress["town_map"] == 0:
-            next_game_checkpoint = "Get The Town Map in Pallet Town"
+            next_game_checkpoint = "Return parcel to Oak in his lab in Pallet Town, Then get The Town Map for Blue's House"
         elif current_progress["fought_brock"] == 0:
-            next_game_checkpoint = "Defeat Brock at Pewter City Gym"
+            next_game_checkpoint = "Travel to Pewter City, Train and Catch Pokemon Along the Way Until You Have a Pokemon at Level 15, Then Defeat Brock at Pewter City Gym"
         else:
             next_game_checkpoint = "NEED TO DEFINE NEXT GOAL!!!"
 
