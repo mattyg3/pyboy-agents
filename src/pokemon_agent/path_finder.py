@@ -169,7 +169,16 @@ def path_finder(pyboy, goal):
     prev_px=0
     prev_py=0
     prev_move=None
+    max_steps=250
+    step_count=0
+    try_next_xy=False
     while not at_goal:
+        if step_count > max_steps:
+            at_goal=True
+            try_next_xy=True
+            continue
+            # break
+        step_count+=1
         new_map_id, px, py, direction = get_player_position(pyboy)
         if prev_px==px and prev_py==py:
             repeat_cnt+=1
@@ -178,6 +187,7 @@ def path_finder(pyboy, goal):
             if repeat_cnt > 10:
                 at_goal=True
                 continue
+                # break
         else:
             repeat_cnt=0
 
@@ -196,9 +206,11 @@ def path_finder(pyboy, goal):
                 if battle_info["battle_type"] != 0: #break out of path_finding to battle
                     at_goal=True
                     continue
+                    # break
                 elif dialog_info: #break out of path_finding for dialog
                     at_goal=True
                     continue
+                    # break
                 else:
                     prev_px=px
                     prev_py=py
@@ -214,6 +226,7 @@ def path_finder(pyboy, goal):
                 if battle_info["battle_type"] != 0:  #break out of path_finding to battle
                     at_goal=True
                     continue
+                    # break
                 else:
                     prev_px=px
                     prev_py=py  
@@ -223,7 +236,7 @@ def path_finder(pyboy, goal):
             else:
                 print("No path found.")
                 break
-    return prev_move
+    return {"prev_move":prev_move, "try_next_xy":try_next_xy}
 
 
 
