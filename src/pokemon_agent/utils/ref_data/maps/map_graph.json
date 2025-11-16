@@ -1,0 +1,4972 @@
+{
+  "CELADON_CITY": [
+    {
+      "neighbor": "ROUTE_16",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_16",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_7",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_7",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_MART_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_MART_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_MANSION_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_MANSION_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_POKECENTER",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_POKECENTER",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_GYM",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_GYM",
+      "meta": {}
+    },
+    {
+      "neighbor": "GAME_CORNER",
+      "meta": {}
+    },
+    {
+      "neighbor": "GAME_CORNER",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_MART_5F",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_MART_5F",
+      "meta": {}
+    },
+    {
+      "neighbor": "GAME_CORNER_PRIZE_ROOM",
+      "meta": {}
+    },
+    {
+      "neighbor": "GAME_CORNER_PRIZE_ROOM",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_DINER",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_DINER",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_CHIEF_HOUSE",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_CHIEF_HOUSE",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_HOTEL",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_HOTEL",
+      "meta": {}
+    }
+  ],
+  "ROUTE_16": [
+    {
+      "neighbor": "CELADON_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_17",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_17",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_16_GATE_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_16_GATE_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_16_FLY_HOUSE",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_16_FLY_HOUSE",
+      "meta": {}
+    }
+  ],
+  "ROUTE_7": [
+    {
+      "neighbor": "CELADON_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFFRON_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFFRON_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_7_GATE",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_7_GATE",
+      "meta": {}
+    },
+    {
+      "neighbor": "UNDERGROUND_PATH_ROUTE_7",
+      "meta": {}
+    },
+    {
+      "neighbor": "UNDERGROUND_PATH_ROUTE_7",
+      "meta": {}
+    }
+  ],
+  "CELADON_MART_1F": [
+    {
+      "neighbor": "CELADON_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_MART_2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_MART_2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_MART_ELEVATOR",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_MART_ELEVATOR",
+      "meta": {}
+    }
+  ],
+  "CELADON_MANSION_1F": [
+    {
+      "neighbor": "CELADON_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_MANSION_2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_MANSION_2F",
+      "meta": {}
+    }
+  ],
+  "CELADON_POKECENTER": [
+    {
+      "neighbor": "CELADON_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_CITY",
+      "meta": {}
+    }
+  ],
+  "CELADON_GYM": [
+    {
+      "neighbor": "CELADON_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_CITY",
+      "meta": {}
+    }
+  ],
+  "GAME_CORNER": [
+    {
+      "neighbor": "CELADON_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROCKET_HIDEOUT_B1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROCKET_HIDEOUT_B1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROCKET_HIDEOUT_B_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROCKET_HIDEOUT_B_1F",
+      "meta": {}
+    }
+  ],
+  "CELADON_MART_5F": [
+    {
+      "neighbor": "CELADON_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_MART_4F",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_MART_4F",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_MART_ROOF",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_MART_ROOF",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_MART_ELEVATOR",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_MART_ELEVATOR",
+      "meta": {}
+    }
+  ],
+  "GAME_CORNER_PRIZE_ROOM": [
+    {
+      "neighbor": "CELADON_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_CITY",
+      "meta": {}
+    }
+  ],
+  "CELADON_DINER": [
+    {
+      "neighbor": "CELADON_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_CITY",
+      "meta": {}
+    }
+  ],
+  "CELADON_CHIEF_HOUSE": [
+    {
+      "neighbor": "CELADON_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_CITY",
+      "meta": {}
+    }
+  ],
+  "CELADON_HOTEL": [
+    {
+      "neighbor": "CELADON_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_CITY",
+      "meta": {}
+    }
+  ],
+  "CERULEAN_CITY": [
+    {
+      "neighbor": "ROUTE_24",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_24",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_5",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_5",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_4",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_4",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_9",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_9",
+      "meta": {}
+    },
+    {
+      "neighbor": "CERULEAN_TRASHED_HOUSE",
+      "meta": {}
+    },
+    {
+      "neighbor": "CERULEAN_TRASHED_HOUSE",
+      "meta": {}
+    },
+    {
+      "neighbor": "CERULEAN_TRADE_HOUSE",
+      "meta": {}
+    },
+    {
+      "neighbor": "CERULEAN_TRADE_HOUSE",
+      "meta": {}
+    },
+    {
+      "neighbor": "CERULEAN_POKECENTER",
+      "meta": {}
+    },
+    {
+      "neighbor": "CERULEAN_POKECENTER",
+      "meta": {}
+    },
+    {
+      "neighbor": "CERULEAN_GYM",
+      "meta": {}
+    },
+    {
+      "neighbor": "CERULEAN_GYM",
+      "meta": {}
+    },
+    {
+      "neighbor": "BIKE_SHOP",
+      "meta": {}
+    },
+    {
+      "neighbor": "BIKE_SHOP",
+      "meta": {}
+    },
+    {
+      "neighbor": "CERULEAN_MART",
+      "meta": {}
+    },
+    {
+      "neighbor": "CERULEAN_MART",
+      "meta": {}
+    },
+    {
+      "neighbor": "CERULEAN_CAVE_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "CERULEAN_CAVE_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "CERULEAN_BADGE_HOUSE",
+      "meta": {}
+    },
+    {
+      "neighbor": "CERULEAN_BADGE_HOUSE",
+      "meta": {}
+    }
+  ],
+  "ROUTE_24": [
+    {
+      "neighbor": "CERULEAN_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "CERULEAN_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_25",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_25",
+      "meta": {}
+    }
+  ],
+  "ROUTE_5": [
+    {
+      "neighbor": "CERULEAN_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "CERULEAN_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFFRON_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFFRON_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_5_GATE",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_5_GATE",
+      "meta": {}
+    },
+    {
+      "neighbor": "UNDERGROUND_PATH_ROUTE_5",
+      "meta": {}
+    },
+    {
+      "neighbor": "UNDERGROUND_PATH_ROUTE_5",
+      "meta": {}
+    },
+    {
+      "neighbor": "DAYCARE",
+      "meta": {}
+    },
+    {
+      "neighbor": "DAYCARE",
+      "meta": {}
+    }
+  ],
+  "ROUTE_4": [
+    {
+      "neighbor": "CERULEAN_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "CERULEAN_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_3",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_3",
+      "meta": {}
+    },
+    {
+      "neighbor": "MT_MOON_POKECENTER",
+      "meta": {}
+    },
+    {
+      "neighbor": "MT_MOON_POKECENTER",
+      "meta": {}
+    },
+    {
+      "neighbor": "MT_MOON_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "MT_MOON_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "MT_MOON_B1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "MT_MOON_B1F",
+      "meta": {}
+    }
+  ],
+  "ROUTE_9": [
+    {
+      "neighbor": "CERULEAN_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "CERULEAN_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_10",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_10",
+      "meta": {}
+    }
+  ],
+  "CERULEAN_TRASHED_HOUSE": [
+    {
+      "neighbor": "CERULEAN_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "CERULEAN_CITY",
+      "meta": {}
+    }
+  ],
+  "CERULEAN_TRADE_HOUSE": [
+    {
+      "neighbor": "CERULEAN_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "CERULEAN_CITY",
+      "meta": {}
+    }
+  ],
+  "CERULEAN_POKECENTER": [
+    {
+      "neighbor": "CERULEAN_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "CERULEAN_CITY",
+      "meta": {}
+    }
+  ],
+  "CERULEAN_GYM": [
+    {
+      "neighbor": "CERULEAN_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "CERULEAN_CITY",
+      "meta": {}
+    }
+  ],
+  "BIKE_SHOP": [
+    {
+      "neighbor": "CERULEAN_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "CERULEAN_CITY",
+      "meta": {}
+    }
+  ],
+  "CERULEAN_MART": [
+    {
+      "neighbor": "CERULEAN_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "CERULEAN_CITY",
+      "meta": {}
+    }
+  ],
+  "CERULEAN_CAVE_1F": [
+    {
+      "neighbor": "CERULEAN_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "CERULEAN_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "CERULEAN_CAVE_2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "CERULEAN_CAVE_2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "CERULEAN_CAVE_B1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "CERULEAN_CAVE_B1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "CERULEAN_CAVE_B_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "CERULEAN_CAVE_B_1F",
+      "meta": {}
+    }
+  ],
+  "CERULEAN_BADGE_HOUSE": [
+    {
+      "neighbor": "CERULEAN_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "CERULEAN_CITY",
+      "meta": {}
+    }
+  ],
+  "CINNABAR_ISLAND": [
+    {
+      "neighbor": "ROUTE_21",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_21",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_20",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_20",
+      "meta": {}
+    },
+    {
+      "neighbor": "POKEMON_MANSION_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "POKEMON_MANSION_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "CINNABAR_GYM",
+      "meta": {}
+    },
+    {
+      "neighbor": "CINNABAR_GYM",
+      "meta": {}
+    },
+    {
+      "neighbor": "CINNABAR_LAB",
+      "meta": {}
+    },
+    {
+      "neighbor": "CINNABAR_LAB",
+      "meta": {}
+    },
+    {
+      "neighbor": "CINNABAR_POKECENTER",
+      "meta": {}
+    },
+    {
+      "neighbor": "CINNABAR_POKECENTER",
+      "meta": {}
+    },
+    {
+      "neighbor": "CINNABAR_MART",
+      "meta": {}
+    },
+    {
+      "neighbor": "CINNABAR_MART",
+      "meta": {}
+    }
+  ],
+  "ROUTE_21": [
+    {
+      "neighbor": "CINNABAR_ISLAND",
+      "meta": {}
+    },
+    {
+      "neighbor": "CINNABAR_ISLAND",
+      "meta": {}
+    },
+    {
+      "neighbor": "PALLET_TOWN",
+      "meta": {}
+    },
+    {
+      "neighbor": "PALLET_TOWN",
+      "meta": {}
+    }
+  ],
+  "ROUTE_20": [
+    {
+      "neighbor": "CINNABAR_ISLAND",
+      "meta": {}
+    },
+    {
+      "neighbor": "CINNABAR_ISLAND",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_19",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_19",
+      "meta": {}
+    },
+    {
+      "neighbor": "SEAFOAM_ISLANDS_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SEAFOAM_ISLANDS_1F",
+      "meta": {}
+    }
+  ],
+  "POKEMON_MANSION_1F": [
+    {
+      "neighbor": "CINNABAR_ISLAND",
+      "meta": {}
+    },
+    {
+      "neighbor": "CINNABAR_ISLAND",
+      "meta": {}
+    },
+    {
+      "neighbor": "POKEMON_MANSION_2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "POKEMON_MANSION_2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "POKEMON_MANSION_B1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "POKEMON_MANSION_B1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "POKEMON_MANSION_B_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "POKEMON_MANSION_B_1F",
+      "meta": {}
+    }
+  ],
+  "CINNABAR_GYM": [
+    {
+      "neighbor": "CINNABAR_ISLAND",
+      "meta": {}
+    },
+    {
+      "neighbor": "CINNABAR_ISLAND",
+      "meta": {}
+    }
+  ],
+  "CINNABAR_LAB": [
+    {
+      "neighbor": "CINNABAR_ISLAND",
+      "meta": {}
+    },
+    {
+      "neighbor": "CINNABAR_ISLAND",
+      "meta": {}
+    },
+    {
+      "neighbor": "CINNABAR_LAB_TRADE_ROOM",
+      "meta": {}
+    },
+    {
+      "neighbor": "CINNABAR_LAB_TRADE_ROOM",
+      "meta": {}
+    },
+    {
+      "neighbor": "CINNABAR_LAB_METRONOME_ROOM",
+      "meta": {}
+    },
+    {
+      "neighbor": "CINNABAR_LAB_METRONOME_ROOM",
+      "meta": {}
+    },
+    {
+      "neighbor": "CINNABAR_LAB_FOSSIL_ROOM",
+      "meta": {}
+    },
+    {
+      "neighbor": "CINNABAR_LAB_FOSSIL_ROOM",
+      "meta": {}
+    }
+  ],
+  "CINNABAR_POKECENTER": [
+    {
+      "neighbor": "CINNABAR_ISLAND",
+      "meta": {}
+    },
+    {
+      "neighbor": "CINNABAR_ISLAND",
+      "meta": {}
+    }
+  ],
+  "CINNABAR_MART": [
+    {
+      "neighbor": "CINNABAR_ISLAND",
+      "meta": {}
+    },
+    {
+      "neighbor": "CINNABAR_ISLAND",
+      "meta": {}
+    }
+  ],
+  "FUCHSIA_CITY": [
+    {
+      "neighbor": "ROUTE_19",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_19",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_18",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_18",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_15",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_15",
+      "meta": {}
+    },
+    {
+      "neighbor": "FUCHSIA_MART",
+      "meta": {}
+    },
+    {
+      "neighbor": "FUCHSIA_MART",
+      "meta": {}
+    },
+    {
+      "neighbor": "FUCHSIA_BILLS_GRANDPAS_HOUSE",
+      "meta": {}
+    },
+    {
+      "neighbor": "FUCHSIA_BILLS_GRANDPAS_HOUSE",
+      "meta": {}
+    },
+    {
+      "neighbor": "FUCHSIA_POKECENTER",
+      "meta": {}
+    },
+    {
+      "neighbor": "FUCHSIA_POKECENTER",
+      "meta": {}
+    },
+    {
+      "neighbor": "WARDENS_HOUSE",
+      "meta": {}
+    },
+    {
+      "neighbor": "WARDENS_HOUSE",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFARI_ZONE_GATE",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFARI_ZONE_GATE",
+      "meta": {}
+    },
+    {
+      "neighbor": "FUCHSIA_GYM",
+      "meta": {}
+    },
+    {
+      "neighbor": "FUCHSIA_GYM",
+      "meta": {}
+    },
+    {
+      "neighbor": "FUCHSIA_MEETING_ROOM",
+      "meta": {}
+    },
+    {
+      "neighbor": "FUCHSIA_MEETING_ROOM",
+      "meta": {}
+    },
+    {
+      "neighbor": "FUCHSIA_GOOD_ROD_HOUSE",
+      "meta": {}
+    },
+    {
+      "neighbor": "FUCHSIA_GOOD_ROD_HOUSE",
+      "meta": {}
+    }
+  ],
+  "ROUTE_19": [
+    {
+      "neighbor": "FUCHSIA_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "FUCHSIA_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_20",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_20",
+      "meta": {}
+    }
+  ],
+  "ROUTE_18": [
+    {
+      "neighbor": "FUCHSIA_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "FUCHSIA_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_17",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_17",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_18_GATE_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_18_GATE_1F",
+      "meta": {}
+    }
+  ],
+  "ROUTE_15": [
+    {
+      "neighbor": "FUCHSIA_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "FUCHSIA_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_14",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_14",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_15_GATE_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_15_GATE_1F",
+      "meta": {}
+    }
+  ],
+  "FUCHSIA_MART": [
+    {
+      "neighbor": "FUCHSIA_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "FUCHSIA_CITY",
+      "meta": {}
+    }
+  ],
+  "FUCHSIA_BILLS_GRANDPAS_HOUSE": [
+    {
+      "neighbor": "FUCHSIA_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "FUCHSIA_CITY",
+      "meta": {}
+    }
+  ],
+  "FUCHSIA_POKECENTER": [
+    {
+      "neighbor": "FUCHSIA_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "FUCHSIA_CITY",
+      "meta": {}
+    }
+  ],
+  "WARDENS_HOUSE": [
+    {
+      "neighbor": "FUCHSIA_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "FUCHSIA_CITY",
+      "meta": {}
+    }
+  ],
+  "SAFARI_ZONE_GATE": [
+    {
+      "neighbor": "FUCHSIA_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "FUCHSIA_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFARI_ZONE_CENTER",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFARI_ZONE_CENTER",
+      "meta": {}
+    }
+  ],
+  "FUCHSIA_GYM": [
+    {
+      "neighbor": "FUCHSIA_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "FUCHSIA_CITY",
+      "meta": {}
+    }
+  ],
+  "FUCHSIA_MEETING_ROOM": [
+    {
+      "neighbor": "FUCHSIA_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "FUCHSIA_CITY",
+      "meta": {}
+    }
+  ],
+  "FUCHSIA_GOOD_ROD_HOUSE": [
+    {
+      "neighbor": "FUCHSIA_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "FUCHSIA_CITY",
+      "meta": {}
+    }
+  ],
+  "INDIGO_PLATEAU": [
+    {
+      "neighbor": "ROUTE_23",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_23",
+      "meta": {}
+    },
+    {
+      "neighbor": "INDIGO_PLATEAU_LOBBY",
+      "meta": {}
+    },
+    {
+      "neighbor": "INDIGO_PLATEAU_LOBBY",
+      "meta": {}
+    }
+  ],
+  "ROUTE_23": [
+    {
+      "neighbor": "INDIGO_PLATEAU",
+      "meta": {}
+    },
+    {
+      "neighbor": "INDIGO_PLATEAU",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_22",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_22",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_22_GATE",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_22_GATE",
+      "meta": {}
+    },
+    {
+      "neighbor": "VICTORY_ROAD_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "VICTORY_ROAD_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "VICTORY_ROAD_2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "VICTORY_ROAD_2F",
+      "meta": {}
+    }
+  ],
+  "INDIGO_PLATEAU_LOBBY": [
+    {
+      "neighbor": "INDIGO_PLATEAU",
+      "meta": {}
+    },
+    {
+      "neighbor": "INDIGO_PLATEAU",
+      "meta": {}
+    },
+    {
+      "neighbor": "LORELEIS_ROOM",
+      "meta": {}
+    },
+    {
+      "neighbor": "LORELEIS_ROOM",
+      "meta": {}
+    }
+  ],
+  "LAVENDER_TOWN": [
+    {
+      "neighbor": "ROUTE_10",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_10",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_12",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_12",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_8",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_8",
+      "meta": {}
+    },
+    {
+      "neighbor": "LAVENDER_POKECENTER",
+      "meta": {}
+    },
+    {
+      "neighbor": "LAVENDER_POKECENTER",
+      "meta": {}
+    },
+    {
+      "neighbor": "POKEMON_TOWER_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "POKEMON_TOWER_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "MR_FUJIS_HOUSE",
+      "meta": {}
+    },
+    {
+      "neighbor": "MR_FUJIS_HOUSE",
+      "meta": {}
+    },
+    {
+      "neighbor": "LAVENDER_MART",
+      "meta": {}
+    },
+    {
+      "neighbor": "LAVENDER_MART",
+      "meta": {}
+    },
+    {
+      "neighbor": "LAVENDER_CUBONE_HOUSE",
+      "meta": {}
+    },
+    {
+      "neighbor": "LAVENDER_CUBONE_HOUSE",
+      "meta": {}
+    },
+    {
+      "neighbor": "NAME_RATERS_HOUSE",
+      "meta": {}
+    },
+    {
+      "neighbor": "NAME_RATERS_HOUSE",
+      "meta": {}
+    }
+  ],
+  "ROUTE_10": [
+    {
+      "neighbor": "LAVENDER_TOWN",
+      "meta": {}
+    },
+    {
+      "neighbor": "LAVENDER_TOWN",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_9",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_9",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROCK_TUNNEL_POKECENTER",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROCK_TUNNEL_POKECENTER",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROCK_TUNNEL_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROCK_TUNNEL_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "POWER_PLANT",
+      "meta": {}
+    },
+    {
+      "neighbor": "POWER_PLANT",
+      "meta": {}
+    }
+  ],
+  "ROUTE_12": [
+    {
+      "neighbor": "LAVENDER_TOWN",
+      "meta": {}
+    },
+    {
+      "neighbor": "LAVENDER_TOWN",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_11",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_11",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_13",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_13",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_12_GATE_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_12_GATE_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_12_SUPER_ROD_HOUSE",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_12_SUPER_ROD_HOUSE",
+      "meta": {}
+    }
+  ],
+  "ROUTE_8": [
+    {
+      "neighbor": "LAVENDER_TOWN",
+      "meta": {}
+    },
+    {
+      "neighbor": "LAVENDER_TOWN",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFFRON_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFFRON_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_8_GATE",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_8_GATE",
+      "meta": {}
+    },
+    {
+      "neighbor": "UNDERGROUND_PATH_ROUTE_8",
+      "meta": {}
+    },
+    {
+      "neighbor": "UNDERGROUND_PATH_ROUTE_8",
+      "meta": {}
+    }
+  ],
+  "LAVENDER_POKECENTER": [
+    {
+      "neighbor": "LAVENDER_TOWN",
+      "meta": {}
+    },
+    {
+      "neighbor": "LAVENDER_TOWN",
+      "meta": {}
+    }
+  ],
+  "POKEMON_TOWER_1F": [
+    {
+      "neighbor": "LAVENDER_TOWN",
+      "meta": {}
+    },
+    {
+      "neighbor": "LAVENDER_TOWN",
+      "meta": {}
+    },
+    {
+      "neighbor": "POKEMON_TOWER_2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "POKEMON_TOWER_2F",
+      "meta": {}
+    }
+  ],
+  "MR_FUJIS_HOUSE": [
+    {
+      "neighbor": "LAVENDER_TOWN",
+      "meta": {}
+    },
+    {
+      "neighbor": "LAVENDER_TOWN",
+      "meta": {}
+    }
+  ],
+  "LAVENDER_MART": [
+    {
+      "neighbor": "LAVENDER_TOWN",
+      "meta": {}
+    },
+    {
+      "neighbor": "LAVENDER_TOWN",
+      "meta": {}
+    }
+  ],
+  "LAVENDER_CUBONE_HOUSE": [
+    {
+      "neighbor": "LAVENDER_TOWN",
+      "meta": {}
+    },
+    {
+      "neighbor": "LAVENDER_TOWN",
+      "meta": {}
+    }
+  ],
+  "NAME_RATERS_HOUSE": [
+    {
+      "neighbor": "LAVENDER_TOWN",
+      "meta": {}
+    },
+    {
+      "neighbor": "LAVENDER_TOWN",
+      "meta": {}
+    }
+  ],
+  "PALLET_TOWN": [
+    {
+      "neighbor": "ROUTE_1",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_1",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_21",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_21",
+      "meta": {}
+    },
+    {
+      "neighbor": "REDS_HOUSE_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "REDS_HOUSE_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "BLUES_HOUSE",
+      "meta": {}
+    },
+    {
+      "neighbor": "BLUES_HOUSE",
+      "meta": {}
+    },
+    {
+      "neighbor": "OAKS_LAB",
+      "meta": {}
+    },
+    {
+      "neighbor": "OAKS_LAB",
+      "meta": {}
+    }
+  ],
+  "ROUTE_1": [
+    {
+      "neighbor": "PALLET_TOWN",
+      "meta": {}
+    },
+    {
+      "neighbor": "PALLET_TOWN",
+      "meta": {}
+    },
+    {
+      "neighbor": "VIRIDIAN_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "VIRIDIAN_CITY",
+      "meta": {}
+    }
+  ],
+  "REDS_HOUSE_1F": [
+    {
+      "neighbor": "PALLET_TOWN",
+      "meta": {}
+    },
+    {
+      "neighbor": "PALLET_TOWN",
+      "meta": {}
+    },
+    {
+      "neighbor": "REDS_HOUSE_2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "REDS_HOUSE_2F",
+      "meta": {}
+    }
+  ],
+  "BLUES_HOUSE": [
+    {
+      "neighbor": "PALLET_TOWN",
+      "meta": {}
+    },
+    {
+      "neighbor": "PALLET_TOWN",
+      "meta": {}
+    }
+  ],
+  "OAKS_LAB": [
+    {
+      "neighbor": "PALLET_TOWN",
+      "meta": {}
+    },
+    {
+      "neighbor": "PALLET_TOWN",
+      "meta": {}
+    }
+  ],
+  "PEWTER_CITY": [
+    {
+      "neighbor": "ROUTE_2",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_2",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_3",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_3",
+      "meta": {}
+    },
+    {
+      "neighbor": "MUSEUM_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "MUSEUM_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "PEWTER_GYM",
+      "meta": {}
+    },
+    {
+      "neighbor": "PEWTER_GYM",
+      "meta": {}
+    },
+    {
+      "neighbor": "PEWTER_NIDORAN_HOUSE",
+      "meta": {}
+    },
+    {
+      "neighbor": "PEWTER_NIDORAN_HOUSE",
+      "meta": {}
+    },
+    {
+      "neighbor": "PEWTER_MART",
+      "meta": {}
+    },
+    {
+      "neighbor": "PEWTER_MART",
+      "meta": {}
+    },
+    {
+      "neighbor": "PEWTER_SPEECH_HOUSE",
+      "meta": {}
+    },
+    {
+      "neighbor": "PEWTER_SPEECH_HOUSE",
+      "meta": {}
+    },
+    {
+      "neighbor": "PEWTER_POKECENTER",
+      "meta": {}
+    },
+    {
+      "neighbor": "PEWTER_POKECENTER",
+      "meta": {}
+    }
+  ],
+  "ROUTE_2": [
+    {
+      "neighbor": "PEWTER_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "PEWTER_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "VIRIDIAN_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "VIRIDIAN_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "DIGLETTS_CAVE_ROUTE_2",
+      "meta": {}
+    },
+    {
+      "neighbor": "DIGLETTS_CAVE_ROUTE_2",
+      "meta": {}
+    },
+    {
+      "neighbor": "VIRIDIAN_FOREST_NORTH_GATE",
+      "meta": {}
+    },
+    {
+      "neighbor": "VIRIDIAN_FOREST_NORTH_GATE",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_2_TRADE_HOUSE",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_2_TRADE_HOUSE",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_2_GATE",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_2_GATE",
+      "meta": {}
+    },
+    {
+      "neighbor": "VIRIDIAN_FOREST_SOUTH_GATE",
+      "meta": {}
+    },
+    {
+      "neighbor": "VIRIDIAN_FOREST_SOUTH_GATE",
+      "meta": {}
+    }
+  ],
+  "ROUTE_3": [
+    {
+      "neighbor": "PEWTER_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "PEWTER_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_4",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_4",
+      "meta": {}
+    }
+  ],
+  "MUSEUM_1F": [
+    {
+      "neighbor": "PEWTER_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "PEWTER_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "MUSEUM_2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "MUSEUM_2F",
+      "meta": {}
+    }
+  ],
+  "PEWTER_GYM": [
+    {
+      "neighbor": "PEWTER_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "PEWTER_CITY",
+      "meta": {}
+    }
+  ],
+  "PEWTER_NIDORAN_HOUSE": [
+    {
+      "neighbor": "PEWTER_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "PEWTER_CITY",
+      "meta": {}
+    }
+  ],
+  "PEWTER_MART": [
+    {
+      "neighbor": "PEWTER_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "PEWTER_CITY",
+      "meta": {}
+    }
+  ],
+  "PEWTER_SPEECH_HOUSE": [
+    {
+      "neighbor": "PEWTER_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "PEWTER_CITY",
+      "meta": {}
+    }
+  ],
+  "PEWTER_POKECENTER": [
+    {
+      "neighbor": "PEWTER_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "PEWTER_CITY",
+      "meta": {}
+    }
+  ],
+  "REDS_HOUSE_2F": [
+    {
+      "neighbor": "REDS_HOUSE_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "REDS_HOUSE_1F",
+      "meta": {}
+    }
+  ],
+  "VIRIDIAN_CITY": [
+    {
+      "neighbor": "ROUTE_1",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_1",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_2",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_2",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_22",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_22",
+      "meta": {}
+    },
+    {
+      "neighbor": "VIRIDIAN_POKECENTER",
+      "meta": {}
+    },
+    {
+      "neighbor": "VIRIDIAN_POKECENTER",
+      "meta": {}
+    },
+    {
+      "neighbor": "VIRIDIAN_MART",
+      "meta": {}
+    },
+    {
+      "neighbor": "VIRIDIAN_MART",
+      "meta": {}
+    },
+    {
+      "neighbor": "VIRIDIAN_SCHOOL_HOUSE",
+      "meta": {}
+    },
+    {
+      "neighbor": "VIRIDIAN_SCHOOL_HOUSE",
+      "meta": {}
+    },
+    {
+      "neighbor": "VIRIDIAN_NICKNAME_HOUSE",
+      "meta": {}
+    },
+    {
+      "neighbor": "VIRIDIAN_NICKNAME_HOUSE",
+      "meta": {}
+    },
+    {
+      "neighbor": "VIRIDIAN_GYM",
+      "meta": {}
+    },
+    {
+      "neighbor": "VIRIDIAN_GYM",
+      "meta": {}
+    }
+  ],
+  "ROCK_TUNNEL_POKECENTER": [
+    {
+      "neighbor": "ROUTE_10",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_10",
+      "meta": {}
+    }
+  ],
+  "ROCK_TUNNEL_1F": [
+    {
+      "neighbor": "ROUTE_10",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_10",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROCK_TUNNEL_B1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROCK_TUNNEL_B1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROCK_TUNNEL_B_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROCK_TUNNEL_B_1F",
+      "meta": {}
+    }
+  ],
+  "POWER_PLANT": [
+    {
+      "neighbor": "ROUTE_10",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_10",
+      "meta": {}
+    }
+  ],
+  "ROUTE_11": [
+    {
+      "neighbor": "VERMILION_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "VERMILION_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_12",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_12",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_11_GATE_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_11_GATE_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "DIGLETTS_CAVE_ROUTE_11",
+      "meta": {}
+    },
+    {
+      "neighbor": "DIGLETTS_CAVE_ROUTE_11",
+      "meta": {}
+    }
+  ],
+  "VERMILION_CITY": [
+    {
+      "neighbor": "ROUTE_11",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_11",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_6",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_6",
+      "meta": {}
+    },
+    {
+      "neighbor": "VERMILION_POKECENTER",
+      "meta": {}
+    },
+    {
+      "neighbor": "VERMILION_POKECENTER",
+      "meta": {}
+    },
+    {
+      "neighbor": "POKEMON_FAN_CLUB",
+      "meta": {}
+    },
+    {
+      "neighbor": "POKEMON_FAN_CLUB",
+      "meta": {}
+    },
+    {
+      "neighbor": "VERMILION_MART",
+      "meta": {}
+    },
+    {
+      "neighbor": "VERMILION_MART",
+      "meta": {}
+    },
+    {
+      "neighbor": "VERMILION_GYM",
+      "meta": {}
+    },
+    {
+      "neighbor": "VERMILION_GYM",
+      "meta": {}
+    },
+    {
+      "neighbor": "VERMILION_PIDGEY_HOUSE",
+      "meta": {}
+    },
+    {
+      "neighbor": "VERMILION_PIDGEY_HOUSE",
+      "meta": {}
+    },
+    {
+      "neighbor": "VERMILION_DOCK",
+      "meta": {}
+    },
+    {
+      "neighbor": "VERMILION_DOCK",
+      "meta": {}
+    },
+    {
+      "neighbor": "VERMILION_TRADE_HOUSE",
+      "meta": {}
+    },
+    {
+      "neighbor": "VERMILION_TRADE_HOUSE",
+      "meta": {}
+    },
+    {
+      "neighbor": "VERMILION_OLD_ROD_HOUSE",
+      "meta": {}
+    },
+    {
+      "neighbor": "VERMILION_OLD_ROD_HOUSE",
+      "meta": {}
+    }
+  ],
+  "ROUTE_11_GATE_1F": [
+    {
+      "neighbor": "ROUTE_11",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_11",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_11_GATE_2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_11_GATE_2F",
+      "meta": {}
+    }
+  ],
+  "DIGLETTS_CAVE_ROUTE_11": [
+    {
+      "neighbor": "ROUTE_11",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_11",
+      "meta": {}
+    },
+    {
+      "neighbor": "DIGLETTS_CAVE",
+      "meta": {}
+    },
+    {
+      "neighbor": "DIGLETTS_CAVE",
+      "meta": {}
+    }
+  ],
+  "ROUTE_13": [
+    {
+      "neighbor": "ROUTE_12",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_12",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_14",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_14",
+      "meta": {}
+    }
+  ],
+  "ROUTE_12_GATE_1F": [
+    {
+      "neighbor": "ROUTE_12",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_12",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_12_GATE_2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_12_GATE_2F",
+      "meta": {}
+    }
+  ],
+  "ROUTE_12_SUPER_ROD_HOUSE": [
+    {
+      "neighbor": "ROUTE_12",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_12",
+      "meta": {}
+    }
+  ],
+  "ROUTE_14": [
+    {
+      "neighbor": "ROUTE_13",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_13",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_15",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_15",
+      "meta": {}
+    }
+  ],
+  "ROUTE_15_GATE_1F": [
+    {
+      "neighbor": "ROUTE_15",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_15",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_15_GATE_2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_15_GATE_2F",
+      "meta": {}
+    }
+  ],
+  "ROUTE_17": [
+    {
+      "neighbor": "ROUTE_16",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_16",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_18",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_18",
+      "meta": {}
+    }
+  ],
+  "ROUTE_16_GATE_1F": [
+    {
+      "neighbor": "ROUTE_16",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_16",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_16_GATE_2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_16_GATE_2F",
+      "meta": {}
+    }
+  ],
+  "ROUTE_16_FLY_HOUSE": [
+    {
+      "neighbor": "ROUTE_16",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_16",
+      "meta": {}
+    }
+  ],
+  "ROUTE_18_GATE_1F": [
+    {
+      "neighbor": "ROUTE_18",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_18",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_18_GATE_2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_18_GATE_2F",
+      "meta": {}
+    }
+  ],
+  "DIGLETTS_CAVE_ROUTE_2": [
+    {
+      "neighbor": "ROUTE_2",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_2",
+      "meta": {}
+    },
+    {
+      "neighbor": "DIGLETTS_CAVE",
+      "meta": {}
+    },
+    {
+      "neighbor": "DIGLETTS_CAVE",
+      "meta": {}
+    }
+  ],
+  "VIRIDIAN_FOREST_NORTH_GATE": [
+    {
+      "neighbor": "ROUTE_2",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_2",
+      "meta": {}
+    },
+    {
+      "neighbor": "VIRIDIAN_FOREST",
+      "meta": {}
+    },
+    {
+      "neighbor": "VIRIDIAN_FOREST",
+      "meta": {}
+    }
+  ],
+  "ROUTE_2_TRADE_HOUSE": [
+    {
+      "neighbor": "ROUTE_2",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_2",
+      "meta": {}
+    }
+  ],
+  "ROUTE_2_GATE": [
+    {
+      "neighbor": "ROUTE_2",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_2",
+      "meta": {}
+    }
+  ],
+  "VIRIDIAN_FOREST_SOUTH_GATE": [
+    {
+      "neighbor": "ROUTE_2",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_2",
+      "meta": {}
+    },
+    {
+      "neighbor": "VIRIDIAN_FOREST",
+      "meta": {}
+    },
+    {
+      "neighbor": "VIRIDIAN_FOREST",
+      "meta": {}
+    }
+  ],
+  "SEAFOAM_ISLANDS_1F": [
+    {
+      "neighbor": "ROUTE_20",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_20",
+      "meta": {}
+    },
+    {
+      "neighbor": "SEAFOAM_ISLANDS_B1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SEAFOAM_ISLANDS_B1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SEAFOAM_ISLANDS_B_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SEAFOAM_ISLANDS_B_1F",
+      "meta": {}
+    }
+  ],
+  "ROUTE_22": [
+    {
+      "neighbor": "ROUTE_23",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_23",
+      "meta": {}
+    },
+    {
+      "neighbor": "VIRIDIAN_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "VIRIDIAN_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_22_GATE",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_22_GATE",
+      "meta": {}
+    }
+  ],
+  "ROUTE_22_GATE": [
+    {
+      "neighbor": "ROUTE_22",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_22",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_23",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_23",
+      "meta": {}
+    }
+  ],
+  "VICTORY_ROAD_1F": [
+    {
+      "neighbor": "ROUTE_23",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_23",
+      "meta": {}
+    },
+    {
+      "neighbor": "VICTORY_ROAD_2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "VICTORY_ROAD_2F",
+      "meta": {}
+    }
+  ],
+  "VICTORY_ROAD_2F": [
+    {
+      "neighbor": "ROUTE_23",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_23",
+      "meta": {}
+    },
+    {
+      "neighbor": "VICTORY_ROAD_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "VICTORY_ROAD_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "VICTORY_ROAD_3F",
+      "meta": {}
+    },
+    {
+      "neighbor": "VICTORY_ROAD_3F",
+      "meta": {}
+    }
+  ],
+  "ROUTE_25": [
+    {
+      "neighbor": "ROUTE_24",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_24",
+      "meta": {}
+    },
+    {
+      "neighbor": "BILLS_HOUSE",
+      "meta": {}
+    },
+    {
+      "neighbor": "BILLS_HOUSE",
+      "meta": {}
+    }
+  ],
+  "BILLS_HOUSE": [
+    {
+      "neighbor": "ROUTE_25",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_25",
+      "meta": {}
+    }
+  ],
+  "MT_MOON_POKECENTER": [
+    {
+      "neighbor": "ROUTE_4",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_4",
+      "meta": {}
+    }
+  ],
+  "MT_MOON_1F": [
+    {
+      "neighbor": "ROUTE_4",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_4",
+      "meta": {}
+    },
+    {
+      "neighbor": "MT_MOON_B1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "MT_MOON_B1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "MT_MOON_B_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "MT_MOON_B_1F",
+      "meta": {}
+    }
+  ],
+  "MT_MOON_B1F": [
+    {
+      "neighbor": "ROUTE_4",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_4",
+      "meta": {}
+    },
+    {
+      "neighbor": "MT_MOON_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "MT_MOON_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "MT_MOON_B_2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "MT_MOON_B_2F",
+      "meta": {}
+    }
+  ],
+  "SAFFRON_CITY": [
+    {
+      "neighbor": "ROUTE_5",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_5",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_6",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_6",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_7",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_7",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_8",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_8",
+      "meta": {}
+    },
+    {
+      "neighbor": "COPYCATS_HOUSE_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "COPYCATS_HOUSE_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "FIGHTING_DOJO",
+      "meta": {}
+    },
+    {
+      "neighbor": "FIGHTING_DOJO",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFFRON_GYM",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFFRON_GYM",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFFRON_PIDGEY_HOUSE",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFFRON_PIDGEY_HOUSE",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFFRON_MART",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFFRON_MART",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFFRON_POKECENTER",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFFRON_POKECENTER",
+      "meta": {}
+    },
+    {
+      "neighbor": "MR_PSYCHICS_HOUSE",
+      "meta": {}
+    },
+    {
+      "neighbor": "MR_PSYCHICS_HOUSE",
+      "meta": {}
+    }
+  ],
+  "ROUTE_5_GATE": [
+    {
+      "neighbor": "ROUTE_5",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_5",
+      "meta": {}
+    }
+  ],
+  "UNDERGROUND_PATH_ROUTE_5": [
+    {
+      "neighbor": "ROUTE_5",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_5",
+      "meta": {}
+    },
+    {
+      "neighbor": "UNDERGROUND_PATH_NORTH_SOUTH",
+      "meta": {}
+    },
+    {
+      "neighbor": "UNDERGROUND_PATH_NORTH_SOUTH",
+      "meta": {}
+    }
+  ],
+  "DAYCARE": [
+    {
+      "neighbor": "ROUTE_5",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_5",
+      "meta": {}
+    }
+  ],
+  "ROUTE_6": [
+    {
+      "neighbor": "SAFFRON_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFFRON_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "VERMILION_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "VERMILION_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_6_GATE",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_6_GATE",
+      "meta": {}
+    },
+    {
+      "neighbor": "UNDERGROUND_PATH_ROUTE_6",
+      "meta": {}
+    },
+    {
+      "neighbor": "UNDERGROUND_PATH_ROUTE_6",
+      "meta": {}
+    }
+  ],
+  "ROUTE_6_GATE": [
+    {
+      "neighbor": "ROUTE_6",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_6",
+      "meta": {}
+    }
+  ],
+  "UNDERGROUND_PATH_ROUTE_6": [
+    {
+      "neighbor": "ROUTE_6",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_6",
+      "meta": {}
+    },
+    {
+      "neighbor": "UNDERGROUND_PATH_NORTH_SOUTH",
+      "meta": {}
+    },
+    {
+      "neighbor": "UNDERGROUND_PATH_NORTH_SOUTH",
+      "meta": {}
+    }
+  ],
+  "ROUTE_7_GATE": [
+    {
+      "neighbor": "ROUTE_7",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_7",
+      "meta": {}
+    }
+  ],
+  "UNDERGROUND_PATH_ROUTE_7": [
+    {
+      "neighbor": "ROUTE_7",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_7",
+      "meta": {}
+    },
+    {
+      "neighbor": "UNDERGROUND_PATH_WEST_EAST",
+      "meta": {}
+    },
+    {
+      "neighbor": "UNDERGROUND_PATH_WEST_EAST",
+      "meta": {}
+    }
+  ],
+  "ROUTE_8_GATE": [
+    {
+      "neighbor": "ROUTE_8",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_8",
+      "meta": {}
+    }
+  ],
+  "UNDERGROUND_PATH_ROUTE_8": [
+    {
+      "neighbor": "ROUTE_8",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_8",
+      "meta": {}
+    },
+    {
+      "neighbor": "UNDERGROUND_PATH_WEST_EAST",
+      "meta": {}
+    },
+    {
+      "neighbor": "UNDERGROUND_PATH_WEST_EAST",
+      "meta": {}
+    }
+  ],
+  "COPYCATS_HOUSE_1F": [
+    {
+      "neighbor": "SAFFRON_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFFRON_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "COPYCATS_HOUSE_2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "COPYCATS_HOUSE_2F",
+      "meta": {}
+    }
+  ],
+  "FIGHTING_DOJO": [
+    {
+      "neighbor": "SAFFRON_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFFRON_CITY",
+      "meta": {}
+    }
+  ],
+  "SAFFRON_GYM": [
+    {
+      "neighbor": "SAFFRON_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFFRON_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFFRON_GYM",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFFRON_GYM",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFFRON_GYM",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFFRON_GYM",
+      "meta": {}
+    }
+  ],
+  "SAFFRON_PIDGEY_HOUSE": [
+    {
+      "neighbor": "SAFFRON_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFFRON_CITY",
+      "meta": {}
+    }
+  ],
+  "SAFFRON_MART": [
+    {
+      "neighbor": "SAFFRON_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFFRON_CITY",
+      "meta": {}
+    }
+  ],
+  "SILPH_CO_1F": [
+    {
+      "neighbor": "SAFFRON_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFFRON_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_ELEVATOR",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_ELEVATOR",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_3F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_3F",
+      "meta": {}
+    }
+  ],
+  "SAFFRON_POKECENTER": [
+    {
+      "neighbor": "SAFFRON_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFFRON_CITY",
+      "meta": {}
+    }
+  ],
+  "MR_PSYCHICS_HOUSE": [
+    {
+      "neighbor": "SAFFRON_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFFRON_CITY",
+      "meta": {}
+    }
+  ],
+  "VERMILION_POKECENTER": [
+    {
+      "neighbor": "VERMILION_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "VERMILION_CITY",
+      "meta": {}
+    }
+  ],
+  "POKEMON_FAN_CLUB": [
+    {
+      "neighbor": "VERMILION_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "VERMILION_CITY",
+      "meta": {}
+    }
+  ],
+  "VERMILION_MART": [
+    {
+      "neighbor": "VERMILION_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "VERMILION_CITY",
+      "meta": {}
+    }
+  ],
+  "VERMILION_GYM": [
+    {
+      "neighbor": "VERMILION_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "VERMILION_CITY",
+      "meta": {}
+    }
+  ],
+  "VERMILION_PIDGEY_HOUSE": [
+    {
+      "neighbor": "VERMILION_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "VERMILION_CITY",
+      "meta": {}
+    }
+  ],
+  "VERMILION_DOCK": [
+    {
+      "neighbor": "VERMILION_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "VERMILION_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "SS_ANNE_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SS_ANNE_1F",
+      "meta": {}
+    }
+  ],
+  "VERMILION_TRADE_HOUSE": [
+    {
+      "neighbor": "VERMILION_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "VERMILION_CITY",
+      "meta": {}
+    }
+  ],
+  "VERMILION_OLD_ROD_HOUSE": [
+    {
+      "neighbor": "VERMILION_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "VERMILION_CITY",
+      "meta": {}
+    }
+  ],
+  "VIRIDIAN_POKECENTER": [
+    {
+      "neighbor": "VIRIDIAN_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "VIRIDIAN_CITY",
+      "meta": {}
+    }
+  ],
+  "VIRIDIAN_MART": [
+    {
+      "neighbor": "VIRIDIAN_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "VIRIDIAN_CITY",
+      "meta": {}
+    }
+  ],
+  "VIRIDIAN_SCHOOL_HOUSE": [
+    {
+      "neighbor": "VIRIDIAN_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "VIRIDIAN_CITY",
+      "meta": {}
+    }
+  ],
+  "VIRIDIAN_NICKNAME_HOUSE": [
+    {
+      "neighbor": "VIRIDIAN_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "VIRIDIAN_CITY",
+      "meta": {}
+    }
+  ],
+  "VIRIDIAN_GYM": [
+    {
+      "neighbor": "VIRIDIAN_CITY",
+      "meta": {}
+    },
+    {
+      "neighbor": "VIRIDIAN_CITY",
+      "meta": {}
+    }
+  ],
+  "AGATHAS_ROOM": [
+    {
+      "neighbor": "BRUNOS_ROOM",
+      "meta": {}
+    },
+    {
+      "neighbor": "BRUNOS_ROOM",
+      "meta": {}
+    },
+    {
+      "neighbor": "LANCES_ROOM",
+      "meta": {}
+    },
+    {
+      "neighbor": "LANCES_ROOM",
+      "meta": {}
+    }
+  ],
+  "BRUNOS_ROOM": [
+    {
+      "neighbor": "AGATHAS_ROOM",
+      "meta": {}
+    },
+    {
+      "neighbor": "AGATHAS_ROOM",
+      "meta": {}
+    },
+    {
+      "neighbor": "LORELEIS_ROOM",
+      "meta": {}
+    },
+    {
+      "neighbor": "LORELEIS_ROOM",
+      "meta": {}
+    }
+  ],
+  "LANCES_ROOM": [
+    {
+      "neighbor": "AGATHAS_ROOM",
+      "meta": {}
+    },
+    {
+      "neighbor": "AGATHAS_ROOM",
+      "meta": {}
+    },
+    {
+      "neighbor": "CHAMPIONS_ROOM",
+      "meta": {}
+    },
+    {
+      "neighbor": "CHAMPIONS_ROOM",
+      "meta": {}
+    }
+  ],
+  "LORELEIS_ROOM": [
+    {
+      "neighbor": "BRUNOS_ROOM",
+      "meta": {}
+    },
+    {
+      "neighbor": "BRUNOS_ROOM",
+      "meta": {}
+    },
+    {
+      "neighbor": "INDIGO_PLATEAU_LOBBY",
+      "meta": {}
+    },
+    {
+      "neighbor": "INDIGO_PLATEAU_LOBBY",
+      "meta": {}
+    }
+  ],
+  "CELADON_MANSION_2F": [
+    {
+      "neighbor": "CELADON_MANSION_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_MANSION_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_MANSION_3F",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_MANSION_3F",
+      "meta": {}
+    }
+  ],
+  "CELADON_MANSION_3F": [
+    {
+      "neighbor": "CELADON_MANSION_2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_MANSION_2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_MANSION_ROOF",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_MANSION_ROOF",
+      "meta": {}
+    }
+  ],
+  "CELADON_MANSION_ROOF": [
+    {
+      "neighbor": "CELADON_MANSION_3F",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_MANSION_3F",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_MANSION_ROOF_HOUSE",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_MANSION_ROOF_HOUSE",
+      "meta": {}
+    }
+  ],
+  "CELADON_MANSION_ROOF_HOUSE": [
+    {
+      "neighbor": "CELADON_MANSION_ROOF",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_MANSION_ROOF",
+      "meta": {}
+    }
+  ],
+  "CELADON_MART_2F": [
+    {
+      "neighbor": "CELADON_MART_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_MART_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_MART_3F",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_MART_3F",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_MART_ELEVATOR",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_MART_ELEVATOR",
+      "meta": {}
+    }
+  ],
+  "CELADON_MART_ELEVATOR": [
+    {
+      "neighbor": "CELADON_MART_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_MART_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_MART_2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_MART_2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_MART_3F",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_MART_3F",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_MART_4F",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_MART_4F",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_MART_5F",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_MART_5F",
+      "meta": {}
+    }
+  ],
+  "CELADON_MART_3F": [
+    {
+      "neighbor": "CELADON_MART_2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_MART_2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_MART_4F",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_MART_4F",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_MART_ELEVATOR",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_MART_ELEVATOR",
+      "meta": {}
+    }
+  ],
+  "CELADON_MART_4F": [
+    {
+      "neighbor": "CELADON_MART_3F",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_MART_3F",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_MART_5F",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_MART_5F",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_MART_ELEVATOR",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_MART_ELEVATOR",
+      "meta": {}
+    }
+  ],
+  "CELADON_MART_ROOF": [
+    {
+      "neighbor": "CELADON_MART_5F",
+      "meta": {}
+    },
+    {
+      "neighbor": "CELADON_MART_5F",
+      "meta": {}
+    }
+  ],
+  "CERULEAN_CAVE_2F": [
+    {
+      "neighbor": "CERULEAN_CAVE_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "CERULEAN_CAVE_1F",
+      "meta": {}
+    }
+  ],
+  "CERULEAN_CAVE_B1F": [
+    {
+      "neighbor": "CERULEAN_CAVE_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "CERULEAN_CAVE_1F",
+      "meta": {}
+    }
+  ],
+  "CERULEAN_CAVE_B_1F": [
+    {
+      "neighbor": "CERULEAN_CAVE_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "CERULEAN_CAVE_1F",
+      "meta": {}
+    }
+  ],
+  "CHAMPIONS_ROOM": [
+    {
+      "neighbor": "LANCES_ROOM",
+      "meta": {}
+    },
+    {
+      "neighbor": "LANCES_ROOM",
+      "meta": {}
+    },
+    {
+      "neighbor": "HALL_OF_FAME",
+      "meta": {}
+    },
+    {
+      "neighbor": "HALL_OF_FAME",
+      "meta": {}
+    }
+  ],
+  "HALL_OF_FAME": [
+    {
+      "neighbor": "CHAMPIONS_ROOM",
+      "meta": {}
+    },
+    {
+      "neighbor": "CHAMPIONS_ROOM",
+      "meta": {}
+    }
+  ],
+  "CINNABAR_LAB_TRADE_ROOM": [
+    {
+      "neighbor": "CINNABAR_LAB",
+      "meta": {}
+    },
+    {
+      "neighbor": "CINNABAR_LAB",
+      "meta": {}
+    }
+  ],
+  "CINNABAR_LAB_METRONOME_ROOM": [
+    {
+      "neighbor": "CINNABAR_LAB",
+      "meta": {}
+    },
+    {
+      "neighbor": "CINNABAR_LAB",
+      "meta": {}
+    }
+  ],
+  "CINNABAR_LAB_FOSSIL_ROOM": [
+    {
+      "neighbor": "CINNABAR_LAB",
+      "meta": {}
+    },
+    {
+      "neighbor": "CINNABAR_LAB",
+      "meta": {}
+    }
+  ],
+  "COPYCATS_HOUSE_2F": [
+    {
+      "neighbor": "COPYCATS_HOUSE_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "COPYCATS_HOUSE_1F",
+      "meta": {}
+    }
+  ],
+  "DIGLETTS_CAVE": [
+    {
+      "neighbor": "DIGLETTS_CAVE_ROUTE_2",
+      "meta": {}
+    },
+    {
+      "neighbor": "DIGLETTS_CAVE_ROUTE_2",
+      "meta": {}
+    },
+    {
+      "neighbor": "DIGLETTS_CAVE_ROUTE_11",
+      "meta": {}
+    },
+    {
+      "neighbor": "DIGLETTS_CAVE_ROUTE_11",
+      "meta": {}
+    }
+  ],
+  "ROCKET_HIDEOUT_B1F": [
+    {
+      "neighbor": "GAME_CORNER",
+      "meta": {}
+    },
+    {
+      "neighbor": "GAME_CORNER",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROCKET_HIDEOUT_B_2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROCKET_HIDEOUT_B_2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROCKET_HIDEOUT_ELEVATOR",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROCKET_HIDEOUT_ELEVATOR",
+      "meta": {}
+    }
+  ],
+  "MT_MOON_B_1F": [
+    {
+      "neighbor": "MT_MOON_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "MT_MOON_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "MT_MOON_B2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "MT_MOON_B2F",
+      "meta": {}
+    }
+  ],
+  "MT_MOON_B2F": [
+    {
+      "neighbor": "MT_MOON_B_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "MT_MOON_B_1F",
+      "meta": {}
+    }
+  ],
+  "MT_MOON_B_2F": [
+    {
+      "neighbor": "MT_MOON_B1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "MT_MOON_B1F",
+      "meta": {}
+    }
+  ],
+  "MUSEUM_2F": [
+    {
+      "neighbor": "MUSEUM_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "MUSEUM_1F",
+      "meta": {}
+    }
+  ],
+  "POKEMON_MANSION_2F": [
+    {
+      "neighbor": "POKEMON_MANSION_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "POKEMON_MANSION_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "POKEMON_MANSION_3F",
+      "meta": {}
+    },
+    {
+      "neighbor": "POKEMON_MANSION_3F",
+      "meta": {}
+    }
+  ],
+  "POKEMON_MANSION_B1F": [
+    {
+      "neighbor": "POKEMON_MANSION_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "POKEMON_MANSION_1F",
+      "meta": {}
+    }
+  ],
+  "POKEMON_MANSION_3F": [
+    {
+      "neighbor": "POKEMON_MANSION_2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "POKEMON_MANSION_2F",
+      "meta": {}
+    }
+  ],
+  "POKEMON_MANSION_B_1F": [
+    {
+      "neighbor": "POKEMON_MANSION_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "POKEMON_MANSION_1F",
+      "meta": {}
+    }
+  ],
+  "POKEMON_TOWER_2F": [
+    {
+      "neighbor": "POKEMON_TOWER_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "POKEMON_TOWER_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "POKEMON_TOWER_3F",
+      "meta": {}
+    },
+    {
+      "neighbor": "POKEMON_TOWER_3F",
+      "meta": {}
+    }
+  ],
+  "POKEMON_TOWER_3F": [
+    {
+      "neighbor": "POKEMON_TOWER_2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "POKEMON_TOWER_2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "POKEMON_TOWER_4F",
+      "meta": {}
+    },
+    {
+      "neighbor": "POKEMON_TOWER_4F",
+      "meta": {}
+    }
+  ],
+  "POKEMON_TOWER_4F": [
+    {
+      "neighbor": "POKEMON_TOWER_3F",
+      "meta": {}
+    },
+    {
+      "neighbor": "POKEMON_TOWER_3F",
+      "meta": {}
+    },
+    {
+      "neighbor": "POKEMON_TOWER_5F",
+      "meta": {}
+    },
+    {
+      "neighbor": "POKEMON_TOWER_5F",
+      "meta": {}
+    }
+  ],
+  "POKEMON_TOWER_5F": [
+    {
+      "neighbor": "POKEMON_TOWER_4F",
+      "meta": {}
+    },
+    {
+      "neighbor": "POKEMON_TOWER_4F",
+      "meta": {}
+    },
+    {
+      "neighbor": "POKEMON_TOWER_6F",
+      "meta": {}
+    },
+    {
+      "neighbor": "POKEMON_TOWER_6F",
+      "meta": {}
+    }
+  ],
+  "POKEMON_TOWER_6F": [
+    {
+      "neighbor": "POKEMON_TOWER_5F",
+      "meta": {}
+    },
+    {
+      "neighbor": "POKEMON_TOWER_5F",
+      "meta": {}
+    },
+    {
+      "neighbor": "POKEMON_TOWER_7F",
+      "meta": {}
+    },
+    {
+      "neighbor": "POKEMON_TOWER_7F",
+      "meta": {}
+    }
+  ],
+  "POKEMON_TOWER_7F": [
+    {
+      "neighbor": "POKEMON_TOWER_6F",
+      "meta": {}
+    },
+    {
+      "neighbor": "POKEMON_TOWER_6F",
+      "meta": {}
+    }
+  ],
+  "ROCKET_HIDEOUT_B_1F": [
+    {
+      "neighbor": "ROCKET_HIDEOUT_B2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROCKET_HIDEOUT_B2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "GAME_CORNER",
+      "meta": {}
+    },
+    {
+      "neighbor": "GAME_CORNER",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROCKET_HIDEOUT_ELEVATOR",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROCKET_HIDEOUT_ELEVATOR",
+      "meta": {}
+    }
+  ],
+  "ROCKET_HIDEOUT_B2F": [
+    {
+      "neighbor": "ROCKET_HIDEOUT_B_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROCKET_HIDEOUT_B_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROCKET_HIDEOUT_B_3F",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROCKET_HIDEOUT_B_3F",
+      "meta": {}
+    }
+  ],
+  "ROCKET_HIDEOUT_ELEVATOR": [
+    {
+      "neighbor": "ROCKET_HIDEOUT_B_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROCKET_HIDEOUT_B_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROCKET_HIDEOUT_B_2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROCKET_HIDEOUT_B_2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROCKET_HIDEOUT_B_4F",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROCKET_HIDEOUT_B_4F",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROCKET_HIDEOUT_B1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROCKET_HIDEOUT_B1F",
+      "meta": {}
+    }
+  ],
+  "ROCKET_HIDEOUT_B_2F": [
+    {
+      "neighbor": "ROCKET_HIDEOUT_B1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROCKET_HIDEOUT_B1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROCKET_HIDEOUT_B3F",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROCKET_HIDEOUT_B3F",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROCKET_HIDEOUT_ELEVATOR",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROCKET_HIDEOUT_ELEVATOR",
+      "meta": {}
+    }
+  ],
+  "ROCKET_HIDEOUT_B3F": [
+    {
+      "neighbor": "ROCKET_HIDEOUT_B_2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROCKET_HIDEOUT_B_2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROCKET_HIDEOUT_B_4F",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROCKET_HIDEOUT_B_4F",
+      "meta": {}
+    }
+  ],
+  "ROCKET_HIDEOUT_B_3F": [
+    {
+      "neighbor": "ROCKET_HIDEOUT_B2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROCKET_HIDEOUT_B2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROCKET_HIDEOUT_B4F",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROCKET_HIDEOUT_B4F",
+      "meta": {}
+    }
+  ],
+  "ROCKET_HIDEOUT_B4F": [
+    {
+      "neighbor": "ROCKET_HIDEOUT_B_3F",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROCKET_HIDEOUT_B_3F",
+      "meta": {}
+    }
+  ],
+  "ROCKET_HIDEOUT_B_4F": [
+    {
+      "neighbor": "ROCKET_HIDEOUT_B3F",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROCKET_HIDEOUT_B3F",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROCKET_HIDEOUT_ELEVATOR",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROCKET_HIDEOUT_ELEVATOR",
+      "meta": {}
+    }
+  ],
+  "ROCK_TUNNEL_B1F": [
+    {
+      "neighbor": "ROCK_TUNNEL_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROCK_TUNNEL_1F",
+      "meta": {}
+    }
+  ],
+  "ROCK_TUNNEL_B_1F": [
+    {
+      "neighbor": "ROCK_TUNNEL_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROCK_TUNNEL_1F",
+      "meta": {}
+    }
+  ],
+  "ROUTE_11_GATE_2F": [
+    {
+      "neighbor": "ROUTE_11_GATE_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_11_GATE_1F",
+      "meta": {}
+    }
+  ],
+  "ROUTE_12_GATE_2F": [
+    {
+      "neighbor": "ROUTE_12_GATE_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_12_GATE_1F",
+      "meta": {}
+    }
+  ],
+  "ROUTE_15_GATE_2F": [
+    {
+      "neighbor": "ROUTE_15_GATE_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_15_GATE_1F",
+      "meta": {}
+    }
+  ],
+  "ROUTE_16_GATE_2F": [
+    {
+      "neighbor": "ROUTE_16_GATE_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_16_GATE_1F",
+      "meta": {}
+    }
+  ],
+  "ROUTE_18_GATE_2F": [
+    {
+      "neighbor": "ROUTE_18_GATE_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "ROUTE_18_GATE_1F",
+      "meta": {}
+    }
+  ],
+  "SAFARI_ZONE_CENTER": [
+    {
+      "neighbor": "SAFARI_ZONE_GATE",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFARI_ZONE_GATE",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFARI_ZONE_WEST",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFARI_ZONE_WEST",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFARI_ZONE_NORTH",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFARI_ZONE_NORTH",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFARI_ZONE_EAST",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFARI_ZONE_EAST",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFARI_ZONE_CENTER_REST_HOUSE",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFARI_ZONE_CENTER_REST_HOUSE",
+      "meta": {}
+    }
+  ],
+  "SAFARI_ZONE_WEST": [
+    {
+      "neighbor": "SAFARI_ZONE_CENTER",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFARI_ZONE_CENTER",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFARI_ZONE_NORTH",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFARI_ZONE_NORTH",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFARI_ZONE_SECRET_HOUSE",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFARI_ZONE_SECRET_HOUSE",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFARI_ZONE_WEST_REST_HOUSE",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFARI_ZONE_WEST_REST_HOUSE",
+      "meta": {}
+    }
+  ],
+  "SAFARI_ZONE_NORTH": [
+    {
+      "neighbor": "SAFARI_ZONE_CENTER",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFARI_ZONE_CENTER",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFARI_ZONE_EAST",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFARI_ZONE_EAST",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFARI_ZONE_WEST",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFARI_ZONE_WEST",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFARI_ZONE_NORTH_REST_HOUSE",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFARI_ZONE_NORTH_REST_HOUSE",
+      "meta": {}
+    }
+  ],
+  "SAFARI_ZONE_EAST": [
+    {
+      "neighbor": "SAFARI_ZONE_CENTER",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFARI_ZONE_CENTER",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFARI_ZONE_NORTH",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFARI_ZONE_NORTH",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFARI_ZONE_EAST_REST_HOUSE",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFARI_ZONE_EAST_REST_HOUSE",
+      "meta": {}
+    }
+  ],
+  "SAFARI_ZONE_CENTER_REST_HOUSE": [
+    {
+      "neighbor": "SAFARI_ZONE_CENTER",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFARI_ZONE_CENTER",
+      "meta": {}
+    }
+  ],
+  "SAFARI_ZONE_EAST_REST_HOUSE": [
+    {
+      "neighbor": "SAFARI_ZONE_EAST",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFARI_ZONE_EAST",
+      "meta": {}
+    }
+  ],
+  "SAFARI_ZONE_NORTH_REST_HOUSE": [
+    {
+      "neighbor": "SAFARI_ZONE_NORTH",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFARI_ZONE_NORTH",
+      "meta": {}
+    }
+  ],
+  "SAFARI_ZONE_SECRET_HOUSE": [
+    {
+      "neighbor": "SAFARI_ZONE_WEST",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFARI_ZONE_WEST",
+      "meta": {}
+    }
+  ],
+  "SAFARI_ZONE_WEST_REST_HOUSE": [
+    {
+      "neighbor": "SAFARI_ZONE_WEST",
+      "meta": {}
+    },
+    {
+      "neighbor": "SAFARI_ZONE_WEST",
+      "meta": {}
+    }
+  ],
+  "SEAFOAM_ISLANDS_B1F": [
+    {
+      "neighbor": "SEAFOAM_ISLANDS_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SEAFOAM_ISLANDS_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SEAFOAM_ISLANDS_B_2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SEAFOAM_ISLANDS_B_2F",
+      "meta": {}
+    }
+  ],
+  "SEAFOAM_ISLANDS_B_1F": [
+    {
+      "neighbor": "SEAFOAM_ISLANDS_B2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SEAFOAM_ISLANDS_B2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SEAFOAM_ISLANDS_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SEAFOAM_ISLANDS_1F",
+      "meta": {}
+    }
+  ],
+  "SEAFOAM_ISLANDS_B2F": [
+    {
+      "neighbor": "SEAFOAM_ISLANDS_B_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SEAFOAM_ISLANDS_B_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SEAFOAM_ISLANDS_B_3F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SEAFOAM_ISLANDS_B_3F",
+      "meta": {}
+    }
+  ],
+  "SEAFOAM_ISLANDS_B_2F": [
+    {
+      "neighbor": "SEAFOAM_ISLANDS_B1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SEAFOAM_ISLANDS_B1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SEAFOAM_ISLANDS_B3F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SEAFOAM_ISLANDS_B3F",
+      "meta": {}
+    }
+  ],
+  "SEAFOAM_ISLANDS_B3F": [
+    {
+      "neighbor": "SEAFOAM_ISLANDS_B_2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SEAFOAM_ISLANDS_B_2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SEAFOAM_ISLANDS_B_4F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SEAFOAM_ISLANDS_B_4F",
+      "meta": {}
+    }
+  ],
+  "SEAFOAM_ISLANDS_B_3F": [
+    {
+      "neighbor": "SEAFOAM_ISLANDS_B2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SEAFOAM_ISLANDS_B2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SEAFOAM_ISLANDS_B4F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SEAFOAM_ISLANDS_B4F",
+      "meta": {}
+    }
+  ],
+  "SEAFOAM_ISLANDS_B4F": [
+    {
+      "neighbor": "SEAFOAM_ISLANDS_B_3F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SEAFOAM_ISLANDS_B_3F",
+      "meta": {}
+    }
+  ],
+  "SEAFOAM_ISLANDS_B_4F": [
+    {
+      "neighbor": "SEAFOAM_ISLANDS_B3F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SEAFOAM_ISLANDS_B3F",
+      "meta": {}
+    }
+  ],
+  "SILPH_CO_10F": [
+    {
+      "neighbor": "SILPH_CO_9F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_9F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_11F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_11F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_ELEVATOR",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_ELEVATOR",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_4F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_4F",
+      "meta": {}
+    }
+  ],
+  "SILPH_CO_9F": [
+    {
+      "neighbor": "SILPH_CO_10F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_10F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_3F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_3F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_5F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_5F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_8F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_8F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_ELEVATOR",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_ELEVATOR",
+      "meta": {}
+    }
+  ],
+  "SILPH_CO_11F": [
+    {
+      "neighbor": "SILPH_CO_10F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_10F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_ELEVATOR",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_ELEVATOR",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_7F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_7F",
+      "meta": {}
+    }
+  ],
+  "SILPH_CO_ELEVATOR": [
+    {
+      "neighbor": "SILPH_CO_10F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_10F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_11F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_11F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_3F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_3F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_4F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_4F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_5F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_5F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_6F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_6F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_7F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_7F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_8F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_8F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_9F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_9F",
+      "meta": {}
+    },
+    {
+      "neighbor": "UNUSED_MAP_ED",
+      "meta": {}
+    },
+    {
+      "neighbor": "UNUSED_MAP_ED",
+      "meta": {}
+    }
+  ],
+  "SILPH_CO_4F": [
+    {
+      "neighbor": "SILPH_CO_10F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_10F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_3F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_3F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_5F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_5F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_ELEVATOR",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_ELEVATOR",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_6F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_6F",
+      "meta": {}
+    }
+  ],
+  "SILPH_CO_7F": [
+    {
+      "neighbor": "SILPH_CO_11F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_11F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_3F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_3F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_5F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_5F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_6F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_6F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_8F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_8F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_ELEVATOR",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_ELEVATOR",
+      "meta": {}
+    }
+  ],
+  "SILPH_CO_2F": [
+    {
+      "neighbor": "SILPH_CO_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_3F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_3F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_ELEVATOR",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_ELEVATOR",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_8F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_8F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_6F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_6F",
+      "meta": {}
+    }
+  ],
+  "SILPH_CO_3F": [
+    {
+      "neighbor": "SILPH_CO_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_4F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_4F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_ELEVATOR",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_ELEVATOR",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_3F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_3F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_3F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_3F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_5F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_5F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_9F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_9F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_7F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_7F",
+      "meta": {}
+    }
+  ],
+  "SILPH_CO_8F": [
+    {
+      "neighbor": "SILPH_CO_2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_7F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_7F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_9F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_9F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_ELEVATOR",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_ELEVATOR",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_8F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_8F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_8F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_8F",
+      "meta": {}
+    }
+  ],
+  "SILPH_CO_6F": [
+    {
+      "neighbor": "SILPH_CO_2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_4F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_4F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_5F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_5F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_7F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_7F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_ELEVATOR",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_ELEVATOR",
+      "meta": {}
+    }
+  ],
+  "SILPH_CO_5F": [
+    {
+      "neighbor": "SILPH_CO_3F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_3F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_4F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_4F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_6F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_6F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_ELEVATOR",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_ELEVATOR",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_7F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_7F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_9F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_9F",
+      "meta": {}
+    }
+  ],
+  "UNUSED_MAP_ED": [
+    {
+      "neighbor": "SILPH_CO_ELEVATOR",
+      "meta": {}
+    },
+    {
+      "neighbor": "SILPH_CO_ELEVATOR",
+      "meta": {}
+    }
+  ],
+  "SS_ANNE_1F": [
+    {
+      "neighbor": "VERMILION_DOCK",
+      "meta": {}
+    },
+    {
+      "neighbor": "VERMILION_DOCK",
+      "meta": {}
+    },
+    {
+      "neighbor": "SS_ANNE_1F_ROOMS",
+      "meta": {}
+    },
+    {
+      "neighbor": "SS_ANNE_1F_ROOMS",
+      "meta": {}
+    },
+    {
+      "neighbor": "SS_ANNE_2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SS_ANNE_2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SS_ANNE_B1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SS_ANNE_B1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SS_ANNE_KITCHEN",
+      "meta": {}
+    },
+    {
+      "neighbor": "SS_ANNE_KITCHEN",
+      "meta": {}
+    },
+    {
+      "neighbor": "SS_ANNE_B_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SS_ANNE_B_1F",
+      "meta": {}
+    }
+  ],
+  "SS_ANNE_1F_ROOMS": [
+    {
+      "neighbor": "SS_ANNE_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SS_ANNE_1F",
+      "meta": {}
+    }
+  ],
+  "SS_ANNE_2F": [
+    {
+      "neighbor": "SS_ANNE_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SS_ANNE_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SS_ANNE_2F_ROOMS",
+      "meta": {}
+    },
+    {
+      "neighbor": "SS_ANNE_2F_ROOMS",
+      "meta": {}
+    },
+    {
+      "neighbor": "SS_ANNE_3F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SS_ANNE_3F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SS_ANNE_CAPTAINS_ROOM",
+      "meta": {}
+    },
+    {
+      "neighbor": "SS_ANNE_CAPTAINS_ROOM",
+      "meta": {}
+    }
+  ],
+  "SS_ANNE_B1F": [
+    {
+      "neighbor": "SS_ANNE_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SS_ANNE_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SS_ANNE_B_1F_ROOMS",
+      "meta": {}
+    },
+    {
+      "neighbor": "SS_ANNE_B_1F_ROOMS",
+      "meta": {}
+    }
+  ],
+  "SS_ANNE_KITCHEN": [
+    {
+      "neighbor": "SS_ANNE_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SS_ANNE_1F",
+      "meta": {}
+    }
+  ],
+  "SS_ANNE_2F_ROOMS": [
+    {
+      "neighbor": "SS_ANNE_2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SS_ANNE_2F",
+      "meta": {}
+    }
+  ],
+  "SS_ANNE_3F": [
+    {
+      "neighbor": "SS_ANNE_2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SS_ANNE_2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SS_ANNE_BOW",
+      "meta": {}
+    },
+    {
+      "neighbor": "SS_ANNE_BOW",
+      "meta": {}
+    }
+  ],
+  "SS_ANNE_CAPTAINS_ROOM": [
+    {
+      "neighbor": "SS_ANNE_2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SS_ANNE_2F",
+      "meta": {}
+    }
+  ],
+  "SS_ANNE_BOW": [
+    {
+      "neighbor": "SS_ANNE_3F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SS_ANNE_3F",
+      "meta": {}
+    }
+  ],
+  "SS_ANNE_B_1F": [
+    {
+      "neighbor": "SS_ANNE_B1F_ROOMS",
+      "meta": {}
+    },
+    {
+      "neighbor": "SS_ANNE_B1F_ROOMS",
+      "meta": {}
+    },
+    {
+      "neighbor": "SS_ANNE_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SS_ANNE_1F",
+      "meta": {}
+    }
+  ],
+  "SS_ANNE_B1F_ROOMS": [
+    {
+      "neighbor": "SS_ANNE_B_1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SS_ANNE_B_1F",
+      "meta": {}
+    }
+  ],
+  "SS_ANNE_B_1F_ROOMS": [
+    {
+      "neighbor": "SS_ANNE_B1F",
+      "meta": {}
+    },
+    {
+      "neighbor": "SS_ANNE_B1F",
+      "meta": {}
+    }
+  ],
+  "UNDERGROUND_PATH_NORTH_SOUTH": [
+    {
+      "neighbor": "UNDERGROUND_PATH_ROUTE_5",
+      "meta": {}
+    },
+    {
+      "neighbor": "UNDERGROUND_PATH_ROUTE_5",
+      "meta": {}
+    },
+    {
+      "neighbor": "UNDERGROUND_PATH_ROUTE_6",
+      "meta": {}
+    },
+    {
+      "neighbor": "UNDERGROUND_PATH_ROUTE_6",
+      "meta": {}
+    }
+  ],
+  "UNDERGROUND_PATH_WEST_EAST": [
+    {
+      "neighbor": "UNDERGROUND_PATH_ROUTE_7",
+      "meta": {}
+    },
+    {
+      "neighbor": "UNDERGROUND_PATH_ROUTE_7",
+      "meta": {}
+    },
+    {
+      "neighbor": "UNDERGROUND_PATH_ROUTE_7_COPY",
+      "meta": {}
+    },
+    {
+      "neighbor": "UNDERGROUND_PATH_ROUTE_7_COPY",
+      "meta": {}
+    },
+    {
+      "neighbor": "UNDERGROUND_PATH_ROUTE_8",
+      "meta": {}
+    },
+    {
+      "neighbor": "UNDERGROUND_PATH_ROUTE_8",
+      "meta": {}
+    }
+  ],
+  "UNDERGROUND_PATH_ROUTE_7_COPY": [
+    {
+      "neighbor": "UNDERGROUND_PATH_WEST_EAST",
+      "meta": {}
+    },
+    {
+      "neighbor": "UNDERGROUND_PATH_WEST_EAST",
+      "meta": {}
+    }
+  ],
+  "VICTORY_ROAD_3F": [
+    {
+      "neighbor": "VICTORY_ROAD_2F",
+      "meta": {}
+    },
+    {
+      "neighbor": "VICTORY_ROAD_2F",
+      "meta": {}
+    }
+  ],
+  "VIRIDIAN_FOREST": [
+    {
+      "neighbor": "VIRIDIAN_FOREST_NORTH_GATE",
+      "meta": {}
+    },
+    {
+      "neighbor": "VIRIDIAN_FOREST_NORTH_GATE",
+      "meta": {}
+    },
+    {
+      "neighbor": "VIRIDIAN_FOREST_SOUTH_GATE",
+      "meta": {}
+    },
+    {
+      "neighbor": "VIRIDIAN_FOREST_SOUTH_GATE",
+      "meta": {}
+    }
+  ]
+}

@@ -29,7 +29,9 @@ class PathingAgent:
                     warp_y.append(warp.get("xy_coord")[1])
             goal_xy = (int(np.mean(warp_x)), int(np.mean(warp_y)))
             print(f"GOAL: {goal_xy}")  
-            last_move = path_finder(self.pyboy, goal=goal_xy)
+            path_dict = path_finder(self.pyboy, goal=goal_xy)
+            path_dict["goal_xy"] = goal_xy
+            # last_move = path_dict["prev_move"]
             # cntr = 0
             # new_map_id, px, py, direction = get_player_position(self.pyboy)
             # while map_id == new_map_id:
@@ -67,7 +69,9 @@ class PathingAgent:
             # goal_xy = random.choice(warps)
             goal_xy = (connection_coords[0][0], connection_coords[0][1])
             print(f"GOAL: {goal_xy}") 
-            last_move = path_finder(self.pyboy, goal=goal_xy)
+            path_dict = path_finder(self.pyboy, goal=goal_xy)
+            path_dict["goal_xy"] = goal_xy
+            # last_move = path_dict["prev_move"]
             if dest_key == "north":
                 self.skills.execute({"type": "GO_UP"})
                 print("UP_EXTRA")
@@ -88,19 +92,29 @@ class PathingAgent:
             dest_key = match.group(1)
             print(f"DEST_KEY: {dest_key}")
             npc_xy = get_npc_coords(map_filename)
+            npc_coords = []
             for npc in npc_xy:
                 if npc.get("name")==dest_key:
                     if npc.get("text")[-1] != '2':
-                        npc_coords = (npc.get("x"), npc.get("y"))
-            print(f"GOAL: {npc_coords}")  
-            goal_xy = npc_coords
-            last_move = path_finder(self.pyboy, goal=npc_coords)
+                        npc_coords.append((npc.get("x"), npc.get("y")))
+            for coords in npc_coords:
+                print(f"GOAL: {coords}")  
+                goal_xy = coords
+                path_dict = path_finder(self.pyboy, goal=goal_xy) #{"prev_move":prev_move, "try_next_xy":try_next_xy}
+                if not path_dict["try_next_xy"]:
+                    path_dict["goal_xy"] = goal_xy
+                    break
+            # last_move = path_dict["prev_move"]
             self.skills.execute({"type": "PRESS_A"})
             print("START_DIALOG")
             for _ in range(60):  # wait a few frames for movement
                 self.pyboy.tick()
 
-        return last_move, goal_xy
+        else:
+            path_dict = {}
+
+
+        return path_dict
 
 
 

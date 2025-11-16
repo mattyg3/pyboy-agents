@@ -1,3 +1,19 @@
+def camel_to_snake(s):
+    # Rule 1: Split ALLCAPS → CapitalLower
+    s = re.sub(r'([A-Z]+)([A-Z][a-z])', r'\1_\2', s)
+
+    # Rule 2: Split lower → upper
+    s = re.sub(r'([a-z])([A-Z])', r'\1_\2', s)
+
+    # Rule 3: Split letter → digit
+    s = re.sub(r'([A-Za-z])([0-9])', r'\1_\2', s)
+
+    # Rule 4: Split digit → letter ONLY if the next letter is lowercase
+    # This preserves "1F" but splits "1Room" → "1_Room"
+    s = re.sub(r'([0-9])([A-Z][a-z])', r'\1_\2', s)
+    return s.lower()
+
+
 # Macro Action Creation
 class create_macro:
     def __init__(self):
@@ -193,6 +209,12 @@ class TextCleaner:
 def find_map_by_id(map_list, map_id):
     for m in map_list:
         if m["map_id"] == map_id:
+            return m
+    return None 
+
+def find_map_by_filename(map_list, map_filename):
+    for m in map_list:
+        if m["file"] == map_filename:
             return m
     return None 
 

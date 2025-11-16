@@ -87,15 +87,25 @@ class DialogPerception:
         ocr_results = ocr_state.read_frame()
         dialog_text = ocr_results.get("new_text")
         if dialog_text not in self.dialog_history:
-            print(f"NEW DIALOG: {dialog_text}")
-            self.dialog_history.append(dialog_text)
-            self.text_count += 1
-            if self.text_count > 2: #save cleaned text to LOG
+            if dialog_text == '':
+                print("CONVO END DETECTED")
                 cleaned_dialog = TextCleaner(self.dialog_history)
                 with open('src/pokemon_agent/saves/dialog_log.txt', 'a') as file:
                     file.write(f'{cleaned_dialog}\n')
+                dialog_text = '\n\n'
                 self.dialog_history=[]
-                self.text_count=0
+                with open('src/pokemon_agent/saves/dialog_log.txt', 'a') as file:
+                    file.write(f'{dialog_text}\n')
+            else:
+                print(f"NEW DIALOG: {dialog_text}")
+                self.dialog_history.append(dialog_text)
+                self.text_count += 1
+                if self.text_count > 2: #save cleaned text to LOG
+                    cleaned_dialog = TextCleaner(self.dialog_history)
+                    with open('src/pokemon_agent/saves/dialog_log.txt', 'a') as file:
+                        file.write(f'{cleaned_dialog}\n')
+                    self.dialog_history=[]
+                    self.text_count=0
     def log_dialog(self):
         if len(self.dialog_history) > 0:
             cleaned_dialog = TextCleaner(self.dialog_history)

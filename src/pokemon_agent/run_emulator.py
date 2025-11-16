@@ -18,11 +18,14 @@ import lmstudio as lms
 # from progress_tracking import ProgressTracker
 
 ROM_PATH = 'ROMS/pokemon_red.gb'
-SAVE_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_DEV.sav'
+# SAVE_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_DEV.sav'
+# SAVE_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_DEV_oak_task.sav'
+SAVE_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_DEV_got_townmap.sav'
 # LOAD_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_prefight.sav'
 # LOAD_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_postfight.sav'
 LOAD_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_postfight_pallettown.sav'
 # SAVE_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_prefight.sav'
+# LOAD_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_DEV_oak_task.sav'
 
 # # ------ LangSmith Set-Up ------
 # import os
@@ -116,25 +119,48 @@ def run(ROM_PATH=ROM_PATH, LOAD_STATE_PATH=LOAD_STATE_PATH, SAVE_STATE_PATH=SAVE
                     dialog_reader.read_dialog()
                     
                 dialog_reader.log_dialog()
+                # map_id, px, py, direction = get_player_position(pyboy)
+                # if fnmatch.fnmatch(goal_agent_state["next_best_action"], "*talk*") and goal_xy in [(px + dx, py + dy) for dx in (-2,-1, 0, 1, 2) for dy in (-2,-1, 0, 1, 2)]: #and next to NPC
+                #     # Goal Agent
+                #     goal_agent_state = create_goal_agent_state()
+                #     goal_agent = GoalsAgent(pyboy, preprompt=f'You just completed the previous goal: {goal_agent_state["next_best_action"]}!\nDecide the Next Best Action based on the Longterm Goal.')
+                #     goal_agent.compile_workflow(goal_agent_state)
+                #     # goal_agent_state = create_goal_agent_state()
+                #     config = RunnableConfig(recursion_limit=500) #max number of graph nodes to process
+                #     goal_agent_state = goal_agent.app.invoke(goal_agent_state, config)
+                #     # print("GOALS_AGENT_FLAG")
+                #     print(f"GOAL AGENT OUTPUT: {goal_agent_state["next_best_action"]}")
+                #     last_move, goal_xy = pathing_agent.go_to_destination_xy(goal_agent_state["next_best_action"])
+
+
 
             elif battle_info["battle_type"] != 0:
                 # print("BATTLE_FLAG")
+                # Battle Agent
                 battle_agent_state = create_battle_agent_state()
+                # battle_agent = BattleAgent(pyboy)
+                # battle_agent.compile_workflow(battle_agent_state)
+                # battle_agent_state = create_battle_agent_state()
                 config = RunnableConfig(recursion_limit=500) #max number of graph nodes to process
                 battle_agent_state = battle_agent.app.invoke(battle_agent_state, config)
 
             else:
                 try:
+                    # Goal Agent
                     goal_agent_state = create_goal_agent_state()
+                    # goal_agent = GoalsAgent(pyboy)
+                    # goal_agent.compile_workflow(goal_agent_state)
+                    # goal_agent_state = create_goal_agent_state()
                     config = RunnableConfig(recursion_limit=500) #max number of graph nodes to process
                     goal_agent_state = goal_agent.app.invoke(goal_agent_state, config)
                     # print("GOALS_AGENT_FLAG")
-                    last_move, goal_xy = pathing_agent.go_to_destination_xy(goal_agent_state["next_best_action"])
+                    print(f"GOAL AGENT OUTPUT: {goal_agent_state["next_best_action"]}")
+                    path_dict = pathing_agent.go_to_destination_xy(goal_agent_state["next_best_action"]) #last_move, goal_xy
                     # CHECK IF PLAYER STUCK
                     map_id, px, py, direction = get_player_position(pyboy)
                     curr_iter = {
                     "player_xy": (px,py),
-                    "last_action": last_move,
+                    "last_action": path_dict["prev_move"],
                     "map_id": map_id,
                     "iter_counter": prev_iter["iter_counter"],
                     }
@@ -144,15 +170,20 @@ def run(ROM_PATH=ROM_PATH, LOAD_STATE_PATH=LOAD_STATE_PATH, SAVE_STATE_PATH=SAVE
                     #goal in [(px + dx, py + dy) for dx in (-1, 0, 1) for dy in (-1, 0, 1)]
                         # print("PASSED_IF_STMT")
                         iter_counter = prev_iter["iter_counter"]+1
-                        if iter_counter > 1:
+                        # if iter_counter > 1:
+                        if iter_counter > 0:
+                                # Unstuck Agent
                             unstuck_agent_state = create_unstuck_agent_state()
+                            # unstuck_agent = UnstuckAgent(pyboy)
+                            # unstuck_agent.compile_workflow(unstuck_agent_state)
+                            # unstuck_agent_state = create_unstuck_agent_state()
                             unstuck_agent_state["messages"] = []
                             # print("CREATED_STATE")
                             screen_frame = pyboy.screen.ndarray
                             cv2.imwrite("src/pokemon_agent/saves/unstuck_agent_frame.png", screen_frame)
                             unstuck_agent_state["screenshot"] = lms.prepare_image("src/pokemon_agent/saves/unstuck_agent_frame.png")
                             # print(unstuck_agent_state["screenshot"])
-                            render_map_png(map_id, (px,px), goal_xy, save_path="src/pokemon_agent/saves/render_map.png")
+                            render_map_png(map_id, (px,px), path_dict["goal_xy"], save_path="src/pokemon_agent/saves/render_map.png")
                             unstuck_agent_state["map_render"] = lms.prepare_image("src/pokemon_agent/saves/render_map.png")
                             unstuck_agent_state["map_render"] = None
 
@@ -177,28 +208,35 @@ def run(ROM_PATH=ROM_PATH, LOAD_STATE_PATH=LOAD_STATE_PATH, SAVE_STATE_PATH=SAVE
                                 print(e)
                                 pass
 
-                        #     prev_iter = {
-                        #     "player_xy": (px,py),
-                        #     "last_action": last_move,
-                        #     "map_id": map_id,
-                        #     "iter_counter": iter_counter,
-                        #     }
-                        # else:
                         prev_iter = {
                         "player_xy": (px,py),
-                        "last_action": last_move,
+                        "last_action": path_dict["prev_move"],
                         "map_id": map_id,
                         "iter_counter": iter_counter,
                         }
                     else: #reset counter
                         prev_iter = {
                             "player_xy": (px,py),
-                            "last_action": last_move,
+                            "last_action": path_dict["prev_move"],
                             "map_id": map_id,
                             "iter_counter": 0,
                             }
 
-                    
+                    # map_id, px, py, direction = get_player_position(pyboy)
+                    # if fnmatch.fnmatch(goal_agent_state["next_best_action"], "*talk*") and goal_xy in [(px + dx, py + dy) for dx in (-2,-1, 0, 1, 2) for dy in (-2,-1, 0, 1, 2)]: #and next to NPC
+                    #     print("PASSED IF STMT")
+                    #     # Goal Agent
+                    #     goal_agent_state = create_goal_agent_state()
+                    #     goal_agent = GoalsAgent(pyboy, preprompt=f'You just completed the previous goal: {goal_agent_state["next_best_action"]}!\nDecide the Next Best Action based on the Longterm Goal.')
+                    #     goal_agent.compile_workflow(goal_agent_state)
+                    #     # goal_agent_state = create_goal_agent_state()
+                    #     config = RunnableConfig(recursion_limit=500) #max number of graph nodes to process
+                    #     goal_agent_state = goal_agent.app.invoke(goal_agent_state, config)
+                    #     # print("GOALS_AGENT_FLAG")
+                    #     print(f"GOAL AGENT OUTPUT: {goal_agent_state["next_best_action"]}")
+                    #     last_move, goal_xy = pathing_agent.go_to_destination_xy(goal_agent_state["next_best_action"])
+
+
                 except Exception as e: 
                     print(e)
                     pass
@@ -225,7 +263,8 @@ def run(ROM_PATH=ROM_PATH, LOAD_STATE_PATH=LOAD_STATE_PATH, SAVE_STATE_PATH=SAVE
 
 
             
-            
+            if frame > 30:
+                break
             frame += 1
             time.sleep(0.001)
     finally:
