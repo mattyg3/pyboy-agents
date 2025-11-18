@@ -130,6 +130,37 @@ def generate_walkability_tile_matrix(blocks, map_blocks, walkable_tiles):
 
     return walk_matrix
 
+def generate_tile_matrix(blocks, map_blocks):
+    """
+    Returns a 2D list of booleans at the TILE level.
+    True = walkable, False = unwalkable.
+    Each block = 4×4 tiles.
+    """
+    tiles_per_block = 4
+    height_blocks = len(map_blocks)
+    width_blocks = len(map_blocks[0])
+
+    height_tiles = height_blocks * tiles_per_block
+    width_tiles = width_blocks * tiles_per_block
+
+    tile_matrix = [[False for _ in range(width_tiles)] for _ in range(height_tiles)]
+
+    for by in range(height_blocks):
+        for bx in range(width_blocks):
+            block_idx = map_blocks[by][bx]
+            if block_idx >= len(blocks):
+                continue
+
+            block = blocks[block_idx]
+            for ty in range(tiles_per_block):
+                for tx in range(tiles_per_block):
+                    tile_id = block[ty][tx]
+                    global_y = by * tiles_per_block + ty
+                    global_x = bx * tiles_per_block + tx
+                    tile_matrix[global_y][global_x] = tile_id
+
+    return tile_matrix
+
 def add_warp_tiles(walk_matrix, map_filename):
     map_name = map_filename.replace(".asm","")
     warp_events = MAP_OBJECTS.get(map_name).get("warp_events", None)
@@ -261,6 +292,8 @@ def print_tile_walk_matrix(matrix):
     walkable_grid_clean = "\n".join(rows)
     print(walkable_grid_clean)
 
+
+
 def read_map(pyboy):
     map_id = get_current_map(pyboy)
     # print(f"Player at map {map_id}, X={px}, Y={py}, Looking={direction}") #(0: down, 4: up, 8: left, 12: right)
@@ -285,7 +318,29 @@ def read_map(pyboy):
 
     return walk_matrix, width*4, height*4, warp_tiles
 
+def check_tile_map(map_id):
+    # --- Load Map Values ---
+    width = find_map_by_id(MAP_HEADERS, map_id).get("map_width")
+    height = find_map_by_id(MAP_HEADERS, map_id).get("map_height")
+    map_env = find_map_by_id(MAP_HEADERS, map_id).get("environment")
+    map_filename = find_map_by_id(MAP_HEADERS, map_id).get("file")
+    map_path = Path("src/pokemon_agent/utils/ref_data/maps/map_files") / f"{map_filename.replace(".asm",".blk")}" #/PalletTown.blk
+    blockset_path = Path("src/pokemon_agent/utils/ref_data/maps/blocksets") / f"{map_env.lower()}.bst" #/overworld.bst
 
+    # --- Load map graphics ---
+    blocks = load_blockset(blockset_path)
+    map_blocks = load_map_blk(map_path, width, height)
+
+    tile_matrix = generate_tile_matrix(blocks, map_blocks)
+
+    rows = []
+    for row in tile_matrix:
+        line = ""
+        for cell in row:
+            line += f" {cell}"
+        rows.append(line)
+    tile_grid_clean = "\n".join(rows)
+    print(tile_grid_clean)
 
 # =========================================================
 # 6. --- Main: render + overlay player ---
@@ -301,32 +356,34 @@ with open('src/pokemon_agent/utils/ref_data/maps/map_objects.json', 'r') as f:
 
 def main():
 
-    ROM_PATH = 'ROMS/pokemon_red.gb'
-    # LOAD_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_postfight_pallettown.sav'
-    LOAD_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_postfight.sav'
+    # ROM_PATH = 'ROMS/pokemon_red.gb'
+    # # LOAD_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_postfight_pallettown.sav'
+    # LOAD_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_postfight.sav'
 
-    # --- Start PyBoy in headless mode ---
-    pyboy = PyBoy(ROM_PATH, window="SDL2")
-    pyboy.tick()  # initialize emulation
-    # Load Save State
-    with open(LOAD_STATE_PATH, "rb") as f:
-            pyboy.load_state(f)
+    # # --- Start PyBoy in headless mode ---
+    # pyboy = PyBoy(ROM_PATH, window="SDL2")
+    # pyboy.tick()  # initialize emulation
+    # # Load Save State
+    # with open(LOAD_STATE_PATH, "rb") as f:
+    #         pyboy.load_state(f)
 
-    while pyboy.tick():
-        walk_matrix, map_width, map_height, warp_tiles = read_map(pyboy)
-        pyboy.stop()
+    # while pyboy.tick():
+    #     walk_matrix, map_width, map_height, warp_tiles = read_map(pyboy)
+    #     pyboy.stop()
 
-    # --- Print to console ---
-    # print(walk_matrix)
-    print("\nWalkable tile matrix ('-' = walkable, '#' = blocked):")
-    print_tile_walk_matrix(walk_matrix)
-    print(warp_tiles)
+    # # --- Print to console ---
+    # # print(walk_matrix)
+    # print("\nWalkable tile matrix ('-' = walkable, '#' = blocked):")
+    # print_tile_walk_matrix(walk_matrix)
+    # print(warp_tiles)
 
-    map_id = get_current_map(pyboy)
-    map_filename = find_map_by_id(MAP_HEADERS, map_id).get("file")
+    # map_id = get_current_map(pyboy)
+    # map_filename = find_map_by_id(MAP_HEADERS, map_id).get("file")
 
-    print(get_npc_coords(map_filename))
-    # print(get_map_signs(map_filename))
+    # print(get_npc_coords(map_filename))
+    # # print(get_map_signs(map_filename))
+
+    check_tile_map(map_id=50)
 
 
 if __name__ == "__main__":

@@ -148,14 +148,14 @@ def path_finder(pyboy, goal):
     map_id, px, py, direction = get_player_position(pyboy)
     battle_flag = BattleFlag(pyboy)
     dialog_flag = DialogFlag(pyboy)
-    # try:
-    #     print(f"Player at map {map_id}, X={px}, Y={py}, Looking={direction}") #(0: down, 4: up, 8: left, 12: right)
-    #     walk_matrix[py][px] = 'P' #player location
-    #     walk_matrix[goal[1]][goal[0]] = 'G' #goal location
-    # except:
-    #     pass
-    # print("\nWalkable tile matrix ('-' = walkable, '#' = blocked):")
-    # print_tile_walk_matrix(walk_matrix)
+    try:
+        print(f"Player at map {map_id}, X={px}, Y={py}, Looking={direction}") #(0: down, 4: up, 8: left, 12: right)
+        walk_matrix[py][px] = 'P' #player location
+        walk_matrix[goal[1]][goal[0]] = 'G' #goal location
+    except:
+        pass
+    print("\nWalkable tile matrix ('-' = walkable, '#' = blocked):")
+    print_tile_walk_matrix(walk_matrix)
 
 
     # --- Load Map Values ---

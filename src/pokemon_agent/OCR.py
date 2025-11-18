@@ -43,7 +43,7 @@ class OverworldStateTracker:
 class BattleStateTracker:
     def __init__(self):
         self.menu_state = None
-        self.region = REGIONS["dialog"]
+        self.region = REGIONS["menu"]
         self.upscale = 2
 
     def update_from_ocr(self, text_data):
