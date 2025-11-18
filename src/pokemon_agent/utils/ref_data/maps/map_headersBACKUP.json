@@ -1,0 +1,5739 @@
+[
+    {
+        "file": "AgathasRoom.asm",
+        "name": "AGATHASROOM",
+        "map_id": 247,
+        "map_width": 5,
+        "map_height": 6,
+        "label": "AGATHAS_ROOM",
+        "environment": "CEMETERY",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "BikeShop.asm",
+        "name": "BIKESHOP",
+        "map_id": 66,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "BIKE_SHOP",
+        "environment": "CLUB",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "BillsHouse.asm",
+        "name": "BILLSHOUSE",
+        "map_id": 88,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "BILLS_HOUSE",
+        "environment": "INTERIOR",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "BluesHouse.asm",
+        "name": "BLUESHOUSE",
+        "map_id": 39,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "BLUES_HOUSE",
+        "environment": "HOUSE",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "BrunosRoom.asm",
+        "name": "BRUNOSROOM",
+        "map_id": 246,
+        "map_width": 5,
+        "map_height": 6,
+        "label": "BRUNOS_ROOM",
+        "environment": "GYM",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "CeladonChiefHouse.asm",
+        "name": "CELADONCHIEFHOUSE",
+        "map_id": 139,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "CELADON_CHIEF_HOUSE",
+        "environment": "MANSION",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "CeladonCity.asm",
+        "name": "CELADONCITY",
+        "map_id": 6,
+        "map_width": 25,
+        "map_height": 18,
+        "label": "CELADON_CITY",
+        "environment": "OVERWORLD",
+        "connections_flags": "WEST | EAST",
+        "connections": [
+            {
+                "direction": "west",
+                "target_name": "Route16",
+                "target_label": "ROUTE_16",
+                "offset": 4,
+                "connection_coords": [
+                    [
+                        0,
+                        36
+                    ],
+                    [
+                        0,
+                        37
+                    ]
+                ]
+            },
+            {
+                "direction": "east",
+                "target_name": "Route7",
+                "target_label": "ROUTE_7",
+                "offset": 4,
+                "connection_coords": [
+                    [
+                        99,
+                        21
+                    ],
+                    [
+                        99,
+                        22
+                    ],
+                    [
+                        99,
+                        23
+                    ],
+                    [
+                        99,
+                        20
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "file": "CeladonDiner.asm",
+        "name": "CELADONDINER",
+        "map_id": 138,
+        "map_width": 5,
+        "map_height": 4,
+        "label": "CELADON_DINER",
+        "environment": "LOBBY",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "CeladonGym.asm",
+        "name": "CELADONGYM",
+        "map_id": 134,
+        "map_width": 5,
+        "map_height": 9,
+        "label": "CELADON_GYM",
+        "environment": "GYM",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "CeladonHotel.asm",
+        "name": "CELADONHOTEL",
+        "map_id": 140,
+        "map_width": 7,
+        "map_height": 4,
+        "label": "CELADON_HOTEL",
+        "environment": "POKECENTER",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "CeladonMansion1F.asm",
+        "name": "CELADONMANSION1F",
+        "map_id": 128,
+        "map_width": 4,
+        "map_height": 6,
+        "label": "CELADON_MANSION_1F",
+        "environment": "MANSION",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "CeladonMansion2F.asm",
+        "name": "CELADONMANSION2F",
+        "map_id": 129,
+        "map_width": 4,
+        "map_height": 6,
+        "label": "CELADON_MANSION_2F",
+        "environment": "MANSION",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "CeladonMansion3F.asm",
+        "name": "CELADONMANSION3F",
+        "map_id": 130,
+        "map_width": 4,
+        "map_height": 6,
+        "label": "CELADON_MANSION_3F",
+        "environment": "MANSION",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "CeladonMansionRoof.asm",
+        "name": "CELADONMANSIONROOF",
+        "map_id": 131,
+        "map_width": 4,
+        "map_height": 6,
+        "label": "CELADON_MANSION_ROOF",
+        "environment": "MANSION",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "CeladonMansionRoofHouse.asm",
+        "name": "CELADONMANSIONROOFHOUSE",
+        "map_id": 132,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "CELADON_MANSION_ROOF_HOUSE",
+        "environment": "HOUSE",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "CeladonMart1F.asm",
+        "name": "CELADONMART1F",
+        "map_id": 122,
+        "map_width": 10,
+        "map_height": 4,
+        "label": "CELADON_MART_1F",
+        "environment": "LOBBY",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "CeladonMart2F.asm",
+        "name": "CELADONMART2F",
+        "map_id": 123,
+        "map_width": 10,
+        "map_height": 4,
+        "label": "CELADON_MART_2F",
+        "environment": "LOBBY",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "CeladonMart3F.asm",
+        "name": "CELADONMART3F",
+        "map_id": 124,
+        "map_width": 10,
+        "map_height": 4,
+        "label": "CELADON_MART_3F",
+        "environment": "LOBBY",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "CeladonMart4F.asm",
+        "name": "CELADONMART4F",
+        "map_id": 125,
+        "map_width": 10,
+        "map_height": 4,
+        "label": "CELADON_MART_4F",
+        "environment": "LOBBY",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "CeladonMart5F.asm",
+        "name": "CELADONMART5F",
+        "map_id": 136,
+        "map_width": 10,
+        "map_height": 4,
+        "label": "CELADON_MART_5F",
+        "environment": "LOBBY",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "CeladonMartElevator.asm",
+        "name": "CELADONMARTELEVATOR",
+        "map_id": 127,
+        "map_width": 2,
+        "map_height": 2,
+        "label": "CELADON_MART_ELEVATOR",
+        "environment": "LOBBY",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "CeladonMartRoof.asm",
+        "name": "CELADONMARTROOF",
+        "map_id": 126,
+        "map_width": 10,
+        "map_height": 4,
+        "label": "CELADON_MART_ROOF",
+        "environment": "LOBBY",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "CeladonPokecenter.asm",
+        "name": "CELADONPOKECENTER",
+        "map_id": 133,
+        "map_width": 7,
+        "map_height": 4,
+        "label": "CELADON_POKECENTER",
+        "environment": "POKECENTER",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "CeruleanBadgeHouse.asm",
+        "name": "CERULEANBADGEHOUSE",
+        "map_id": 230,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "CERULEAN_BADGE_HOUSE",
+        "environment": "SHIP",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "CeruleanCave1F.asm",
+        "name": "CERULEANCAVE1F",
+        "map_id": 228,
+        "map_width": 15,
+        "map_height": 9,
+        "label": "CERULEAN_CAVE_1F",
+        "environment": "CAVERN",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "CeruleanCave2F.asm",
+        "name": "CERULEANCAVE2F",
+        "map_id": 226,
+        "map_width": 15,
+        "map_height": 9,
+        "label": "CERULEAN_CAVE_2F",
+        "environment": "CAVERN",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "CeruleanCaveB1F.asm",
+        "name": "CERULEANCAVEB1F",
+        "map_id": 227,
+        "map_width": 15,
+        "map_height": 9,
+        "label": "CERULEAN_CAVE_B1F",
+        "environment": "CAVERN",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "CeruleanCity.asm",
+        "name": "CERULEANCITY",
+        "map_id": 3,
+        "map_width": 20,
+        "map_height": 18,
+        "label": "CERULEAN_CITY",
+        "environment": "OVERWORLD",
+        "connections_flags": "NORTH | SOUTH | WEST | EAST",
+        "connections": [
+            {
+                "direction": "north",
+                "target_name": "Route24",
+                "target_label": "ROUTE_24",
+                "offset": 5,
+                "connection_coords": [
+                    [
+                        43,
+                        0
+                    ],
+                    [
+                        42,
+                        0
+                    ],
+                    [
+                        40,
+                        0
+                    ],
+                    [
+                        41,
+                        0
+                    ]
+                ]
+            },
+            {
+                "direction": "south",
+                "target_name": "Route5",
+                "target_label": "ROUTE_5",
+                "offset": 5,
+                "connection_coords": [
+                    [
+                        54,
+                        71
+                    ],
+                    [
+                        28,
+                        71
+                    ],
+                    [
+                        23,
+                        71
+                    ],
+                    [
+                        50,
+                        71
+                    ],
+                    [
+                        29,
+                        71
+                    ],
+                    [
+                        24,
+                        71
+                    ],
+                    [
+                        56,
+                        71
+                    ],
+                    [
+                        52,
+                        71
+                    ],
+                    [
+                        57,
+                        71
+                    ],
+                    [
+                        26,
+                        71
+                    ],
+                    [
+                        53,
+                        71
+                    ],
+                    [
+                        27,
+                        71
+                    ],
+                    [
+                        22,
+                        71
+                    ],
+                    [
+                        55,
+                        71
+                    ],
+                    [
+                        51,
+                        71
+                    ],
+                    [
+                        25,
+                        71
+                    ]
+                ]
+            },
+            {
+                "direction": "west",
+                "target_name": "Route4",
+                "target_label": "ROUTE_4",
+                "offset": 4,
+                "connection_coords": [
+                    [
+                        0,
+                        36
+                    ],
+                    [
+                        0,
+                        26
+                    ],
+                    [
+                        0,
+                        39
+                    ],
+                    [
+                        0,
+                        38
+                    ],
+                    [
+                        0,
+                        28
+                    ],
+                    [
+                        0,
+                        25
+                    ],
+                    [
+                        0,
+                        24
+                    ],
+                    [
+                        0,
+                        37
+                    ],
+                    [
+                        0,
+                        27
+                    ]
+                ]
+            },
+            {
+                "direction": "east",
+                "target_name": "Route9",
+                "target_label": "ROUTE_9",
+                "offset": 4,
+                "connection_coords": [
+                    [
+                        79,
+                        34
+                    ],
+                    [
+                        79,
+                        35
+                    ],
+                    [
+                        79,
+                        32
+                    ],
+                    [
+                        79,
+                        33
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "file": "CeruleanGym.asm",
+        "name": "CERULEANGYM",
+        "map_id": 65,
+        "map_width": 5,
+        "map_height": 7,
+        "label": "CERULEAN_GYM",
+        "environment": "GYM",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "CeruleanMart.asm",
+        "name": "CERULEANMART",
+        "map_id": 67,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "CERULEAN_MART",
+        "environment": "POKECENTER",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "CeruleanPokecenter.asm",
+        "name": "CERULEANPOKECENTER",
+        "map_id": 64,
+        "map_width": 7,
+        "map_height": 4,
+        "label": "CERULEAN_POKECENTER",
+        "environment": "POKECENTER",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "CeruleanTradeHouse.asm",
+        "name": "CERULEANTRADEHOUSE",
+        "map_id": 63,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "CERULEAN_TRADE_HOUSE",
+        "environment": "HOUSE",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "CeruleanTrashedHouse.asm",
+        "name": "CERULEANTRASHEDHOUSE",
+        "map_id": 62,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "CERULEAN_TRASHED_HOUSE",
+        "environment": "HOUSE",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "ChampionsRoom.asm",
+        "name": "CHAMPIONSROOM",
+        "map_id": 120,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "CHAMPIONS_ROOM",
+        "environment": "GYM",
+        "connections_flags": "$0",
+        "connections": []
+    },
+    {
+        "file": "CinnabarGym.asm",
+        "name": "CINNABARGYM",
+        "map_id": 166,
+        "map_width": 10,
+        "map_height": 9,
+        "label": "CINNABAR_GYM",
+        "environment": "FACILITY",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "CinnabarIsland.asm",
+        "name": "CINNABARISLAND",
+        "map_id": 8,
+        "map_width": 10,
+        "map_height": 9,
+        "label": "CINNABAR_ISLAND",
+        "environment": "OVERWORLD",
+        "connections_flags": "NORTH | EAST",
+        "connections": [
+            {
+                "direction": "north",
+                "target_name": "Route21",
+                "target_label": "ROUTE_21",
+                "offset": 0,
+                "connection_coords": [
+                    [
+                        25,
+                        0
+                    ],
+                    [
+                        21,
+                        0
+                    ],
+                    [
+                        23,
+                        0
+                    ],
+                    [
+                        7,
+                        0
+                    ],
+                    [
+                        24,
+                        0
+                    ],
+                    [
+                        20,
+                        0
+                    ],
+                    [
+                        26,
+                        0
+                    ],
+                    [
+                        27,
+                        0
+                    ],
+                    [
+                        22,
+                        0
+                    ]
+                ]
+            },
+            {
+                "direction": "east",
+                "target_name": "Route20",
+                "target_label": "ROUTE_20",
+                "offset": 0,
+                "connection_coords": [
+                    [
+                        39,
+                        12
+                    ],
+                    [
+                        39,
+                        18
+                    ],
+                    [
+                        39,
+                        21
+                    ],
+                    [
+                        39,
+                        27
+                    ],
+                    [
+                        39,
+                        24
+                    ],
+                    [
+                        39,
+                        8
+                    ],
+                    [
+                        39,
+                        11
+                    ],
+                    [
+                        39,
+                        14
+                    ],
+                    [
+                        39,
+                        20
+                    ],
+                    [
+                        39,
+                        17
+                    ],
+                    [
+                        39,
+                        23
+                    ],
+                    [
+                        39,
+                        26
+                    ],
+                    [
+                        39,
+                        13
+                    ],
+                    [
+                        39,
+                        10
+                    ],
+                    [
+                        39,
+                        16
+                    ],
+                    [
+                        39,
+                        22
+                    ],
+                    [
+                        39,
+                        19
+                    ],
+                    [
+                        39,
+                        25
+                    ],
+                    [
+                        39,
+                        28
+                    ],
+                    [
+                        39,
+                        9
+                    ],
+                    [
+                        39,
+                        15
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "file": "CinnabarLab.asm",
+        "name": "CINNABARLAB",
+        "map_id": 167,
+        "map_width": 9,
+        "map_height": 4,
+        "label": "CINNABAR_LAB",
+        "environment": "LAB",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "CinnabarLabFossilRoom.asm",
+        "name": "CINNABARLABFOSSILROOM",
+        "map_id": 170,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "CINNABAR_LAB_FOSSIL_ROOM",
+        "environment": "LAB",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "CinnabarLabMetronomeRoom.asm",
+        "name": "CINNABARLABMETRONOMEROOM",
+        "map_id": 169,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "CINNABAR_LAB_METRONOME_ROOM",
+        "environment": "LAB",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "CinnabarLabTradeRoom.asm",
+        "name": "CINNABARLABTRADEROOM",
+        "map_id": 168,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "CINNABAR_LAB_TRADE_ROOM",
+        "environment": "LAB",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "CinnabarMart.asm",
+        "name": "CINNABARMART",
+        "map_id": 172,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "CINNABAR_MART",
+        "environment": "POKECENTER",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "CinnabarPokecenter.asm",
+        "name": "CINNABARPOKECENTER",
+        "map_id": 171,
+        "map_width": 7,
+        "map_height": 4,
+        "label": "CINNABAR_POKECENTER",
+        "environment": "POKECENTER",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "Colosseum.asm",
+        "name": "COLOSSEUM",
+        "map_id": 240,
+        "map_width": 5,
+        "map_height": 4,
+        "label": "COLOSSEUM",
+        "environment": "CLUB",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "CopycatsHouse1F.asm",
+        "name": "COPYCATSHOUSE1F",
+        "map_id": 175,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "COPYCATS_HOUSE_1F",
+        "environment": "REDS_HOUSE",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "CopycatsHouse2F.asm",
+        "name": "COPYCATSHOUSE2F",
+        "map_id": 176,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "COPYCATS_HOUSE_2F",
+        "environment": "REDS_HOUSE",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "Daycare.asm",
+        "name": "DAYCARE",
+        "map_id": 72,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "DAYCARE",
+        "environment": "HOUSE",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "DiglettsCave.asm",
+        "name": "DIGLETTSCAVE",
+        "map_id": 197,
+        "map_width": 20,
+        "map_height": 18,
+        "label": "DIGLETTS_CAVE",
+        "environment": "CAVERN",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "DiglettsCaveRoute11.asm",
+        "name": "DIGLETTSCAVEROUTE11",
+        "map_id": 85,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "DIGLETTS_CAVE_ROUTE_11",
+        "environment": "CAVERN",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "DiglettsCaveRoute2.asm",
+        "name": "DIGLETTSCAVEROUTE2",
+        "map_id": 46,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "DIGLETTS_CAVE_ROUTE_2",
+        "environment": "CAVERN",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "FightingDojo.asm",
+        "name": "FIGHTINGDOJO",
+        "map_id": 177,
+        "map_width": 5,
+        "map_height": 6,
+        "label": "FIGHTING_DOJO",
+        "environment": "GYM",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "FuchsiaBillsGrandpasHouse.asm",
+        "name": "FUCHSIABILLSGRANDPASHOUSE",
+        "map_id": 153,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "FUCHSIA_BILLS_GRANDPAS_HOUSE",
+        "environment": "HOUSE",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "FuchsiaCity.asm",
+        "name": "FUCHSIACITY",
+        "map_id": 7,
+        "map_width": 20,
+        "map_height": 18,
+        "label": "FUCHSIA_CITY",
+        "environment": "OVERWORLD",
+        "connections_flags": "SOUTH | WEST | EAST",
+        "connections": [
+            {
+                "direction": "south",
+                "target_name": "Route19",
+                "target_label": "ROUTE_19",
+                "offset": 5,
+                "connection_coords": []
+            },
+            {
+                "direction": "west",
+                "target_name": "Route18",
+                "target_label": "ROUTE_18",
+                "offset": 4,
+                "connection_coords": [
+                    [
+                        0,
+                        35
+                    ],
+                    [
+                        0,
+                        32
+                    ],
+                    [
+                        0,
+                        33
+                    ],
+                    [
+                        0,
+                        34
+                    ]
+                ]
+            },
+            {
+                "direction": "east",
+                "target_name": "Route15",
+                "target_label": "ROUTE_15",
+                "offset": 4,
+                "connection_coords": [
+                    [
+                        79,
+                        34
+                    ],
+                    [
+                        79,
+                        35
+                    ],
+                    [
+                        79,
+                        32
+                    ],
+                    [
+                        79,
+                        33
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "file": "FuchsiaGoodRodHouse.asm",
+        "name": "FUCHSIAGOODRODHOUSE",
+        "map_id": 164,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "FUCHSIA_GOOD_ROD_HOUSE",
+        "environment": "SHIP",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "FuchsiaGym.asm",
+        "name": "FUCHSIAGYM",
+        "map_id": 157,
+        "map_width": 5,
+        "map_height": 9,
+        "label": "FUCHSIA_GYM",
+        "environment": "GYM",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "FuchsiaMart.asm",
+        "name": "FUCHSIAMART",
+        "map_id": 152,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "FUCHSIA_MART",
+        "environment": "POKECENTER",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "FuchsiaMeetingRoom.asm",
+        "name": "FUCHSIAMEETINGROOM",
+        "map_id": 158,
+        "map_width": 7,
+        "map_height": 4,
+        "label": "FUCHSIA_MEETING_ROOM",
+        "environment": "LAB",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "FuchsiaPokecenter.asm",
+        "name": "FUCHSIAPOKECENTER",
+        "map_id": 154,
+        "map_width": 7,
+        "map_height": 4,
+        "label": "FUCHSIA_POKECENTER",
+        "environment": "POKECENTER",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "GameCorner.asm",
+        "name": "GAMECORNER",
+        "map_id": 135,
+        "map_width": 10,
+        "map_height": 9,
+        "label": "GAME_CORNER",
+        "environment": "LOBBY",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "GameCornerPrizeRoom.asm",
+        "name": "GAMECORNERPRIZEROOM",
+        "map_id": 137,
+        "map_width": 5,
+        "map_height": 4,
+        "label": "GAME_CORNER_PRIZE_ROOM",
+        "environment": "LOBBY",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "HallOfFame.asm",
+        "name": "HALLOFFAME",
+        "map_id": 118,
+        "map_width": 5,
+        "map_height": 4,
+        "label": "HALL_OF_FAME",
+        "environment": "GYM",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "IndigoPlateau.asm",
+        "name": "INDIGOPLATEAU",
+        "map_id": 9,
+        "map_width": 10,
+        "map_height": 9,
+        "label": "INDIGO_PLATEAU",
+        "environment": "PLATEAU",
+        "connections_flags": "SOUTH",
+        "connections": [
+            {
+                "direction": "south",
+                "target_name": "Route23",
+                "target_label": "ROUTE_23",
+                "offset": 0,
+                "connection_coords": [
+                    [
+                        19,
+                        35
+                    ],
+                    [
+                        20,
+                        35
+                    ],
+                    [
+                        18,
+                        35
+                    ],
+                    [
+                        21,
+                        35
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "file": "IndigoPlateauLobby.asm",
+        "name": "INDIGOPLATEAULOBBY",
+        "map_id": 174,
+        "map_width": 8,
+        "map_height": 6,
+        "label": "INDIGO_PLATEAU_LOBBY",
+        "environment": "POKECENTER",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "LancesRoom.asm",
+        "name": "LANCESROOM",
+        "map_id": 113,
+        "map_width": 13,
+        "map_height": 13,
+        "label": "LANCES_ROOM",
+        "environment": "GYM",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "LavenderCuboneHouse.asm",
+        "name": "LAVENDERCUBONEHOUSE",
+        "map_id": 151,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "LAVENDER_CUBONE_HOUSE",
+        "environment": "HOUSE",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "LavenderMart.asm",
+        "name": "LAVENDERMART",
+        "map_id": 150,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "LAVENDER_MART",
+        "environment": "POKECENTER",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "LavenderPokecenter.asm",
+        "name": "LAVENDERPOKECENTER",
+        "map_id": 141,
+        "map_width": 7,
+        "map_height": 4,
+        "label": "LAVENDER_POKECENTER",
+        "environment": "POKECENTER",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "LavenderTown.asm",
+        "name": "LAVENDERTOWN",
+        "map_id": 4,
+        "map_width": 10,
+        "map_height": 9,
+        "label": "LAVENDER_TOWN",
+        "environment": "OVERWORLD",
+        "connections_flags": "NORTH | SOUTH | WEST",
+        "connections": [
+            {
+                "direction": "north",
+                "target_name": "Route10",
+                "target_label": "ROUTE_10",
+                "offset": 0,
+                "connection_coords": [
+                    [
+                        16,
+                        0
+                    ],
+                    [
+                        17,
+                        0
+                    ],
+                    [
+                        12,
+                        0
+                    ],
+                    [
+                        18,
+                        0
+                    ],
+                    [
+                        13,
+                        0
+                    ],
+                    [
+                        19,
+                        0
+                    ],
+                    [
+                        14,
+                        0
+                    ],
+                    [
+                        15,
+                        0
+                    ]
+                ]
+            },
+            {
+                "direction": "south",
+                "target_name": "Route12",
+                "target_label": "ROUTE_12",
+                "offset": 0,
+                "connection_coords": [
+                    [
+                        16,
+                        35
+                    ],
+                    [
+                        17,
+                        35
+                    ],
+                    [
+                        19,
+                        35
+                    ],
+                    [
+                        18,
+                        35
+                    ]
+                ]
+            },
+            {
+                "direction": "west",
+                "target_name": "Route8",
+                "target_label": "ROUTE_8",
+                "offset": 0,
+                "connection_coords": [
+                    [
+                        0,
+                        30
+                    ],
+                    [
+                        0,
+                        5
+                    ],
+                    [
+                        0,
+                        8
+                    ],
+                    [
+                        0,
+                        14
+                    ],
+                    [
+                        0,
+                        11
+                    ],
+                    [
+                        0,
+                        17
+                    ],
+                    [
+                        0,
+                        23
+                    ],
+                    [
+                        0,
+                        20
+                    ],
+                    [
+                        0,
+                        26
+                    ],
+                    [
+                        0,
+                        29
+                    ],
+                    [
+                        0,
+                        7
+                    ],
+                    [
+                        0,
+                        4
+                    ],
+                    [
+                        0,
+                        10
+                    ],
+                    [
+                        0,
+                        16
+                    ],
+                    [
+                        0,
+                        13
+                    ],
+                    [
+                        0,
+                        19
+                    ],
+                    [
+                        0,
+                        22
+                    ],
+                    [
+                        0,
+                        28
+                    ],
+                    [
+                        0,
+                        25
+                    ],
+                    [
+                        0,
+                        31
+                    ],
+                    [
+                        0,
+                        9
+                    ],
+                    [
+                        0,
+                        6
+                    ],
+                    [
+                        0,
+                        12
+                    ],
+                    [
+                        0,
+                        15
+                    ],
+                    [
+                        0,
+                        21
+                    ],
+                    [
+                        0,
+                        18
+                    ],
+                    [
+                        0,
+                        24
+                    ],
+                    [
+                        0,
+                        27
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "file": "LoreleisRoom.asm",
+        "name": "LORELEISROOM",
+        "map_id": 245,
+        "map_width": 5,
+        "map_height": 6,
+        "label": "LORELEIS_ROOM",
+        "environment": "GYM",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "MrFujisHouse.asm",
+        "name": "MRFUJISHOUSE",
+        "map_id": 149,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "MR_FUJIS_HOUSE",
+        "environment": "HOUSE",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "MrPsychicsHouse.asm",
+        "name": "MRPSYCHICSHOUSE",
+        "map_id": 183,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "MR_PSYCHICS_HOUSE",
+        "environment": "HOUSE",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "MtMoon1F.asm",
+        "name": "MTMOON1F",
+        "map_id": 59,
+        "map_width": 20,
+        "map_height": 18,
+        "label": "MT_MOON_1F",
+        "environment": "CAVERN",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "MtMoonB1F.asm",
+        "name": "MTMOONB1F",
+        "map_id": 60,
+        "map_width": 14,
+        "map_height": 14,
+        "label": "MT_MOON_B1F",
+        "environment": "CAVERN",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "MtMoonB2F.asm",
+        "name": "MTMOONB2F",
+        "map_id": 61,
+        "map_width": 20,
+        "map_height": 18,
+        "label": "MT_MOON_B2F",
+        "environment": "CAVERN",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "MtMoonPokecenter.asm",
+        "name": "MTMOONPOKECENTER",
+        "map_id": 68,
+        "map_width": 7,
+        "map_height": 4,
+        "label": "MT_MOON_POKECENTER",
+        "environment": "POKECENTER",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "Museum1F.asm",
+        "name": "MUSEUM1F",
+        "map_id": 52,
+        "map_width": 10,
+        "map_height": 4,
+        "label": "MUSEUM_1F",
+        "environment": "GATE",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "Museum2F.asm",
+        "name": "MUSEUM2F",
+        "map_id": 53,
+        "map_width": 7,
+        "map_height": 4,
+        "label": "MUSEUM_2F",
+        "environment": "GATE",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "NameRatersHouse.asm",
+        "name": "NAMERATERSHOUSE",
+        "map_id": 229,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "NAME_RATERS_HOUSE",
+        "environment": "HOUSE",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "OaksLab.asm",
+        "name": "OAKSLAB",
+        "map_id": 40,
+        "map_width": 5,
+        "map_height": 6,
+        "label": "OAKS_LAB",
+        "environment": "GYM",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "PalletTown.asm",
+        "name": "PALLETTOWN",
+        "map_id": 0,
+        "map_width": 10,
+        "map_height": 9,
+        "label": "PALLET_TOWN",
+        "environment": "OVERWORLD",
+        "connections_flags": "NORTH | SOUTH",
+        "connections": [
+            {
+                "direction": "north",
+                "target_name": "Route1",
+                "target_label": "ROUTE_1",
+                "offset": 0,
+                "connection_coords": [
+                    [
+                        20,
+                        0
+                    ],
+                    [
+                        23,
+                        0
+                    ],
+                    [
+                        21,
+                        0
+                    ],
+                    [
+                        22,
+                        0
+                    ]
+                ]
+            },
+            {
+                "direction": "south",
+                "target_name": "Route21",
+                "target_label": "ROUTE_21",
+                "offset": 0,
+                "connection_coords": [
+                    [
+                        4,
+                        35
+                    ],
+                    [
+                        7,
+                        35
+                    ],
+                    [
+                        15,
+                        35
+                    ],
+                    [
+                        5,
+                        35
+                    ],
+                    [
+                        6,
+                        35
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "file": "PewterCity.asm",
+        "name": "PEWTERCITY",
+        "map_id": 2,
+        "map_width": 20,
+        "map_height": 18,
+        "label": "PEWTER_CITY",
+        "environment": "OVERWORLD",
+        "connections_flags": "SOUTH | EAST",
+        "connections": [
+            {
+                "direction": "south",
+                "target_name": "Route2",
+                "target_label": "ROUTE_2",
+                "offset": 5,
+                "connection_coords": [
+                    [
+                        39,
+                        71
+                    ],
+                    [
+                        37,
+                        71
+                    ],
+                    [
+                        38,
+                        71
+                    ],
+                    [
+                        36,
+                        71
+                    ]
+                ]
+            },
+            {
+                "direction": "east",
+                "target_name": "Route3",
+                "target_label": "ROUTE_3",
+                "offset": 4,
+                "connection_coords": [
+                    [
+                        79,
+                        1
+                    ],
+                    [
+                        79,
+                        33
+                    ],
+                    [
+                        79,
+                        39
+                    ],
+                    [
+                        79,
+                        36
+                    ],
+                    [
+                        79,
+                        32
+                    ],
+                    [
+                        79,
+                        0
+                    ],
+                    [
+                        79,
+                        35
+                    ],
+                    [
+                        79,
+                        38
+                    ],
+                    [
+                        79,
+                        34
+                    ],
+                    [
+                        79,
+                        37
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "file": "PewterGym.asm",
+        "name": "PEWTERGYM",
+        "map_id": 54,
+        "map_width": 5,
+        "map_height": 7,
+        "label": "PEWTER_GYM",
+        "environment": "GYM",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "PewterMart.asm",
+        "name": "PEWTERMART",
+        "map_id": 56,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "PEWTER_MART",
+        "environment": "POKECENTER",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "PewterNidoranHouse.asm",
+        "name": "PEWTERNIDORANHOUSE",
+        "map_id": 55,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "PEWTER_NIDORAN_HOUSE",
+        "environment": "HOUSE",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "PewterPokecenter.asm",
+        "name": "PEWTERPOKECENTER",
+        "map_id": 58,
+        "map_width": 7,
+        "map_height": 4,
+        "label": "PEWTER_POKECENTER",
+        "environment": "POKECENTER",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "PewterSpeechHouse.asm",
+        "name": "PEWTERSPEECHHOUSE",
+        "map_id": 57,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "PEWTER_SPEECH_HOUSE",
+        "environment": "HOUSE",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "PokemonFanClub.asm",
+        "name": "POKEMONFANCLUB",
+        "map_id": 90,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "POKEMON_FAN_CLUB",
+        "environment": "INTERIOR",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "PokemonMansion1F.asm",
+        "name": "POKEMONMANSION1F",
+        "map_id": 165,
+        "map_width": 15,
+        "map_height": 14,
+        "label": "POKEMON_MANSION_1F",
+        "environment": "FACILITY",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "PokemonMansion2F.asm",
+        "name": "POKEMONMANSION2F",
+        "map_id": 214,
+        "map_width": 15,
+        "map_height": 14,
+        "label": "POKEMON_MANSION_2F",
+        "environment": "FACILITY",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "PokemonMansion3F.asm",
+        "name": "POKEMONMANSION3F",
+        "map_id": 215,
+        "map_width": 15,
+        "map_height": 9,
+        "label": "POKEMON_MANSION_3F",
+        "environment": "FACILITY",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "PokemonMansionB1F.asm",
+        "name": "POKEMONMANSIONB1F",
+        "map_id": 216,
+        "map_width": 15,
+        "map_height": 14,
+        "label": "POKEMON_MANSION_B1F",
+        "environment": "FACILITY",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "PokemonTower1F.asm",
+        "name": "POKEMONTOWER1F",
+        "map_id": 142,
+        "map_width": 10,
+        "map_height": 9,
+        "label": "POKEMON_TOWER_1F",
+        "environment": "CEMETERY",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "PokemonTower2F.asm",
+        "name": "POKEMONTOWER2F",
+        "map_id": 143,
+        "map_width": 10,
+        "map_height": 9,
+        "label": "POKEMON_TOWER_2F",
+        "environment": "CEMETERY",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "PokemonTower3F.asm",
+        "name": "POKEMONTOWER3F",
+        "map_id": 144,
+        "map_width": 10,
+        "map_height": 9,
+        "label": "POKEMON_TOWER_3F",
+        "environment": "CEMETERY",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "PokemonTower4F.asm",
+        "name": "POKEMONTOWER4F",
+        "map_id": 145,
+        "map_width": 10,
+        "map_height": 9,
+        "label": "POKEMON_TOWER_4F",
+        "environment": "CEMETERY",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "PokemonTower5F.asm",
+        "name": "POKEMONTOWER5F",
+        "map_id": 146,
+        "map_width": 10,
+        "map_height": 9,
+        "label": "POKEMON_TOWER_5F",
+        "environment": "CEMETERY",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "PokemonTower6F.asm",
+        "name": "POKEMONTOWER6F",
+        "map_id": 147,
+        "map_width": 10,
+        "map_height": 9,
+        "label": "POKEMON_TOWER_6F",
+        "environment": "CEMETERY",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "PokemonTower7F.asm",
+        "name": "POKEMONTOWER7F",
+        "map_id": 148,
+        "map_width": 10,
+        "map_height": 9,
+        "label": "POKEMON_TOWER_7F",
+        "environment": "CEMETERY",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "PowerPlant.asm",
+        "name": "POWERPLANT",
+        "map_id": 83,
+        "map_width": 20,
+        "map_height": 18,
+        "label": "POWER_PLANT",
+        "environment": "FACILITY",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "RedsHouse1F.asm",
+        "name": "REDSHOUSE1F",
+        "map_id": 37,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "REDS_HOUSE_1F",
+        "environment": "REDS_HOUSE",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "RedsHouse2F.asm",
+        "name": "REDSHOUSE2F",
+        "map_id": 38,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "REDS_HOUSE_2F",
+        "environment": "REDS_HOUSE",
+        "connections_flags": "$00",
+        "connections": []
+    },
+    {
+        "file": "RocketHideoutB1F.asm",
+        "name": "ROCKETHIDEOUTB1F",
+        "map_id": 199,
+        "map_width": 15,
+        "map_height": 14,
+        "label": "ROCKET_HIDEOUT_B1F",
+        "environment": "FACILITY",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "RocketHideoutB2F.asm",
+        "name": "ROCKETHIDEOUTB2F",
+        "map_id": 200,
+        "map_width": 15,
+        "map_height": 14,
+        "label": "ROCKET_HIDEOUT_B2F",
+        "environment": "FACILITY",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "RocketHideoutB3F.asm",
+        "name": "ROCKETHIDEOUTB3F",
+        "map_id": 201,
+        "map_width": 15,
+        "map_height": 14,
+        "label": "ROCKET_HIDEOUT_B3F",
+        "environment": "FACILITY",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "RocketHideoutB4F.asm",
+        "name": "ROCKETHIDEOUTB4F",
+        "map_id": 202,
+        "map_width": 15,
+        "map_height": 12,
+        "label": "ROCKET_HIDEOUT_B4F",
+        "environment": "FACILITY",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "RocketHideoutElevator.asm",
+        "name": "ROCKETHIDEOUTELEVATOR",
+        "map_id": 203,
+        "map_width": 3,
+        "map_height": 4,
+        "label": "ROCKET_HIDEOUT_ELEVATOR",
+        "environment": "LOBBY",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "RockTunnel1F.asm",
+        "name": "ROCKTUNNEL1F",
+        "map_id": 82,
+        "map_width": 20,
+        "map_height": 18,
+        "label": "ROCK_TUNNEL_1F",
+        "environment": "CAVERN",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "RockTunnelB1F.asm",
+        "name": "ROCKTUNNELB1F",
+        "map_id": 232,
+        "map_width": 20,
+        "map_height": 18,
+        "label": "ROCK_TUNNEL_B1F",
+        "environment": "CAVERN",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "RockTunnelPokecenter.asm",
+        "name": "ROCKTUNNELPOKECENTER",
+        "map_id": 81,
+        "map_width": 7,
+        "map_height": 4,
+        "label": "ROCK_TUNNEL_POKECENTER",
+        "environment": "POKECENTER",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "Route1.asm",
+        "name": "ROUTE1",
+        "map_id": 12,
+        "map_width": 10,
+        "map_height": 18,
+        "label": "ROUTE_1",
+        "environment": "OVERWORLD",
+        "connections_flags": "NORTH | SOUTH",
+        "connections": [
+            {
+                "direction": "north",
+                "target_name": "ViridianCity",
+                "target_label": "VIRIDIAN_CITY",
+                "offset": -5,
+                "connection_coords": [
+                    [
+                        20,
+                        0
+                    ],
+                    [
+                        23,
+                        0
+                    ],
+                    [
+                        21,
+                        0
+                    ],
+                    [
+                        22,
+                        0
+                    ]
+                ]
+            },
+            {
+                "direction": "south",
+                "target_name": "PalletTown",
+                "target_label": "PALLET_TOWN",
+                "offset": 0,
+                "connection_coords": [
+                    [
+                        21,
+                        71
+                    ],
+                    [
+                        22,
+                        71
+                    ],
+                    [
+                        20,
+                        71
+                    ],
+                    [
+                        23,
+                        71
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "file": "Route10.asm",
+        "name": "ROUTE10",
+        "map_id": 21,
+        "map_width": 10,
+        "map_height": 36,
+        "label": "ROUTE_10",
+        "environment": "OVERWORLD",
+        "connections_flags": "SOUTH | WEST",
+        "connections": [
+            {
+                "direction": "south",
+                "target_name": "LavenderTown",
+                "target_label": "LAVENDER_TOWN",
+                "offset": 0,
+                "connection_coords": [
+                    [
+                        13,
+                        143
+                    ],
+                    [
+                        19,
+                        143
+                    ],
+                    [
+                        14,
+                        143
+                    ],
+                    [
+                        15,
+                        143
+                    ],
+                    [
+                        16,
+                        143
+                    ],
+                    [
+                        17,
+                        143
+                    ],
+                    [
+                        12,
+                        143
+                    ],
+                    [
+                        18,
+                        143
+                    ]
+                ]
+            },
+            {
+                "direction": "west",
+                "target_name": "Route9",
+                "target_label": "ROUTE_9",
+                "offset": 0,
+                "connection_coords": [
+                    [
+                        0,
+                        16
+                    ],
+                    [
+                        0,
+                        13
+                    ],
+                    [
+                        0,
+                        19
+                    ],
+                    [
+                        0,
+                        9
+                    ],
+                    [
+                        0,
+                        12
+                    ],
+                    [
+                        0,
+                        15
+                    ],
+                    [
+                        0,
+                        18
+                    ],
+                    [
+                        0,
+                        8
+                    ],
+                    [
+                        0,
+                        14
+                    ],
+                    [
+                        0,
+                        17
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "file": "Route11.asm",
+        "name": "ROUTE11",
+        "map_id": 22,
+        "map_width": 30,
+        "map_height": 9,
+        "label": "ROUTE_11",
+        "environment": "OVERWORLD",
+        "connections_flags": "WEST | EAST",
+        "connections": [
+            {
+                "direction": "west",
+                "target_name": "VermilionCity",
+                "target_label": "VERMILION_CITY",
+                "offset": -4,
+                "connection_coords": [
+                    [
+                        0,
+                        16
+                    ],
+                    [
+                        0,
+                        13
+                    ],
+                    [
+                        0,
+                        12
+                    ],
+                    [
+                        0,
+                        15
+                    ],
+                    [
+                        0,
+                        14
+                    ]
+                ]
+            },
+            {
+                "direction": "east",
+                "target_name": "Route12",
+                "target_label": "ROUTE_12",
+                "offset": -27,
+                "connection_coords": [
+                    [
+                        119,
+                        16
+                    ],
+                    [
+                        119,
+                        17
+                    ],
+                    [
+                        119,
+                        18
+                    ],
+                    [
+                        119,
+                        19
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "file": "Route11Gate1F.asm",
+        "name": "ROUTE11GATE1F",
+        "map_id": 84,
+        "map_width": 4,
+        "map_height": 5,
+        "label": "ROUTE_11_GATE_1F",
+        "environment": "GATE",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "Route11Gate2F.asm",
+        "name": "ROUTE11GATE2F",
+        "map_id": 86,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "ROUTE_11_GATE_2F",
+        "environment": "GATE",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "Route12.asm",
+        "name": "ROUTE12",
+        "map_id": 23,
+        "map_width": 10,
+        "map_height": 54,
+        "label": "ROUTE_12",
+        "environment": "OVERWORLD",
+        "connections_flags": "NORTH | SOUTH | WEST",
+        "connections": [
+            {
+                "direction": "north",
+                "target_name": "LavenderTown",
+                "target_label": "LAVENDER_TOWN",
+                "offset": 0,
+                "connection_coords": [
+                    [
+                        17,
+                        0
+                    ],
+                    [
+                        18,
+                        0
+                    ],
+                    [
+                        16,
+                        0
+                    ],
+                    [
+                        19,
+                        0
+                    ]
+                ]
+            },
+            {
+                "direction": "south",
+                "target_name": "Route13",
+                "target_label": "ROUTE_13",
+                "offset": -20,
+                "connection_coords": [
+                    [
+                        9,
+                        215
+                    ],
+                    [
+                        21,
+                        215
+                    ],
+                    [
+                        16,
+                        215
+                    ],
+                    [
+                        11,
+                        215
+                    ],
+                    [
+                        17,
+                        215
+                    ],
+                    [
+                        12,
+                        215
+                    ],
+                    [
+                        23,
+                        215
+                    ],
+                    [
+                        13,
+                        215
+                    ],
+                    [
+                        8,
+                        215
+                    ],
+                    [
+                        14,
+                        215
+                    ],
+                    [
+                        20,
+                        215
+                    ],
+                    [
+                        15,
+                        215
+                    ],
+                    [
+                        10,
+                        215
+                    ],
+                    [
+                        22,
+                        215
+                    ]
+                ]
+            },
+            {
+                "direction": "west",
+                "target_name": "Route11",
+                "target_label": "ROUTE_11",
+                "offset": 27,
+                "connection_coords": [
+                    [
+                        0,
+                        125
+                    ],
+                    [
+                        0,
+                        122
+                    ],
+                    [
+                        0,
+                        123
+                    ],
+                    [
+                        0,
+                        124
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "file": "Route12Gate1F.asm",
+        "name": "ROUTE12GATE1F",
+        "map_id": 87,
+        "map_width": 5,
+        "map_height": 4,
+        "label": "ROUTE_12_GATE_1F",
+        "environment": "GATE",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "Route12Gate2F.asm",
+        "name": "ROUTE12GATE2F",
+        "map_id": 195,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "ROUTE_12_GATE_2F",
+        "environment": "GATE",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "Route12SuperRodHouse.asm",
+        "name": "ROUTE12SUPERRODHOUSE",
+        "map_id": 189,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "ROUTE_12_SUPER_ROD_HOUSE",
+        "environment": "HOUSE",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "Route13.asm",
+        "name": "ROUTE13",
+        "map_id": 24,
+        "map_width": 30,
+        "map_height": 9,
+        "label": "ROUTE_13",
+        "environment": "OVERWORLD",
+        "connections_flags": "NORTH | WEST",
+        "connections": [
+            {
+                "direction": "north",
+                "target_name": "Route12",
+                "target_label": "ROUTE_12",
+                "offset": 20,
+                "connection_coords": [
+                    [
+                        103,
+                        0
+                    ],
+                    [
+                        102,
+                        0
+                    ],
+                    [
+                        100,
+                        0
+                    ],
+                    [
+                        101,
+                        0
+                    ]
+                ]
+            },
+            {
+                "direction": "west",
+                "target_name": "Route14",
+                "target_label": "ROUTE_14",
+                "offset": 0,
+                "connection_coords": [
+                    [
+                        0,
+                        20
+                    ],
+                    [
+                        0,
+                        16
+                    ],
+                    [
+                        0,
+                        13
+                    ],
+                    [
+                        0,
+                        9
+                    ],
+                    [
+                        0,
+                        12
+                    ],
+                    [
+                        0,
+                        21
+                    ],
+                    [
+                        0,
+                        8
+                    ],
+                    [
+                        0,
+                        17
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "file": "Route14.asm",
+        "name": "ROUTE14",
+        "map_id": 25,
+        "map_width": 10,
+        "map_height": 27,
+        "label": "ROUTE_14",
+        "environment": "OVERWORLD",
+        "connections_flags": "WEST | EAST",
+        "connections": [
+            {
+                "direction": "west",
+                "target_name": "Route15",
+                "target_label": "ROUTE_15",
+                "offset": 18,
+                "connection_coords": [
+                    [
+                        0,
+                        91
+                    ],
+                    [
+                        0,
+                        97
+                    ],
+                    [
+                        0,
+                        94
+                    ],
+                    [
+                        0,
+                        81
+                    ],
+                    [
+                        0,
+                        84
+                    ],
+                    [
+                        0,
+                        90
+                    ],
+                    [
+                        0,
+                        93
+                    ],
+                    [
+                        0,
+                        99
+                    ],
+                    [
+                        0,
+                        96
+                    ],
+                    [
+                        0,
+                        80
+                    ],
+                    [
+                        0,
+                        83
+                    ],
+                    [
+                        0,
+                        86
+                    ],
+                    [
+                        0,
+                        92
+                    ],
+                    [
+                        0,
+                        89
+                    ],
+                    [
+                        0,
+                        95
+                    ],
+                    [
+                        0,
+                        98
+                    ],
+                    [
+                        0,
+                        85
+                    ],
+                    [
+                        0,
+                        82
+                    ],
+                    [
+                        0,
+                        88
+                    ]
+                ]
+            },
+            {
+                "direction": "east",
+                "target_name": "Route13",
+                "target_label": "ROUTE_13",
+                "offset": 0,
+                "connection_coords": [
+                    [
+                        39,
+                        12
+                    ],
+                    [
+                        39,
+                        8
+                    ],
+                    [
+                        39,
+                        21
+                    ],
+                    [
+                        39,
+                        24
+                    ],
+                    [
+                        39,
+                        20
+                    ],
+                    [
+                        39,
+                        17
+                    ],
+                    [
+                        39,
+                        13
+                    ],
+                    [
+                        39,
+                        16
+                    ],
+                    [
+                        39,
+                        25
+                    ],
+                    [
+                        39,
+                        9
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "file": "Route15.asm",
+        "name": "ROUTE15",
+        "map_id": 26,
+        "map_width": 30,
+        "map_height": 9,
+        "label": "ROUTE_15",
+        "environment": "OVERWORLD",
+        "connections_flags": "WEST | EAST",
+        "connections": [
+            {
+                "direction": "west",
+                "target_name": "FuchsiaCity",
+                "target_label": "FUCHSIA_CITY",
+                "offset": -4,
+                "connection_coords": [
+                    [
+                        0,
+                        30
+                    ],
+                    [
+                        0,
+                        16
+                    ],
+                    [
+                        0,
+                        35
+                    ],
+                    [
+                        0,
+                        19
+                    ],
+                    [
+                        0,
+                        32
+                    ],
+                    [
+                        0,
+                        31
+                    ],
+                    [
+                        0,
+                        34
+                    ],
+                    [
+                        0,
+                        18
+                    ],
+                    [
+                        0,
+                        33
+                    ],
+                    [
+                        0,
+                        17
+                    ]
+                ]
+            },
+            {
+                "direction": "east",
+                "target_name": "Route14",
+                "target_label": "ROUTE_14",
+                "offset": -18,
+                "connection_coords": [
+                    [
+                        119,
+                        31
+                    ],
+                    [
+                        119,
+                        21
+                    ],
+                    [
+                        119,
+                        27
+                    ],
+                    [
+                        119,
+                        30
+                    ],
+                    [
+                        119,
+                        20
+                    ],
+                    [
+                        119,
+                        33
+                    ],
+                    [
+                        119,
+                        23
+                    ],
+                    [
+                        119,
+                        26
+                    ],
+                    [
+                        119,
+                        32
+                    ],
+                    [
+                        119,
+                        16
+                    ],
+                    [
+                        119,
+                        22
+                    ],
+                    [
+                        119,
+                        35
+                    ],
+                    [
+                        119,
+                        19
+                    ],
+                    [
+                        119,
+                        25
+                    ],
+                    [
+                        119,
+                        34
+                    ],
+                    [
+                        119,
+                        18
+                    ],
+                    [
+                        119,
+                        24
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "file": "Route15Gate1F.asm",
+        "name": "ROUTE15GATE1F",
+        "map_id": 184,
+        "map_width": 4,
+        "map_height": 5,
+        "label": "ROUTE_15_GATE_1F",
+        "environment": "GATE",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "Route15Gate2F.asm",
+        "name": "ROUTE15GATE2F",
+        "map_id": 185,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "ROUTE_15_GATE_2F",
+        "environment": "GATE",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "Route16.asm",
+        "name": "ROUTE16",
+        "map_id": 27,
+        "map_width": 20,
+        "map_height": 9,
+        "label": "ROUTE_16",
+        "environment": "OVERWORLD",
+        "connections_flags": "SOUTH | EAST",
+        "connections": [
+            {
+                "direction": "south",
+                "target_name": "Route17",
+                "target_label": "ROUTE_17",
+                "offset": 0,
+                "connection_coords": [
+                    [
+                        16,
+                        35
+                    ],
+                    [
+                        7,
+                        35
+                    ],
+                    [
+                        18,
+                        35
+                    ],
+                    [
+                        20,
+                        35
+                    ],
+                    [
+                        22,
+                        35
+                    ],
+                    [
+                        9,
+                        35
+                    ],
+                    [
+                        2,
+                        35
+                    ],
+                    [
+                        13,
+                        35
+                    ],
+                    [
+                        15,
+                        35
+                    ],
+                    [
+                        6,
+                        35
+                    ],
+                    [
+                        4,
+                        35
+                    ],
+                    [
+                        17,
+                        35
+                    ],
+                    [
+                        8,
+                        35
+                    ],
+                    [
+                        19,
+                        35
+                    ],
+                    [
+                        21,
+                        35
+                    ],
+                    [
+                        12,
+                        35
+                    ],
+                    [
+                        23,
+                        35
+                    ],
+                    [
+                        3,
+                        35
+                    ],
+                    [
+                        14,
+                        35
+                    ],
+                    [
+                        5,
+                        35
+                    ]
+                ]
+            },
+            {
+                "direction": "east",
+                "target_name": "CeladonCity",
+                "target_label": "CELADON_CITY",
+                "offset": -4,
+                "connection_coords": [
+                    [
+                        79,
+                        20
+                    ],
+                    [
+                        79,
+                        21
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "file": "Route16FlyHouse.asm",
+        "name": "ROUTE16FLYHOUSE",
+        "map_id": 188,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "ROUTE_16_FLY_HOUSE",
+        "environment": "HOUSE",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "Route16Gate1F.asm",
+        "name": "ROUTE16GATE1F",
+        "map_id": 186,
+        "map_width": 4,
+        "map_height": 7,
+        "label": "ROUTE_16_GATE_1F",
+        "environment": "GATE",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "Route16Gate2F.asm",
+        "name": "ROUTE16GATE2F",
+        "map_id": 187,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "ROUTE_16_GATE_2F",
+        "environment": "GATE",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "Route17.asm",
+        "name": "ROUTE17",
+        "map_id": 28,
+        "map_width": 10,
+        "map_height": 72,
+        "label": "ROUTE_17",
+        "environment": "OVERWORLD",
+        "connections_flags": "NORTH | SOUTH",
+        "connections": [
+            {
+                "direction": "north",
+                "target_name": "Route16",
+                "target_label": "ROUTE_16",
+                "offset": 0,
+                "connection_coords": [
+                    [
+                        4,
+                        0
+                    ],
+                    [
+                        17,
+                        0
+                    ],
+                    [
+                        8,
+                        0
+                    ],
+                    [
+                        19,
+                        0
+                    ],
+                    [
+                        10,
+                        0
+                    ],
+                    [
+                        21,
+                        0
+                    ],
+                    [
+                        12,
+                        0
+                    ],
+                    [
+                        23,
+                        0
+                    ],
+                    [
+                        3,
+                        0
+                    ],
+                    [
+                        14,
+                        0
+                    ],
+                    [
+                        5,
+                        0
+                    ],
+                    [
+                        16,
+                        0
+                    ],
+                    [
+                        7,
+                        0
+                    ],
+                    [
+                        18,
+                        0
+                    ],
+                    [
+                        20,
+                        0
+                    ],
+                    [
+                        22,
+                        0
+                    ],
+                    [
+                        9,
+                        0
+                    ],
+                    [
+                        11,
+                        0
+                    ],
+                    [
+                        2,
+                        0
+                    ],
+                    [
+                        13,
+                        0
+                    ],
+                    [
+                        15,
+                        0
+                    ],
+                    [
+                        6,
+                        0
+                    ]
+                ]
+            },
+            {
+                "direction": "south",
+                "target_name": "Route18",
+                "target_label": "ROUTE_18",
+                "offset": 0,
+                "connection_coords": [
+                    [
+                        20,
+                        287
+                    ],
+                    [
+                        21,
+                        287
+                    ],
+                    [
+                        11,
+                        287
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "file": "Route18.asm",
+        "name": "ROUTE18",
+        "map_id": 29,
+        "map_width": 25,
+        "map_height": 9,
+        "label": "ROUTE_18",
+        "environment": "OVERWORLD",
+        "connections_flags": "NORTH | EAST",
+        "connections": [
+            {
+                "direction": "north",
+                "target_name": "Route17",
+                "target_label": "ROUTE_17",
+                "offset": 0,
+                "connection_coords": [
+                    [
+                        59,
+                        0
+                    ],
+                    [
+                        70,
+                        0
+                    ],
+                    [
+                        92,
+                        0
+                    ],
+                    [
+                        17,
+                        0
+                    ],
+                    [
+                        50,
+                        0
+                    ],
+                    [
+                        61,
+                        0
+                    ],
+                    [
+                        83,
+                        0
+                    ],
+                    [
+                        94,
+                        0
+                    ],
+                    [
+                        19,
+                        0
+                    ],
+                    [
+                        52,
+                        0
+                    ],
+                    [
+                        74,
+                        0
+                    ],
+                    [
+                        85,
+                        0
+                    ],
+                    [
+                        96,
+                        0
+                    ],
+                    [
+                        65,
+                        0
+                    ],
+                    [
+                        76,
+                        0
+                    ],
+                    [
+                        98,
+                        0
+                    ],
+                    [
+                        63,
+                        0
+                    ],
+                    [
+                        21,
+                        0
+                    ],
+                    [
+                        54,
+                        0
+                    ],
+                    [
+                        87,
+                        0
+                    ],
+                    [
+                        12,
+                        0
+                    ],
+                    [
+                        23,
+                        0
+                    ],
+                    [
+                        56,
+                        0
+                    ],
+                    [
+                        67,
+                        0
+                    ],
+                    [
+                        78,
+                        0
+                    ],
+                    [
+                        14,
+                        0
+                    ],
+                    [
+                        89,
+                        0
+                    ],
+                    [
+                        58,
+                        0
+                    ],
+                    [
+                        69,
+                        0
+                    ],
+                    [
+                        80,
+                        0
+                    ],
+                    [
+                        91,
+                        0
+                    ],
+                    [
+                        27,
+                        0
+                    ],
+                    [
+                        60,
+                        0
+                    ],
+                    [
+                        93,
+                        0
+                    ],
+                    [
+                        51,
+                        0
+                    ],
+                    [
+                        25,
+                        0
+                    ],
+                    [
+                        16,
+                        0
+                    ],
+                    [
+                        49,
+                        0
+                    ],
+                    [
+                        71,
+                        0
+                    ],
+                    [
+                        82,
+                        0
+                    ],
+                    [
+                        18,
+                        0
+                    ],
+                    [
+                        62,
+                        0
+                    ],
+                    [
+                        73,
+                        0
+                    ],
+                    [
+                        84,
+                        0
+                    ],
+                    [
+                        95,
+                        0
+                    ],
+                    [
+                        20,
+                        0
+                    ],
+                    [
+                        53,
+                        0
+                    ],
+                    [
+                        64,
+                        0
+                    ],
+                    [
+                        86,
+                        0
+                    ],
+                    [
+                        97,
+                        0
+                    ],
+                    [
+                        22,
+                        0
+                    ],
+                    [
+                        55,
+                        0
+                    ],
+                    [
+                        77,
+                        0
+                    ],
+                    [
+                        75,
+                        0
+                    ],
+                    [
+                        11,
+                        0
+                    ],
+                    [
+                        66,
+                        0
+                    ],
+                    [
+                        88,
+                        0
+                    ],
+                    [
+                        99,
+                        0
+                    ],
+                    [
+                        13,
+                        0
+                    ],
+                    [
+                        24,
+                        0
+                    ],
+                    [
+                        57,
+                        0
+                    ],
+                    [
+                        68,
+                        0
+                    ],
+                    [
+                        79,
+                        0
+                    ],
+                    [
+                        15,
+                        0
+                    ],
+                    [
+                        26,
+                        0
+                    ],
+                    [
+                        48,
+                        0
+                    ],
+                    [
+                        81,
+                        0
+                    ],
+                    [
+                        90,
+                        0
+                    ],
+                    [
+                        72,
+                        0
+                    ]
+                ]
+            },
+            {
+                "direction": "east",
+                "target_name": "FuchsiaCity",
+                "target_label": "FUCHSIA_CITY",
+                "offset": -4,
+                "connection_coords": [
+                    [
+                        99,
+                        4
+                    ],
+                    [
+                        99,
+                        17
+                    ],
+                    [
+                        99,
+                        7
+                    ],
+                    [
+                        99,
+                        13
+                    ],
+                    [
+                        99,
+                        10
+                    ],
+                    [
+                        99,
+                        16
+                    ],
+                    [
+                        99,
+                        0
+                    ],
+                    [
+                        99,
+                        6
+                    ],
+                    [
+                        99,
+                        19
+                    ],
+                    [
+                        99,
+                        3
+                    ],
+                    [
+                        99,
+                        9
+                    ],
+                    [
+                        99,
+                        12
+                    ],
+                    [
+                        99,
+                        18
+                    ],
+                    [
+                        99,
+                        2
+                    ],
+                    [
+                        99,
+                        8
+                    ],
+                    [
+                        99,
+                        5
+                    ],
+                    [
+                        99,
+                        11
+                    ],
+                    [
+                        99,
+                        1
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "file": "Route18Gate1F.asm",
+        "name": "ROUTE18GATE1F",
+        "map_id": 190,
+        "map_width": 4,
+        "map_height": 5,
+        "label": "ROUTE_18_GATE_1F",
+        "environment": "GATE",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "Route18Gate2F.asm",
+        "name": "ROUTE18GATE2F",
+        "map_id": 191,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "ROUTE_18_GATE_2F",
+        "environment": "GATE",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "Route19.asm",
+        "name": "ROUTE19",
+        "map_id": 30,
+        "map_width": 10,
+        "map_height": 27,
+        "label": "ROUTE_19",
+        "environment": "OVERWORLD",
+        "connections_flags": "NORTH | WEST",
+        "connections": [
+            {
+                "direction": "north",
+                "target_name": "FuchsiaCity",
+                "target_label": "FUCHSIA_CITY",
+                "offset": -5,
+                "connection_coords": [
+                    [
+                        26,
+                        0
+                    ],
+                    [
+                        27,
+                        0
+                    ]
+                ]
+            },
+            {
+                "direction": "west",
+                "target_name": "Route20",
+                "target_label": "ROUTE_20",
+                "offset": 18,
+                "connection_coords": []
+            }
+        ]
+    },
+    {
+        "file": "Route2.asm",
+        "name": "ROUTE2",
+        "map_id": 13,
+        "map_width": 10,
+        "map_height": 36,
+        "label": "ROUTE_2",
+        "environment": "OVERWORLD",
+        "connections_flags": "NORTH | SOUTH",
+        "connections": [
+            {
+                "direction": "north",
+                "target_name": "PewterCity",
+                "target_label": "PEWTER_CITY",
+                "offset": -5,
+                "connection_coords": [
+                    [
+                        17,
+                        0
+                    ],
+                    [
+                        18,
+                        0
+                    ],
+                    [
+                        16,
+                        0
+                    ],
+                    [
+                        19,
+                        0
+                    ]
+                ]
+            },
+            {
+                "direction": "south",
+                "target_name": "ViridianCity",
+                "target_label": "VIRIDIAN_CITY",
+                "offset": -5,
+                "connection_coords": [
+                    [
+                        19,
+                        143
+                    ],
+                    [
+                        14,
+                        143
+                    ],
+                    [
+                        15,
+                        143
+                    ],
+                    [
+                        16,
+                        143
+                    ],
+                    [
+                        17,
+                        143
+                    ],
+                    [
+                        18,
+                        143
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "file": "Route20.asm",
+        "name": "ROUTE20",
+        "map_id": 31,
+        "map_width": 50,
+        "map_height": 9,
+        "label": "ROUTE_20",
+        "environment": "OVERWORLD",
+        "connections_flags": "WEST | EAST",
+        "connections": [
+            {
+                "direction": "west",
+                "target_name": "CinnabarIsland",
+                "target_label": "CINNABAR_ISLAND",
+                "offset": 0,
+                "connection_coords": []
+            },
+            {
+                "direction": "east",
+                "target_name": "Route19",
+                "target_label": "ROUTE_19",
+                "offset": -18,
+                "connection_coords": []
+            }
+        ]
+    },
+    {
+        "file": "Route21.asm",
+        "name": "ROUTE21",
+        "map_id": 32,
+        "map_width": 10,
+        "map_height": 45,
+        "label": "ROUTE_21",
+        "environment": "OVERWORLD",
+        "connections_flags": "NORTH | SOUTH",
+        "connections": [
+            {
+                "direction": "north",
+                "target_name": "PalletTown",
+                "target_label": "PALLET_TOWN",
+                "offset": 0,
+                "connection_coords": [
+                    [
+                        15,
+                        0
+                    ]
+                ]
+            },
+            {
+                "direction": "south",
+                "target_name": "CinnabarIsland",
+                "target_label": "CINNABAR_ISLAND",
+                "offset": 0,
+                "connection_coords": []
+            }
+        ]
+    },
+    {
+        "file": "Route22.asm",
+        "name": "ROUTE22",
+        "map_id": 33,
+        "map_width": 20,
+        "map_height": 9,
+        "label": "ROUTE_22",
+        "environment": "OVERWORLD",
+        "connections_flags": "NORTH | EAST",
+        "connections": [
+            {
+                "direction": "north",
+                "target_name": "Route23",
+                "target_label": "ROUTE_23",
+                "offset": 0,
+                "connection_coords": []
+            },
+            {
+                "direction": "east",
+                "target_name": "ViridianCity",
+                "target_label": "VIRIDIAN_CITY",
+                "offset": -4,
+                "connection_coords": [
+                    [
+                        79,
+                        14
+                    ],
+                    [
+                        79,
+                        17
+                    ],
+                    [
+                        79,
+                        13
+                    ],
+                    [
+                        79,
+                        16
+                    ],
+                    [
+                        79,
+                        19
+                    ],
+                    [
+                        79,
+                        15
+                    ],
+                    [
+                        79,
+                        12
+                    ],
+                    [
+                        79,
+                        18
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "file": "Route22Gate.asm",
+        "name": "ROUTE22GATE",
+        "map_id": 193,
+        "map_width": 5,
+        "map_height": 4,
+        "label": "ROUTE_22_GATE",
+        "environment": "GATE",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "Route23.asm",
+        "name": "ROUTE23",
+        "map_id": 34,
+        "map_width": 10,
+        "map_height": 72,
+        "label": "ROUTE_23",
+        "environment": "PLATEAU",
+        "connections_flags": "NORTH | SOUTH",
+        "connections": [
+            {
+                "direction": "north",
+                "target_name": "IndigoPlateau",
+                "target_label": "INDIGO_PLATEAU",
+                "offset": 0,
+                "connection_coords": [
+                    [
+                        20,
+                        0
+                    ],
+                    [
+                        18,
+                        0
+                    ],
+                    [
+                        21,
+                        0
+                    ],
+                    [
+                        19,
+                        0
+                    ]
+                ]
+            },
+            {
+                "direction": "south",
+                "target_name": "Route22",
+                "target_label": "ROUTE_22",
+                "offset": 0,
+                "connection_coords": []
+            }
+        ]
+    },
+    {
+        "file": "Route24.asm",
+        "name": "ROUTE24",
+        "map_id": 35,
+        "map_width": 10,
+        "map_height": 18,
+        "label": "ROUTE_24",
+        "environment": "OVERWORLD",
+        "connections_flags": "SOUTH | EAST",
+        "connections": [
+            {
+                "direction": "south",
+                "target_name": "CeruleanCity",
+                "target_label": "CERULEAN_CITY",
+                "offset": -5,
+                "connection_coords": [
+                    [
+                        21,
+                        71
+                    ],
+                    [
+                        22,
+                        71
+                    ],
+                    [
+                        20,
+                        71
+                    ],
+                    [
+                        23,
+                        71
+                    ]
+                ]
+            },
+            {
+                "direction": "east",
+                "target_name": "Route25",
+                "target_label": "ROUTE_25",
+                "offset": 0,
+                "connection_coords": [
+                    [
+                        39,
+                        17
+                    ],
+                    [
+                        39,
+                        18
+                    ],
+                    [
+                        39,
+                        19
+                    ],
+                    [
+                        39,
+                        16
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "file": "Route25.asm",
+        "name": "ROUTE25",
+        "map_id": 36,
+        "map_width": 30,
+        "map_height": 9,
+        "label": "ROUTE_25",
+        "environment": "OVERWORLD",
+        "connections_flags": "WEST",
+        "connections": [
+            {
+                "direction": "west",
+                "target_name": "Route24",
+                "target_label": "ROUTE_24",
+                "offset": 0,
+                "connection_coords": [
+                    [
+                        0,
+                        23
+                    ],
+                    [
+                        0,
+                        10
+                    ],
+                    [
+                        0,
+                        16
+                    ],
+                    [
+                        0,
+                        13
+                    ],
+                    [
+                        0,
+                        19
+                    ],
+                    [
+                        0,
+                        9
+                    ],
+                    [
+                        0,
+                        22
+                    ],
+                    [
+                        0,
+                        12
+                    ],
+                    [
+                        0,
+                        18
+                    ],
+                    [
+                        0,
+                        8
+                    ],
+                    [
+                        0,
+                        14
+                    ],
+                    [
+                        0,
+                        11
+                    ],
+                    [
+                        0,
+                        17
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "file": "Route2Gate.asm",
+        "name": "ROUTE2GATE",
+        "map_id": 49,
+        "map_width": 5,
+        "map_height": 4,
+        "label": "ROUTE_2_GATE",
+        "environment": "GATE",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "Route2TradeHouse.asm",
+        "name": "ROUTE2TRADEHOUSE",
+        "map_id": 48,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "ROUTE_2_TRADE_HOUSE",
+        "environment": "HOUSE",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "Route3.asm",
+        "name": "ROUTE3",
+        "map_id": 14,
+        "map_width": 35,
+        "map_height": 9,
+        "label": "ROUTE_3",
+        "environment": "OVERWORLD",
+        "connections_flags": "NORTH | WEST",
+        "connections": [
+            {
+                "direction": "north",
+                "target_name": "Route4",
+                "target_label": "ROUTE_4",
+                "offset": 25,
+                "connection_coords": [
+                    [
+                        125,
+                        0
+                    ],
+                    [
+                        120,
+                        0
+                    ],
+                    [
+                        115,
+                        0
+                    ],
+                    [
+                        121,
+                        0
+                    ],
+                    [
+                        116,
+                        0
+                    ],
+                    [
+                        127,
+                        0
+                    ],
+                    [
+                        117,
+                        0
+                    ],
+                    [
+                        123,
+                        0
+                    ],
+                    [
+                        118,
+                        0
+                    ],
+                    [
+                        124,
+                        0
+                    ],
+                    [
+                        119,
+                        0
+                    ],
+                    [
+                        114,
+                        0
+                    ],
+                    [
+                        122,
+                        0
+                    ],
+                    [
+                        126,
+                        0
+                    ]
+                ]
+            },
+            {
+                "direction": "west",
+                "target_name": "PewterCity",
+                "target_label": "PEWTER_CITY",
+                "offset": -4,
+                "connection_coords": [
+                    [
+                        0,
+                        23
+                    ],
+                    [
+                        0,
+                        20
+                    ],
+                    [
+                        0,
+                        16
+                    ],
+                    [
+                        0,
+                        19
+                    ],
+                    [
+                        0,
+                        22
+                    ],
+                    [
+                        0,
+                        21
+                    ],
+                    [
+                        0,
+                        18
+                    ],
+                    [
+                        0,
+                        17
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "file": "Route4.asm",
+        "name": "ROUTE4",
+        "map_id": 15,
+        "map_width": 45,
+        "map_height": 9,
+        "label": "ROUTE_4",
+        "environment": "OVERWORLD",
+        "connections_flags": "SOUTH | EAST",
+        "connections": [
+            {
+                "direction": "south",
+                "target_name": "Route3",
+                "target_label": "ROUTE_3",
+                "offset": -25,
+                "connection_coords": [
+                    [
+                        21,
+                        35
+                    ],
+                    [
+                        16,
+                        35
+                    ],
+                    [
+                        17,
+                        35
+                    ],
+                    [
+                        12,
+                        35
+                    ],
+                    [
+                        18,
+                        35
+                    ],
+                    [
+                        23,
+                        35
+                    ],
+                    [
+                        13,
+                        35
+                    ],
+                    [
+                        19,
+                        35
+                    ],
+                    [
+                        14,
+                        35
+                    ],
+                    [
+                        20,
+                        35
+                    ],
+                    [
+                        15,
+                        35
+                    ],
+                    [
+                        22,
+                        35
+                    ]
+                ]
+            },
+            {
+                "direction": "east",
+                "target_name": "CeruleanCity",
+                "target_label": "CERULEAN_CITY",
+                "offset": -4,
+                "connection_coords": []
+            }
+        ]
+    },
+    {
+        "file": "Route5.asm",
+        "name": "ROUTE5",
+        "map_id": 16,
+        "map_width": 10,
+        "map_height": 18,
+        "label": "ROUTE_5",
+        "environment": "OVERWORLD",
+        "connections_flags": "NORTH | SOUTH",
+        "connections": [
+            {
+                "direction": "north",
+                "target_name": "CeruleanCity",
+                "target_label": "CERULEAN_CITY",
+                "offset": -5,
+                "connection_coords": [
+                    [
+                        9,
+                        0
+                    ],
+                    [
+                        4,
+                        0
+                    ],
+                    [
+                        37,
+                        0
+                    ],
+                    [
+                        33,
+                        0
+                    ],
+                    [
+                        7,
+                        0
+                    ],
+                    [
+                        2,
+                        0
+                    ],
+                    [
+                        34,
+                        0
+                    ],
+                    [
+                        8,
+                        0
+                    ],
+                    [
+                        3,
+                        0
+                    ],
+                    [
+                        30,
+                        0
+                    ],
+                    [
+                        31,
+                        0
+                    ],
+                    [
+                        35,
+                        0
+                    ],
+                    [
+                        36,
+                        0
+                    ],
+                    [
+                        5,
+                        0
+                    ],
+                    [
+                        32,
+                        0
+                    ],
+                    [
+                        6,
+                        0
+                    ]
+                ]
+            },
+            {
+                "direction": "south",
+                "target_name": "SaffronCity",
+                "target_label": "SAFFRON_CITY",
+                "offset": -5,
+                "connection_coords": [
+                    [
+                        21,
+                        71
+                    ],
+                    [
+                        12,
+                        71
+                    ],
+                    [
+                        23,
+                        71
+                    ],
+                    [
+                        34,
+                        71
+                    ],
+                    [
+                        14,
+                        71
+                    ],
+                    [
+                        5,
+                        71
+                    ],
+                    [
+                        27,
+                        71
+                    ],
+                    [
+                        25,
+                        71
+                    ],
+                    [
+                        16,
+                        71
+                    ],
+                    [
+                        7,
+                        71
+                    ],
+                    [
+                        18,
+                        71
+                    ],
+                    [
+                        29,
+                        71
+                    ],
+                    [
+                        20,
+                        71
+                    ],
+                    [
+                        31,
+                        71
+                    ],
+                    [
+                        22,
+                        71
+                    ],
+                    [
+                        9,
+                        71
+                    ],
+                    [
+                        11,
+                        71
+                    ],
+                    [
+                        33,
+                        71
+                    ],
+                    [
+                        13,
+                        71
+                    ],
+                    [
+                        24,
+                        71
+                    ],
+                    [
+                        35,
+                        71
+                    ],
+                    [
+                        15,
+                        71
+                    ],
+                    [
+                        26,
+                        71
+                    ],
+                    [
+                        6,
+                        71
+                    ],
+                    [
+                        4,
+                        71
+                    ],
+                    [
+                        17,
+                        71
+                    ],
+                    [
+                        28,
+                        71
+                    ],
+                    [
+                        8,
+                        71
+                    ],
+                    [
+                        19,
+                        71
+                    ],
+                    [
+                        30,
+                        71
+                    ],
+                    [
+                        10,
+                        71
+                    ],
+                    [
+                        32,
+                        71
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "file": "Route5Gate.asm",
+        "name": "ROUTE5GATE",
+        "map_id": 70,
+        "map_width": 4,
+        "map_height": 3,
+        "label": "ROUTE_5_GATE",
+        "environment": "GATE",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "Route6.asm",
+        "name": "ROUTE6",
+        "map_id": 17,
+        "map_width": 10,
+        "map_height": 18,
+        "label": "ROUTE_6",
+        "environment": "OVERWORLD",
+        "connections_flags": "NORTH | SOUTH",
+        "connections": [
+            {
+                "direction": "north",
+                "target_name": "SaffronCity",
+                "target_label": "SAFFRON_CITY",
+                "offset": -5,
+                "connection_coords": [
+                    [
+                        20,
+                        0
+                    ],
+                    [
+                        21,
+                        0
+                    ]
+                ]
+            },
+            {
+                "direction": "south",
+                "target_name": "VermilionCity",
+                "target_label": "VERMILION_CITY",
+                "offset": -5,
+                "connection_coords": [
+                    [
+                        18,
+                        71
+                    ],
+                    [
+                        16,
+                        71
+                    ],
+                    [
+                        17,
+                        71
+                    ],
+                    [
+                        19,
+                        71
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "file": "Route6Gate.asm",
+        "name": "ROUTE6GATE",
+        "map_id": 73,
+        "map_width": 4,
+        "map_height": 3,
+        "label": "ROUTE_6_GATE",
+        "environment": "GATE",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "Route7.asm",
+        "name": "ROUTE7",
+        "map_id": 18,
+        "map_width": 10,
+        "map_height": 9,
+        "label": "ROUTE_7",
+        "environment": "OVERWORLD",
+        "connections_flags": "WEST | EAST",
+        "connections": [
+            {
+                "direction": "west",
+                "target_name": "CeladonCity",
+                "target_label": "CELADON_CITY",
+                "offset": -4,
+                "connection_coords": [
+                    [
+                        0,
+                        7
+                    ],
+                    [
+                        0,
+                        4
+                    ],
+                    [
+                        0,
+                        5
+                    ],
+                    [
+                        0,
+                        6
+                    ]
+                ]
+            },
+            {
+                "direction": "east",
+                "target_name": "SaffronCity",
+                "target_label": "SAFFRON_CITY",
+                "offset": -4,
+                "connection_coords": [
+                    [
+                        39,
+                        12
+                    ],
+                    [
+                        39,
+                        18
+                    ],
+                    [
+                        39,
+                        8
+                    ],
+                    [
+                        39,
+                        21
+                    ],
+                    [
+                        39,
+                        5
+                    ],
+                    [
+                        39,
+                        11
+                    ],
+                    [
+                        39,
+                        14
+                    ],
+                    [
+                        39,
+                        20
+                    ],
+                    [
+                        39,
+                        4
+                    ],
+                    [
+                        39,
+                        17
+                    ],
+                    [
+                        39,
+                        7
+                    ],
+                    [
+                        39,
+                        13
+                    ],
+                    [
+                        39,
+                        10
+                    ],
+                    [
+                        39,
+                        16
+                    ],
+                    [
+                        39,
+                        6
+                    ],
+                    [
+                        39,
+                        19
+                    ],
+                    [
+                        39,
+                        9
+                    ],
+                    [
+                        39,
+                        15
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "file": "Route7Gate.asm",
+        "name": "ROUTE7GATE",
+        "map_id": 76,
+        "map_width": 3,
+        "map_height": 4,
+        "label": "ROUTE_7_GATE",
+        "environment": "GATE",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "Route8.asm",
+        "name": "ROUTE8",
+        "map_id": 19,
+        "map_width": 30,
+        "map_height": 9,
+        "label": "ROUTE_8",
+        "environment": "OVERWORLD",
+        "connections_flags": "WEST | EAST",
+        "connections": [
+            {
+                "direction": "west",
+                "target_name": "SaffronCity",
+                "target_label": "SAFFRON_CITY",
+                "offset": -4,
+                "connection_coords": [
+                    [
+                        0,
+                        20
+                    ],
+                    [
+                        0,
+                        16
+                    ],
+                    [
+                        0,
+                        19
+                    ],
+                    [
+                        0,
+                        21
+                    ],
+                    [
+                        0,
+                        18
+                    ],
+                    [
+                        0,
+                        17
+                    ]
+                ]
+            },
+            {
+                "direction": "east",
+                "target_name": "LavenderTown",
+                "target_label": "LAVENDER_TOWN",
+                "offset": 0,
+                "connection_coords": [
+                    [
+                        119,
+                        16
+                    ],
+                    [
+                        119,
+                        17
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "file": "Route8Gate.asm",
+        "name": "ROUTE8GATE",
+        "map_id": 79,
+        "map_width": 3,
+        "map_height": 4,
+        "label": "ROUTE_8_GATE",
+        "environment": "GATE",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "Route9.asm",
+        "name": "ROUTE9",
+        "map_id": 20,
+        "map_width": 30,
+        "map_height": 9,
+        "label": "ROUTE_9",
+        "environment": "OVERWORLD",
+        "connections_flags": "WEST | EAST",
+        "connections": [
+            {
+                "direction": "west",
+                "target_name": "CeruleanCity",
+                "target_label": "CERULEAN_CITY",
+                "offset": -4,
+                "connection_coords": [
+                    [
+                        0,
+                        18
+                    ],
+                    [
+                        0,
+                        19
+                    ],
+                    [
+                        0,
+                        16
+                    ],
+                    [
+                        0,
+                        17
+                    ]
+                ]
+            },
+            {
+                "direction": "east",
+                "target_name": "Route10",
+                "target_label": "ROUTE_10",
+                "offset": 0,
+                "connection_coords": [
+                    [
+                        119,
+                        16
+                    ],
+                    [
+                        119,
+                        17
+                    ],
+                    [
+                        119,
+                        18
+                    ],
+                    [
+                        119,
+                        19
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "file": "SafariZoneCenter.asm",
+        "name": "SAFARIZONECENTER",
+        "map_id": 220,
+        "map_width": 15,
+        "map_height": 13,
+        "label": "SAFARI_ZONE_CENTER",
+        "environment": "FOREST",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "SafariZoneCenterRestHouse.asm",
+        "name": "SAFARIZONECENTERRESTHOUSE",
+        "map_id": 221,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "SAFARI_ZONE_CENTER_REST_HOUSE",
+        "environment": "GATE",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "SafariZoneEast.asm",
+        "name": "SAFARIZONEEAST",
+        "map_id": 217,
+        "map_width": 15,
+        "map_height": 13,
+        "label": "SAFARI_ZONE_EAST",
+        "environment": "FOREST",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "SafariZoneEastRestHouse.asm",
+        "name": "SAFARIZONEEASTRESTHOUSE",
+        "map_id": 224,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "SAFARI_ZONE_EAST_REST_HOUSE",
+        "environment": "GATE",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "SafariZoneGate.asm",
+        "name": "SAFARIZONEGATE",
+        "map_id": 156,
+        "map_width": 4,
+        "map_height": 3,
+        "label": "SAFARI_ZONE_GATE",
+        "environment": "GATE",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "SafariZoneNorth.asm",
+        "name": "SAFARIZONENORTH",
+        "map_id": 218,
+        "map_width": 20,
+        "map_height": 18,
+        "label": "SAFARI_ZONE_NORTH",
+        "environment": "FOREST",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "SafariZoneNorthRestHouse.asm",
+        "name": "SAFARIZONENORTHRESTHOUSE",
+        "map_id": 225,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "SAFARI_ZONE_NORTH_REST_HOUSE",
+        "environment": "GATE",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "SafariZoneSecretHouse.asm",
+        "name": "SAFARIZONESECRETHOUSE",
+        "map_id": 222,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "SAFARI_ZONE_SECRET_HOUSE",
+        "environment": "LAB",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "SafariZoneWest.asm",
+        "name": "SAFARIZONEWEST",
+        "map_id": 219,
+        "map_width": 15,
+        "map_height": 13,
+        "label": "SAFARI_ZONE_WEST",
+        "environment": "FOREST",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "SafariZoneWestRestHouse.asm",
+        "name": "SAFARIZONEWESTRESTHOUSE",
+        "map_id": 223,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "SAFARI_ZONE_WEST_REST_HOUSE",
+        "environment": "GATE",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "SaffronCity.asm",
+        "name": "SAFFRONCITY",
+        "map_id": 10,
+        "map_width": 20,
+        "map_height": 18,
+        "label": "SAFFRON_CITY",
+        "environment": "OVERWORLD",
+        "connections_flags": "NORTH | SOUTH | WEST | EAST",
+        "connections": [
+            {
+                "direction": "north",
+                "target_name": "Route5",
+                "target_label": "ROUTE_5",
+                "offset": 5,
+                "connection_coords": [
+                    [
+                        37,
+                        0
+                    ],
+                    [
+                        28,
+                        0
+                    ],
+                    [
+                        30,
+                        0
+                    ],
+                    [
+                        41,
+                        0
+                    ],
+                    [
+                        32,
+                        0
+                    ],
+                    [
+                        43,
+                        0
+                    ],
+                    [
+                        34,
+                        0
+                    ],
+                    [
+                        36,
+                        0
+                    ],
+                    [
+                        27,
+                        0
+                    ],
+                    [
+                        25,
+                        0
+                    ],
+                    [
+                        38,
+                        0
+                    ],
+                    [
+                        29,
+                        0
+                    ],
+                    [
+                        40,
+                        0
+                    ],
+                    [
+                        31,
+                        0
+                    ],
+                    [
+                        42,
+                        0
+                    ],
+                    [
+                        33,
+                        0
+                    ],
+                    [
+                        24,
+                        0
+                    ],
+                    [
+                        35,
+                        0
+                    ],
+                    [
+                        26,
+                        0
+                    ],
+                    [
+                        39,
+                        0
+                    ]
+                ]
+            },
+            {
+                "direction": "south",
+                "target_name": "Route6",
+                "target_label": "ROUTE_6",
+                "offset": 5,
+                "connection_coords": [
+                    [
+                        42,
+                        71
+                    ],
+                    [
+                        40,
+                        71
+                    ],
+                    [
+                        43,
+                        71
+                    ],
+                    [
+                        41,
+                        71
+                    ]
+                ]
+            },
+            {
+                "direction": "west",
+                "target_name": "Route7",
+                "target_label": "ROUTE_7",
+                "offset": 4,
+                "connection_coords": [
+                    [
+                        0,
+                        30
+                    ],
+                    [
+                        0,
+                        36
+                    ],
+                    [
+                        0,
+                        42
+                    ],
+                    [
+                        0,
+                        45
+                    ],
+                    [
+                        0,
+                        23
+                    ],
+                    [
+                        0,
+                        20
+                    ],
+                    [
+                        0,
+                        26
+                    ],
+                    [
+                        0,
+                        29
+                    ],
+                    [
+                        0,
+                        35
+                    ],
+                    [
+                        0,
+                        32
+                    ],
+                    [
+                        0,
+                        41
+                    ],
+                    [
+                        0,
+                        47
+                    ],
+                    [
+                        0,
+                        44
+                    ],
+                    [
+                        0,
+                        22
+                    ],
+                    [
+                        0,
+                        28
+                    ],
+                    [
+                        0,
+                        25
+                    ],
+                    [
+                        0,
+                        31
+                    ],
+                    [
+                        0,
+                        34
+                    ],
+                    [
+                        0,
+                        40
+                    ],
+                    [
+                        0,
+                        37
+                    ],
+                    [
+                        0,
+                        43
+                    ],
+                    [
+                        0,
+                        46
+                    ],
+                    [
+                        0,
+                        21
+                    ],
+                    [
+                        0,
+                        24
+                    ],
+                    [
+                        0,
+                        27
+                    ],
+                    [
+                        0,
+                        33
+                    ]
+                ]
+            },
+            {
+                "direction": "east",
+                "target_name": "Route8",
+                "target_label": "ROUTE_8",
+                "offset": 4,
+                "connection_coords": [
+                    [
+                        79,
+                        33
+                    ],
+                    [
+                        79,
+                        36
+                    ],
+                    [
+                        79,
+                        32
+                    ],
+                    [
+                        79,
+                        35
+                    ],
+                    [
+                        79,
+                        34
+                    ],
+                    [
+                        79,
+                        37
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "file": "SaffronGym.asm",
+        "name": "SAFFRONGYM",
+        "map_id": 178,
+        "map_width": 10,
+        "map_height": 9,
+        "label": "SAFFRON_GYM",
+        "environment": "FACILITY",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "SaffronMart.asm",
+        "name": "SAFFRONMART",
+        "map_id": 180,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "SAFFRON_MART",
+        "environment": "POKECENTER",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "SaffronPidgeyHouse.asm",
+        "name": "SAFFRONPIDGEYHOUSE",
+        "map_id": 179,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "SAFFRON_PIDGEY_HOUSE",
+        "environment": "HOUSE",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "SaffronPokecenter.asm",
+        "name": "SAFFRONPOKECENTER",
+        "map_id": 182,
+        "map_width": 7,
+        "map_height": 4,
+        "label": "SAFFRON_POKECENTER",
+        "environment": "POKECENTER",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "SeafoamIslands1F.asm",
+        "name": "SEAFOAMISLANDS1F",
+        "map_id": 192,
+        "map_width": 15,
+        "map_height": 9,
+        "label": "SEAFOAM_ISLANDS_1F",
+        "environment": "CAVERN",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "SeafoamIslandsB1F.asm",
+        "name": "SEAFOAMISLANDSB1F",
+        "map_id": 159,
+        "map_width": 15,
+        "map_height": 9,
+        "label": "SEAFOAM_ISLANDS_B1F",
+        "environment": "CAVERN",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "SeafoamIslandsB2F.asm",
+        "name": "SEAFOAMISLANDSB2F",
+        "map_id": 160,
+        "map_width": 15,
+        "map_height": 9,
+        "label": "SEAFOAM_ISLANDS_B2F",
+        "environment": "CAVERN",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "SeafoamIslandsB3F.asm",
+        "name": "SEAFOAMISLANDSB3F",
+        "map_id": 161,
+        "map_width": 15,
+        "map_height": 9,
+        "label": "SEAFOAM_ISLANDS_B3F",
+        "environment": "CAVERN",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "SeafoamIslandsB4F.asm",
+        "name": "SEAFOAMISLANDSB4F",
+        "map_id": 162,
+        "map_width": 15,
+        "map_height": 9,
+        "label": "SEAFOAM_ISLANDS_B4F",
+        "environment": "CAVERN",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "SilphCo10F.asm",
+        "name": "SILPHCO10F",
+        "map_id": 234,
+        "map_width": 8,
+        "map_height": 9,
+        "label": "SILPH_CO_10F",
+        "environment": "FACILITY",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "SilphCo11F.asm",
+        "name": "SILPHCO11F",
+        "map_id": 235,
+        "map_width": 9,
+        "map_height": 9,
+        "label": "SILPH_CO_11F",
+        "environment": "INTERIOR",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "SilphCo1F.asm",
+        "name": "SILPHCO1F",
+        "map_id": 181,
+        "map_width": 15,
+        "map_height": 9,
+        "label": "SILPH_CO_1F",
+        "environment": "FACILITY",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "SilphCo2F.asm",
+        "name": "SILPHCO2F",
+        "map_id": 207,
+        "map_width": 15,
+        "map_height": 9,
+        "label": "SILPH_CO_2F",
+        "environment": "FACILITY",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "SilphCo3F.asm",
+        "name": "SILPHCO3F",
+        "map_id": 208,
+        "map_width": 15,
+        "map_height": 9,
+        "label": "SILPH_CO_3F",
+        "environment": "FACILITY",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "SilphCo4F.asm",
+        "name": "SILPHCO4F",
+        "map_id": 209,
+        "map_width": 15,
+        "map_height": 9,
+        "label": "SILPH_CO_4F",
+        "environment": "FACILITY",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "SilphCo5F.asm",
+        "name": "SILPHCO5F",
+        "map_id": 210,
+        "map_width": 15,
+        "map_height": 9,
+        "label": "SILPH_CO_5F",
+        "environment": "FACILITY",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "SilphCo6F.asm",
+        "name": "SILPHCO6F",
+        "map_id": 211,
+        "map_width": 13,
+        "map_height": 9,
+        "label": "SILPH_CO_6F",
+        "environment": "FACILITY",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "SilphCo7F.asm",
+        "name": "SILPHCO7F",
+        "map_id": 212,
+        "map_width": 13,
+        "map_height": 9,
+        "label": "SILPH_CO_7F",
+        "environment": "FACILITY",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "SilphCo8F.asm",
+        "name": "SILPHCO8F",
+        "map_id": 213,
+        "map_width": 13,
+        "map_height": 9,
+        "label": "SILPH_CO_8F",
+        "environment": "FACILITY",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "SilphCo9F.asm",
+        "name": "SILPHCO9F",
+        "map_id": 233,
+        "map_width": 13,
+        "map_height": 9,
+        "label": "SILPH_CO_9F",
+        "environment": "FACILITY",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "SilphCoElevator.asm",
+        "name": "SILPHCOELEVATOR",
+        "map_id": 236,
+        "map_width": 2,
+        "map_height": 2,
+        "label": "SILPH_CO_ELEVATOR",
+        "environment": "LOBBY",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "SSAnne1F.asm",
+        "name": "SSANNE1F",
+        "map_id": 95,
+        "map_width": 20,
+        "map_height": 9,
+        "label": "SS_ANNE_1F",
+        "environment": "SHIP",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "SSAnne1FRooms.asm",
+        "name": "SSANNE1FROOMS",
+        "map_id": 102,
+        "map_width": 12,
+        "map_height": 8,
+        "label": "SS_ANNE_1F_ROOMS",
+        "environment": "SHIP",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "SSAnne2F.asm",
+        "name": "SSANNE2F",
+        "map_id": 96,
+        "map_width": 20,
+        "map_height": 9,
+        "label": "SS_ANNE_2F",
+        "environment": "SHIP",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "SSAnne2FRooms.asm",
+        "name": "SSANNE2FROOMS",
+        "map_id": 103,
+        "map_width": 12,
+        "map_height": 8,
+        "label": "SS_ANNE_2F_ROOMS",
+        "environment": "SHIP",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "SSAnne3F.asm",
+        "name": "SSANNE3F",
+        "map_id": 97,
+        "map_width": 10,
+        "map_height": 3,
+        "label": "SS_ANNE_3F",
+        "environment": "SHIP",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "SSAnneB1F.asm",
+        "name": "SSANNEB1F",
+        "map_id": 98,
+        "map_width": 15,
+        "map_height": 4,
+        "label": "SS_ANNE_B1F",
+        "environment": "SHIP",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "SSAnneB1FRooms.asm",
+        "name": "SSANNEB1FROOMS",
+        "map_id": 104,
+        "map_width": 12,
+        "map_height": 8,
+        "label": "SS_ANNE_B1F_ROOMS",
+        "environment": "SHIP",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "SSAnneBow.asm",
+        "name": "SSANNEBOW",
+        "map_id": 99,
+        "map_width": 10,
+        "map_height": 7,
+        "label": "SS_ANNE_BOW",
+        "environment": "SHIP",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "SSAnneCaptainsRoom.asm",
+        "name": "SSANNECAPTAINSROOM",
+        "map_id": 101,
+        "map_width": 3,
+        "map_height": 4,
+        "label": "SS_ANNE_CAPTAINS_ROOM",
+        "environment": "SHIP",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "SSAnneKitchen.asm",
+        "name": "SSANNEKITCHEN",
+        "map_id": 100,
+        "map_width": 7,
+        "map_height": 8,
+        "label": "SS_ANNE_KITCHEN",
+        "environment": "SHIP",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "TradeCenter.asm",
+        "name": "TRADECENTER",
+        "map_id": 239,
+        "map_width": 5,
+        "map_height": 4,
+        "label": "TRADE_CENTER",
+        "environment": "CLUB",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "UndergroundPathNorthSouth.asm",
+        "name": "UNDERGROUNDPATHNORTHSOUTH",
+        "map_id": 119,
+        "map_width": 4,
+        "map_height": 24,
+        "label": "UNDERGROUND_PATH_NORTH_SOUTH",
+        "environment": "UNDERGROUND",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "UndergroundPathRoute5.asm",
+        "name": "UNDERGROUNDPATHROUTE5",
+        "map_id": 71,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "UNDERGROUND_PATH_ROUTE_5",
+        "environment": "GATE",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "UndergroundPathRoute6.asm",
+        "name": "UNDERGROUNDPATHROUTE6",
+        "map_id": 74,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "UNDERGROUND_PATH_ROUTE_6",
+        "environment": "GATE",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "UndergroundPathRoute7.asm",
+        "name": "UNDERGROUNDPATHROUTE7",
+        "map_id": 77,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "UNDERGROUND_PATH_ROUTE_7",
+        "environment": "GATE",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "UndergroundPathRoute7Copy.asm",
+        "name": "UNDERGROUNDPATHROUTE7COPY",
+        "map_id": 78,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "UNDERGROUND_PATH_ROUTE_7",
+        "environment": "GATE",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "UndergroundPathRoute8.asm",
+        "name": "UNDERGROUNDPATHROUTE8",
+        "map_id": 80,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "UNDERGROUND_PATH_ROUTE_8",
+        "environment": "GATE",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "UndergroundPathWestEast.asm",
+        "name": "UNDERGROUNDPATHWESTEAST",
+        "map_id": 121,
+        "map_width": 25,
+        "map_height": 4,
+        "label": "UNDERGROUND_PATH_WEST_EAST",
+        "environment": "UNDERGROUND",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "VermilionCity.asm",
+        "name": "VERMILIONCITY",
+        "map_id": 5,
+        "map_width": 20,
+        "map_height": 18,
+        "label": "VERMILION_CITY",
+        "environment": "OVERWORLD",
+        "connections_flags": "NORTH | EAST",
+        "connections": [
+            {
+                "direction": "north",
+                "target_name": "Route6",
+                "target_label": "ROUTE_6",
+                "offset": 5,
+                "connection_coords": [
+                    [
+                        36,
+                        0
+                    ],
+                    [
+                        37,
+                        0
+                    ],
+                    [
+                        39,
+                        0
+                    ],
+                    [
+                        38,
+                        0
+                    ]
+                ]
+            },
+            {
+                "direction": "east",
+                "target_name": "Route11",
+                "target_label": "ROUTE_11",
+                "offset": 4,
+                "connection_coords": [
+                    [
+                        79,
+                        30
+                    ],
+                    [
+                        79,
+                        32
+                    ],
+                    [
+                        79,
+                        29
+                    ],
+                    [
+                        79,
+                        28
+                    ],
+                    [
+                        79,
+                        31
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "file": "VermilionDock.asm",
+        "name": "VERMILIONDOCK",
+        "map_id": 94,
+        "map_width": 14,
+        "map_height": 6,
+        "label": "VERMILION_DOCK",
+        "environment": "SHIP_PORT",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "VermilionGym.asm",
+        "name": "VERMILIONGYM",
+        "map_id": 92,
+        "map_width": 5,
+        "map_height": 9,
+        "label": "VERMILION_GYM",
+        "environment": "GYM",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "VermilionMart.asm",
+        "name": "VERMILIONMART",
+        "map_id": 91,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "VERMILION_MART",
+        "environment": "POKECENTER",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "VermilionOldRodHouse.asm",
+        "name": "VERMILIONOLDRODHOUSE",
+        "map_id": 163,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "VERMILION_OLD_ROD_HOUSE",
+        "environment": "HOUSE",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "VermilionPidgeyHouse.asm",
+        "name": "VERMILIONPIDGEYHOUSE",
+        "map_id": 93,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "VERMILION_PIDGEY_HOUSE",
+        "environment": "HOUSE",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "VermilionPokecenter.asm",
+        "name": "VERMILIONPOKECENTER",
+        "map_id": 89,
+        "map_width": 7,
+        "map_height": 4,
+        "label": "VERMILION_POKECENTER",
+        "environment": "POKECENTER",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "VermilionTradeHouse.asm",
+        "name": "VERMILIONTRADEHOUSE",
+        "map_id": 196,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "VERMILION_TRADE_HOUSE",
+        "environment": "HOUSE",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "VictoryRoad1F.asm",
+        "name": "VICTORYROAD1F",
+        "map_id": 108,
+        "map_width": 10,
+        "map_height": 9,
+        "label": "VICTORY_ROAD_1F",
+        "environment": "CAVERN",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "VictoryRoad2F.asm",
+        "name": "VICTORYROAD2F",
+        "map_id": 194,
+        "map_width": 15,
+        "map_height": 9,
+        "label": "VICTORY_ROAD_2F",
+        "environment": "CAVERN",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "VictoryRoad3F.asm",
+        "name": "VICTORYROAD3F",
+        "map_id": 198,
+        "map_width": 15,
+        "map_height": 9,
+        "label": "VICTORY_ROAD_3F",
+        "environment": "CAVERN",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "ViridianCity.asm",
+        "name": "VIRIDIANCITY",
+        "map_id": 1,
+        "map_width": 20,
+        "map_height": 18,
+        "label": "VIRIDIAN_CITY",
+        "environment": "OVERWORLD",
+        "connections_flags": "NORTH | SOUTH | WEST",
+        "connections": [
+            {
+                "direction": "north",
+                "target_name": "Route2",
+                "target_label": "ROUTE_2",
+                "offset": 5,
+                "connection_coords": [
+                    [
+                        37,
+                        0
+                    ],
+                    [
+                        38,
+                        0
+                    ],
+                    [
+                        34,
+                        0
+                    ],
+                    [
+                        35,
+                        0
+                    ],
+                    [
+                        36,
+                        0
+                    ],
+                    [
+                        39,
+                        0
+                    ]
+                ]
+            },
+            {
+                "direction": "south",
+                "target_name": "Route1",
+                "target_label": "ROUTE_1",
+                "offset": 5,
+                "connection_coords": [
+                    [
+                        42,
+                        71
+                    ],
+                    [
+                        40,
+                        71
+                    ],
+                    [
+                        43,
+                        71
+                    ],
+                    [
+                        41,
+                        71
+                    ]
+                ]
+            },
+            {
+                "direction": "west",
+                "target_name": "Route22",
+                "target_label": "ROUTE_22",
+                "offset": 4,
+                "connection_coords": [
+                    [
+                        0,
+                        30
+                    ],
+                    [
+                        0,
+                        29
+                    ],
+                    [
+                        0,
+                        35
+                    ],
+                    [
+                        0,
+                        32
+                    ],
+                    [
+                        0,
+                        28
+                    ],
+                    [
+                        0,
+                        31
+                    ],
+                    [
+                        0,
+                        34
+                    ],
+                    [
+                        0,
+                        33
+                    ]
+                ]
+            }
+        ]
+    },
+    {
+        "file": "ViridianForest.asm",
+        "name": "VIRIDIANFOREST",
+        "map_id": 51,
+        "map_width": 17,
+        "map_height": 24,
+        "label": "VIRIDIAN_FOREST",
+        "environment": "FOREST",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "ViridianForestNorthGate.asm",
+        "name": "VIRIDIANFORESTNORTHGATE",
+        "map_id": 47,
+        "map_width": 5,
+        "map_height": 4,
+        "label": "VIRIDIAN_FOREST_NORTH_GATE",
+        "environment": "GATE",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "ViridianForestSouthGate.asm",
+        "name": "VIRIDIANFORESTSOUTHGATE",
+        "map_id": 50,
+        "map_width": 5,
+        "map_height": 4,
+        "label": "VIRIDIAN_FOREST_SOUTH_GATE",
+        "environment": "GATE",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "ViridianGym.asm",
+        "name": "VIRIDIANGYM",
+        "map_id": 45,
+        "map_width": 10,
+        "map_height": 9,
+        "label": "VIRIDIAN_GYM",
+        "environment": "GYM",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "ViridianMart.asm",
+        "name": "VIRIDIANMART",
+        "map_id": 42,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "VIRIDIAN_MART",
+        "environment": "POKECENTER",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "ViridianNicknameHouse.asm",
+        "name": "VIRIDIANNICKNAMEHOUSE",
+        "map_id": 44,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "VIRIDIAN_NICKNAME_HOUSE",
+        "environment": "HOUSE",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "ViridianPokecenter.asm",
+        "name": "VIRIDIANPOKECENTER",
+        "map_id": 41,
+        "map_width": 7,
+        "map_height": 4,
+        "label": "VIRIDIAN_POKECENTER",
+        "environment": "POKECENTER",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "ViridianSchoolHouse.asm",
+        "name": "VIRIDIANSCHOOLHOUSE",
+        "map_id": 43,
+        "map_width": 4,
+        "map_height": 4,
+        "label": "VIRIDIAN_SCHOOL_HOUSE",
+        "environment": "HOUSE",
+        "connections_flags": "0",
+        "connections": []
+    },
+    {
+        "file": "WardensHouse.asm",
+        "name": "WARDENSHOUSE",
+        "map_id": 155,
+        "map_width": 5,
+        "map_height": 4,
+        "label": "WARDENS_HOUSE",
+        "environment": "LAB",
+        "connections_flags": "0",
+        "connections": []
+    }
+]

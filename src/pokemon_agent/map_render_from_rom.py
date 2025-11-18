@@ -293,6 +293,7 @@ def render_map_png(map_id, player_xy, goal_xy, save_path="src/pokemon_agent/save
     map_path = Path("src/pokemon_agent/utils/ref_data/maps/map_files") / f"{map_filename.replace(".asm",".blk")}" #/PalletTown.blk
 
     px, py = player_xy
+    # py = height - py #corrected y coord
     gx, gy = goal_xy 
 
      # --- Load map graphics ---

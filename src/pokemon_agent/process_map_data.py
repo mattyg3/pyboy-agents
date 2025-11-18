@@ -517,11 +517,11 @@ def create_map_graph():
         point_a = k
         for conn in v["connections"]:
             point_b = conn
-            if (point_a, point_b) and (point_b, point_a) not in logged_connections:
+            if (point_a, point_b) or (point_b, point_a) not in logged_connections: # and (point_b, point_a)
                 map_graph.add_connection(point_a, point_b)
-                map_graph.add_connection(point_b, point_a)
+                # map_graph.add_connection(point_b, point_a)
                 logged_connections.append((point_a, point_b))
-                logged_connections.append((point_b, point_a))
+                # logged_connections.append((point_b, point_a))
 
     # save map_graph.json
     with open("src/pokemon_agent/utils/ref_data/maps/map_graph.json", "w") as f:
@@ -549,10 +549,10 @@ def main():
     # parse_asm_objects()
 
     create_map_graph()
-    # with open("src/pokemon_agent/utils/ref_data/maps/map_graph.json") as f:
-    #     MAP_GRAPH = json.load(f)
-    # g = MapGraph.from_dict(MAP_GRAPH)
-    # print(g.find_path("OAKS_LAB", "BLUES_HOUSE"))
+    with open("src/pokemon_agent/utils/ref_data/maps/map_graph.json") as f:
+        MAP_GRAPH = json.load(f)
+    g = MapGraph.from_dict(MAP_GRAPH)
+    print(g.find_path("OAKS_LAB", "PEWTER_CITY"))
 
 
 

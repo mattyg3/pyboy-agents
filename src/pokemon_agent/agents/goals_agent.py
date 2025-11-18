@@ -6,8 +6,10 @@ from langchain.tools import StructuredTool
 from map_collision_read import *
 from progress_tracking import ProgressTracker
 from .agent_tools import get_directions
+from path_finder import astar_next_step
 
 
+# llm_model.as_langchain()
 # # ------ Define Tools ------
 # tools = [
 #         StructuredTool.from_function(
@@ -26,6 +28,8 @@ class AgentState(TypedDict):
     # has_preprompt: bool
     tool_call: dict[str, Any]
     directions:str
+    game_state: dict[str, Any]
+    scratch_pad: str
 
 
 def create_goal_agent_state(
@@ -36,6 +40,9 @@ def create_goal_agent_state(
         # has_preprompt=False,
         tool_call=None,
         directions=None,
+        game_state=None,
+        scratch_pad='Previous Move Decisions (most recent is at the bottom):\n',
+        
 
 
 ) -> AgentState:
@@ -47,6 +54,8 @@ def create_goal_agent_state(
         # has_preprompt=has_preprompt,
         tool_call=tool_call,
         directions=directions,
+        game_state=game_state,
+        scratch_pad=scratch_pad,
     )
 
 
@@ -65,14 +74,44 @@ class GoalsAgent:
         map_doorways = get_warp_tiles(map_filename)
         map_npcs = get_npc_coords(map_filename)
 
+        map_id, px, py, direction = get_player_position(self.pyboy)
+        walk_matrix, map_width, map_height, warp_tiles = read_map(self.pyboy)
+
+        start = (px,py)
+        available_connections = []
+        for loc in map_connections:
+            coords = loc["connection_coords"]
+            # connection_label = loc["target_label"]
+            for coord in coords:
+                a_star = astar_next_step(walk_matrix, start, (coord[0], coord[1]))
+                if a_star:
+                    available_connections.append(loc)
+                    break
+                else:
+                    pass
+
+        available_doorways = []
+        for loc in map_doorways:
+            coord = loc["xy_coord"]
+            a_star = astar_next_step(walk_matrix, start, (coord[0], coord[1]))
+            if a_star:
+                available_doorways.append(loc)
+            else:
+                pass
+
+
         curr_game_state = {
             "Longterm Goal": LONGTERM_GOAL,
             "Dialog History": dialog_history,
             "Current Map": map_label,
-            "Map Connections": map_connections,
-            "Map Doorways": map_doorways,
+            "Map Connections": available_connections,
+            "Map Doorways": available_doorways,
             "Map NPCs": map_npcs,
         }
+
+        state["game_state"] = curr_game_state
+
+        
 
         sys_prompt = f"""
         # Role
@@ -80,18 +119,20 @@ class GoalsAgent:
 
         # Task
         Given 'Current Game State', select the next best action. In 'Current Game State' there are lists different types of actions that can be made:
-            - 'Map Connections': Lists all of possible maps connected to the current map
+            - 'Map Connections': Lists all of possible maps connected to the current map. **IF** this is empty, you **cannot** use ['NORTH', 'SOUTH', 'EAST', or 'WEST]
             - 'Map Doorways': Lists all possible doorways in the current map
             - 'Map NPCs': Lists all possible NPCs to interact with in current map
 
         # General Map Connection Information
-        Pallet Town -> Route 1 -> Viridian City -> Route 2 -> Viridian Forest -> Pewter City -> Route 3 -> Mt. Moon -> Route 4 -> Cerulean City
+            - Pallet Town -> Route 1 -> Viridian City -> Route 2 -> Viridian Forest -> Pewter City -> Route 3 -> Mt. Moon -> Route 4 -> Cerulean City
+            - When traveling NORTH, you will likely need to use the labeled SOUTH entrance for the target map
+            - '*_GATE' maps are access points to main maps. Example: 'VIRIDIAN_FOREST_SOUTH_GATE' is the southern entrance to 'VIRIDIAN_FOREST'. To enter 'VIRIDIAN_FOREST', you must fully pass through the 'VIRIDIAN_FOREST_SOUTH_GATE'. To exit the otherside of 'VIRIDIAN_FOREST', you must pass through the other gate 'VIRIDIAN_FOREST_NORTH_GATE'.
 
         # Stategy
-        Consider the 'Longterm Goal' and 'Dialog History' from the 'Current Game State'
+        Consider the 'Longterm Goal' and 'Dialog History' from the 'Current Game State', also consider 'Scratch Pad' for previous moves.
 
         # Current Game State
-        {curr_game_state}
+        {state["game_state"]}
 
         # Tools
             - get_directions(start, end): a function that returns the directions (map connections) from start to end locations. Use this function if you need to navigate between maps.
@@ -106,6 +147,10 @@ class GoalsAgent:
 
         # Output Format
         **ONLY** the next best action formatted exactly like the examples provided. 
+
+
+        # Scratch Pad
+        {state["scratch_pad"]}
         """
         # chat = lms.Chat(sys_prompt)
 
@@ -151,6 +196,12 @@ class GoalsAgent:
         state["messages"].append({"role":"goals", "content": response})
         state["next_best_action"] = response
         state["goals_thoughts"].append({"content": thinking})
+        new_sp = (
+        state["scratch_pad"]
+        + "\n"
+        + response
+    )
+        state["scratch_pad"] = new_sp
 
         return state
     

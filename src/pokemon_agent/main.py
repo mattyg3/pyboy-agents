@@ -23,9 +23,10 @@ ROM_PATH = 'ROMS/pokemon_red.gb'
 SAVE_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_DEV_got_townmap.sav'
 # LOAD_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_prefight.sav'
 # LOAD_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_postfight.sav'
-LOAD_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_postfight_pallettown.sav'
+# LOAD_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_postfight_pallettown.sav'
 # SAVE_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_prefight.sav'
-# LOAD_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_DEV_oak_task.sav'
+LOAD_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_DEV_oak_task.sav'
+# LOAD_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_DEV_got_townmap.sav'
 
 # # ------ LangSmith Set-Up ------
 # import os
@@ -147,7 +148,7 @@ def run(ROM_PATH=ROM_PATH, LOAD_STATE_PATH=LOAD_STATE_PATH, SAVE_STATE_PATH=SAVE
             else:
                 try:
                     # Goal Agent
-                    goal_agent_state = create_goal_agent_state()
+                    # goal_agent_state = create_goal_agent_state()
                     # goal_agent = GoalsAgent(pyboy)
                     # goal_agent.compile_workflow(goal_agent_state)
                     # goal_agent_state = create_goal_agent_state()
@@ -183,13 +184,13 @@ def run(ROM_PATH=ROM_PATH, LOAD_STATE_PATH=LOAD_STATE_PATH, SAVE_STATE_PATH=SAVE
                             cv2.imwrite("src/pokemon_agent/saves/unstuck_agent_frame.png", screen_frame)
                             unstuck_agent_state["screenshot"] = lms.prepare_image("src/pokemon_agent/saves/unstuck_agent_frame.png")
                             # print(unstuck_agent_state["screenshot"])
-                            render_map_png(map_id, (px,px), path_dict["goal_xy"], save_path="src/pokemon_agent/saves/render_map.png")
-                            unstuck_agent_state["map_render"] = lms.prepare_image("src/pokemon_agent/saves/render_map.png")
-                            unstuck_agent_state["map_render"] = None
+                            # render_map_png(map_id, (px,px), path_dict["goal_xy"], save_path="src/pokemon_agent/saves/render_map.png")
+                            # unstuck_agent_state["map_render"] = lms.prepare_image("src/pokemon_agent/saves/render_map.png")
+                            # unstuck_agent_state["map_render"] = None
 
                             if fnmatch.fnmatch(goal_agent_state["next_best_action"], "*last_map*"):
                                 unstuck_agent_state["attempted_goal"] = "exit the building"
-                                unstuck_agent_state["map_render"] = None
+                                # unstuck_agent_state["map_render"] = None
                             else:
                                 unstuck_agent_state["attempted_goal"]=goal_agent_state["next_best_action"]
                             # print(f"SET_PREV_GOAL: {unstuck_agent_state}")
@@ -222,53 +223,23 @@ def run(ROM_PATH=ROM_PATH, LOAD_STATE_PATH=LOAD_STATE_PATH, SAVE_STATE_PATH=SAVE
                             "iter_counter": 0,
                             }
 
-                    # map_id, px, py, direction = get_player_position(pyboy)
-                    # if fnmatch.fnmatch(goal_agent_state["next_best_action"], "*talk*") and goal_xy in [(px + dx, py + dy) for dx in (-2,-1, 0, 1, 2) for dy in (-2,-1, 0, 1, 2)]: #and next to NPC
-                    #     print("PASSED IF STMT")
-                    #     # Goal Agent
-                    #     goal_agent_state = create_goal_agent_state()
-                    #     goal_agent = GoalsAgent(pyboy, preprompt=f'You just completed the previous goal: {goal_agent_state["next_best_action"]}!\nDecide the Next Best Action based on the Longterm Goal.')
-                    #     goal_agent.compile_workflow(goal_agent_state)
-                    #     # goal_agent_state = create_goal_agent_state()
-                    #     config = RunnableConfig(recursion_limit=500) #max number of graph nodes to process
-                    #     goal_agent_state = goal_agent.app.invoke(goal_agent_state, config)
-                    #     # print("GOALS_AGENT_FLAG")
-                    #     print(f"GOAL AGENT OUTPUT: {goal_agent_state["next_best_action"]}")
-                    #     last_move, goal_xy = pathing_agent.go_to_destination_xy(goal_agent_state["next_best_action"])
-
-
                 except Exception as e: 
                     print(e)
                     pass
                 
 
-            # elif frame==0:
-            #     # CUSTOM_DEST="Enter 'REDS_HOUSE_1F'" 
-            #     # CUSTOM_DEST="Enter 'BLUES_HOUSE'" 
-            #     # CUSTOM_DEST="Move to 'NORTH'" #leave pallettown to route1
-            #     # pathing_agent.go_to_destination_xy(CUSTOM_DEST)
-                
-            #     # CUSTOM_DEST="Move to 'NORTH'" #go through route1
-            #     # pathing_agent.go_to_destination_xy(CUSTOM_DEST)
-
-            #     CUSTOM_DEST="Enter  'OAKS_LAB'" 
-            #     pathing_agent.go_to_destination_xy(CUSTOM_DEST)
-
-            #     CUSTOM_DEST="Talk to  'OAK'" 
-            #     pathing_agent.go_to_destination_xy(CUSTOM_DEST)
-            #     # percept_state = perception.get_game_state()
-            
-            # else:
-            #     pass
-
 
             
-            if frame > 30:
+            if frame > 50:
                 break
             frame += 1
             time.sleep(0.001)
     finally:
         # print(f"Raw Dialog History: {perception.dialog_history}")
+        with open("src/pokemon_agent/saves/agent_states/goals_agent_state.json", "w", encoding='utf-8') as f:
+            json.dump(goal_agent_state, f, indent=4, ensure_ascii=False)
+
+
         with open(SAVE_STATE_PATH, "wb") as f:
             pyboy.save_state(f)
         pyboy.stop()
