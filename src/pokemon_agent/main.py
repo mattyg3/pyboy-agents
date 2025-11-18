@@ -28,14 +28,14 @@ SAVE_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_DEV_got_townma
 LOAD_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_DEV_oak_task.sav'
 # LOAD_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_DEV_got_townmap.sav'
 
-# # ------ LangSmith Set-Up ------
-# import os
-# import keyring
-# SERVICE = "langsmith"
-# USERNAME = "api_key"
-# os.environ["LANGSMITH_API_KEY"] = keyring.get_password(SERVICE, USERNAME)
-# os.environ["LANGSMITH_PROJECT"] = "pokemon_red_agent"
-# os.environ["LANGSMITH_TRACING"] = "true"
+# ------ LangSmith Set-Up ------
+import os
+import keyring
+SERVICE = "langsmith"
+USERNAME = "api_key"
+os.environ["LANGSMITH_API_KEY"] = keyring.get_password(SERVICE, USERNAME)
+os.environ["LANGSMITH_PROJECT"] = "pokemon_red_agent"
+os.environ["LANGSMITH_TRACING"] = "true"
 
 def run(ROM_PATH=ROM_PATH, LOAD_STATE_PATH=LOAD_STATE_PATH, SAVE_STATE_PATH=SAVE_STATE_PATH):
     # Use headless for fastest "null", or use "SDL2" if you want a window or "OpenGL"
@@ -230,7 +230,7 @@ def run(ROM_PATH=ROM_PATH, LOAD_STATE_PATH=LOAD_STATE_PATH, SAVE_STATE_PATH=SAVE
 
 
             
-            if frame > 50:
+            if frame > 25:
                 break
             frame += 1
             time.sleep(0.001)

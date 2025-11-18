@@ -1,5 +1,5 @@
 from map_collision_read import *
-from map_render_from_rom import render_map_png
+# from src.pokemon_agent.utils.map_render_from_rom import render_map_png
 from pyboy import PyBoy
 from pathlib import Path
 import heapq
