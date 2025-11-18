@@ -9,6 +9,7 @@ langgraph
 openai
 ollama
 langchain_ollama
+langchain-openai
 keyring
 tqdm
 lmstudio
