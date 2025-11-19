@@ -279,8 +279,8 @@ with OUTPUT_JSON.open( "w", encoding="utf-8") as f:
 # ====== add map connection coords to map_headers.json ======
 import json
 from pathlib import Path
-from path_finder import *
-from utils.utility_funcs import find_map_by_id
+from pokemon_agent.path_finder import *
+from pokemon_agent.utils.utility_funcs import find_map_by_id
 from tqdm import tqdm
 
 
@@ -392,7 +392,7 @@ def add_connection_xy_to_map_headers():
 
 # ====== create map_graph.json ======
 from collections import deque, defaultdict
-from utils.utility_funcs import camel_to_snake
+from pokemon_agent.utils.utility_funcs import camel_to_snake
 
 with open('src/pokemon_agent/utils/ref_data/maps/map_headers.json', 'r') as f:
         MAP_HEADERS = json.load(f)

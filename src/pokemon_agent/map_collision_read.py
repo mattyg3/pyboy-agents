@@ -3,7 +3,7 @@ from pathlib import Path
 # from PIL import Image, ImageDraw
 from pyboy import PyBoy
 import json
-from utils.utility_funcs import find_map_by_id
+from pokemon_agent.utils.utility_funcs import find_map_by_id
 
 
 # =========================================================

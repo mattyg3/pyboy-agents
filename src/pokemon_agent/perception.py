@@ -4,9 +4,9 @@ import cv2
 import pytesseract
 pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 import json
-from utils.utility_funcs import type_multiplier
-from OCR import OCR_Processing, BattleStateTracker, OverworldStateTracker
-from utils.utility_funcs import TextCleaner
+from pokemon_agent.utils.utility_funcs import type_multiplier
+from pokemon_agent.OCR import OCR_Processing, BattleStateTracker, OverworldStateTracker
+from pokemon_agent.utils.utility_funcs import TextCleaner
 
 # Import Reference Data
 with open('src/pokemon_agent/utils/ref_data/POKEDEX.json', 'r') as f:

@@ -1,7 +1,7 @@
 from .init_llm import llm_model
 # import lmstudio as lms
-from perception import PokemonPerceptionAgent, BattleFlag
-from skills import SkillExecutor
+from pokemon_agent.perception import PokemonPerceptionAgent, BattleFlag
+from pokemon_agent.skills import SkillExecutor
 from typing import Any, TypedDict
 from langgraph.graph import StateGraph, END
 

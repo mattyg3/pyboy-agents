@@ -1,5 +1,5 @@
-from path_finder import *
-from skills import SkillExecutor
+from pokemon_agent.path_finder import *
+from pokemon_agent.skills import SkillExecutor
 import fnmatch
 import re
 import numpy as np
