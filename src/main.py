@@ -1,17 +1,17 @@
 from pyboy import PyBoy#, WindowEvent
-from perception import DialogPerception, DialogFlag #PokemonPerceptionAgent, 
+from pokemon_agent.perception import DialogPerception, DialogFlag #PokemonPerceptionAgent, 
 # from planner import SimplePlanner
-from skills import SkillExecutor
+from pokemon_agent.skills import SkillExecutor
 import time
 # from typing import Any, TypedDict, Annotated
 # from langgraph.graph import StateGraph, END
 from langchain_core.runnables.config import RunnableConfig
 # from agents.pathing_agent import *
-from path_finder import *
-from agents.battle_agent import  create_battle_agent_state, BattleAgent
-from agents.pathing_agent import PathingAgent
-from agents.goals_agent import create_goal_agent_state, GoalsAgent
-from agents.unstuck_agent import create_unstuck_agent_state, UnstuckAgent
+from pokemon_agent.path_finder import *
+from pokemon_agent.agents.battle_agent import  create_battle_agent_state, BattleAgent
+from pokemon_agent.agents.pathing_agent import PathingAgent
+from pokemon_agent.agents.goals_agent import create_goal_agent_state, GoalsAgent
+from pokemon_agent.agents.unstuck_agent import create_unstuck_agent_state, UnstuckAgent
 import fnmatch
 import cv2
 import lmstudio as lms
@@ -28,14 +28,14 @@ SAVE_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_DEV_got_townma
 LOAD_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_DEV_oak_task.sav'
 # LOAD_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_DEV_got_townmap.sav'
 
-# ------ LangSmith Set-Up ------
-import os
-import keyring
-SERVICE = "langsmith"
-USERNAME = "api_key"
-os.environ["LANGSMITH_API_KEY"] = keyring.get_password(SERVICE, USERNAME)
-os.environ["LANGSMITH_PROJECT"] = "pokemon_red_agent"
-os.environ["LANGSMITH_TRACING"] = "true"
+# # ------ LangSmith Set-Up ------
+# import os
+# import keyring
+# SERVICE = "langsmith"
+# USERNAME = "api_key"
+# os.environ["LANGSMITH_API_KEY"] = keyring.get_password(SERVICE, USERNAME)
+# os.environ["LANGSMITH_PROJECT"] = "pokemon_red_agent"
+# os.environ["LANGSMITH_TRACING"] = "true"
 
 def run(ROM_PATH=ROM_PATH, LOAD_STATE_PATH=LOAD_STATE_PATH, SAVE_STATE_PATH=SAVE_STATE_PATH):
     # Use headless for fastest "null", or use "SDL2" if you want a window or "OpenGL"

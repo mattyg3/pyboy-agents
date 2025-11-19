@@ -78,7 +78,7 @@ class ProgressTracker:
         
         elif current_progress["fought_brock"] == 0 and fnmatch.fnmatch(self.dialog_log, '*GOT A TOWN MAP*'):
             # print(current_progress["town_map"])
-            next_game_checkpoint = "Travel to PEWTER_CITY, Train and Catch Pokemon Along the Way Until You Have a Pokemon at Level 15, Then Defeat Brock at PEWTER_GYM"
+            next_game_checkpoint = "Travel to PEWTER_CITY and Defeat Brock at PEWTER_GYM"
         elif current_progress["fought_brock"] == 0:
             next_game_checkpoint = "Retrieve the Town Map from NPC in BLUES_HOUSE"
         

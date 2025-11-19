@@ -12,7 +12,7 @@ from langchain.schema import HumanMessage, SystemMessage
 import json
 # from collections import deque, defaultdict
 # from utils.utility_funcs import camel_to_snake
-from utils.process_map_data import *
+from pokemon_agent.utils.process_map_data import *
 
     
 def get_directions(start: str, end: str):
@@ -208,28 +208,46 @@ graph.add_conditional_edges("llm", router,
                                 "end":END
                                 })
 
-app = graph.compile()
+tool_app = graph.compile()
+
+
+def run(tool_app, tool_call):
+    state = {
+        "messages": [
+            HumanMessage(content=tool_call)
+        ]
+    }
+    for event in tool_app.stream(state):
+        node, update = next(iter(event.items()))
+        # msg = update["messages"][-1]
+        msg = update["messages"][-2]
+    return msg.content.split('Observation: ')[1]
 
 
 # ---------------------------
 # 9. Run Example
 # ---------------------------
 
+
+
 if __name__ == "__main__":
-    state = {
-        "messages": [
-            HumanMessage(content="Get from Pallet Town to Pewter City")
-        ]
-    }
+    # state = {
+    #     "messages": [
+    #         HumanMessage(content="Get from Pallet Town to Pewter City")
+    #     ]
+    # }
 
-    print("\nRunning pure ReAct agent...\n")
+    # print("\nRunning pure ReAct agent...\n")
 
-    for event in app.stream(state):
-        node, update = next(iter(event.items()))
-        msg = update["messages"][-1]
-        print(f"[{node.upper()}] → {msg.content}")
+    # for event in tool_app.stream(state):
+    #     node, update = next(iter(event.items()))
+    #     msg = update["messages"][-1]
+    #     print(f"[{node.upper()}] → {msg.content}")
 
-    print("\nDone.")
+    # print("\nDone.")
+
+    messages = run(tool_app, "Get from Pallet Town to Pewter City")
+    print(messages)
 
 
 

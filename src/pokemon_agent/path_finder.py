@@ -1,11 +1,11 @@
-from map_collision_read import *
+from pokemon_agent.map_collision_read import *
 # from src.pokemon_agent.utils.map_render_from_rom import render_map_png
 from pyboy import PyBoy
 from pathlib import Path
 import heapq
-from skills import SkillExecutor
-from utils.utility_funcs import find_map_by_id
-from perception import BattleFlag, DialogFlag
+from pokemon_agent.skills import SkillExecutor
+from pokemon_agent.utils.utility_funcs import find_map_by_id
+from pokemon_agent.perception import BattleFlag, DialogFlag
 
 # ------ Pathfinding Algo ------
 def astar(grid, start, goal):

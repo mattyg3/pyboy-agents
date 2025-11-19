@@ -1,4 +1,4 @@
-# from .init_llm import lms, llm_model
+from .init_llm import lms, llm_model
 from typing import Any, TypedDict
 from langgraph.graph import StateGraph, END
 from langchain_core.messages import AIMessage
@@ -8,27 +8,28 @@ from langgraph.prebuilt import ToolNode
 from langchain.tools import tool
 from langchain.schema import SystemMessage, HumanMessage
 
-from map_collision_read import *
-from progress_tracking import ProgressTracker
-from agent_tools import get_directions
-from path_finder import astar_next_step
+from pokemon_agent.map_collision_read import *
+from pokemon_agent.progress_tracking import ProgressTracker
+from pokemon_agent.agents.tools_agent import get_directions
+from pokemon_agent.path_finder import astar_next_step
+# from pokemon_agent.agents.tools_agent import tool_app, run, TOOLS
 
 
-llm = ChatOpenAI(
-    api_key="not-needed",
-    base_url="http://localhost:1234/v1",
-    model="qwen/qwen3-4b-thinking-2507",   # or your loaded model
-    temperature=0,
-)
+# llm = ChatOpenAI(
+#     api_key="not-needed",
+#     base_url="http://localhost:1234/v1",
+#     model="qwen/qwen3-4b-thinking-2507",   # or your loaded model
+#     temperature=0,
+# )
 
-# ------ Define Tools ------
-TOOLS = [
-        StructuredTool.from_function(
-            func=get_directions,
-            name="get_directions",
-            description="Search a graph object to get directions from point_a to point_b."
-        )]
-llm = llm.bind_tools(TOOLS)
+# # ------ Define Tools ------
+# TOOLS = [
+#         StructuredTool.from_function(
+#             func=get_directions,
+#             name="get_directions",
+#             description="Search a graph object to get directions from point_a to point_b."
+#         )]
+# llm = llm.bind_tools(TOOLS)
 
 
 # ------ Define State ------
@@ -38,8 +39,9 @@ class AgentState(TypedDict):
     next_best_action: str
     dialog_history: str
     # has_preprompt: bool
-    tool_call: dict[str, Any]
-    directions:str
+    # tool_call: dict[str, Any]
+    # tool_call:str
+    # directions:str
     game_state: dict[str, Any]
     scratch_pad: str
 
@@ -50,10 +52,10 @@ def create_goal_agent_state(
         next_best_action=None,
         dialog_history=None,
         # has_preprompt=False,
-        tool_call=None,
-        directions=None,
+        # tool_call=None,
+        # directions=None,
         game_state=None,
-        scratch_pad='Previous Move Decisions (most recent at the bottom):\n',
+        scratch_pad='Previous Move Decisions (Oldest to Most Recent):\n',
         
 
 
@@ -64,8 +66,8 @@ def create_goal_agent_state(
         next_best_action=next_best_action,
         dialog_history=dialog_history,
         # has_preprompt=has_preprompt,
-        tool_call=tool_call,
-        directions=directions,
+        # tool_call=tool_call,
+        # directions=directions,
         game_state=game_state,
         scratch_pad=scratch_pad,
     )
@@ -136,15 +138,12 @@ class GoalsAgent:
             - 'Map NPCs': Lists all possible NPCs to interact with in current map
 
         # General Map Connection Information
-           
+            - Use get_directions tool_call if you need to check directions from point_a to point_b
             - When traveling NORTH, you will likely need to use the labeled SOUTH entrance for the target map
             - '*_GATE' maps are access points to main maps. Example: 'VIRIDIAN_FOREST_SOUTH_GATE' is the southern entrance to 'VIRIDIAN_FOREST'. To enter 'VIRIDIAN_FOREST', you must fully pass through the 'VIRIDIAN_FOREST_SOUTH_GATE'. To exit the otherside of 'VIRIDIAN_FOREST', you must pass through the other gate 'VIRIDIAN_FOREST_NORTH_GATE'.
 
         # Stategy
         Consider the 'Longterm Goal' and 'Dialog History' from the 'Current Game State', also consider 'Scratch Pad' for previous moves. Use available tool to determine which map connections and doorways to use.
-
-        # Tool
-        get_directions: provide clear, valid map names when calling.
 
         # Current Game State
         {state["game_state"]}
@@ -161,7 +160,8 @@ class GoalsAgent:
         **MUST** select an action from the provided options in 'Current Game State'
                 
         # Output Format
-        **ONLY** the next best action formatted exactly like the examples provided. 
+        **IF** calling a tool, output should be exactly: 'TOOL_CALL: get_directions from POINT_A to POINT_B'
+        **ELSE** the next best action formatted exactly like the 'Example Responses' provided. 
 
 
         # Scratch Pad
@@ -181,9 +181,9 @@ class GoalsAgent:
 
 
 
-        response = llm.invoke(sys_prompt)
-        result = response.model_dump()
-        result_content = result["content"]
+        # response = llm.invoke(sys_prompt)
+        # result = response.model_dump()
+        # result_content = result["content"]
 
         # state["messages"].append({"role":"researcher", "content": f'Research: {response.model_dump()}'})
         # if not isinstance(response, AIMessage) or not getattr(response, "tool_calls", None):
@@ -191,8 +191,8 @@ class GoalsAgent:
         # else:
         #     state["research_queries"].append(str(response.tool_calls[0].get("args").get("query")))
         # state["tool_call"] = response
-        # result = llm_model.respond(sys_prompt)
-        # result_content = result.content
+        result = llm_model.respond(sys_prompt)
+        result_content = result.content
 
 
 
@@ -231,8 +231,14 @@ class GoalsAgent:
         else:
             response = result_content.strip()
         # print(f"RESPONSE: {response}")
-        state["messages"].append({"role":"goals", "content": response})
+        # if 'TOOL_CALL:' in response.upper():
+        #     state["next_best_action"] = 'TOOL_CALL'
+        #     state["tool_call"] = response
+        # else:
+        #     state["next_best_action"] = response
+        #     state["tool_call"] = None
         state["next_best_action"] = response
+        state["messages"].append({"role":"goals", "content": response})
         state["goals_thoughts"].append({"content": thinking})
         new_sp = (
         state["scratch_pad"]
@@ -248,58 +254,62 @@ class GoalsAgent:
         # ------ Define Nodes ------
         def goals_node(state: AgentState):
             return self.goals_agent(state)
-        def run_tools(state: AgentState):
-            """
-            Custom replacement for ToolNode:
-            - Look for tool calls in the last AIMessage
-            - Execute them and append ToolMessage outputs
-            """
-            state["directions"] = None
-            tool_call = state["tool_call"]
-            # last_message = state["messages"][-1]
-            if not isinstance(tool_call, AIMessage) or not getattr(tool_call, "tool_calls", None):
-                # No tool calls, nothing to do
-                return state  
+        # def run_tools(state: AgentState):
+        #     """
+        #     Custom replacement for ToolNode:
+        #     - Look for tool calls in the last AIMessage
+        #     - Execute them and append ToolMessage outputs
+        #     """
+        #     state["directions"] = None
+        #     tool_call = state["tool_call"]
+        #     # last_message = state["messages"][-1]
+        #     if not isinstance(tool_call, AIMessage) or not getattr(tool_call, "tool_calls", None):
+        #         # No tool calls, nothing to do
+        #         return state  
 
-            for call in tool_call.tool_calls:
-                name = call["name"]
-                args = call.get("args", {})
-                for tool in TOOLS:
-                    if name in tool.name:
-                        result = tool.invoke(args)
+        #     for call in tool_call.tool_calls:
+        #         name = call["name"]
+        #         args = call.get("args", {})
+        #         for tool in TOOLS:
+        #             if name in tool.name:
+        #                 result = tool.invoke(args)
 
-                        # Append a ToolMessage with the result
-                        # state["messages"].append(
-                        #     ToolMessage(name=name, content=result, tool_call_id=call["id"])
-                        # )
-                        state["messages"].append({"role":"tool_call", "content": f'Tool {name}: {result}'})
-                        state["directions"] = result
+        #                 # Append a ToolMessage with the result
+        #                 # state["messages"].append(
+        #                 #     ToolMessage(name=name, content=result, tool_call_id=call["id"])
+        #                 # )
+        #                 state["messages"].append({"role":"tool_call", "content": f'Tool {name}: {result}'})
+        #                 state["directions"] = result
 
-            return state
+        #     return state
+        # def run_tools_agent(state: AgentState):
+        #     state["directions"] = run(tool_app, state["tool_call"])
+        #     return state
         
-        def tool_routing(state: AgentState) -> str:
-            # last_message = state["messages"][-1]
-            tool_call = state["tool_call"]
-            #Max number of search iterations
-            if state["directions"]:
-                return "end"
-            try:
-                if tool_call.tool_calls:
-                    return "tools"
-                else:
-                    return "end"
-            except:
-                return "end"
+        # def tool_routing(state: AgentState) -> str:
+        #     # last_message = state["messages"][-1]
+        #     tool_call = state["tool_call"]
+        #     #Max number of search iterations
+        #     # if state["directions"]:
+        #     #     return "end"
+        #     try:
+        #         if tool_call:
+        #             return "tools"
+        #         else:
+        #             return "end"
+        #     except:
+        #         return "end"
         # ------ Define Workflow ------
         workflow = StateGraph(state_schema=AgentState)
-        workflow.add_node("start", goals_node)
-        workflow.add_node("tools", run_tools)
-        workflow.set_entry_point("start")
-        # workflow.add_edge("start", END)
-        workflow.add_conditional_edges("start", tool_routing, 
-                               {
-                                   "tools":"tools", 
-                                   "end":END
-                                   })
+        workflow.add_node("llm", goals_node)
+        # workflow.add_node("tools", run_tools_agent)
+        workflow.set_entry_point("llm")
+        workflow.add_edge("llm", END)
+        # workflow.add_conditional_edges("llm", tool_routing, 
+        #                        {
+        #                            "tools":"tools", 
+        #                            "end":END
+        #                            })
+        # workflow.add_edge("tools", "llm")
         # ------ Compile Workflow ------
         self.app = workflow.compile()

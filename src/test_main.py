@@ -10,13 +10,17 @@
 
 
 
-from pyboy import PyBoy
-import cv2
-ROM_PATH = 'ROMS/pokemon_red.gb'
-LOAD_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_midfight.sav'
-from agents.goals_agent import *
+# from pyboy import PyBoy
+# import cv2
+# ROM_PATH = 'ROMS/pokemon_red.gb'
+# LOAD_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_midfight.sav'
+from pokemon_agent.agents.goals_agent import *
+from pokemon_agent.agents.tools_agent import tool_app, run
 def main():
-    print("NONE")
+    # print("NONE")
+    messages = run(tool_app, "Get from Pallet Town to Pewter City")
+    print(messages)
+    
     
     
     # # Use headless for fastest "null", or use "SDL2" if you want a window or "OpenGL"
