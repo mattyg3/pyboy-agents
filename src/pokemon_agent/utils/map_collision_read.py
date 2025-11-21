@@ -3,6 +3,7 @@ from pathlib import Path
 # from PIL import Image, ImageDraw
 from pyboy import PyBoy
 import json
+# from utils.utility_funcs import find_map_by_id
 from pokemon_agent.utils.utility_funcs import find_map_by_id
 
 
@@ -302,8 +303,8 @@ def read_map(pyboy):
     height = find_map_by_id(MAP_HEADERS, map_id).get("map_height")
     map_env = find_map_by_id(MAP_HEADERS, map_id).get("environment")
     map_filename = find_map_by_id(MAP_HEADERS, map_id).get("file")
-    map_path = Path("src/pokemon_agent/utils/ref_data/maps/map_files") / f"{map_filename.replace(".asm",".blk")}" #/PalletTown.blk
-    blockset_path = Path("src/pokemon_agent/utils/ref_data/maps/blocksets") / f"{map_env.lower()}.bst" #/overworld.bst
+    map_path = Path("src/pokemon_agent/maps/map_files") / f"{map_filename.replace(".asm",".blk")}" #/PalletTown.blk
+    blockset_path = Path("src/pokemon_agent/maps/blocksets") / f"{map_env.lower()}.bst" #/overworld.bst
     WALKABLE_TILE_IDS = COLLISION.get(f"{map_env.replace("_","").upper()}_COLL")
     # print(f'WIDTH: {width}, HEIGHT: {height}, ENVR: {map_env}')
 
@@ -324,8 +325,8 @@ def check_tile_map(map_id):
     height = find_map_by_id(MAP_HEADERS, map_id).get("map_height")
     map_env = find_map_by_id(MAP_HEADERS, map_id).get("environment")
     map_filename = find_map_by_id(MAP_HEADERS, map_id).get("file")
-    map_path = Path("src/pokemon_agent/utils/ref_data/maps/map_files") / f"{map_filename.replace(".asm",".blk")}" #/PalletTown.blk
-    blockset_path = Path("src/pokemon_agent/utils/ref_data/maps/blocksets") / f"{map_env.lower()}.bst" #/overworld.bst
+    map_path = Path("src/pokemon_agent/maps/map_files") / f"{map_filename.replace(".asm",".blk")}" #/PalletTown.blk
+    blockset_path = Path("src/pokemon_agent/maps/blocksets") / f"{map_env.lower()}.bst" #/overworld.bst
 
     # --- Load map graphics ---
     blocks = load_blockset(blockset_path)
@@ -345,13 +346,13 @@ def check_tile_map(map_id):
 # =========================================================
 # 6. --- Main: render + overlay player ---
 # =========================================================
-with open('src/pokemon_agent/utils/ref_data/maps/map_headers.json', 'r') as f:
+with open('src/pokemon_agent/maps/map_headers.json', 'r') as f:
     MAP_HEADERS = json.load(f)
 
-with open('src/pokemon_agent/utils/ref_data/maps/collision_tiles.json', 'r') as f:
+with open('src/pokemon_agent/maps/collision_tiles.json', 'r') as f:
     COLLISION = json.load(f)
 
-with open('src/pokemon_agent/utils/ref_data/maps/map_objects.json', 'r') as f:
+with open('src/pokemon_agent/maps/map_objects.json', 'r') as f:
     MAP_OBJECTS = json.load(f)
 
 def main():
@@ -383,7 +384,8 @@ def main():
     # print(get_npc_coords(map_filename))
     # # print(get_map_signs(map_filename))
 
-    check_tile_map(map_id=50)
+    check_tile_map(map_id=39)
+
 
 
 if __name__ == "__main__":

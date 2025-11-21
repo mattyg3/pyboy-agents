@@ -10318,18 +10318,7 @@
                 "dest_map": "ROUTE_2_TRADE_HOUSE",
                 "warp_id": 1
             },
-            {
-                "x": 16,
-                "y": 35,
-                "dest_map": "ROUTE_2_GATE",
-                "warp_id": 2
-            },
-            {
-                "x": 15,
-                "y": 39,
-                "dest_map": "ROUTE_2_GATE",
-                "warp_id": 3
-            },
+
             {
                 "x": 3,
                 "y": 43,
@@ -17920,7 +17909,7 @@
         "border_block": "$a",
         "warp_events": [
             {
-                "x": 4,
+                "x": 6,
                 "y": 0,
                 "dest_map": "VIRIDIAN_FOREST",
                 "warp_id": 4

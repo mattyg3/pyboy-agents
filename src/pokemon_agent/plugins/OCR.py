@@ -13,7 +13,7 @@ REGIONS = {
     "dialog":  (104, 144, 2, 160),
     "menu":    (90, 144, 35, 160),
 }
-def load_templates_pkl(filename="src/pokemon_agent/utils/ref_data/font_templates.pkl"):
+def load_templates_pkl(filename="src/pokemon_agent/data/font_templates.pkl"):
     with open(filename, "rb") as f:
         templates = pickle.load(f)
     print(f"✅ Loaded {len(templates)} templates from {filename}")

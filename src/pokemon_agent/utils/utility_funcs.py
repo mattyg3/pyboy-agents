@@ -42,7 +42,7 @@ from functools import reduce
 from operator import mul
 import json
 
-with open("src/pokemon_agent/utils/ref_data/type_chart.json") as f:
+with open("src/pokemon_agent/data/type_chart.json") as f:
     TYPE_CHART = json.load(f)
 
 def type_multiplier(attacking_type, defending_types, attacker_types=None):

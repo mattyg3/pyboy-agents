@@ -15,29 +15,42 @@ PyBoy Agents combines several AI techniques to create an autonomous Pokémon tra
 
 ## 🏗️ Architecture
 
-The system follows a modular agent architecture with LangGraph orchestration:
+The system follows a modular multi-agent architecture with LangGraph orchestration:
 
 ```
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   Perception    │───▶│  LLM Agents     │───▶│  Pathfinding    │───▶│  Skill Executor │
-│     Agent       │    │  (LangGraph)    │    │  (A* Algorithm) │    │                 │
-└─────────────────┘    └─────────────────┘    └─────────────────┘    └─────────────────┘
-         │                       │                       │                       │
-         ▼                       ▼                       ▼                       ▼
-    Game State              Action Plan              Navigation Path        Button Inputs
-    (Memory + OCR)          (Structured LLM)         (Coordinate Seq)       (PyBoy Events)
+┌─────────────────┐    ┌─────────────────────────────────────────────────────────┐
+│   Perception     │───▶│              Multi-Agent System (LangGraph)              │
+│   (Memory+OCR)   │    │  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐ │
+└─────────────────┘    │  │  Goals   │  │  Battle  │  │ Pathing │  │ Unstuck  │ │
+         │              │  │  Agent   │  │  Agent   │  │  Agent   │  │  Agent   │ │
+         ▼              │  └──────────┘  └──────────┘  └──────────┘  └──────────┘ │
+    Game State          └─────────────────────────────────────────────────────────┘
+    (Memory + OCR)                    │                       │
+                                       ▼                       ▼
+                              ┌─────────────────┐    ┌─────────────────┐
+                              │  Pathfinding    │───▶│  Skill Executor │
+                              │  (A* Algorithm) │    │                 │
+                              └─────────────────┘    └─────────────────┘
+                                       │                       │
+                                       ▼                       ▼
+                              Navigation Path        Button Inputs
+                              (Coordinate Seq)       (PyBoy Events)
 ```
 
 ### Core Components
 
-- **`perception.py`**: Extracts game state through screen capture (OCR) and RAM reading
-- **`agents/pathing_agent.py`**: LLM-powered agent that determines navigation destinations using structured outputs
-- **`agents/init_llm.py`**: LLM initialization (supports Ollama and OpenAI)
-- **`path_finder.py`**: A* pathfinding algorithm implementation for optimal navigation
-- **`map_collision_read.py`**: Reads map data from ROM, generates walkability matrices, and detects warp tiles
-- **`planner.py`**: Rule-based planning system with pre-defined action macros
-- **`skills.py`**: Executes plans by converting them to PyBoy button inputs
-- **`run_emulator.py`**: Main game loop orchestrating perception, LLM agents, pathfinding, and execution
+- **`plugins/perception.py`**: Extracts game state through screen capture (OCR) and RAM reading
+- **`agents/goals_agent.py`**: LLM-powered agent that determines high-level objectives and next actions
+- **`agents/battle_agent.py`**: LLM-powered agent for battle decision making
+- **`agents/pathing_agent.py`**: Executes navigation commands (enter buildings, move between maps, talk to NPCs)
+- **`agents/unstuck_agent.py`**: Vision-based agent that handles stuck situations using screenshot analysis
+- **`agents/init_llm.py`**: LLM initialization (currently uses LM Studio, supports Ollama and OpenAI)
+- **`plugins/path_finder.py`**: A* pathfinding algorithm implementation for optimal navigation
+- **`utils/map_collision_read.py`**: Reads map data from ROM, generates walkability matrices, and detects warp tiles
+- **`plugins/skills.py`**: Executes plans by converting them to PyBoy button inputs
+- **`plugins/progress_tracking.py`**: Tracks game progress through RAM flags and dialog history
+- **`plugins/OCR.py`**: OCR processing with template matching for text recognition
+- **`src/main.py`**: Main game loop orchestrating perception, LLM agents, pathfinding, and execution
 
 ## 🚀 Features
 
@@ -47,10 +60,14 @@ The system follows a modular agent architecture with LangGraph orchestration:
 - **State Tracking**: Maintains awareness of current scene, battle status, map ID, and player coordinates
 
 ### LLM-Powered Strategic Planning
-- **Structured Outputs**: Uses Pydantic models for type-safe LLM responses
-- **Pathing Agent**: LLM determines optimal destinations based on current map state and objectives
+- **Multi-Agent System**: Four specialized agents working together:
+  - **Goals Agent**: Determines high-level objectives and next best actions based on game progress
+  - **Battle Agent**: Makes tactical battle decisions (move selection, running)
+  - **Pathing Agent**: Executes navigation tasks (entering buildings, moving between maps, talking to NPCs)
+  - **Unstuck Agent**: Vision-based recovery agent that analyzes screenshots when the agent gets stuck
 - **LangGraph Integration**: Multi-agent orchestration workflow for complex decision making
-- **LangSmith Tracing**: Full observability and debugging of agent workflows
+- **Progress Tracking**: Monitors game progress through RAM flags and dialog history
+- **Dialog Logging**: Captures and processes in-game dialogue for context
 
 ### Navigation & Pathfinding
 - **A* Pathfinding**: Optimal path calculation through walkability matrices
@@ -69,7 +86,7 @@ The system follows a modular agent architecture with LangGraph orchestration:
 - Python 3.8+
 - Tesseract OCR installed and configured (for OCR fallback)
 - Pokémon Red ROM file
-- Ollama installed (for local LLM) OR OpenAI API key (for cloud LLM)
+- LM Studio installed and running (for local LLM) OR Ollama/OpenAI configured
 - Windows/Linux/macOS
 
 ## 🛠️ Installation
@@ -87,27 +104,30 @@ The system follows a modular agent architecture with LangGraph orchestration:
 
 3. **Configure Tesseract OCR** (optional, for OCR fallback)
    - Download and install [Tesseract OCR](https://github.com/tesseract-ocr/tesseract)
-   - Update the path in `src/pokemon_agent/perception.py`:
+   - Update the path in `src/pokemon_agent/plugins/perception.py`:
      ```python
      pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
      ```
 
 4. **Set up LLM** (choose one):
-   - **Ollama (Recommended for local execution)**:
+   - **LM Studio (Currently used)**:
+     ```bash
+     # Install LM Studio from https://lmstudio.ai
+     # Download and load a model (e.g., qwen/qwen3-4b-thinking-2507)
+     # Ensure LM Studio server is running
+     ```
+   - **Ollama** (alternative):
      ```bash
      # Install Ollama from https://ollama.ai
      ollama pull gemma3:4b  # or your preferred model
+     # Uncomment Ollama code in src/pokemon_agent/agents/init_llm.py
      ```
-   - **OpenAI**:
+   - **OpenAI** (alternative):
      ```bash
      # Store API key securely using keyring
      python -c "import keyring; keyring.set_password('openai', 'api_key', 'your-api-key')"
+     # Uncomment OpenAI code in src/pokemon_agent/agents/init_llm.py
      ```
-
-5. **Configure LangSmith** (optional, for tracing):
-   ```bash
-   python -c "import keyring; keyring.set_password('langsmith', 'api_key', 'your-langsmith-api-key')"
-   ```
 
 6. **Add Pokémon Red ROM**
    - Place `pokemon_red.gb` in the `ROMs/` directory
@@ -119,17 +139,17 @@ The system follows a modular agent architecture with LangGraph orchestration:
 Run the main emulator loop:
 
 ```bash
-python src/pokemon_agent/run_emulator.py
+python src/main.py
 ```
 
 Or import and run programmatically:
 
 ```python
-from pokemon_agent.run_emulator import run
+from src.main import run
 
 ROM_PATH = 'ROMs/pokemon_red.gb'
-LOAD_STATE_PATH = 'src/pokemon_agent/saves/pre-save.sav'
-SAVE_STATE_PATH = 'src/pokemon_agent/saves/saved_gamestate.sav'
+LOAD_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_DEV_oak_task.sav'
+SAVE_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_DEV.sav'
 
 run(ROM_PATH, LOAD_STATE_PATH, SAVE_STATE_PATH)
 ```
@@ -137,25 +157,33 @@ run(ROM_PATH, LOAD_STATE_PATH, SAVE_STATE_PATH)
 The agent will:
 1. Load a pre-configured save state
 2. Read current map and player position
-3. Use LLM to determine navigation goals
-4. Calculate optimal path using A* algorithm
-5. Navigate to destination autonomously
+3. Use Goals Agent (LLM) to determine next best action
+4. Use Pathing Agent to execute navigation (enter buildings, move between maps, talk to NPCs)
+5. Calculate optimal path using A* algorithm
+6. Navigate to destination autonomously
+7. Handle battles with Battle Agent when encountered
+8. Use Unstuck Agent if the agent gets stuck
 
 ### Configuration
 
-Key parameters in `src/pokemon_agent/run_emulator.py`:
+Key parameters in `src/main.py`:
 
 ```python
 ROM_PATH = 'ROMs/pokemon_red.gb'
-LOAD_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_postfight_pallettown.sav'
-SAVE_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_DEV.sav'
+LOAD_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_DEV_oak_task.sav'
+SAVE_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_DEV_got_townmap.sav'
 ```
 
 LLM configuration in `src/pokemon_agent/agents/init_llm.py`:
 
 ```python
-# Ollama (default)
-llm = ChatOllama(model="gemma3:4b", temperature=1.0, top_k=64, top_p=0.95)
+# LM Studio (currently used)
+import lmstudio as lms
+llm_model = lms.llm("qwen/qwen3-4b-thinking-2507")
+
+# Or Ollama (uncomment and configure)
+# from langchain_ollama import ChatOllama
+# llm = ChatOllama(model="gemma3:4b", temperature=1.0, top_k=64, top_p=0.95)
 
 # Or OpenAI (uncomment and configure)
 # from langchain_openai import ChatOpenAI
@@ -164,44 +192,57 @@ llm = ChatOllama(model="gemma3:4b", temperature=1.0, top_k=64, top_p=0.95)
 
 ### Customizing Behavior
 
-- **Modify LLM prompts**: Edit `src/pokemon_agent/agents/pathing_agent.py`
-- **Add new pathing tasks**: Extend the pathing agent's task description
-- **Adjust pathfinding**: Modify `src/pokemon_agent/path_finder.py`
+- **Modify LLM prompts**: Edit agent files in `src/pokemon_agent/agents/`
+  - `goals_agent.py` - High-level goal planning
+  - `battle_agent.py` - Battle strategy
+  - `unstuck_agent.py` - Stuck situation recovery
+- **Add new pathing tasks**: Extend `src/pokemon_agent/agents/pathing_agent.py`
+- **Adjust pathfinding**: Modify `src/pokemon_agent/plugins/path_finder.py`
 - **Add new macros**: Edit `src/pokemon_agent/utils/saved_macros.py`
-- **Enhance perception**: Extend `src/pokemon_agent/perception.py`
-- **Modify map reading**: Update `src/pokemon_agent/map_collision_read.py`
+- **Enhance perception**: Extend `src/pokemon_agent/plugins/perception.py`
+- **Modify map reading**: Update `src/pokemon_agent/utils/map_collision_read.py`
+- **Adjust progress tracking**: Modify `src/pokemon_agent/plugins/progress_tracking.py`
 
 ## 📁 Project Structure
 
 ```
 pyboy-agents/
 ├── src/
-│   ├── main.py                    # Entry point (currently commented out)
+│   ├── main.py                    # Main entry point and emulator loop
 │   └── pokemon_agent/
 │       ├── agents/                # LLM-powered agents
-│       │   ├── init_llm.py       # LLM initialization (Ollama/OpenAI)
-│       │   └── pathing_agent.py  # Pathfinding destination agent
-│       ├── perception.py          # Game state perception (OCR + RAM)
-│       ├── planner.py             # Rule-based action planning
-│       ├── skills.py              # Input execution
-│       ├── run_emulator.py        # Main emulator loop (entry point)
-│       ├── path_finder.py         # A* pathfinding implementation
-│       ├── map_collision_read.py  # Map reading and collision detection
-│       ├── map_render_from_rom.py # Map visualization utilities
-│       ├── OCR.py                 # OCR processing with template matching
-│       ├── font_templates.py      # Font template matching system
-│       ├── process_map_data.py    # Map data processing utilities
-│       ├── saves/                 # Save state files
-│       └── utils/
-│           ├── data_classes.py    # Game state data structures
-│           ├── saved_macros.py    # Pre-defined action sequences
-│           ├── utility_funcs.py   # Helper functions
-│           └── ref_data/          # Pokémon game reference data
-│               ├── maps/          # Map definitions, collision data, blocksets
-│               ├── fonts/         # Font templates for OCR
-│               └── *.json         # Game data (Pokedex, moves, types, etc.)
+│       │   ├── init_llm.py       # LLM initialization (LM Studio/Ollama/OpenAI)
+│       │   ├── goals_agent.py    # High-level goal planning agent
+│       │   ├── battle_agent.py   # Battle decision agent
+│       │   ├── pathing_agent.py  # Navigation execution agent
+│       │   ├── unstuck_agent.py  # Vision-based recovery agent
+│       │   └── tools_agent.py    # Tool-calling agent (if needed)
+│       ├── plugins/               # Core functionality modules
+│       │   ├── perception.py     # Game state perception (OCR + RAM)
+│       │   ├── path_finder.py    # A* pathfinding implementation
+│       │   ├── skills.py         # Input execution
+│       │   ├── OCR.py            # OCR processing with template matching
+│       │   └── progress_tracking.py  # Game progress tracking
+│       ├── utils/                 # Utility modules
+│       │   ├── map_collision_read.py  # Map reading and collision detection
+│       │   ├── map_render_from_rom.py # Map visualization utilities
+│       │   ├── saved_macros.py   # Pre-defined action sequences
+│       │   └── utility_funcs.py # Helper functions
+│       ├── data/                  # Game reference data
+│       │   ├── *.json            # Game data (Pokedex, moves, types, RAM addresses)
+│       │   ├── fonts/            # Font templates for OCR
+│       │   └── pokered_data/     # ROM data structures
+│       ├── maps/                  # Map data
+│       │   ├── blocksets/        # Map blockset files
+│       │   ├── tilesets/         # Tileset files
+│       │   ├── map_files/        # Individual map block files
+│       │   └── *.json            # Map headers, connections, objects, collision data
+│       ├── saves/                 # Save states and logs
+│       │   ├── *.sav             # PyBoy save state files
+│       │   ├── dialog_log.txt    # Captured dialogue log
+│       │   └── agent_states/     # Agent state snapshots
+│       └── scripts/               # Data processing scripts
 ├── ROMs/                          # Game ROM files
-├── tests/                         # Test files
 ├── dev_files/                     # Development utilities and tests
 ├── requirements.txt               # Python dependencies
 └── pyproject.toml                 # Project metadata
@@ -219,8 +260,13 @@ python -m pytest tests/
 
 ### LLM Agent Architecture
 - **LangGraph**: Orchestrates multi-agent workflows with state management
-- **Structured Outputs**: Uses Pydantic BaseModel for type-safe LLM responses
-- **Pathing Agent**: Takes map state, player position, and task description, returns destination coordinates
+- **Multi-Agent System**: Four specialized agents:
+  - **Goals Agent**: Determines next best action based on game progress and long-term goals
+  - **Battle Agent**: Selects optimal moves during battles
+  - **Pathing Agent**: Executes navigation commands (enter, move, talk)
+  - **Unstuck Agent**: Vision-based recovery using screenshot analysis
+- **State Management**: Each agent maintains its own state with TypedDict
+- **Progress Integration**: Goals agent uses progress tracker to understand game state
 
 ### Memory Reading
 The agent reads directly from Game Boy RAM to extract:
@@ -245,14 +291,17 @@ The agent reads directly from Game Boy RAM to extract:
 - **Template Matching**: Custom font templates for accurate text recognition
 - **OpenCV Preprocessing**: Image preprocessing for better OCR accuracy
 - **Region-Based OCR**: Focuses on specific screen regions (dialogue, menus)
+- **State Trackers**: Separate trackers for battle and overworld states
+- **Dialog Logging**: Captures and processes in-game dialogue
+- **Vision-Based Recovery**: Unstuck agent uses screenshot analysis to recover from stuck situations
 - **Tesseract Fallback**: Optional Tesseract OCR for generic text recognition
 
-### Action Macros
-Pre-defined sequences for common game scenarios:
-- Game initialization
-- Battle sequences
-- Wild Pokémon encounters
-- Navigation patterns
+### Action Execution
+- **Button Automation**: Precise timing control for Game Boy inputs
+- **Skill Macros**: Reusable action sequences for complex maneuvers (via `saved_macros.py`)
+- **State-Aware Actions**: Context-sensitive input handling
+- **Dialog Handling**: Automatic dialog advancement
+- **Battle Execution**: Automated battle move selection and execution
 
 ## 🤝 Contributing
 
@@ -270,7 +319,8 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 - [PyBoy](https://github.com/Baekalfen/PyBoy) - Game Boy emulator framework
 - [LangChain](https://github.com/langchain-ai/langchain) & [LangGraph](https://github.com/langchain-ai/langgraph) - LLM agent orchestration
-- [Ollama](https://ollama.ai) - Local LLM runtime
+- [LM Studio](https://lmstudio.ai) - Local LLM runtime (currently used)
+- [Ollama](https://ollama.ai) - Alternative local LLM runtime
 - [Tesseract OCR](https://github.com/tesseract-ocr/tesseract) - Text recognition
 - Pokémon Red - Nintendo's classic Game Boy game
 
@@ -279,12 +329,15 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - [x] LLM-powered strategic planning
 - [x] A* pathfinding for exploration
 - [x] Map collision detection from ROM data
-- [ ] Multi-agent coordination for complex tasks
-- [ ] Battle strategy optimization with LLM
+- [x] Multi-agent coordination for complex tasks
+- [x] Battle strategy optimization with LLM
+- [x] Vision-based recovery agent
+- [x] Progress tracking system
 - [ ] Reinforcement learning integration
 - [ ] Support for other Pokémon games
 - [ ] Real-time performance optimization
 - [ ] GUI for monitoring agent state
+- [ ] Enhanced dialog understanding and context
 
 ---
 

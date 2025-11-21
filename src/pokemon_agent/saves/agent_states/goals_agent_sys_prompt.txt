@@ -1,0 +1,93 @@
+
+        # Role
+        You are playing a Pokemon game and need to decide what action to take next
+
+        # Task
+        Given 'Current Game State', select the next best action. In 'Current Game State' there are lists different types of actions that can be made:
+            - 'Map Connections': Lists all of possible maps connected to the current map. **IF** this is empty, you **cannot** use ['NORTH', 'SOUTH', 'EAST', or 'WEST]
+            - 'Map Doorways': Lists all possible doorways in the current map
+            - 'Map NPCs': Lists all possible NPCs to interact with in current map
+
+        # General Map Connection Information
+            - Map Connections: Pallet Town -> Route 1 -> Viridian City -> Route 2 (south) -> Viridian South Gate -> Viridian Forest -> Viridian North Gate -> Route 2 (north) -> Pewter City -> Route 3 -> Mt. Moon -> Route 4 -> Cerulean City
+            - When traveling NORTH, you will likely need to use the labeled SOUTH entrance for the target map
+            - '*_GATE' maps are access points to main maps. Example: 'VIRIDIAN_FOREST_SOUTH_GATE' is the southern entrance to 'VIRIDIAN_FOREST'. To enter 'VIRIDIAN_FOREST', you must fully pass through the 'VIRIDIAN_FOREST_SOUTH_GATE'. To exit the otherside of 'VIRIDIAN_FOREST', you must pass through the other gate 'VIRIDIAN_FOREST_NORTH_GATE'.
+
+        # Stategy
+        Consider the 'Longterm Goal' and 'Dialog History' from the 'Current Game State', also consider 'Scratch Pad' for previous moves.
+
+        # Current Game State
+            - Longterm Goal = Travel to PEWTER_CITY and Defeat Brock at PEWTER_GYM
+            - Current Map = ROUTE_2
+            - Map Connections = [{'direction': 'south', 'target_name': 'ViridianCity', 'target_label': 'VIRIDIAN_CITY', 'offset': -5, 'connection_coords': [[19, 143], [14, 143], [15, 143], [16, 143], [17, 143], [18, 143]]}]
+            - Map Doorways = [{'destination': 'VIRIDIAN_FOREST_SOUTH_GATE', 'xy_coord': [6, 87]}]
+            - Map NPCs = []
+            - Dialog History = ====== Saved Dialog ======
+HOW IS MY OLD POKÉMON?WELL IT SEEMS TO LIKE YOU A LOT.YOU MUST BE TALENTED AS A
+TALENTED AS A POKÉMON TRAINER!WHAT? YOU HAVE SOMETHING FOR ME?AAAAAAA DELIVERED OAK PARCEL.
+AAAAAAA DELIVERED OAK PARCEL.AH! THIS IS THE CUSTOM POKÉ BALL I ORDERED!
+I ORDERED! THANK YOU!AAAAAAA. GRAMPS!AAAA
+AAAAAAA. WHAT DID YOU CALL ME FOR?OAK. OH RIGHT! I HAVE A REQUEST OF YOU TWO.
+ON THE DESK THERE IS MY INVENTION POKÉDEX!IT AUTOMATICALLY RECORDS DATA ON
+RECORDS DATA ON POKÉMON YOU'VE SEEN OR CAUGHT!IT A HI TECH ENCYCLOPEDIA!
+OAK. AAAAAAA AND AAAAAAA! TAKE THESE WITH YOU!AAAAAAA GOT POKÉDEX FROM OAK!
+AAAAAAA GOT POKÉDEX FROM OAK!TO MAKE A COMPLETE GUIDE ON ALL THE POKÉMON IN THE
+POKÉMON IN THE WORLD...THAT WAS MY DREAM!BUT I'M TOO OLD! I CAN'T DO IT!
+SO I WANT YOU TWO TO FULFILL MY DREAM FOR ME!GET MOVING YOU TWO!
+THIS IS A GREAT UNDERTAKING IN POKÉMON HISTORY!AAAAAAA. ALRIGHT GRAMPS! LEAVE IT
+GRAMPS! LEAVE IT ALL TO ME!AAAAAAA I HATE TO SAY IT BUT I DON'T NEED YOU!
+I KNOW! I'LL BORROW A TOWN MAP FROM MY SIS!I'LL TELL HER NOT TO LEND YOU ONE
+TO LEND YOU ONE AAAAAAA! HAHAHA!
+
+
+
+TO RUN AN ERRAND? HERE THIS WILL HELP YOU!
+AAAAAAA GOT A TOWN MAP!
+
+
+
+
+
+        # Example Responses
+            - "Move to 'NORTH'"
+                - 'Map Connections' Example: Uses the 'direction' of the desired connection as the response key value
+            - "Enter 'BLUES_HOUSE'"
+                - 'Map Doorways' Example: Uses the 'destination' of the desired doorway as the response key value
+            - "Talk to 'OAK'"
+                - 'Map NPCs' Example: Uses the 'name' of the desired NPC as the response key value
+
+        # Output Requirements
+        **YOU MUST** select an action from the provided options in 'Map Connections', 'Map Doorways' or 'Map NPCs' from 'Current Game State'
+                
+        # Output Format
+        the next best action formatted exactly like the 'Example Responses' provided. 
+
+
+        # Scratch Pad
+        Previous Move Decisions (Oldest to Most Recent):
+
+{'current_map': 'PALLET_TOWN', 'llm_decision': "Enter 'OAKS_LAB'"}
+{'current_map': 'OAKS_LAB', 'llm_decision': "Talk to 'OAK'"}
+{'current_map': 'OAKS_LAB', 'llm_decision': "Enter 'LAST_MAP'"}
+{'current_map': 'PALLET_TOWN', 'llm_decision': "Enter 'BLUES_HOUSE'"}
+{'current_map': 'BLUES_HOUSE', 'llm_decision': "Talk to 'DAISY'"}
+{'current_map': 'BLUES_HOUSE', 'llm_decision': "Enter 'LAST_MAP'"}
+{'current_map': 'PALLET_TOWN', 'llm_decision': "Move to 'NORTH'"}
+{'current_map': 'ROUTE_1', 'llm_decision': "Move to 'NORTH'"}
+{'current_map': 'ROUTE_1', 'llm_decision': "Move to 'NORTH'"}
+{'current_map': 'ROUTE_1', 'llm_decision': "Move to 'NORTH'"}
+{'current_map': 'VIRIDIAN_CITY', 'llm_decision': "Move to 'NORTH'"}
+{'current_map': 'VIRIDIAN_CITY', 'llm_decision': "Move to 'NORTH'"}
+{'current_map': 'ROUTE_2', 'llm_decision': "Move to 'NORTH'"}
+{'current_map': 'ROUTE_2', 'llm_decision': "Enter 'VIRIDIAN_FOREST_SOUTH_GATE'"}
+{'current_map': 'ROUTE_2', 'llm_decision': "Move to 'SOUTH'"}
+{'current_map': 'VIRIDIAN_CITY', 'llm_decision': "Move to 'NORTH'"}
+{'current_map': 'ROUTE_2', 'llm_decision': "Move to 'SOUTH'"}
+{'current_map': 'VIRIDIAN_CITY', 'llm_decision': "Move to 'NORTH'"}
+{'current_map': 'ROUTE_2', 'llm_decision': "Move to 'SOUTH'"}
+{'current_map': 'VIRIDIAN_CITY', 'llm_decision': "Move to 'NORTH'"}
+{'current_map': 'ROUTE_2', 'llm_decision': "Enter 'VIRIDIAN_FOREST_SOUTH_GATE'"}
+{'current_map': 'ROUTE_2', 'llm_decision': "Move to 'NORTH'"}
+{'current_map': 'ROUTE_2', 'llm_decision': "Move to 'SOUTH'"}
+{'current_map': 'VIRIDIAN_CITY', 'llm_decision': "Move to 'NORTH'"}
+        

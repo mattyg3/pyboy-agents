@@ -7,7 +7,7 @@ from pathlib import Path
 
 def create_map_headers():
     # Path to your file
-    file_path = "src/pokemon_agent/utils/ref_data/pokered_data/map_constants.asm"
+    file_path = "src/pokemon_agent/data/pokered_data/map_constants.asm"
 
     # Regex to match map_const lines
     pattern = re.compile(r'map_const\s+(\w+),\s+(\d+),\s+(\d+)\s*;\s*(\$\w+)')
@@ -36,8 +36,8 @@ def create_map_headers():
 
 
     # Directory containing .asm files
-    ASM_DIR = Path("src/pokemon_agent/utils/ref_data/pokered_data/maps/headers")
-    OUTPUT_JSON = Path("src/pokemon_agent/utils/ref_data/maps/map_headers.json")
+    ASM_DIR = Path("src/pokemon_agent/data/pokered_data/maps/headers")
+    OUTPUT_JSON = Path("src/pokemon_agent/maps/map_headers.json")
 
     # Regex patterns
     header_pattern = re.compile(
@@ -131,7 +131,7 @@ from pathlib import Path
 def create_collision_tiles():
 
     # Path to your collision file
-    collision_file = Path("src/pokemon_agent/utils/ref_data/pokered_data/tilesets/collision_tile_ids.asm")
+    collision_file = Path("src/pokemon_agent/data/pokered_data/tilesets/collision_tile_ids.asm")
 
     collision_data = {}
     current_labels = []
@@ -177,7 +177,7 @@ def create_collision_tiles():
     upper_collision_data = {k.upper(): v for k, v in collision_data.items()}
 
     # Save as JSON
-    output_file = Path("src/pokemon_agent/utils/ref_data/maps/collision_tiles.json")
+    output_file = Path("src/pokemon_agent/maps/collision_tiles.json")
     with output_file.open("w", encoding="utf-8") as f:
         json.dump(upper_collision_data, f, indent=4)
 
@@ -189,8 +189,8 @@ import re
 import json
 from pathlib import Path
 # Directory containing .asm files
-ASM_DIR = Path("src/pokemon_agent/utils/ref_data/pokered_data/maps/objects")
-OUTPUT_JSON = Path("src/pokemon_agent/utils/ref_data/maps/map_objects.json")
+ASM_DIR = Path("src/pokemon_agent/data/pokered_data/maps/objects")
+OUTPUT_JSON = Path("src/pokemon_agent/maps/map_objects.json")
 
 def parse_asm_objects(file_text: str):
     data = {
@@ -269,36 +269,36 @@ def parse_asm_directory(dir_path: Path):
     return results
 
 
-# Example usage:
-all_maps = parse_asm_directory(ASM_DIR)
-with OUTPUT_JSON.open( "w", encoding="utf-8") as f:
-    json.dump(all_maps, f, indent=4, default=int)
+# # Example usage:
+# all_maps = parse_asm_directory(ASM_DIR)
+# with OUTPUT_JSON.open( "w", encoding="utf-8") as f:
+#     json.dump(all_maps, f, indent=4, default=int)
 
 
 
 # ====== add map connection coords to map_headers.json ======
 import json
 from pathlib import Path
-from pokemon_agent.path_finder import *
+from src.pokemon_agent.plugins.path_finder import *
 from pokemon_agent.utils.utility_funcs import find_map_by_id
 from tqdm import tqdm
 
 
 def add_connection_xy_to_map_headers():
 
-    with open('src/pokemon_agent/utils/ref_data/maps/map_headers.json', 'r') as f:
+    with open('src/pokemon_agent/maps/map_headers.json', 'r') as f:
         MAP_HEADERS = json.load(f)
-    with open('src/pokemon_agent/utils/ref_data/maps/collision_tiles.json', 'r') as f:
+    with open('src/pokemon_agent/maps/collision_tiles.json', 'r') as f:
         COLLISION = json.load(f)
-    with open('src/pokemon_agent/utils/ref_data/maps/map_objects.json', 'r') as f:
+    with open('src/pokemon_agent/maps/map_objects.json', 'r') as f:
         MAP_OBJECTS = json.load(f)
 
     # Load to JSON
-    INPUT_JSON = Path("src/pokemon_agent/utils/ref_data/maps/map_headers.json")
+    INPUT_JSON = Path("src/pokemon_agent/maps/map_headers.json")
     with INPUT_JSON.open("r") as f:
         map_headers = json.load(f)
 
-    OUTPUT_JSON = Path("src/pokemon_agent/utils/ref_data/maps/map_headers.json")
+    OUTPUT_JSON = Path("src/pokemon_agent/maps/map_headers.json")
 
     # print(map_headers[6])
     upgraded_maps = []
@@ -394,10 +394,10 @@ def add_connection_xy_to_map_headers():
 from collections import deque, defaultdict
 from pokemon_agent.utils.utility_funcs import camel_to_snake
 
-with open('src/pokemon_agent/utils/ref_data/maps/map_headers.json', 'r') as f:
+with open('src/pokemon_agent/maps/map_headers.json', 'r') as f:
         MAP_HEADERS = json.load(f)
 
-with open('src/pokemon_agent/utils/ref_data/maps/map_objects.json', 'r') as f:
+with open('src/pokemon_agent/maps/map_objects.json', 'r') as f:
         MAP_OBJECTS = json.load(f)
 
 class MapGraph:
@@ -524,7 +524,7 @@ def create_map_graph():
                 # logged_connections.append((point_b, point_a))
 
     # save map_graph.json
-    with open("src/pokemon_agent/utils/ref_data/maps/map_graph.json", "w") as f:
+    with open("src/pokemon_agent/maps/map_graph.json", "w") as f:
         json.dump(map_graph.to_dict(), f, indent=2)
         
 
@@ -549,7 +549,7 @@ def main():
     # parse_asm_objects()
 
     create_map_graph()
-    with open("src/pokemon_agent/utils/ref_data/maps/map_graph.json") as f:
+    with open("src/pokemon_agent/maps/map_graph.json") as f:
         MAP_GRAPH = json.load(f)
     g = MapGraph.from_dict(MAP_GRAPH)
     print(g.find_path("OAKS_LAB", "PEWTER_CITY"))

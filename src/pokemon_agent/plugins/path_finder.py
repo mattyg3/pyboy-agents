@@ -1,11 +1,11 @@
-from pokemon_agent.map_collision_read import *
+from pokemon_agent.utils.map_collision_read import *
 # from src.pokemon_agent.utils.map_render_from_rom import render_map_png
 from pyboy import PyBoy
-from pathlib import Path
+# from pathlib import Path
 import heapq
-from pokemon_agent.skills import SkillExecutor
+from pokemon_agent.plugins.skills import SkillExecutor
 from pokemon_agent.utils.utility_funcs import find_map_by_id
-from pokemon_agent.perception import BattleFlag, DialogFlag
+from pokemon_agent.plugins.perception import BattleFlag, DialogFlag
 
 # ------ Pathfinding Algo ------
 def astar(grid, start, goal):
@@ -53,66 +53,121 @@ def astar(grid, start, goal):
                     heapq.heappush(open_set, (f_score, neighbor))
     return None  # no path found 
 
-def astar_next_step(grid, start, goal):
+def astar_2wide(grid, start, goal):
     """
-    A* pathfinding that returns only the next step toward the goal, 
-    stopping early once the next move is known.
-    
-    grid[y][x] = True if walkable, False if blocked
-    start = (x, y)
-    goal = (x, y)
-    Returns (x, y) of the next step, or None if no path exists.
+    A* pathfinding where start and goal can be single tiles, 
+    but the path must have width-2 clearance everywhere else.
+
+    The search operates on positions representing the *top-left* of a 2×2 footprint.
     """
-    if start == goal:
-        return start
 
     h = len(grid)
     w = len(grid[0])
 
+    def has_width2_clearance(x, y):
+        if x < 0 or y < 0 or x + 1 >= w or y + 1 >= h:
+            return False
+        return (
+            grid[y][x] and grid[y][x+1] and
+            grid[y+1][x] and grid[y+1][x+1]
+        )
+
+    # ------------------------------------------------------------------
+    # Find all 2×2 legal locations that include a given 1×1 point
+    # (for start/goal mapping)
+    # ------------------------------------------------------------------
+    def all_valid_footprints_touching(px, py):
+        candidates = [
+            (px, py),
+            (px - 1, py),
+            (px, py - 1),
+            (px - 1, py - 1),
+        ]
+        return [(x, y) for (x, y) in candidates if has_width2_clearance(x, y)]
+
+    # If start has no valid 2×2 footprint, we still allow its exact 1×1 position
+    # as the start node, but the first move must go to a valid 2×2 footprint.
+    start_nodes = all_valid_footprints_touching(*start)
+    goal_nodes = all_valid_footprints_touching(*goal)
+
+    # If goal is unreachable directly, allow "adjacent to goal".
+    # This means any 2×2 footprint whose 4 tiles include a tile adjacent to goal.
+    if not goal_nodes:
+        gx, gy = goal
+        adj = [(gx+1,gy), (gx-1,gy), (gx,gy+1), (gx,gy-1)]
+        for ax, ay in adj:
+            for x, y in all_valid_footprints_touching(ax, ay):
+                goal_nodes.append((x, y))
+
+    # If absolutely no goal nodes exist, impossible
+    if not goal_nodes:
+        return None
+
+    import heapq
+
+    # ------------------------------------------------------------------
+    # A* search on 2×2 footprints
+    # ------------------------------------------------------------------
     def heuristic(a, b):
-        # Manhattan distance
         return abs(a[0] - b[0]) + abs(a[1] - b[1])
 
     open_set = []
-    heapq.heappush(open_set, (heuristic(start, goal), start))
+    g_score = {}
     came_from = {}
-    g_score = {start: 0}
+
+    # If start is already in a width-2 footprint, treat that as start.
+    # Otherwise search starts at the raw 1×1 tile, which has no clearance.
+    if start_nodes:
+        for sn in start_nodes:
+            heapq.heappush(open_set, (0, sn))
+            g_score[sn] = 0
+    else:
+        # Use the raw start tile; it has no neighbors except valid footprints.
+        heapq.heappush(open_set, (0, start))
+        g_score[start] = 0
+
+    goal_nodes = set(goal_nodes)
 
     while open_set:
         _, current = heapq.heappop(open_set)
 
-        # If we reached the goal, reconstruct just the first move
-        if current == goal:
-            # Backtrack once to find the step after start
-            prev = current
-            while came_from.get(prev) and came_from[prev] != start:
-                prev = came_from[prev]
-            return prev if came_from.get(prev) == start else None
+        if current in goal_nodes:
+            # Reconstruct path of 2×2 footprints
+            path = [current]
+            while current in came_from:
+                current = came_from[current]
+                path.append(current)
+            path.reverse()
+            return path
 
         x, y = current
+
+        # Move in 4 directions, but only into width-2 footprints
         for dx, dy in [(1,0),(-1,0),(0,1),(0,-1)]:
             nx, ny = x + dx, y + dy
-            if 0 <= nx < w and 0 <= ny < h and grid[ny][nx]:
+
+            # If current was the raw 1×1 starting tile, neighbors are the valid footprints
+            if current == start and not start_nodes:
+                if has_width2_clearance(nx, ny):
+                    tentative = g_score[current] + 1
+                    if tentative < g_score.get((nx, ny), float('inf')):
+                        g_score[(nx, ny)] = tentative
+                        came_from[(nx, ny)] = current
+                        f = tentative + min(heuristic((nx, ny), g) for g in goal_nodes)
+                        heapq.heappush(open_set, (f, (nx, ny)))
+                continue
+
+            # Normal case: moving from a 2×2 footprint to another
+            if has_width2_clearance(nx, ny):
                 neighbor = (nx, ny)
-                tentative_g = g_score[current] + 1
-                if tentative_g < g_score.get(neighbor, float('inf')):
+                tentative = g_score[current] + 1
+                if tentative < g_score.get(neighbor, float('inf')):
                     came_from[neighbor] = current
-                    g_score[neighbor] = tentative_g
-                    f_score = tentative_g + heuristic(neighbor, goal)
-                    heapq.heappush(open_set, (f_score, neighbor))
+                    g_score[neighbor] = tentative
+                    f = tentative + min(heuristic(neighbor, g) for g in goal_nodes)
+                    heapq.heappush(open_set, (f, neighbor))
 
-                    # Early stop: if neighbor is goal, return it immediately if it's next to start
-                    if neighbor == goal:
-                        if current == start:
-                            return neighbor
-                        # otherwise backtrack one step
-                        prev = current
-                        while came_from.get(prev) and came_from[prev] != start:
-                            prev = came_from[prev]
-                        return prev if came_from.get(prev) == start else None
-
-    return None  # No path found
-
+    return None
 
 def move_toward_path(pyboy, path): #top left is (0,0)
     map_id, px, py, direction = get_player_position(pyboy)
@@ -141,7 +196,7 @@ def move_toward_path(pyboy, path): #top left is (0,0)
         pyboy.tick()
 
         
-def path_finder(pyboy, goal):
+def path_finder(pyboy, goal, astar_2=False):
     # skills = SkillExecutor(pyboy)
     walk_matrix, map_width, map_height, warp_tiles = read_map(pyboy)
     # --- Get player position ---
@@ -195,7 +250,16 @@ def path_finder(pyboy, goal):
             at_goal=True
             continue
         if goal in [(px + dx, py + dy) for dx in (-1, 0, 1) for dy in (-1, 0, 1)]:
-            last_path = astar_next_step(walk_matrix, (px, py), goal)
+            # last_path = astar_next_step(walk_matrix, (px, py), goal)
+            
+            try:
+                if astar_2:
+                    a_path = astar_2wide(walk_matrix, (px, py), goal)
+                else:
+                    a_path = astar(walk_matrix, (px, py), goal)
+                last_path = a_path[1] # get next move
+            except:
+                last_path = goal
             if last_path == (px, py):
                 at_goal=True
                 continue
@@ -218,7 +282,16 @@ def path_finder(pyboy, goal):
                     
 
         else:
-            path = astar_next_step(walk_matrix, (px, py), goal)
+            
+            try:
+                # path = astar_next_step(walk_matrix, (px, py), goal)
+                if astar_2:
+                    a_path = astar_2wide(walk_matrix, (px, py), goal)
+                else:
+                    a_path = astar(walk_matrix, (px, py), goal)
+                path = a_path[1] # get next move
+            except:
+                path = prev_move
 
             if path:
                 battle_info = battle_flag.read_memory_state()
@@ -240,10 +313,10 @@ def path_finder(pyboy, goal):
 
 
 
-with open('src/pokemon_agent/utils/ref_data/maps/map_headers.json', 'r') as f:
+with open('src/pokemon_agent/maps/map_headers.json', 'r') as f:
     MAP_HEADERS = json.load(f)
 
-with open('src/pokemon_agent/utils/ref_data/maps/collision_tiles.json', 'r') as f:
+with open('src/pokemon_agent/maps/collision_tiles.json', 'r') as f:
     COLLISION = json.load(f)
 
 

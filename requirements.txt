@@ -13,3 +13,4 @@ langchain-openai
 keyring
 tqdm
 lmstudio
+keyboard

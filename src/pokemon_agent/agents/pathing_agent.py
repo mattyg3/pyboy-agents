@@ -1,9 +1,9 @@
-from pokemon_agent.path_finder import *
-from pokemon_agent.skills import SkillExecutor
+from pokemon_agent.plugins.path_finder import *
+from pokemon_agent.plugins.skills import SkillExecutor
 import fnmatch
 import re
 import numpy as np
-import random
+# import random
 
 class PathingAgent:
     def __init__(self, pyboy):
@@ -69,19 +69,27 @@ class PathingAgent:
             # goal_xy = random.choice(warps)
             goal_xy = (connection_coords[0][0], connection_coords[0][1])
             print(f"GOAL: {goal_xy}") 
-            path_dict = path_finder(self.pyboy, goal=goal_xy)
+            path_dict = path_finder(self.pyboy, goal=goal_xy, astar_2=True)
             path_dict["goal_xy"] = goal_xy
             # last_move = path_dict["prev_move"]
             if dest_key == "north":
                 self.skills.execute({"type": "GO_UP"})
+                self.skills.execute({"type": "GO_UP"})
+                self.skills.execute({"type": "GO_UP"})
                 print("UP_EXTRA")
             elif dest_key == "south":
+                self.skills.execute({"type": "GO_DOWN"})
+                self.skills.execute({"type": "GO_DOWN"})
                 self.skills.execute({"type": "GO_DOWN"})
                 print("DOWN_EXTRA")
             elif dest_key == "east":
                 self.skills.execute({"type": "GO_RIGHT"})
+                self.skills.execute({"type": "GO_RIGHT"})
+                self.skills.execute({"type": "GO_RIGHT"})
                 print("RIGHT_EXTRA")
             elif dest_key == "west":
+                self.skills.execute({"type": "GO_LEFT"})
+                self.skills.execute({"type": "GO_LEFT"})
                 self.skills.execute({"type": "GO_LEFT"})
                 print("LEFT_EXTRA")
             for _ in range(60):  # wait a few frames for movement
