@@ -11,7 +11,7 @@ from langchain.schema import SystemMessage, HumanMessage
 from pokemon_agent.map_collision_read import *
 from pokemon_agent.progress_tracking import ProgressTracker
 from pokemon_agent.agents.tools_agent import get_directions
-from pokemon_agent.path_finder import astar_next_step
+from pokemon_agent.path_finder import astar, astar_2wide
 # from pokemon_agent.agents.tools_agent import tool_app, run, TOOLS
 
 
@@ -97,7 +97,8 @@ class GoalsAgent:
             coords = loc["connection_coords"]
             # connection_label = loc["target_label"]
             for coord in coords:
-                a_star = astar_next_step(walk_matrix, start, (coord[0], coord[1]))
+                # a_star = astar(walk_matrix, start, (coord[0], coord[1]))
+                a_star = astar_2wide(walk_matrix, start, (coord[0], coord[1]))
                 if a_star:
                     available_connections.append(loc)
                     break
@@ -107,7 +108,7 @@ class GoalsAgent:
         available_doorways = []
         for loc in map_doorways:
             coord = loc["xy_coord"]
-            a_star = astar_next_step(walk_matrix, start, (coord[0], coord[1]))
+            a_star = astar(walk_matrix, start, (coord[0], coord[1]))
             if a_star:
                 available_doorways.append(loc)
             else:
@@ -138,7 +139,7 @@ class GoalsAgent:
             - 'Map NPCs': Lists all possible NPCs to interact with in current map
 
         # General Map Connection Information
-            - Use get_directions tool_call if you need to check directions from point_a to point_b
+            - Map Connections: Pallet Town -> Route 1 -> Viridian City -> Route 2 (south) -> Viridian South Gate -> Viridian Forest -> Viridian North Gate -> Route 2 (north) -> Pewter City -> Route 3 -> Mt. Moon -> Route 4 -> Cerulean City
             - When traveling NORTH, you will likely need to use the labeled SOUTH entrance for the target map
             - '*_GATE' maps are access points to main maps. Example: 'VIRIDIAN_FOREST_SOUTH_GATE' is the southern entrance to 'VIRIDIAN_FOREST'. To enter 'VIRIDIAN_FOREST', you must fully pass through the 'VIRIDIAN_FOREST_SOUTH_GATE'. To exit the otherside of 'VIRIDIAN_FOREST', you must pass through the other gate 'VIRIDIAN_FOREST_NORTH_GATE'.
 

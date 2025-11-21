@@ -230,7 +230,7 @@ def run(ROM_PATH=ROM_PATH, LOAD_STATE_PATH=LOAD_STATE_PATH, SAVE_STATE_PATH=SAVE
 
 
             
-            if frame > 25:
+            if frame > 75:
                 break
             frame += 1
             time.sleep(0.001)

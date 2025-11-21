@@ -269,10 +269,10 @@ def parse_asm_directory(dir_path: Path):
     return results
 
 
-# Example usage:
-all_maps = parse_asm_directory(ASM_DIR)
-with OUTPUT_JSON.open( "w", encoding="utf-8") as f:
-    json.dump(all_maps, f, indent=4, default=int)
+# # Example usage:
+# all_maps = parse_asm_directory(ASM_DIR)
+# with OUTPUT_JSON.open( "w", encoding="utf-8") as f:
+#     json.dump(all_maps, f, indent=4, default=int)
 
 
 

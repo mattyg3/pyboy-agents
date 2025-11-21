@@ -69,7 +69,7 @@ class PathingAgent:
             # goal_xy = random.choice(warps)
             goal_xy = (connection_coords[0][0], connection_coords[0][1])
             print(f"GOAL: {goal_xy}") 
-            path_dict = path_finder(self.pyboy, goal=goal_xy)
+            path_dict = path_finder(self.pyboy, goal=goal_xy, astar_2=True)
             path_dict["goal_xy"] = goal_xy
             # last_move = path_dict["prev_move"]
             if dest_key == "north":

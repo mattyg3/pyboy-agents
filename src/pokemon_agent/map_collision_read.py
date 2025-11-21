@@ -3,6 +3,7 @@ from pathlib import Path
 # from PIL import Image, ImageDraw
 from pyboy import PyBoy
 import json
+# from utils.utility_funcs import find_map_by_id
 from pokemon_agent.utils.utility_funcs import find_map_by_id
 
 
@@ -383,7 +384,8 @@ def main():
     # print(get_npc_coords(map_filename))
     # # print(get_map_signs(map_filename))
 
-    check_tile_map(map_id=50)
+    check_tile_map(map_id=39)
+
 
 
 if __name__ == "__main__":
