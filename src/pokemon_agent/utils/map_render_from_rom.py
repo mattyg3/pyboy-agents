@@ -288,9 +288,9 @@ def render_map_png(map_id, player_xy, goal_xy, save_path="src/pokemon_agent/save
     height = find_map_by_id(MAP_HEADERS, map_id).get("map_height")
     map_env = find_map_by_id(MAP_HEADERS, map_id).get("environment")
     map_filename = find_map_by_id(MAP_HEADERS, map_id).get("file")
-    tileset_path = Path("src/pokemon_agent/utils/ref_data/maps/tilesets") / f"{map_env.lower()}.2bpp" #/overworld.2bpp
-    blockset_path = Path("src/pokemon_agent/utils/ref_data/maps/blocksets") / f"{map_env.lower()}.bst" #/overworld.bst
-    map_path = Path("src/pokemon_agent/utils/ref_data/maps/map_files") / f"{map_filename.replace(".asm",".blk")}" #/PalletTown.blk
+    tileset_path = Path("src/pokemon_agent/maps/tilesets") / f"{map_env.lower()}.2bpp" #/overworld.2bpp
+    blockset_path = Path("src/pokemon_agent/maps/blocksets") / f"{map_env.lower()}.bst" #/overworld.bst
+    map_path = Path("src/pokemon_agent/maps/map_files") / f"{map_filename.replace(".asm",".blk")}" #/PalletTown.blk
 
     px, py = player_xy
     # py = height - py #corrected y coord
@@ -336,18 +336,18 @@ def render_map_png(map_id, player_xy, goal_xy, save_path="src/pokemon_agent/save
 
 
 import json
-with open('src/pokemon_agent/utils/ref_data/maps/map_headers.json', 'r') as f:
+with open('src/pokemon_agent/maps/map_headers.json', 'r') as f:
     MAP_HEADERS = json.load(f)
 
 def main():
 
     ROM_PATH = 'ROMS/pokemon_red.gb'
-    # tileset_path = Path("src/pokemon_agent/utils/ref_data/maps/tilesets/overworld.2bpp")
-    # blockset_path = Path("src/pokemon_agent/utils/ref_data/maps/blocksets/overworld.bst")
-    # map_path = Path("src/pokemon_agent/utils/ref_data/maps/map_files/PalletTown.blk")
-    # # tileset_path = Path("src/pokemon_agent/utils/ref_data/maps/tilesets/gym.2bpp")
-    # # blockset_path = Path("src/pokemon_agent/utils/ref_data/maps/blocksets/gym.bst")
-    # # map_path = Path("src/pokemon_agent/utils/ref_data/maps/map_files/OaksLab.blk")
+    # tileset_path = Path("src/pokemon_agent/maps/tilesets/overworld.2bpp")
+    # blockset_path = Path("src/pokemon_agent/maps/blocksets/overworld.bst")
+    # map_path = Path("src/pokemon_agent/maps/map_files/PalletTown.blk")
+    # # tileset_path = Path("src/pokemon_agent/maps/tilesets/gym.2bpp")
+    # # blockset_path = Path("src/pokemon_agent/maps/blocksets/gym.bst")
+    # # map_path = Path("src/pokemon_agent/maps/map_files/OaksLab.blk")
     # width = 10
     # height = 9
     # out_path = Path("src/pokemon_agent/saves/render_map_test.png")

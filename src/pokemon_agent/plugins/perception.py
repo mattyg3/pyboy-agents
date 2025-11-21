@@ -5,17 +5,17 @@ import pytesseract
 pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 import json
 from pokemon_agent.utils.utility_funcs import type_multiplier
-from pokemon_agent.OCR import OCR_Processing, BattleStateTracker, OverworldStateTracker
+from pokemon_agent.plugins.OCR import OCR_Processing, BattleStateTracker, OverworldStateTracker
 from pokemon_agent.utils.utility_funcs import TextCleaner
 
 # Import Reference Data
-with open('src/pokemon_agent/utils/ref_data/POKEDEX.json', 'r') as f:
+with open('src/pokemon_agent/data/POKEDEX.json', 'r') as f:
     POKEDEX = json.load(f)
 
-with open('src/pokemon_agent/utils/ref_data/MOVES_INDEX.json', 'r') as f:
+with open('src/pokemon_agent/data/MOVES_INDEX.json', 'r') as f:
     MOVES_INDEX = json.load(f)
 
-with open('src/pokemon_agent/utils/ref_data/ram_addresses.json', 'r') as f:
+with open('src/pokemon_agent/data/ram_addresses.json', 'r') as f:
     RAM_POINTERS = json.load(f)
 
 

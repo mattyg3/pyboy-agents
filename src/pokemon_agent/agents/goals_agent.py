@@ -1,17 +1,17 @@
 from .init_llm import lms, llm_model
 from typing import Any, TypedDict
 from langgraph.graph import StateGraph, END
-from langchain_core.messages import AIMessage
-from langchain.tools import StructuredTool
-from langchain_openai import ChatOpenAI
-from langgraph.prebuilt import ToolNode
-from langchain.tools import tool
-from langchain.schema import SystemMessage, HumanMessage
+# from langchain_core.messages import AIMessage
+# from langchain.tools import StructuredTool
+# from langchain_openai import ChatOpenAI
+# from langgraph.prebuilt import ToolNode
+# from langchain.tools import tool
+# from langchain.schema import SystemMessage, HumanMessage
 
-from pokemon_agent.map_collision_read import *
-from pokemon_agent.progress_tracking import ProgressTracker
-from pokemon_agent.agents.tools_agent import get_directions
-from pokemon_agent.path_finder import astar, astar_2wide
+from pokemon_agent.utils.map_collision_read import *
+from pokemon_agent.plugins.progress_tracking import ProgressTracker
+# from pokemon_agent.agents.tools_agent import get_directions
+from pokemon_agent.plugins.path_finder import astar, astar_2wide
 # from pokemon_agent.agents.tools_agent import tool_app, run, TOOLS
 
 
@@ -144,10 +144,15 @@ class GoalsAgent:
             - '*_GATE' maps are access points to main maps. Example: 'VIRIDIAN_FOREST_SOUTH_GATE' is the southern entrance to 'VIRIDIAN_FOREST'. To enter 'VIRIDIAN_FOREST', you must fully pass through the 'VIRIDIAN_FOREST_SOUTH_GATE'. To exit the otherside of 'VIRIDIAN_FOREST', you must pass through the other gate 'VIRIDIAN_FOREST_NORTH_GATE'.
 
         # Stategy
-        Consider the 'Longterm Goal' and 'Dialog History' from the 'Current Game State', also consider 'Scratch Pad' for previous moves. Use available tool to determine which map connections and doorways to use.
+        Consider the 'Longterm Goal' and 'Dialog History' from the 'Current Game State', also consider 'Scratch Pad' for previous moves.
 
         # Current Game State
-        {state["game_state"]}
+            - Longterm Goal = {state["game_state"]["Longterm Goal"]}
+            - Current Map = {state["game_state"]["Current Map"]}
+            - Map Connections = {state["game_state"]["Map Connections"]}
+            - Map Doorways = {state["game_state"]["Map Doorways"]}
+            - Map NPCs = {state["game_state"]["Map NPCs"]}
+            - Dialog History = {state["game_state"]["Dialog History"]}
 
         # Example Responses
             - "Move to 'NORTH'"
@@ -157,17 +162,26 @@ class GoalsAgent:
             - "Talk to 'OAK'"
                 - 'Map NPCs' Example: Uses the 'name' of the desired NPC as the response key value
 
-        # Output Restrictions
-        **MUST** select an action from the provided options in 'Current Game State'
+        # Output Requirements
+        **YOU MUST** select an action from the provided options in 'Map Connections', 'Map Doorways' or 'Map NPCs' from 'Current Game State'
                 
         # Output Format
-        **IF** calling a tool, output should be exactly: 'TOOL_CALL: get_directions from POINT_A to POINT_B'
-        **ELSE** the next best action formatted exactly like the 'Example Responses' provided. 
+        the next best action formatted exactly like the 'Example Responses' provided. 
 
 
         # Scratch Pad
         {state["scratch_pad"]}
         """
+        # try:
+        #     with open("src/pokemon_agent/saves/agent_states/goals_agent_sys_prompt.json", 'r') as f:
+        #         prompt_list = json.load(f)
+        # except:
+        #     prompt_list=[]
+
+        # prompt_list=[]
+        # prompt_list.append(sys_prompt)
+        with open("src/pokemon_agent/saves/agent_states/goals_agent_sys_prompt.txt", 'w') as file:
+            file.write(sys_prompt)
         # - Pallet Town -> Route 1 -> Viridian City -> Route 2 (south) -> Viridian South Gate -> Viridian Forest -> Viridian North Gate -> Route 2 (north) -> Pewter City -> Route 3 -> Mt. Moon -> Route 4 -> Cerulean City
         # chat = lms.Chat(sys_prompt)
 

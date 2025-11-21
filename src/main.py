@@ -1,13 +1,13 @@
 from pyboy import PyBoy#, WindowEvent
-from pokemon_agent.perception import DialogPerception, DialogFlag #PokemonPerceptionAgent, 
+from pokemon_agent.plugins.perception import DialogPerception, DialogFlag #PokemonPerceptionAgent, 
 # from planner import SimplePlanner
-from pokemon_agent.skills import SkillExecutor
+from pokemon_agent.plugins.skills import SkillExecutor
 import time
 # from typing import Any, TypedDict, Annotated
 # from langgraph.graph import StateGraph, END
 from langchain_core.runnables.config import RunnableConfig
 # from agents.pathing_agent import *
-from pokemon_agent.path_finder import *
+from pokemon_agent.plugins.path_finder import *
 from pokemon_agent.agents.battle_agent import  create_battle_agent_state, BattleAgent
 from pokemon_agent.agents.pathing_agent import PathingAgent
 from pokemon_agent.agents.goals_agent import create_goal_agent_state, GoalsAgent
@@ -16,6 +16,9 @@ import fnmatch
 import cv2
 import lmstudio as lms
 # from progress_tracking import ProgressTracker
+import keyboard
+
+
 
 ROM_PATH = 'ROMS/pokemon_red.gb'
 # SAVE_STATE_PATH = 'src/pokemon_agent/saves/pokemon_red_charmander_DEV.sav'
@@ -90,6 +93,8 @@ def run(ROM_PATH=ROM_PATH, LOAD_STATE_PATH=LOAD_STATE_PATH, SAVE_STATE_PATH=SAVE
         # if frame % 10 == 0:
         
         while pyboy.tick(100):  # returns False when ROM done / exit 60, 100
+            if keyboard.is_pressed("q"):
+                break
             # LONGTERM_GOAL = progress.check_progress()
             # print(f"LONGTERM_GOAL: {LONGTERM_GOAL}")
             
