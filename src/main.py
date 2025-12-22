@@ -1,5 +1,5 @@
 from pyboy import PyBoy#, WindowEvent
-from pokemon_agent.plugins.perception import DialogPerception, DialogFlag #PokemonPerceptionAgent, 
+from pokemon_agent.plugins.perception import DialogPerception, DialogFlag, PokemonPerceptionAgent
 # from planner import SimplePlanner
 from pokemon_agent.plugins.skills import SkillExecutor
 import time
@@ -55,7 +55,7 @@ def run(ROM_PATH=ROM_PATH, LOAD_STATE_PATH=LOAD_STATE_PATH, SAVE_STATE_PATH=SAVE
         file.write('====== Saved Dialog ======\n')
 
     # Utilities
-    # perception = PokemonPerceptionAgent(pyboy)
+    perception = PokemonPerceptionAgent(pyboy)
     skills = SkillExecutor(pyboy)
     # progress = ProgressTracker(pyboy)
    
@@ -102,7 +102,6 @@ def run(ROM_PATH=ROM_PATH, LOAD_STATE_PATH=LOAD_STATE_PATH, SAVE_STATE_PATH=SAVE
             # percept_state = perception.get_game_state()
             walkable_grid, map_width, map_height, warp_tiles = read_map(pyboy)
             map_id, px, py, direction = get_player_position(pyboy)
-            
             map_label = get_map_label(map_id)
             # map_connections = get_all_map_connections(map_id)
             # map_doorways = get_warp_tiles(get_map_filename(map_id))
@@ -111,6 +110,10 @@ def run(ROM_PATH=ROM_PATH, LOAD_STATE_PATH=LOAD_STATE_PATH, SAVE_STATE_PATH=SAVE
 
             # if frame > 10:
             #     break
+
+            mem_read = perception.read_memory_state() #pyboy
+            print(mem_read["player"]["pokemon"])
+
 
             
             battle_flag = BattleFlag(pyboy)
@@ -158,6 +161,8 @@ def run(ROM_PATH=ROM_PATH, LOAD_STATE_PATH=LOAD_STATE_PATH, SAVE_STATE_PATH=SAVE
                     # goal_agent.compile_workflow(goal_agent_state)
                     # goal_agent_state = create_goal_agent_state()
                     config = RunnableConfig(recursion_limit=500) #max number of graph nodes to process
+                    # mem_read = perception.read_memory_state() #pyboy
+                    # goal_agent_state["player_state"] = mem_read["player"]["pokemon"]
                     goal_agent_state = goal_agent.app.invoke(goal_agent_state, config)
                     # print("GOALS_AGENT_FLAG")
                     print(f"GOAL AGENT OUTPUT: {goal_agent_state["next_best_action"]}")

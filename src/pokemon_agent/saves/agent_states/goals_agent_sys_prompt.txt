@@ -14,19 +14,21 @@
             - '*_GATE' maps are access points to main maps. Example: 'VIRIDIAN_FOREST_SOUTH_GATE' is the southern entrance to 'VIRIDIAN_FOREST'. To enter 'VIRIDIAN_FOREST', you must fully pass through the 'VIRIDIAN_FOREST_SOUTH_GATE'. To exit the otherside of 'VIRIDIAN_FOREST', you must pass through the other gate 'VIRIDIAN_FOREST_NORTH_GATE'.
 
         # Stategy
-        Consider the 'Longterm Goal' and 'Dialog History' from the 'Current Game State', also consider 'Scratch Pad' for previous moves.
+            - Consider the 'Longterm Goal' and 'Dialog History' from the 'Current Game State', also consider 'Scratch Pad' for previous moves.
+            - If there is a 'POKECENTER' listed in the provided 'Map Doorways' and your pokemon are not at full health, visit the 'NURSE' at the 'POKECENTER'
 
         # Current Game State
+            - Player State = {'species': 'CHARMANDER', 'type1': 'FIRE', 'type2': 'FIRE', 'level': 7, 'hp': 11.0, 'hp_max': 22.0, 'hp_ratio': 0.5, 'stats': {'attack': 14.0, 'defense': 13.0, 'speed': 16.0, 'special': 12.0}, 'moves': {'move_1': {'move': 'SCRATCH', 'PP': 25, 'PP_max': 35, 'effect': 'NO_ADDITIONAL_EFFECT', 'power': 40, 'type': 'NORMAL', 'accuracy': 100}, 'move_2': {'move': 'GROWL', 'PP': 40, 'PP_max': 40, 'effect': 'ATTACK_DOWN1_EFFECT', 'power': 0, 'type': 'NORMAL', 'accuracy': 100}, 'move_3': {'move': None, 'PP': 0, 'PP_max': None, 'effect': None, 'power': None, 'type': None, 'accuracy': None}, 'move_4': {'move': None, 'PP': 0, 'PP_max': None, 'effect': None, 'power': None, 'type': None, 'accuracy': None}}}
             - Longterm Goal = Travel to PEWTER_CITY and Defeat Brock at PEWTER_GYM
-            - Current Map = ROUTE_2
-            - Map Connections = [{'direction': 'south', 'target_name': 'ViridianCity', 'target_label': 'VIRIDIAN_CITY', 'offset': -5, 'connection_coords': [[19, 143], [14, 143], [15, 143], [16, 143], [17, 143], [18, 143]]}]
-            - Map Doorways = [{'destination': 'VIRIDIAN_FOREST_SOUTH_GATE', 'xy_coord': [6, 87]}]
-            - Map NPCs = []
+            - Current Map = VIRIDIAN_POKECENTER
+            - Map Connections = []
+            - Map Doorways = [{'destination': 'LAST_MAP', 'xy_coord': [6, 15]}, {'destination': 'LAST_MAP', 'xy_coord': [8, 15]}]
+            - Map NPCs = [{'x': 6, 'y': 3, 'sprite': 'SPRITE_NURSE', 'name': 'NURSE', 'text': 'TEXT_VIRIDIANPOKECENTER_NURSE', 'movement': 'STAY', 'facing': 'DOWN'}, {'x': 20, 'y': 11, 'sprite': 'SPRITE_GENTLEMAN', 'name': 'GENTLEMAN', 'text': 'TEXT_VIRIDIANPOKECENTER_GENTLEMAN', 'movement': 'WALK', 'facing': 'UP_DOWN'}, {'x': 22, 'y': 5, 'sprite': 'SPRITE_LINK_RECEPTIONIST', 'name': 'LINK_RECEPTIONIST', 'text': 'TEXT_VIRIDIANPOKECENTER_LINK_RECEPTIONIST', 'movement': 'STAY', 'facing': 'DOWN'}]
             - Dialog History = ====== Saved Dialog ======
 HOW IS MY OLD POKÉMON?WELL IT SEEMS TO LIKE YOU A LOT.YOU MUST BE TALENTED AS A
 TALENTED AS A POKÉMON TRAINER!WHAT? YOU HAVE SOMETHING FOR ME?AAAAAAA DELIVERED OAK PARCEL.
 AAAAAAA DELIVERED OAK PARCEL.AH! THIS IS THE CUSTOM POKÉ BALL I ORDERED!
-I ORDERED! THANK YOU!AAAAAAA. GRAMPS!AAAA
+I ORDERED! THANK YOU!AAAAAAA. GRAMPS!AAAAA
 AAAAAAA. WHAT DID YOU CALL ME FOR?OAK. OH RIGHT! I HAVE A REQUEST OF YOU TWO.
 ON THE DESK THERE IS MY INVENTION POKÉDEX!IT AUTOMATICALLY RECORDS DATA ON
 RECORDS DATA ON POKÉMON YOU'VE SEEN OR CAUGHT!IT A HI TECH ENCYCLOPEDIA!
@@ -43,6 +45,12 @@ TO LEND YOU ONE AAAAAAA! HAHAHA!
 
 TO RUN AN ERRAND? HERE THIS WILL HELP YOU!
 AAAAAAA GOT A TOWN MAP!
+
+
+
+WE HEAL YOUR POKÉMON BACK TO PERFECT HEALTH!
+SHALL WE HEAL YOUR POKÉMON?OK. WE'LL NEED YOUR POKÉMON.THANK YOU! YOUR POKÉMON ARE
+YOUR POKÉMON ARE FIGHTING FIT!WE HOPE TO SEE YOU AGAIN!
 
 
 
@@ -74,20 +82,8 @@ AAAAAAA GOT A TOWN MAP!
 {'current_map': 'BLUES_HOUSE', 'llm_decision': "Enter 'LAST_MAP'"}
 {'current_map': 'PALLET_TOWN', 'llm_decision': "Move to 'NORTH'"}
 {'current_map': 'ROUTE_1', 'llm_decision': "Move to 'NORTH'"}
-{'current_map': 'ROUTE_1', 'llm_decision': "Move to 'NORTH'"}
-{'current_map': 'ROUTE_1', 'llm_decision': "Move to 'NORTH'"}
-{'current_map': 'VIRIDIAN_CITY', 'llm_decision': "Move to 'NORTH'"}
-{'current_map': 'VIRIDIAN_CITY', 'llm_decision': "Move to 'NORTH'"}
-{'current_map': 'ROUTE_2', 'llm_decision': "Move to 'NORTH'"}
-{'current_map': 'ROUTE_2', 'llm_decision': "Enter 'VIRIDIAN_FOREST_SOUTH_GATE'"}
-{'current_map': 'ROUTE_2', 'llm_decision': "Move to 'SOUTH'"}
-{'current_map': 'VIRIDIAN_CITY', 'llm_decision': "Move to 'NORTH'"}
-{'current_map': 'ROUTE_2', 'llm_decision': "Move to 'SOUTH'"}
-{'current_map': 'VIRIDIAN_CITY', 'llm_decision': "Move to 'NORTH'"}
-{'current_map': 'ROUTE_2', 'llm_decision': "Move to 'SOUTH'"}
-{'current_map': 'VIRIDIAN_CITY', 'llm_decision': "Move to 'NORTH'"}
-{'current_map': 'ROUTE_2', 'llm_decision': "Enter 'VIRIDIAN_FOREST_SOUTH_GATE'"}
-{'current_map': 'ROUTE_2', 'llm_decision': "Move to 'NORTH'"}
-{'current_map': 'ROUTE_2', 'llm_decision': "Move to 'SOUTH'"}
-{'current_map': 'VIRIDIAN_CITY', 'llm_decision': "Move to 'NORTH'"}
+{'current_map': 'VIRIDIAN_CITY', 'llm_decision': "Enter 'VIRIDIAN_POKECENTER'"}
+{'current_map': 'VIRIDIAN_POKECENTER', 'llm_decision': "Talk to 'NURSE'"}
+{'current_map': 'VIRIDIAN_POKECENTER', 'llm_decision': "Enter 'LAST_MAP'"}
+{'current_map': 'VIRIDIAN_CITY', 'llm_decision': "Enter 'VIRIDIAN_POKECENTER'"}
         

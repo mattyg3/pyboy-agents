@@ -276,258 +276,307 @@ def parse_asm_directory(dir_path: Path):
 
 
 
-# ====== add map connection coords to map_headers.json ======
-import json
-from pathlib import Path
-from src.pokemon_agent.plugins.path_finder import *
-from pokemon_agent.utils.utility_funcs import find_map_by_id
-from tqdm import tqdm
+# # ====== add map connection coords to map_headers.json ======
+# import json
+# from pathlib import Path
+# from pokemon_agent.plugins.path_finder import *
+# from pokemon_agent.utils.utility_funcs import find_map_by_id
+# from tqdm import tqdm
 
 
-def add_connection_xy_to_map_headers():
+# def add_connection_xy_to_map_headers():
 
-    with open('src/pokemon_agent/maps/map_headers.json', 'r') as f:
-        MAP_HEADERS = json.load(f)
-    with open('src/pokemon_agent/maps/collision_tiles.json', 'r') as f:
-        COLLISION = json.load(f)
-    with open('src/pokemon_agent/maps/map_objects.json', 'r') as f:
-        MAP_OBJECTS = json.load(f)
+#     with open('src/pokemon_agent/maps/map_headers.json', 'r') as f:
+#         MAP_HEADERS = json.load(f)
+#     with open('src/pokemon_agent/maps/collision_tiles.json', 'r') as f:
+#         COLLISION = json.load(f)
+#     with open('src/pokemon_agent/maps/map_objects.json', 'r') as f:
+#         MAP_OBJECTS = json.load(f)
 
-    # Load to JSON
-    INPUT_JSON = Path("src/pokemon_agent/maps/map_headers.json")
-    with INPUT_JSON.open("r") as f:
-        map_headers = json.load(f)
+#     # Load to JSON
+#     INPUT_JSON = Path("src/pokemon_agent/maps/map_headers.json")
+#     with INPUT_JSON.open("r") as f:
+#         map_headers = json.load(f)
 
-    OUTPUT_JSON = Path("src/pokemon_agent/maps/map_headers.json")
+#     OUTPUT_JSON = Path("src/pokemon_agent/maps/map_headers.json")
 
-    # print(map_headers[6])
-    upgraded_maps = []
-    for map in map_headers:
-        if map['connections_flags'] != '0':
-            width = find_map_by_id(MAP_HEADERS, map['map_id']).get("map_width")
-            height = find_map_by_id(MAP_HEADERS, map['map_id']).get("map_height")
-            map_env = find_map_by_id(MAP_HEADERS, map['map_id']).get("environment")
-            map_filename = find_map_by_id(MAP_HEADERS, map['map_id']).get("file")
-            map_path = Path("src/pokemon_agent/utils/ref_data/maps/map_files") / f"{map_filename.replace(".asm",".blk")}" #/PalletTown.blk
-            blockset_path = Path("src/pokemon_agent/utils/ref_data/maps/blocksets") / f"{map_env.lower()}.bst" #/overworld.bst
-            WALKABLE_TILE_IDS = COLLISION.get(f"{map_env.replace("_","").upper()}_COLL")
+#     # print(map_headers[6])
+#     upgraded_maps = []
+#     for map in map_headers:
+#         if map['connections_flags'] != '0':
+#             width = find_map_by_id(MAP_HEADERS, map['map_id']).get("map_width")
+#             height = find_map_by_id(MAP_HEADERS, map['map_id']).get("map_height")
+#             map_env = find_map_by_id(MAP_HEADERS, map['map_id']).get("environment")
+#             map_filename = find_map_by_id(MAP_HEADERS, map['map_id']).get("file")
+#             map_path = Path("src/pokemon_agent/utils/ref_data/maps/map_files") / f"{map_filename.replace(".asm",".blk")}" #/PalletTown.blk
+#             blockset_path = Path("src/pokemon_agent/utils/ref_data/maps/blocksets") / f"{map_env.lower()}.bst" #/overworld.bst
+#             WALKABLE_TILE_IDS = COLLISION.get(f"{map_env.replace("_","").upper()}_COLL")
 
-            print(f"MAP: {map_filename}")
+#             print(f"MAP: {map_filename}")
 
-            blocks = load_blockset(blockset_path)
-            map_blocks = load_map_blk(map_path, width, height)
-            walk_matrix = generate_walkability_tile_matrix(blocks, map_blocks, WALKABLE_TILE_IDS)
-            warp_tiles = get_warp_tiles(map_filename)
-            valid_start_xy = []
-            # try:
-            if len(warp_tiles) > 0:
-                for warp in warp_tiles:
-                    valid_start_xy.append((warp.get("xy_coord")[0], warp.get("xy_coord")[1]+1))
-                print("WARPS")
-            # except:
-            else:
-                cropped_height = len(walk_matrix)-10
-                cropped_width = len(walk_matrix[0])-10
-                for y in range(10, cropped_height):
-                    for x in range(10, cropped_width):
-                        if y % 5 == 0 and x % 5 == 0: #limit combos
-                            value = walk_matrix[y][x]
-                            if value == True:
-                                valid_start_xy.append((x,y))
-                print("BRUTE_FORCE")
-                # # Get coordinates of True cells
-                # true_coords = [(x, y) for y, row in enumerate(walk_matrix) for x, val in enumerate(row) if val]
-                # # Compute average (center of mass)
-                # avg_x = sum(x for x, y in true_coords) / len(true_coords)
-                # avg_y = sum(y for x, y in true_coords) / len(true_coords)
-                # # Find True coordinate closest to the average point
-                # warp_start = min(true_coords, key=lambda c: (c[0] - avg_x) ** 2 + (c[1] - avg_y) ** 2)
+#             blocks = load_blockset(blockset_path)
+#             map_blocks = load_map_blk(map_path, width, height)
+#             walk_matrix = generate_walkability_tile_matrix(blocks, map_blocks, WALKABLE_TILE_IDS)
+#             warp_tiles = get_warp_tiles(map_filename)
+#             valid_start_xy = []
+#             # try:
+#             if len(warp_tiles) > 0:
+#                 for warp in warp_tiles:
+#                     valid_start_xy.append((warp.get("xy_coord")[0], warp.get("xy_coord")[1]+1))
+#                 print("WARPS")
+#             # except:
+#             else:
+#                 cropped_height = len(walk_matrix)-10
+#                 cropped_width = len(walk_matrix[0])-10
+#                 for y in range(10, cropped_height):
+#                     for x in range(10, cropped_width):
+#                         if y % 5 == 0 and x % 5 == 0: #limit combos
+#                             value = walk_matrix[y][x]
+#                             if value == True:
+#                                 valid_start_xy.append((x,y))
+#                 print("BRUTE_FORCE")
+#                 # # Get coordinates of True cells
+#                 # true_coords = [(x, y) for y, row in enumerate(walk_matrix) for x, val in enumerate(row) if val]
+#                 # # Compute average (center of mass)
+#                 # avg_x = sum(x for x, y in true_coords) / len(true_coords)
+#                 # avg_y = sum(y for x, y in true_coords) / len(true_coords)
+#                 # # Find True coordinate closest to the average point
+#                 # warp_start = min(true_coords, key=lambda c: (c[0] - avg_x) ** 2 + (c[1] - avg_y) ** 2)
 
-            # #get possible start tiles walk_matrix[y][x], crop area by 3 blocks in each direction
-            # cropped_height = len(walk_matrix)-3
-            # cropped_width = len(walk_matrix[0])-3
-            # valid_start_xy = []
-            # for y in range(3, cropped_height):
-            #     for x in range(3, cropped_width):
-            #         if y % 5 == 0 and x % 5 == 0: #limit combos
-            #             value = walk_matrix[y][x]
-            #             if value == True:
-            #                 valid_start_xy.append((x,y))
+#             # #get possible start tiles walk_matrix[y][x], crop area by 3 blocks in each direction
+#             # cropped_height = len(walk_matrix)-3
+#             # cropped_width = len(walk_matrix[0])-3
+#             # valid_start_xy = []
+#             # for y in range(3, cropped_height):
+#             #     for x in range(3, cropped_width):
+#             #         if y % 5 == 0 and x % 5 == 0: #limit combos
+#             #             value = walk_matrix[y][x]
+#             #             if value == True:
+#             #                 valid_start_xy.append((x,y))
 
-            map_connections = []
-            print(map["connections"])
-            for connection in map["connections"]:
-                if connection["direction"] == "west":
-                    x_pot = [0]
-                    y_pot = range(map["map_height"]*4)
-                elif connection["direction"] == "east":
-                    x_pot = [map["map_width"]*4 - 1] #max index (width)
-                    y_pot = range(map["map_height"]*4)
-                elif connection["direction"] == "north":
-                    x_pot = range(map["map_width"]*4)
-                    y_pot = [0]
-                elif connection["direction"] == "south":
-                    x_pot = range(map["map_width"]*4)
-                    y_pot = [map["map_height"]*4 - 1] #max index (height)
-                else:
-                    x_pot = None
-                    y_pot = None
+#             map_connections = []
+#             print(map["connections"])
+#             for connection in map["connections"]:
+#                 if connection["direction"] == "west":
+#                     x_pot = [0]
+#                     y_pot = range(map["map_height"]*4)
+#                 elif connection["direction"] == "east":
+#                     x_pot = [map["map_width"]*4 - 1] #max index (width)
+#                     y_pot = range(map["map_height"]*4)
+#                 elif connection["direction"] == "north":
+#                     x_pot = range(map["map_width"]*4)
+#                     y_pot = [0]
+#                 elif connection["direction"] == "south":
+#                     x_pot = range(map["map_width"]*4)
+#                     y_pot = [map["map_height"]*4 - 1] #max index (height)
+#                 else:
+#                     x_pot = None
+#                     y_pot = None
 
-                valid_connections=[]
-                for start in tqdm(valid_start_xy, desc="Processing"):
-                    for x in x_pot:
-                        for y in y_pot:
-                            path = astar(walk_matrix, start, (x, y))
-                            if path:
-                                valid_connections.append((x, y))
+#                 valid_connections=[]
+#                 for start in tqdm(valid_start_xy, desc="Processing"):
+#                     for x in x_pot:
+#                         for y in y_pot:
+#                             path = astar(walk_matrix, start, (x, y))
+#                             if path:
+#                                 valid_connections.append((x, y))
                 
-                connection["connection_coords"] = list(set(valid_connections))
-                map_connections.append(connection)
-            map["connections"] = map_connections
-        upgraded_maps.append(map)
+#                 connection["connection_coords"] = list(set(valid_connections))
+#                 map_connections.append(connection)
+#             map["connections"] = map_connections
+#         upgraded_maps.append(map)
 
-    # Save to JSON
-    with OUTPUT_JSON.open("w", encoding="utf-8") as f:
-        json.dump(upgraded_maps, f, indent=4, default=int)
+#     # Save to JSON
+#     with OUTPUT_JSON.open("w", encoding="utf-8") as f:
+#         json.dump(upgraded_maps, f, indent=4, default=int)
 
-# ====== create map_graph.json ======
-from collections import deque, defaultdict
-from pokemon_agent.utils.utility_funcs import camel_to_snake
+# # ====== create map_graph.json ======
+# from collections import deque, defaultdict
+# from pokemon_agent.utils.utility_funcs import camel_to_snake
 
-with open('src/pokemon_agent/maps/map_headers.json', 'r') as f:
-        MAP_HEADERS = json.load(f)
+# with open('src/pokemon_agent/maps/map_headers.json', 'r') as f:
+#         MAP_HEADERS = json.load(f)
 
-with open('src/pokemon_agent/maps/map_objects.json', 'r') as f:
-        MAP_OBJECTS = json.load(f)
+# with open('src/pokemon_agent/maps/map_objects.json', 'r') as f:
+#         MAP_OBJECTS = json.load(f)
 
-class MapGraph:
-    def __init__(self):
-        # graph[map_name] = list of (neighbor, metadata_dict)
-        self.graph = defaultdict(list)
+# class MapGraph:
+#     def __init__(self):
+#         # graph[map_name] = list of (neighbor, metadata_dict)
+#         self.graph = defaultdict(list)
 
-    def add_connection(self, map_a, map_b, meta=None):
-        """Add a bidirectional edge between map_a and map_b.
+#     def add_connection(self, map_a, map_b, meta=None):
+#         """Add a bidirectional edge between map_a and map_b.
 
-        meta can contain offsets, coordinates, warp positions, etc.
-        """
-        if meta is None:
-            meta = {}
+#         meta can contain offsets, coordinates, warp positions, etc.
+#         """
+#         if meta is None:
+#             meta = {}
 
-        self.graph[map_a].append((map_b, meta))
-        self.graph[map_b].append((map_a, meta))
+#         self.graph[map_a].append((map_b, meta))
+#         self.graph[map_b].append((map_a, meta))
 
-    def neighbors(self, map_name):
-        return self.graph.get(map_name, [])
+#     def neighbors(self, map_name):
+#         return self.graph.get(map_name, [])
 
-    def find_path(self, start, goal):
-        """Breadth-first search returning full path of maps from start → goal."""
-        if start not in self.graph or goal not in self.graph:
-            return None
+#     def find_path(self, start, goal):
+#         """Breadth-first search returning full path of maps from start → goal."""
+#         if start not in self.graph or goal not in self.graph:
+#             return None
 
-        queue = deque([start])
-        visited = {start: None}   # backpointers
+#         queue = deque([start])
+#         visited = {start: None}   # backpointers
 
-        while queue:
-            current = queue.popleft()
+#         while queue:
+#             current = queue.popleft()
 
-            if current == goal:
-                return self._reconstruct_path(visited, start, goal)
+#             if current == goal:
+#                 return self._reconstruct_path(visited, start, goal)
 
-            for neighbor, _meta in self.graph[current]:
-                if neighbor not in visited:
-                    visited[neighbor] = current
-                    queue.append(neighbor)
+#             for neighbor, _meta in self.graph[current]:
+#                 if neighbor not in visited:
+#                     visited[neighbor] = current
+#                     queue.append(neighbor)
 
-        return None  # no path
+#         return None  # no path
 
-    def _reconstruct_path(self, visited, start, goal):
-        path = [goal]
-        while path[-1] != start:
-            path.append(visited[path[-1]])
-        return list(reversed(path))
+#     def _reconstruct_path(self, visited, start, goal):
+#         path = [goal]
+#         while path[-1] != start:
+#             path.append(visited[path[-1]])
+#         return list(reversed(path))
     
-    def to_dict(self):
-        """Convert graph to serializable pure-Python structure."""
-        out = {}
-        for k, neighbors in self.graph.items():
-            out[k] = [{"neighbor": n, "meta": m} for n, m in neighbors]
-        return out
+#     def to_dict(self):
+#         """Convert graph to serializable pure-Python structure."""
+#         out = {}
+#         for k, neighbors in self.graph.items():
+#             out[k] = [{"neighbor": n, "meta": m} for n, m in neighbors]
+#         return out
 
-    @classmethod
-    def from_dict(cls, data):
-        g = cls()
-        for map_name, neighbor_list in data.items():
-            g.graph[map_name] = [(item["neighbor"], item["meta"]) for item in neighbor_list]
-        return g
+#     @classmethod
+#     def from_dict(cls, data):
+#         g = cls()
+#         for map_name, neighbor_list in data.items():
+#             g.graph[map_name] = [(item["neighbor"], item["meta"]) for item in neighbor_list]
+#         return g
 
-def create_map_graph():
+# def create_map_graph():
 
-    map_graph = MapGraph()
+#     map_graph = MapGraph()
 
-    # map_filename = find_map_by_filename(MAP_HEADERS, map_id).get("file")
-    map_headers = []
-    for map in MAP_HEADERS:
-        map_data = {}
-        if map["connections_flags"] not in ('0', '$0'):
-            map_data["map_name"] = map["file"].replace(".asm", "")
-            map_data["label"] = map["label"]
-            connections = []
-            for conn in map["connections"]:
-                connections.append(conn["target_label"])
+#     # map_filename = find_map_by_filename(MAP_HEADERS, map_id).get("file")
+#     map_headers = []
+#     for map in MAP_HEADERS:
+#         map_data = {}
+#         if map["connections_flags"] not in ('0', '$0'):
+#             map_data["map_name"] = map["file"].replace(".asm", "")
+#             map_data["label"] = map["label"]
+#             connections = []
+#             for conn in map["connections"]:
+#                 connections.append(conn["target_label"])
 
-            map_data["connections"] = connections
-            map_headers.append(map_data)
+#             map_data["connections"] = connections
+#             map_headers.append(map_data)
     
-    # print(map_headers)
-    map_objects = []
-    for key, value in MAP_OBJECTS.items():
-        map_data = {}
-        map_data["map_name"] = key
-        map_data["label"] = camel_to_snake(key).upper()
-        connections = []
-        for warp in value["warp_events"]:
-            if warp["dest_map"] != 'LAST_MAP':
-                connections.append(warp["dest_map"])
-        map_data["connections"] = connections
-        map_objects.append(map_data)
-    # print(map_objects)
+#     # print(map_headers)
+#     map_objects = []
+#     for key, value in MAP_OBJECTS.items():
+#         map_data = {}
+#         map_data["map_name"] = key
+#         map_data["label"] = camel_to_snake(key).upper()
+#         connections = []
+#         for warp in value["warp_events"]:
+#             if warp["dest_map"] != 'LAST_MAP':
+#                 connections.append(warp["dest_map"])
+#         map_data["connections"] = connections
+#         map_objects.append(map_data)
+#     # print(map_objects)
 
-    #merge dicts
-    map_dict = {}
+#     #merge dicts
+#     map_dict = {}
 
-    for map in map_headers + map_objects:
-        label = map["label"]
-        map_name = map["map_name"]
-        conns = map.get("connections", [])
+#     for map in map_headers + map_objects:
+#         label = map["label"]
+#         map_name = map["map_name"]
+#         conns = map.get("connections", [])
 
-        if label not in map_dict:
-            # Start new entry
-            map_dict[label] = {
-                "map_name": map_name,
-                "connections": list(conns)  # make a copy
-            }
-        else:
-            # Merge connections
-            map_dict[label]["connections"].extend(conns)
+#         if label not in map_dict:
+#             # Start new entry
+#             map_dict[label] = {
+#                 "map_name": map_name,
+#                 "connections": list(conns)  # make a copy
+#             }
+#         else:
+#             # Merge connections
+#             map_dict[label]["connections"].extend(conns)
 
-    # print(map_dict)
+#     # print(map_dict)
 
-    logged_connections=[]
-    for k, v in map_dict.items():
-        point_a = k
-        for conn in v["connections"]:
-            point_b = conn
-            if (point_a, point_b) or (point_b, point_a) not in logged_connections: # and (point_b, point_a)
-                map_graph.add_connection(point_a, point_b)
-                # map_graph.add_connection(point_b, point_a)
-                logged_connections.append((point_a, point_b))
-                # logged_connections.append((point_b, point_a))
+#     logged_connections=[]
+#     for k, v in map_dict.items():
+#         point_a = k
+#         for conn in v["connections"]:
+#             point_b = conn
+#             if (point_a, point_b) or (point_b, point_a) not in logged_connections: # and (point_b, point_a)
+#                 map_graph.add_connection(point_a, point_b)
+#                 # map_graph.add_connection(point_b, point_a)
+#                 logged_connections.append((point_a, point_b))
+#                 # logged_connections.append((point_b, point_a))
 
-    # save map_graph.json
-    with open("src/pokemon_agent/maps/map_graph.json", "w") as f:
-        json.dump(map_graph.to_dict(), f, indent=2)
+#     # save map_graph.json
+#     with open("src/pokemon_agent/maps/map_graph.json", "w") as f:
+#         json.dump(map_graph.to_dict(), f, indent=2)
         
 
+
+
+def resolve_last_map(maps_data):
+    """
+    Replace dest_map=='LAST_MAP' with the correct source map name based on warp_id.
+    maps_data is the JSON/dict of all maps.
+    """
+
+    # Build reverse lookup:
+    # (dest_map, warp_id) -> source_map
+    reverse_index = {}
+
+    for source_map, data in maps_data.items():
+        for warp in data.get("warp_events", []):
+            dest = warp["dest_map"]
+            # wid = warp["warp_id"]
+
+            # Skip LAST_MAP placeholders here
+            if dest == "LAST_MAP":
+                continue
+
+            # key = (dest, wid)
+            key=dest
+            reverse_index[key] = source_map
+
+    # Now patch maps that use LAST_MAP
+    for map_name, data in maps_data.items():
+        for warp in data.get("warp_events", []):
+            if warp["dest_map"] == "LAST_MAP":
+                # wid = warp["warp_id"]
+                # key = (map_name.upper(), wid)
+                key = map_name.upper()
+
+                # Some map names in your dict may be CamelCase but warps_to is uppercase.
+                # Prefer using warps_to for matching.
+                # real_key = (data["warps_to"], wid) if "warps_to" in data else key
+                real_key = data["warps_to"] if "warps_to" in data else key
+
+                # Find the map that leads here using this warp ID
+                dest = reverse_index.get(real_key)
+
+                if not dest:
+                    # print(f"WARNING: Could not resolve LAST_MAP for {map_name} warp_id={wid}")
+                    print(f"WARNING: Could not resolve LAST_MAP for {map_name}")
+                    continue
+
+                warp["dest_map"] = dest  # Replace LAST_MAP
+
+    return maps_data
 
 
 
@@ -548,11 +597,18 @@ def main():
     # create_collision_tiles()
     # parse_asm_objects()
 
-    create_map_graph()
-    with open("src/pokemon_agent/maps/map_graph.json") as f:
-        MAP_GRAPH = json.load(f)
-    g = MapGraph.from_dict(MAP_GRAPH)
-    print(g.find_path("OAKS_LAB", "PEWTER_CITY"))
+    # create_map_graph()
+    # with open("src/pokemon_agent/maps/map_graph.json") as f:
+    #     MAP_GRAPH = json.load(f)
+    # g = MapGraph.from_dict(MAP_GRAPH)
+    # print(g.find_path("OAKS_LAB", "PEWTER_CITY"))
+    with open('src/pokemon_agent/maps/map_objects.json', 'r') as f:
+        MAP_OBJECTS = json.load(f)
+
+    MAP_OBJECTS_2 = resolve_last_map(MAP_OBJECTS)
+    OUTPUT_JSON = Path('src/pokemon_agent/maps/map_objects_2.json')
+    with OUTPUT_JSON.open("w", encoding="utf-8") as f:
+        json.dump(MAP_OBJECTS_2, f, indent=4, default=int)
 
 
 

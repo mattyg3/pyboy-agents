@@ -13,6 +13,8 @@ from pokemon_agent.plugins.progress_tracking import ProgressTracker
 # from pokemon_agent.agents.tools_agent import get_directions
 from pokemon_agent.plugins.path_finder import astar, astar_2wide
 # from pokemon_agent.agents.tools_agent import tool_app, run, TOOLS
+from pokemon_agent.plugins.perception import DialogPerception, DialogFlag, PokemonPerceptionAgent
+
 
 
 # llm = ChatOpenAI(
@@ -43,6 +45,7 @@ class AgentState(TypedDict):
     # tool_call:str
     # directions:str
     game_state: dict[str, Any]
+    player_state: dict[str, Any]
     scratch_pad: str
 
 
@@ -55,6 +58,7 @@ def create_goal_agent_state(
         # tool_call=None,
         # directions=None,
         game_state=None,
+        player_state=None,
         scratch_pad='Previous Move Decisions (Oldest to Most Recent):\n',
         
 
@@ -69,6 +73,7 @@ def create_goal_agent_state(
         # tool_call=tool_call,
         # directions=directions,
         game_state=game_state,
+        player_state=player_state,
         scratch_pad=scratch_pad,
     )
 
@@ -78,8 +83,15 @@ class GoalsAgent:
         self.pyboy = pyboy
         # self.preprompt = preprompt
         self.progress = ProgressTracker(pyboy)
+        self.perception = PokemonPerceptionAgent(pyboy)
+
+    def read_memory(self):
+        mem_read = self.perception.read_memory_state()
+        # self.player_state = mem_read["player"]["pokemon"]
+        return mem_read["player"]["pokemon"]
 
     def goals_agent(self, state):
+        # Update States
         LONGTERM_GOAL, dialog_history = self.progress.check_progress()
         map_id = get_current_map(self.pyboy)
         map_label = get_map_label(map_id)
@@ -87,6 +99,7 @@ class GoalsAgent:
         map_filename = get_map_filename(map_id)
         map_doorways = get_warp_tiles(map_filename)
         map_npcs = get_npc_coords(map_filename)
+        player_state = self.read_memory() #player_state
 
         map_id, px, py, direction = get_player_position(self.pyboy)
         walk_matrix, map_width, map_height, warp_tiles = read_map(self.pyboy)
@@ -114,8 +127,9 @@ class GoalsAgent:
             else:
                 pass
 
-
+        
         curr_game_state = {
+            "Player State": player_state,
             "Longterm Goal": LONGTERM_GOAL,
             "Dialog History": dialog_history,
             "Current Map": map_label,
@@ -144,9 +158,11 @@ class GoalsAgent:
             - '*_GATE' maps are access points to main maps. Example: 'VIRIDIAN_FOREST_SOUTH_GATE' is the southern entrance to 'VIRIDIAN_FOREST'. To enter 'VIRIDIAN_FOREST', you must fully pass through the 'VIRIDIAN_FOREST_SOUTH_GATE'. To exit the otherside of 'VIRIDIAN_FOREST', you must pass through the other gate 'VIRIDIAN_FOREST_NORTH_GATE'.
 
         # Stategy
-        Consider the 'Longterm Goal' and 'Dialog History' from the 'Current Game State', also consider 'Scratch Pad' for previous moves.
+            - Consider the 'Longterm Goal' and 'Dialog History' from the 'Current Game State', also consider 'Scratch Pad' for previous moves.
+            - If there is a 'POKECENTER' listed in the provided 'Map Doorways' and your pokemon are not at full health, visit the 'NURSE' at the 'POKECENTER'
 
         # Current Game State
+            - Player State = {state["game_state"]["Player State"]}
             - Longterm Goal = {state["game_state"]["Longterm Goal"]}
             - Current Map = {state["game_state"]["Current Map"]}
             - Map Connections = {state["game_state"]["Map Connections"]}
